@@ -1,0 +1,189 @@
+.footer {
+    display: table-footer-group;
+    &-top {
+        display: flex;
+        justify-content: space-between;
+        background-color: #0073b1;
+        padding: 60px 9999px;
+        margin: 0 -9999px;
+        
+        @media screen and (max-width: 1199px) {
+        	padding: 30px 9999px;	
+        	flex-wrap: wrap;
+        }
+    }
+
+    &-left {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex: 0 0 80%;
+
+        @media screen and (max-width: 1199px) {
+        	flex: 0 0 100%;
+        }
+    }
+
+    &-menu {
+        flex: 0 0 33.3%;
+        &:not(:last-child) {
+            margin-bottom: 40px;
+        }
+
+
+        li {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+            a {
+                color: #fff;
+                font-size: 14px;	
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            &:hover {
+                a {
+                    color: #c4e5f5;
+                }
+            }
+        }
+        &__wide {
+            flex: 0 0 100%;
+
+            ul {
+                width: 50%;
+            }
+        }
+        &__wrapper {
+            display: flex;
+        }
+    }
+
+    &-heading {
+        font: 15px / 25px 'HelveticaNeueCyr Bold', Arial, sans-serif;
+        color: #fff;
+        margin-bottom: 11px;
+    }
+    &-bottom {
+        background-color: #1f9bde;
+        padding: 50px 9999px 40px;
+        margin: 0 -9999px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &-text {
+        flex: 0 0 50%;
+        padding-left: 45px;
+        @media screen and (max-width: 1199px) {
+        	flex: 0 0 70%;
+        }
+
+        p {
+            margin: 0 0 15px;
+        }
+        a {
+            color: #fff;
+        }
+    }
+
+    &-logo {
+    	@media screen and (max-width: 1199px) {
+	    	flex: 0 0 30%;
+	    }
+    }
+
+    &-right {
+    	@media screen and (max-width: 1199px) {
+        	flex: 0 0 100%;
+        	padding-top: 30px;	
+        }
+        >ul {
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #338fc1;
+
+            li {
+            	&:not(:last-child) {
+            		margin-bottom: 10px;	
+            	}
+            }
+
+            span {
+            	display: inline-block;	
+            	vertical-align: middle;	
+            }
+
+            span[class^="icon"] {
+                margin-right: 10px;
+                background-color: #fff;
+                border-radius: 50%;
+                margin-bottom: 0;
+                width: 30px;
+                height: 30px;
+            	line-height: 30px;
+            }
+        }
+        a[href^=tel] {
+            font-size: 18px;
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    &-social {
+        display: flex;
+        justify-content: space-between;
+        flex: 0 0 20%;
+
+        @media screen and (max-width: 1199px) {
+        	flex: 0 0 100%;
+        	justify-content: center;
+        	padding-top: 30px;	
+        }
+
+        li {
+        	@media screen and (max-width: 1199px) {
+        		margin: 0 30px;	
+        	}
+            a {
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                font-size: 20px;
+                transition: color 0.3s;
+            }
+            &:hover {
+                a {
+                    color: rgba(255, 255, 255, 1);
+                }
+            }
+        }
+    }
+}
+
+.main-phone {
+    padding-top: 10px;
+    span {
+        padding-top: 10px;
+        display: block;
+        font-size: 14px;
+        color: #a2c0da;
+        padding-bottom: 20px;
+    }
+}
+
+.btn-phone {
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+    border: 1px solid #6da7c6;
+    font-size: 14px;
+    transition: background-color .3s;
+
+    &:hover {
+        background-color: hsla(0, 0%, 100%, .3);
+        color: #fff;
+    }
+}

@@ -1,0 +1,128 @@
+.header {
+    background-color: #fff;
+    &-container {
+        height: 60px;
+        display: flex;
+        padding: 0 15px;
+    }
+
+    &-logo {
+        flex: 0 0 40%;
+        max-width: 40%;
+        position: relative;
+
+        span {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            font-size: 6.9px;
+            font-family: 'HelveticaNeueCyr Roman', Arial, sans-serif;
+            letter-spacing: 1.2px;
+            white-space: nowrap;
+            color: #003764;
+        }
+    }
+
+    &-language {
+        display: none;
+    }
+
+    &-nav {
+        position: fixed;
+        z-index: 2;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding: 50px 0 0;
+        background-color: #f8f7fc;
+        transform: translateX(100%);
+        transition: transform 0.3s;
+
+        &.open {
+            transform: translateX(0);
+        }
+
+        >ul {
+            padding-bottom: 10px;
+        }
+
+        li {
+            padding: 0 20px;
+            a {
+                font: 16px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+                color: #0055b8;
+                display: block;
+                padding: 10px 0;
+                text-decoration: none;
+            }
+
+            >ul {
+                display: none;
+            }
+        }
+        .dropdown {
+            display: none;
+
+            li {
+                padding-left: 0;
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+.close-nav {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: #ccc;
+}
+
+.mobile-language {
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.lang-link {
+    font-size: 14px;
+    color: #0055b8;
+    text-decoration: none;
+    .lang-rus {
+        display: none;
+    }
+
+    &--ukr {
+        .lang-rus {
+            display: block;
+        }
+        .lang-ukr {
+            display: none;
+        }
+    }
+}
+
+.navbar-toggle {
+    font-size: 0;
+    width: 50px;
+    height: 36px;
+    line-height: 36px;
+    background-color: #4281ca;
+    text-align: center;
+    padding: 0;
+
+    .dot {
+        background-color: #fff;
+        width: 5px;
+        height: 5px;
+        border-radius: 5px;
+        display: inline-block;
+        vertical-align: middle;
+        &:not(:nth-child(3)) {
+            margin-right: 3px;
+        }
+    }
+}
