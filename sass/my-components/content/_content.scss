@@ -1,3 +1,102 @@
+@font-face {
+    font-family: 'icomoon-main';
+    src: url('../fonts/icomoon.eot?6ingg5');
+    src: url('../fonts/icomoon.eot?6ingg5#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?6ingg5') format('truetype'),
+    url('../fonts/icomoon.woff?6ingg5') format('woff'),
+    url('../fonts/icomoon.svg?6ingg5#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon-main' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ico-question .path1:before {
+    content: "\e956";
+    color: rgb(220, 223, 235);
+}
+
+.icon-ico-question .path2:before {
+    content: "\e957";
+    margin-left: -1em;
+    color: rgb(48, 86, 179);
+}
+
+
+.icon-city-arrow:before {
+    content: "\e952";
+}
+
+.icon-close:before {
+    content: "\e951";
+}
+
+.icon-mts:before {
+    content: "\e950";
+    color: #ec1c2e;
+}
+
+.icon-viber:before {
+    content: "\e94d";
+    color: #665cac;
+}
+
+.icon-lifecell-1:before {
+    content: "\e94e";
+    color: #ffcb00;
+}
+
+.icon-telegram-1:before {
+    content: "\e94c";
+}
+
+.icon-lifecell-12:before {
+    content: "\e94f";
+    color: #08f;
+}
+
+.icon-login:before {
+    content: "\e94b";
+}
+
+.icon-google-plus-logo:before {
+    content: "\e900";
+}
+
+.icon-youtube-logo:before {
+    content: "\e901";
+}
+
+.icon-instagram-logo:before {
+    content: "\e902";
+}
+
+.icon-facebook-logo:before {
+    content: "\e903";
+}
+
+.icon-vk-social-network-logo:before {
+    content: "\e904";
+}
+
+
+
+
+
 html.lb-disable-scrolling {
     overflow: hidden;
     /* Position fixed required for iOS. Just putting overflow: hidden; on the body is not enough. */

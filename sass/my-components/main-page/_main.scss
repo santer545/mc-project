@@ -1620,7 +1620,9 @@ input[type="checkbox"]:checked+span:before {
 
         strong {
             display: block;
+            font: 35px / 45px 'HelveticaNeueCyr Roman', Arial, sans-serif;
             color: #ed592b;
+            border: none;   
         }
     }
 }
@@ -1750,6 +1752,7 @@ input[type="checkbox"]:checked+span:before {
 
     &-start {
         padding: 20px 0 0;
+        display: block; 
     }
 
     &-col {

@@ -59,6 +59,7 @@
     }
     &-logo {
         position: relative;
+        flex: 0 0 auto;
         @media screen and (max-width: 1199px) {
             flex: 0 0 15%;
         }
@@ -101,6 +102,7 @@
         border: 1px solid #dadada;
         color: #0055b8;
         text-decoration: none;
+        display: block;
     }
 
     &-user {
@@ -178,6 +180,9 @@
         align-items: center;
         flex: 0 0 60%;
         justify-content: center;
+        position: relative;
+        transform: translate(0, 0);
+        background-color: #fff;
 
         @media screen and (max-width: 991px) {
             flex: 0 0 55%;
@@ -187,11 +192,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            padding-bottom: 0;
         }
 
         >ul li {
             position: relative;
-            padding: 40px 20px;
+            padding: 30px 20px;
 
             @media screen and (max-width: 1199px) {
                 padding: 25px 15px;
@@ -211,6 +217,7 @@
                 color: #0055b8;
                 text-decoration: none;
                 cursor: pointer;
+                padding: 0;
 
                 @media screen and (max-width: 1199px) {
                     font-size: 14px;
@@ -312,6 +319,8 @@
     color: #fff;
     font-size: 18px;
     padding: 10px 20px 10px 50px;
+    width: auto;
+    height: auto;
 }
 
 .btn-login {
@@ -329,7 +338,7 @@
 .navbar-toggle,
 .close-nav,
 .mobile-language {
-    display: none;
+    display: none!important;
 }
 
 .help-tooltip-data {

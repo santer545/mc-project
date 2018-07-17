@@ -86,7 +86,7 @@ gulp.task('contentStyles', function() {
         .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        
+
         .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
@@ -101,7 +101,7 @@ gulp.task('contentMobileStyles', function() {
         .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        
+
         .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
@@ -116,7 +116,7 @@ gulp.task('registrationStyles', function() {
         .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        
+
         .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
@@ -131,7 +131,7 @@ gulp.task('registrationMobileStyles', function() {
         .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        
+
         .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
@@ -170,6 +170,7 @@ gulp.task('critical-login', function() {
         css: ['dist/css/main-page-mobile.min.css', 'dist/css/main-page.min.css'],
         base: './dist',
         src: './index.html',
+        ignore: ['@font-face', /url\(/],
         dest: 'dist/test-critical.html'
     });
 });
@@ -224,7 +225,7 @@ gulp.task('homeScripts', function() {
             sourceDir + '/functions.js',
             sourceDir + '/jquery.lazy.js',
             sourceDir + '/client.min.js'
-            
+
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -256,7 +257,7 @@ gulp.task('personalScripts', function() {
             sourceDir + '/functions.js',
             sourceDir + '/jquery.lazy.js',
             sourceDir + '/client.min.js'
-            
+
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -288,7 +289,7 @@ gulp.task('contentScripts', function() {
             sourceDir + '/content-main.js',
             sourceDir + '/functions.js',
             sourceDir + '/client.min.js'
-            
+
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -319,7 +320,7 @@ gulp.task('homeScriptsAB', function() {
             //sourceDir + '/functions.js',
             sourceDir + '/jquery.lazy.js',
             //sourceDir + '/client.min.js'
-            
+
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -362,7 +363,7 @@ gulp.task('registrationScripts', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('mainStyles','mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles');
+    gulp.start('mainStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles');
 });
 
 gulp.task('server', function() {
@@ -391,7 +392,7 @@ gulp.task('watch', function() {
     gulp.watch('js/**/*.js', ['personalScripts', browserSync.reload]);
 
     gulp.watch('js/**/*.js', ['contentScripts', browserSync.reload]);
-    
+
 
     // Watch image files
     //gulp.watch('assets/images/**/*', ['images', browserSync.reload]);
