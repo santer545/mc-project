@@ -87,12 +87,20 @@ a.btn {
     align-items: center;
 }
 
+.align-right {
+    align-items: flex-end;
+}
+
 .justify-center {
     justify-content: center;
 }
 
 .justify-between {
     justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
 }
 
 .text-center {
@@ -131,7 +139,8 @@ a.btn {
 }
 
 // content
-ul {
+ul,
+ol {
     list-style-type: none;
     padding: 0;
     margin: 0;

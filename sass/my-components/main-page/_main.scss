@@ -1,42 +1,10 @@
 @font-face {
-    font-family: 'HelveticaNeueCyr Bold';
-    src: url('../fonts/HelveticaNeueCyr-Bold.eot');
-    src: local('☺'), url('../fonts/HelveticaNeueCyr-Bold.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Bold.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Bold.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'HelveticaNeueCyr Medium';
-    src: url('../fonts/HelveticaNeueCyr-Medium.eot');
-    src: local('☺'), url('../fonts/HelveticaNeueCyr-Medium.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Medium.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Medium.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'HelveticaNeueCyr Roman';
-    src: url('../fonts/HelveticaNeueCyr-Roman.eot');
-    src: local('☺'), url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Roman.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Roman.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'HelveticaNeueCyr Light';
-    src: url('../fonts/HelveticaNeueCyr-Light.eot');
-    src: local('☺'), url('../fonts/HelveticaNeueCyr-Light.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Light.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Light.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
     font-family: 'icomoon-main';
-    src: url('../fonts/icomoon.eot?2d5nts');
-    src: url('../fonts/icomoon.eot?2d5nts#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?2d5nts') format('truetype'),
-    url('../fonts/icomoon.woff?2d5nts') format('woff'),
-    url('../fonts/icomoon.svg?2d5nts#icomoon') format('svg');
+    src: url('../fonts/icomoon.eot?6ingg5');
+    src: url('../fonts/icomoon.eot?6ingg5#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?6ingg5') format('truetype'),
+    url('../fonts/icomoon.woff?6ingg5') format('woff'),
+    url('../fonts/icomoon.svg?6ingg5#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -57,6 +25,17 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-ico-question .path1:before {
+    content: "\e956";
+    color: rgb(220, 223, 235);
+}
+
+.icon-ico-question .path2:before {
+    content: "\e957";
+    margin-left: -1em;
+    color: rgb(48, 86, 179);
+}
+
 .icon-clock-2 .path1:before {
     content: "\e953";
     color: rgb(0, 177, 129);
@@ -73,6 +52,46 @@
     content: "\e955";
     margin-left: -1.0009765625em;
     color: rgb(0, 177, 129);
+}
+
+.icon-avtomat:before {
+    content: "\e958";
+    color: #0055b8;
+}
+
+.icon-cacheback:before {
+    content: "\e959";
+    color: #0055b8;
+}
+
+.icon-pasport:before {
+    content: "\e95a";
+    color: #00b181;
+}
+
+.icon-money:before {
+    content: "\e95b";
+    color: #0055b8;
+}
+
+.icon-percent:before {
+    content: "\e95c";
+    color: #0055b8;
+}
+
+.icon-shtraph:before {
+    content: "\e95d";
+    color: #00b181;
+}
+
+.icon-checked:before {
+    content: "\e95e";
+    color: #00b181;
+}
+
+.icon-zero:before {
+    content: "\e95f";
+    color: #00b181;
 }
 
 .icon-city-arrow:before {
@@ -551,11 +570,6 @@
 
 
 
-
-
-
-
-
 /*
  * Slider for Bootstrap
  *
@@ -580,6 +594,25 @@ $backcolor: #f7f7f7) {
     endColorstr='#{$colorend}',
     GradientType=0);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -642,7 +675,7 @@ $baseBorderRadius: 4px;
             border-radius: 50%;
             background-color: #0056b8;
             cursor: pointer;
-            background-image: url('../images/double-arrows.png');
+            background-image: url('../images/test/double-arrows.png');
             background-repeat: no-repeat;
             background-position: 49%;
             box-shadow: 2px 2px 16px -1px rgba(0, 0, 0, .75);
@@ -811,6 +844,25 @@ $baseBorderRadius: 4px;
 .tooltip.tooltip-main.top {
     display: none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1018,15 +1070,16 @@ $baseBorderRadius: 4px;
     font: 28px / 1.2 'HelveticaNeueCyr Roman', Arial, sans-serif;
     margin-bottom: 30px;
     padding-top: 30px;
+}
 
-    span[class^="icon"] {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        font-size: 10px;
-        color: #ccc;
-        cursor: pointer;
-    }
+.icon-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+    color: #ccc;
+    cursor: pointer;
+    z-index: 1;
 }
 
 // Close icon
@@ -1063,11 +1116,36 @@ $baseBorderRadius: 4px;
     width: 645px;
     margin: 30px auto;
     position: relative;
+
+    .btn-programm {
+        font-size: 17px;
+        padding: 5px 15px;
+        width: 100%;
+    }
 }
 
 .modal-content {
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1174,6 +1252,25 @@ $baseBorderRadius: 4px;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Yuk! CSS Hack for IE6 3 pixel bug :( */
 
 * html .jspCorner {
@@ -1184,88 +1281,154 @@ $baseBorderRadius: 4px;
 
 
 
-.bg-review_2 {
-    width: 110px;
-    height: 105px;
-    background: url('../images/png-sprite/css_sprites.png') -140px -138px;
-}
-
-.bg-review_4 {
-    width: 110px;
-    height: 104px;
-    background: url('../images/png-sprite/css_sprites.png') -270px -10px;
-}
-
-.bg-review {
-    width: 110px;
-    height: 108px;
-    background: url('../images/png-sprite/css_sprites.png') -10px -10px;
-}
-
-.bg-review_5 {
-    width: 110px;
-    height: 102px;
-    background: url('../images/png-sprite/css_sprites.png') -270px -134px;
-}
-
-.bg-review_3 {
-    width: 110px;
-    height: 108px;
-    background: url('../images/png-sprite/css_sprites.png') -140px -10px;
-}
-
-.bg-review_6 {
-    width: 110px;
-    height: 108px;
-    background: url('../images/png-sprite/css_sprites.png') -10px -138px;
+.bg-easy_1 {
+    width: 76px;
+    height: 46px;
+    background: url('../images/test/png-sprite/css_sprites.png') -503px -130px;
 }
 
 .bg-easy_1 {
     width: 76px;
     height: 46px;
-    background: url('../images/png-sprite/css_sprites.png') -10px -266px;
-}
-
-.bg-master {
-    width: 74px;
-    height: 45px;
-    background: url('../images/png-sprite/css_sprites.png') -10px -332px;
+    background: url('../images/test/png-sprite/css_sprites.png') -503px -196px;
 }
 
 .bg-ibox_1 {
     width: 76px;
     height: 45px;
-    background: url('../images/png-sprite/css_sprites.png') -106px -266px;
+    background: url('../images/test/png-sprite/css_sprites.png') -106px -387px;
+}
+
+.bg-ibox_1 {
+    width: 76px;
+    height: 45px;
+    background: url('../images/test/png-sprite/css_sprites.png') -394px -387px;
+}
+
+.bg-master {
+    width: 74px;
+    height: 45px;
+    background: url('../images/test/png-sprite/css_sprites.png') -490px -387px;
 }
 
 .bg-master_small {
     width: 44px;
     height: 27px;
-    background: url('../images/png-sprite/css_sprites.png') -198px -332px;
+    background: url('../images/test/png-sprite/css_sprites.png') -503px -327px;
 }
 
 .bg-terminal_4 {
     width: 76px;
     height: 45px;
-    background: url('../images/png-sprite/css_sprites.png') -202px -266px;
+    background: url('../images/test/png-sprite/css_sprites.png') -202px -387px;
+}
+
+.bg-terminal_4 {
+    width: 76px;
+    height: 45px;
+    background: url('../images/test/png-sprite/css_sprites.png') -503px -262px;
 }
 
 .bg-tyme_gorizont {
     width: 76px;
     height: 45px;
-    background: url('../images/png-sprite/css_sprites.png') -298px -266px;
+    background: url('../images/test/png-sprite/css_sprites.png') -10px -387px;
+}
+
+.bg-tyme_gorizont {
+    width: 76px;
+    height: 45px;
+    background: url('../images/test/png-sprite/css_sprites.png') -298px -387px;
 }
 
 .bg-visa {
     width: 74px;
     height: 45px;
-    background: url('../images/png-sprite/css_sprites.png') -104px -332px;
+    background: url('../images/test/png-sprite/css_sprites.png') -10px -452px;
 }
 
 .bg-visa_small {
     width: 44px;
     height: 27px;
-    background: url('../images/png-sprite/css_sprites.png') -262px -332px;
+    background: url('../images/test/png-sprite/css_sprites.png') -320px -266px;
+}
+
+.bg-review {
+    width: 110px;
+    height: 108px;
+    background: url('../images/test/png-sprite/css_sprites.png') -10px -10px;
+}
+
+.bg-review_2 {
+    width: 110px;
+    height: 105px;
+    background: url('../images/test/png-sprite/css_sprites.png') -140px -138px;
+}
+
+.bg-review_3 {
+    width: 110px;
+    height: 108px;
+    background: url('../images/test/png-sprite/css_sprites.png') -10px -138px;
+}
+
+.bg-review_4 {
+    width: 110px;
+    height: 104px;
+    background: url('../images/test/png-sprite/css_sprites.png') -270px -10px;
+}
+
+.bg-review_5 {
+    width: 110px;
+    height: 102px;
+    background: url('../images/test/png-sprite/css_sprites.png') -270px -134px;
+}
+
+.bg-review_6 {
+    width: 110px;
+    height: 108px;
+    background: url('../images/test/png-sprite/css_sprites.png') -140px -10px;
+}
+
+.bg-auto {
+    width: 83px;
+    height: 100px;
+    background: url('../images/test/png-sprite/css_sprites.png') -400px -250px;
+}
+
+.bg-child {
+    width: 83px;
+    height: 100px;
+    background: url('../images/test/png-sprite/css_sprites.png') -503px -10px;
+}
+
+.bg-credit {
+    width: 83px;
+    height: 100px;
+    background: url('../images/test/png-sprite/css_sprites.png') -400px -130px;
+}
+
+.bg-health {
+    width: 83px;
+    height: 100px;
+    background: url('../images/test/png-sprite/css_sprites.png') -400px -10px;
+}
+
+.bg-need_money {
+    width: 83px;
+    height: 100px;
+    background: url('../images/test/png-sprite/css_sprites.png') -217px -266px;
+}
+
+.bg-relax {
+    width: 83px;
+    height: 100px;
+    background: url('../images/test/png-sprite/css_sprites.png') -114px -266px;
+}
+
+.bg-Remont {
+    width: 84px;
+    height: 101px;
+    background: url('../images/test/png-sprite/css_sprites.png') -10px -266px;
 }
 
 
@@ -1317,6 +1480,10 @@ $baseBorderRadius: 4px;
         }
         &:focus {
             outline: none;
+        }
+
+        &--wr {
+            position: relative;
         }
     }
     &-group {
@@ -1380,21 +1547,7 @@ input[type="checkbox"]:checked+span:before {
     font-size: 14px;
 }
 
-.help-tooltip-data {
-    left: 0;
-    right: 0;
-    width: 100%;
-    bottom: calc(100% + 15px);
-    top: auto;
-    min-width: 200px;
-    max-width: none;
-    min-height: 50px;
-    word-break: break-word;
-    display: none;
-    background-color: #fff;
-    color: #333;
-    z-index: 30;
-}
+
 
 .error_text {
     padding: 15px;
@@ -1407,39 +1560,50 @@ input[type="checkbox"]:checked+span:before {
     font: 12px / 1.2 'HelveticaNeueCyr Light', Arial, sans-serif;
 }
 
-// modal authorize
-.btn-authorize {
-    border-radius: 3px;
-    background: #3068a9 url(../images/login.svg) no-repeat 11px 13px;
-    background-size: 18px;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 20px 10px 50px;
-}
+.has-error {
+    .error_text,
+    .error-text {
+        display: block;
+    }
 
-.btn-login {
-    font-size: 18px;
-    background-color: #45bc75;
-    min-width: 165px;
-    color: #fff;
-    padding: 15px 23px;
-
-    &:hover {
-        background-color: darken(#45bc75, 10%);
+    .form-control {
+        border: 1px solid #f5c6cb;
     }
 }
 
+
 // Баннер
 .banner {
-    height: 670px;
     margin-top: 100px;
+
+    @media screen and (max-width: 1199px) {
+        margin-top: 70px;
+    }
 
     &-top {
         height: auto;
     }
 
-    .slick-slide > div > div> div{
+    &-carousel {
+        visibility: hidden;
+        transition: visibility 0.3s;
+    }
+
+    .slick-initialized {
+        visibility: visible;
+    }
+
+    .slick-slide>div>div>div {
         height: 670px;
+        background-repeat: no-repeat;
+        @media screen and (max-width: 1280px) {
+            background-position: 20% 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+            height: 200px;
+            background-size: cover;
+        }
     }
 
     &-heading {
@@ -1449,13 +1613,35 @@ input[type="checkbox"]:checked+span:before {
         padding-top: 40px;
         margin-bottom: 15px;
 
+        @media screen and (max-width: 1024px) {
+            font: 17px / 25px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+
         strong {
             display: block;
             color: #ed592b;
         }
     }
+}
 
+.lang-link {
+    font-size: 14px;
+    text-align: center;
+    color: #0055b8;
+    text-decoration: none;
+    .lang-rus {
+        display: none;
+    }
 
+    &--ukr {
+        .lang-rus {
+            display: block;
+        }
+        .lang-ukr {
+            display: none;
+        }
+    }
 }
 
 .btn-banner {
@@ -1502,9 +1688,35 @@ input[type="checkbox"]:checked+span:before {
         width: 55%;
     }
 
+    @media screen and (max-width: 1280px) {
+        width: 70%;
+        right: 5%;
+    }
+
+    @media screen and (max-width: 1024px) {
+        position: static;
+        width: 100%;
+    }
+
     &-row {
         display: flex;
         flex-wrap: wrap;
+    }
+
+    &-labe {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            @media screen and (max-width: 1280px) {
+                width: 75px;
+                height: 75px;
+            }
+        }
     }
 
     &-btn {
@@ -1515,12 +1727,21 @@ input[type="checkbox"]:checked+span:before {
         flex: 0 0 60%;
         border-right: 1px solid #eaeaea;
         max-width: 60%;
+
+        @media screen and (max-width: 1024px) {
+            flex: 0 0 55%;
+            max-width: 55%;
+        }
     }
 
     &-right {
         flex: 0 0 40%;
         max-width: 40%;
         padding: 30px 30px 0;
+        @media screen and (max-width: 1024px) {
+            flex: 0 0 45%;
+            max-width: 45%;
+        }
     }
 
     &-holder {
@@ -1534,6 +1755,10 @@ input[type="checkbox"]:checked+span:before {
     &-col {
         min-width: 160px;
         font: 18px / 20px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+
+        @media screen and (max-width: 1280px) {
+            font-size: 16px;
+        }
     }
 
     &-img {
@@ -1541,6 +1766,7 @@ input[type="checkbox"]:checked+span:before {
     }
 
     &-heading {
+        position: relative;
         padding: 15px 30px;
         font: 22px / 1.2 'HelveticaNeueCyr Medium', Arial, sans-serif;
         background-color: #f1f1f1;
@@ -1549,11 +1775,43 @@ input[type="checkbox"]:checked+span:before {
         strong {
             color: #0056b8;
         }
+
+        &__blue {
+            background-color: #0090e3;
+            font-size: 19px;
+            padding: 15px 80px 15px 20px;
+            display: flex;
+            justify-content: space-between;
+
+            strong {
+                color: #fff;
+            }
+
+            .calculator-labe {
+                right: -25px;
+                bottom: 10px;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    @media screen and (max-width: 1280px) {
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+            }
+
+            a {
+                font-family: 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                color: #fec545;
+            }
+        }
     }
 }
 
 .m-b {
-    margin-bottom: 20px;    
+    margin-bottom: 20px;
 }
 
 .brand-color {
@@ -1564,9 +1822,27 @@ input[type="checkbox"]:checked+span:before {
     color: #4281ca;
 }
 
+.slider-wrapper {
+    position: relative;
+    margin-bottom: 0;
+    font-size: 0;
+    height: 20px;
+    .slider.slider-horizontal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+}
+
+.slider-money .slider.slider-horizontal {
+    width: 65%;
+}
+
 .slider-money,
 .slider-days {
     padding: 30px 30px 60px;
+    position: relative;
 }
 
 
@@ -1578,18 +1854,30 @@ input[type="checkbox"]:checked+span:before {
     display: none;
 }
 
+.slider-holder {
+    margin-bottom: 10px;
+}
+
 .slider-tooltip {
     display: none;
 }
 
 .slider-money--label {
     font: 18px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+
+    @media screen and (max-width: 1280px) {
+        font-size: 16px;
+    }
 }
 
 .slider-control--wr {
     font-family: 'HelveticaNeueCyr Bold', Arial, sans-serif;
     font-size: 25px;
     color: #00b181;
+
+    @media screen and (max-width: 1280px) {
+        font-size: 22px;
+    }
 }
 
 .slider-money--control {
@@ -1603,6 +1891,7 @@ input[type="checkbox"]:checked+span:before {
 }
 
 .slider-label {
+    position: relative;
     color: #7b7b7b;
     font: 16px 'HelveticaNeueCyr Medium', Arial, sans-serif;
 
@@ -1612,10 +1901,73 @@ input[type="checkbox"]:checked+span:before {
     }
 }
 
+.slider-tooltip {
+    position: absolute;
+    display: none;
+    width: 196px;
+    left: calc(100% + 15px);
+    top: 0;
+    padding: 14px 16px;
+    font: 14px / 15px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+    border-radius: 5px;
+    color: #393939;
+    z-index: 20;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, .55);
+    background-color: #fff;
+}
+
+
+
+.slider-money-share {
+    position: absolute;
+    left: 30%;
+    bottom: 20px;
+    padding: 3px 10px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 0 15px 15px 15px;
+    background-color: #ff7043;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+
+.slider-money .slider-wrapper:before {
+    content: "";
+    position: absolute;
+    right: calc(35% - 13px);
+    top: 3px;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    background-image: url(../assets/images/calc-ellipse.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slider-money .slider-wrapper:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-image: url(../assets/images/calc-limit-bg.png);
+    background-size: 100% 10px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    height: 10px;
+    width: 100%;
+    top: 5px;
+    border-radius: 0 4px 4px 0;
+}
+
 .promo-linkwrapper {
     padding-top: 10px;
 
     a {
+        cursor: pointer;
         color: #0758be;
         font: 16px 'HelveticaNeueCyr Medium', Arial, sans-serif;
         text-decoration: underline;
@@ -1623,9 +1975,146 @@ input[type="checkbox"]:checked+span:before {
 }
 
 
+
+.slick-dots {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+
+    li {
+        button {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, .4);
+            margin: 0 5px;
+            font-size: 0;
+            padding: 0;
+            border: none;
+        }
+        &.slick-active {
+            button {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
 // Мотивация , почему берем в майкредит
 .motivation {
     padding: 75px 0;
+
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-item {
+        position: relative;
+        min-width: 360px;
+        max-width: 360px;
+        margin: 0 20px;
+        border-radius: 5px;
+        padding-bottom: 112px;
+        border: 1px solid #eee;
+        display: table-cell;
+
+        @media screen and (max-width: 991px) {
+            min-width: 300px;
+        }
+
+        ul {
+            padding: 30px;
+            font-size: 18px;
+
+            li {
+                margin-bottom: 30px;
+                display: flex;
+
+                span[class^="icon"] {
+                    font-size: 35px;
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    &-header {
+        padding: 17px 30px;
+        border-radius: 5px 5px 0 0;
+        font-size: 21px;
+        border-bottom: 1px solid #eee;
+
+        span[class^="icon"] {
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            background-color: #00b181;
+            color: #fff;
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        &__inverse {
+            span[class^="icon"] {
+                background-color: #4281ca;
+            }
+        }
+    }
+
+    &-tooltip {
+        position: absolute;
+        top: -20px;
+        left: calc(100% - 20px);
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+        font-size: 15px;
+        min-width: 210px;
+        background-color: #1f9bde;
+        box-shadow: 10px 13px 75px -18px rgba(0, 0, 0, .75);
+        border-radius: 3px;
+
+        @media screen and (max-width: 1024px) {
+            top: -48px;
+            left: 44%;
+        }
+
+        &:after {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 0 20px 20px;
+            border-color: transparent transparent transparent #1f9bde;
+        }
+
+        a {
+            border-bottom: 1px dashed #fff;
+            display: inline-block;
+            color: #fff;
+            font-size: 21px;
+            transition: color .3s;
+            text-decoration: none;
+
+            @media screen and (max-width: 991px) {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &-footer {
+        background-color: #f3f3f3;
+        padding: 30px 0;
+        height: 112px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
 }
 
 // Программы
@@ -1635,6 +2124,14 @@ input[type="checkbox"]:checked+span:before {
 
     &-wrapper {
         position: relative;
+        @media screen and (max-width: 1280px) {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        @media screen and (max-width: 991px) {
+            max-width: 100%;
+        }
     }
 
     .icon-programm-arrow-right {
@@ -1709,6 +2206,10 @@ input[type="checkbox"]:checked+span:before {
         padding: 20px;
         font-size: 18px;
         line-height: 35px;
+
+        @media screen and (max-width: 1280px) {
+            font-size: 16px;
+        }
     }
 
     &-info {
@@ -1733,10 +2234,32 @@ input[type="checkbox"]:checked+span:before {
     }
 }
 
+.icon-arrow-animate {
+    width: 0;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+    transition: width 0.3s;
+    margin-left: 10px;
+    background-image: url('../images/test/fav-32.png');
+}
+
 .btn-programm {
     background-color: #00b181;
     color: #fff;
     font-size: 20px;
+
+    &__inverse {
+        background-color: #4281ca;
+    }
+}
+
+.btn-arrow-animate {
+    &:hover {
+        .icon-arrow-animate {
+            width: 32px;
+        }
+    }
 }
 
 
@@ -1759,6 +2282,7 @@ input[type="checkbox"]:checked+span:before {
         right: 0;
         cursor: pointer;
         width: 100%;
+        z-index: 2;
     }
 
     &-play--holder {
@@ -1766,7 +2290,7 @@ input[type="checkbox"]:checked+span:before {
         bottom: 80px;
         left: -80px;
         font-size: 17px;
-        z-index: 1;
+        z-index: 3;
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -1785,7 +2309,7 @@ input[type="checkbox"]:checked+span:before {
         text-align: center;
         opacity: 0;
         visibility: hidden;
-        z-index: 1;
+        z-index: 3;
         cursor: pointer;
         transition: opacity .3s, visibility .3s;
 
@@ -1793,6 +2317,11 @@ input[type="checkbox"]:checked+span:before {
             display: block;
             font-size: 50px;
             transform: rotate(90deg);
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
         }
     }
 
@@ -1810,7 +2339,21 @@ input[type="checkbox"]:checked+span:before {
         z-index: 1;
         opacity: 1;
         visibility: visible;
-        transition: opacity .3s, visibility .3s;
+        transition: all .3s;
+
+        &.active {
+            opacity: 0;
+            visibility: hidden;
+            transform: translate(-50%, 300px);
+        }
+
+        @media screen and (max-width: 1199px) {
+            width: 100%;
+            left: 0;
+            flex-wrap: wrap;
+            right: 0;
+            transform: translate(0, 0);
+        }
 
         li {
             position: relative;
@@ -1820,6 +2363,12 @@ input[type="checkbox"]:checked+span:before {
             border-radius: 5px;
             box-shadow: -6px 11px 111px -18px rgba(0, 0, 0, .45);
             margin: 0 15px;
+
+            @media screen and (max-width: 1199px) {
+                flex: 0 0 25%;
+                max-width: 25%;
+                margin: 0;
+            }
 
             &:before {
                 position: absolute;
@@ -1962,11 +2511,20 @@ input[type="checkbox"]:checked+span:before {
 
 .people {
 
+    &-list {
+        padding-bottom: 50px;
+    }
+
     &-item {
         position: relative;
         cursor: pointer;
         border-radius: 50%;
         margin: 0 15px;
+        min-width: 110px;
+
+        @media screen and (max-width: 991px) {
+            margin: 0 5px;
+        }
 
         span[class^="icon"] {
             font-size: 50px;
@@ -2008,6 +2566,9 @@ input[type="checkbox"]:checked+span:before {
     padding: 70px 0 0;
     max-width: 1500px;
     margin: 75px auto;
+    @media screen and (max-width: 991px) {
+        margin: 0 auto;
+    }
 
     &-wrapper {
         display: flex;
@@ -2019,6 +2580,18 @@ input[type="checkbox"]:checked+span:before {
     &-text {
         flex: 0 0 50%;
         padding: 0 15px;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    &-text {
+        @media screen and (max-width: 991px) {
+            padding-bottom: 30px;
+            padding-left: 40px;
+        }
     }
 
     &-list {
@@ -2079,9 +2652,18 @@ input[type="checkbox"]:checked+span:before {
         font-size: 18px;
         line-height: 22px;
 
+        @media screen and (max-width: 991px) {
+            flex: 0 0 50%;
+            margin-bottom: 20px;
+        }
+
         p {
             margin: 0;
             padding-top: 30px;
+
+            @media screen and (max-width: 991px) {
+                padding-left: 10px;
+            }
         }
     }
 
@@ -2102,7 +2684,7 @@ input[type="checkbox"]:checked+span:before {
 // seo-текст
 .seo {
     &-text {
-        background-image: url('../images/seo-bg.jpg');
+        position: relative;
         background-repeat: no-repeat;
         padding: 30px 0 120px;
 
@@ -2201,6 +2783,10 @@ input[type="checkbox"]:checked+span:before {
         span[class^="icon"] {
             font-size: 10px;
             margin-right: 5px;
+
+            @media screen and (max-width: 991px) {
+                display: none;
+            }
         }
     }
 }
@@ -2219,6 +2805,11 @@ input[type="checkbox"]:checked+span:before {
         flex: 0 0 50%;
         display: flex;
         padding-right: 40px;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+        }
     }
 
     .visa,
@@ -2236,17 +2827,28 @@ input[type="checkbox"]:checked+span:before {
         right: 10px;
     }
 
-    &-img {
-        position: relative;
-    }
+
 
     &-img,
     &-text {
         flex: 0 0 50%;
     }
 
+    &-img {
+        position: relative;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 39%;
+        }
+    }
+
     &-text {
         padding-top: 65px;
+        @media screen and (max-width: 991px) {
+            flex: 0 0 61%;
+            padding-top: 0;
+            padding-left: 40px;
+        }
     }
 }
 
@@ -2292,6 +2894,10 @@ input[type="checkbox"]:checked+span:before {
         flex: 0 0 33.3%;
         padding: 0 15px;
         margin-bottom: 25px;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 50%;
+        }
 
         a {
             display: block;
@@ -2349,22 +2955,14 @@ input[type="checkbox"]:checked+span:before {
     }
 }
 
-// окно с информацией о том, что кто-то взял кредит
-.info-user {
-    position: fixed;
-    width: 280px;
-    left: 30px;
-    bottom: 170px;
-    padding: 20px 22px 20px 45px;
-    background-color: #f6f6f6;
-    font-size: 15px;
-    border: 1px solid #cecece;
-    border-radius: 5px;
-    z-index: 999;
-    transform: translate(-400px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all .5s;
+
+
+.btn-user-close {
+    font-size: 10px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
 }
 
 textarea.form-control {
@@ -2372,79 +2970,7 @@ textarea.form-control {
     height: 90px;
 }
 
-.bottom-callback {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 50px 50px 30px;
-    background-color: #f6f6f6;
-    z-index: 1000;
-    transition: transform .5s;
-    transform: translateY(100%);
 
-    span[class^="icon"] {
-        position: absolute;
-        top: 10px;
-        right: 50px;
-        font-size: 30px;
-        cursor: pointer;
-        color: #ccc;
-    }
-
-    &.open {
-        transform: translateY(0);
-    }
-}
-
-.btn-callback {
-    background-color: #00b181;
-    color: #fff;
-}
-
-.callback-holder {
-    flex-wrap: wrap;
-}
-
-.callback-left {
-    position: relative;
-    flex: 0 0 60%;
-    max-width: 60%;
-}
-
-.callback-form {
-    flex: 0 0 20%;
-    max-width: 20%;
-}
-
-.call-text {
-    float: left;
-    width: 50%;
-    color: #003764;
-    padding: 80px 0 0 90px;
-
-    img {
-        display: block;
-        margin-bottom: 15px;
-    }
-}
-
-.call-img {
-    float: left;
-}
-
-.call-img--name {
-    position: absolute;
-    bottom: 60px;
-    left: 23%;
-    font: 15px / 20px 'HelveticaNeueCyr Roman', Arial, sans-serif;
-    color: #003764;
-
-    span {
-        display: block;
-        color: #ababab;
-    }
-}
 
 // animations 
 @keyframes animation-translate {
@@ -2460,8 +2986,3 @@ textarea.form-control {
         opacity: 0;
     }
 }
-
-
-
-
-

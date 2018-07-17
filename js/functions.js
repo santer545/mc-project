@@ -1,10 +1,10 @@
 /**
- * Файл с набором функций на JavaScript для работы с API KLT CREDIT,
- * используется для взаимодействия фронтенда с API CRM KLT CREDIT
+ * Файл с набором функций на JavaScript для работы с MyCredit,
+ * используется для взаимодействия фронтенда с API CRM MyCredit
  * 
  * @author Игорь Стебаев <Stebaev@mail.ru>
- * @copyright Copyright (c) 2016 Artjoker Company
- * @version 1.0
+ * @copyright Copyright (c) 2016- Artjoker Company
+ * @version 2.0
  * @package DesignAPI
  * @link http://www
  */
@@ -328,10 +328,13 @@ function getDeviceInfo(param) {
 			}
 
 			if (gl) {
-				debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-				if (debugInfo != null) {
-					vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
-					renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+				try {
+					debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+					if (debugInfo != null) {
+						vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+						renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+					}
+				} catch (e) {
 				}
 			}
 			if (renderer != undefined)
@@ -900,6 +903,7 @@ function notifyOnClick(event) {
 	
 	$('.js_div_notify').addClass('hidden');
 
+	// если не кнопка "крестик"
 	if (!$(button).hasClass('js_btn_notify_close')) {
 	
 		if ($(button).hasClass('js_btn_notify_ok')) {
@@ -916,6 +920,19 @@ function notifyOnClick(event) {
 		
 		// отправить массив на сервер
 		// console.log("Передаем запрос ajax 'notifyClick'");
+		// console.log(data);
+		sendAjax(data);
+
+	// если кнопка "крестик"
+	} else {
+		
+		var data = {
+			    typeData: "notifyClosed",
+			    notifyId: $(".js-notifyId").first().text()
+		};
+		
+		// отправить массив на сервер
+		// console.log("Передаем запрос ajax 'notifyClosed'");
 		// console.log(data);
 		sendAjax(data);
 	}
@@ -974,7 +991,7 @@ function onChangeBusynessType(fromElement) {
 			
 			$("#mainSource").trigger("chosen:updated");
 			// метод для обновления select с классом selectpicker
-			$("#mainSource").selectpicker('refresh');
+			if ($("#mainSource").length) $("#mainSource").selectpicker('refresh');
 		} else {
 			$("#tr_mainSource").addClass("hidden");
 		}
@@ -1638,11 +1655,11 @@ function onchangePassportType(passportType) {
 		//console.log('selectedOption=' + selectedOption);
 		$("#PassportRegistrationYear [value='" + selectedOption + "']").attr("selected", "selected");
 		// устанавливаем selected методом из bootstrap
-		$('#PassportRegistrationYear').selectpicker('val', selectedOption);
+		if ($('#PassportRegistrationYear').length) $('#PassportRegistrationYear').selectpicker('val', selectedOption);
 	
 		$("#PassportRegistrationYear").trigger("chosen:updated");
 		// метод для обновления select с классом selectpicker
-		$("#PassportRegistrationYear").selectpicker('refresh');
+		if ($("#PassportRegistrationYear").length) $("#PassportRegistrationYear").selectpicker('refresh');
 	}
 	
 	switch (selectedType) {
@@ -4009,9 +4026,15 @@ function tranzzoPayAnotherCard() {
 							// console.log(js.data);
 							location.href = js.data.Url;
 						}
-					// если не 3Ds, просто уходим по ссылке на наш сайт:
+					// если не 3Ds, заполняем форму для внешнего поста, или просто уходим по ссылке на наш сайт:
 					} else {
-						location.href = $("#backUrl").text();
+						if (js.data.Url ) {
+							// заполняем форму для внешнего поста:
+							// console.log(js.data);
+							location.href = js.data.Url;
+						} else {
+							location.href = $("#backUrl").text();
+						}
 					}
 
 				} else {
@@ -4296,7 +4319,6 @@ function tranzzoStartPayAnotherCard() {
 
 	$(".new-repayment-data").removeClass("hidden");
 	$("#div_step1").removeClass("hidden");
-
 }
 
 /**
@@ -4450,16 +4472,18 @@ $(function() {
 	// var a = $("input:visible, button:visible, textarea:visible");
 	// console.log(a);
 	
-	$('.selectpicker').selectpicker({
-		// "dropupAuto": false,
-		//"selectOnTab": true
- 
-		// "liveSearch": true,
-		// "liveSearchNormalize": true,
-		// "liveSearchPlaceholder": "eeeeeee"
-	}).on('loaded.bs.select', function (e) {
-		  $('.btn.dropdown-toggle').attr('tabindex', '0');
-	});
+	if ($('.selectpicker').length) {
+		$('.selectpicker').selectpicker({
+			// "dropupAuto": false,
+			//"selectOnTab": true
+	 
+			// "liveSearch": true,
+			// "liveSearchNormalize": true,
+			// "liveSearchPlaceholder": "eeeeeee"
+		}).on('loaded.bs.select', function (e) {
+			  $('.btn.dropdown-toggle').attr('tabindex', '0');
+		});
+	}
 
 	// $('.selectpicker').selectpicker('refresh');
 
@@ -4565,11 +4589,38 @@ $(function() {
 //    animation: true
 //});
 
+function scrollToObject(target) {
+	
+    // Does a scroll target exist?
+    if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        // event.preventDefault();
+        $('html, body').animate({
+            scrollTop: target.offset().top - 100
+        }, 1000, function() {
+            // Callback after animation
+            // Must change focus!
+            var $target = $(target);
+            // $target.focus();
+            if ($target.is(":focus")) { // Checking if the target was focused
+                return false;
+            } else {
+                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                // $target.focus(); // Set focus again
+            };
+        });
+    }
+}
+
 
 $(document).ready(function() {
 	
+	// перенесено с главной
+	getSessionData();
+	onLoadSlider();
+	
 	var score = Math.round(Number($("#ratingScore").text()));
-	$('#input-1').rating('update', score);
+	// $('#input-1').rating('update', score);
 	// $('#input-1').rating('refresh', {disabled: false});
 	
 	if (($('button').is('#buttonGetCode')) && ((($('#phone').val() !== undefined) ? $('#phone').val().length : 0) < 10)) {
@@ -4698,6 +4749,11 @@ $(document).ready(function() {
     	$("#password-1-auth").on('input', function(event) {
     		checkPwdInputCount();
     	});
+    	
+    	// удаление атрибута readonly:
+    	$("#password-1-auth, #login_auth").on('focus click', function(event) {
+    		$("#password-1-auth").removeAttr('readonly');
+    	});
     }
 
     // если есть кнопка подтверждения почтового ящика:
@@ -4718,9 +4774,23 @@ $(document).ready(function() {
     	// получаем url без якоря:
     	var indexAnchor = location.href.indexOf("#");
     	if (indexAnchor === -1) {
-        	locationHref = location.href;
+        	var locationHref = location.href;
     	} else {
-    		locationHref = location.href.substring(0, indexAnchor);
+
+    		var anchor = location.href.substring(indexAnchor);
+    		var locationHref = location.href.substring(0, indexAnchor);
+    		location.href = locationHref + '#';
+    		
+    		var anchorOut = '';
+    		if (anchor.substring(0, 21) === '#restructuring-anchor') {
+    			$(".restructurization").removeClass("hidden");
+    			anchorOut = '#restructuring-anchor';
+    		}
+    		else if (anchor.substring(0, 20) === '#prolongation-anchor') {
+    			$(".prolongation").removeClass("hidden");
+    			anchorOut = '#prolongation-anchor';
+    		}
+    		scrollToObject($(anchorOut));	// скролинг до объекта
     	}
     	
     	// обработка кнопки "Продлить":
@@ -4739,6 +4809,14 @@ $(document).ready(function() {
 				$(btn).attr('disabled', true);
 			}
 		});
+    	
+    	// обработка кнопки "Реструктурировать":
+    	// $(".js-to-restructuring").on('click', function(event){
+
+    	//	$(".restructurization").removeClass("hidden");
+    	//	location.href = locationHref + '#restructuring-anchor';
+		// });
+    	
 	};
 
     // если есть кнопка/ссылка просмотра доп.соглашения:
@@ -4755,7 +4833,62 @@ $(document).ready(function() {
     	$(".js_btn_notify_close, .js_btn_notify_ok, .js_btn_notify_recall").on('click', function(event){
 			notifyOnClick(event);	// обрабатывает кнопки нотифмкаций 
 		});
-
+    }
+    
+    // если есть секции нотификации с popup:
+    if ($(".js_div_notify_popup").length > 0) {
+		
+    	// добавляем класс для показа popup через время:
+    	setTimeout(function() { 
+	    	$('.js_div_notify_popup').addClass('active');
+    	}, 3000);
+    	
+    	$(".js_btn_notify_popup").on('click', function(event){
+			
+    		// обрабатываем кнопку "закрыть" (крестик) 
+			var button = event.target;
+			// console.log(button);
+	    	$(button).closest('.js_div_notify_popup').removeClass('active');
+	    	
+			var data = {
+				    typeData: "notifyClosed",
+				    notifyId: $(button).closest('.js_div_notify_popup').children(".js_notifyId").first().text()
+			};
+			
+			// отправить массив на сервер
+			// console.log("Передаем запрос ajax 'notifyClosed'");
+			// console.log(data);
+			sendAjax(data);
+		});
+    }
+    
+    // если есть секции нотификации с Modal:
+    if ($(".js_div_notify_modal").length > 0) {
+    	
+    	var notifyModal = $(".js_div_notify_modal").first();	// модалка
+    	
+    	setTimeout(function() { 
+    		$(notifyModal).modal('show'); 
+    	}, 5000);
+    	
+    	$(".js_btn_notify_modal").on('click', function(event){
+			
+    		// обрабатываем кнопку "закрыть" (крестик) 
+			// var button = event.target;
+			// console.log(button);
+	    	$(notifyModal).modal('hide');
+	    	
+			var data = {
+				    typeData: "notifyClick",
+				    btnType: "OK",
+				    notifyId: $(notifyModal).find(".js_notifyId").first().text()
+			};
+			
+			// отправить массив на сервер
+			// console.log("Передаем запрос ajax 'notifyClick'");
+			// console.log(data);
+			sendAjax(data);
+		});
     }
     
 	//================================================================================================================    

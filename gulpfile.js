@@ -15,6 +15,7 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     browserSync = require('browser-sync'),
+    critical = require('critical'),
     del = require('del'),
     replace = require('gulp-replace'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -23,6 +24,33 @@ var gulp = require('gulp'),
 // Styles
 gulp.task('mainStyles', function() {
     return gulp.src('sass/main-page.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+// Styles
+gulp.task('mainStylesAB', function() {
+    return gulp.src('sass/main-page-ab.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('mainStylesABMobile', function() {
+    return gulp.src('sass/main-page-ab-mobile.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 5 version'))
@@ -49,33 +77,101 @@ gulp.task('mainMobileStyles', function() {
 });
 
 gulp.task('contentStyles', function() {
-    return gulp.src('sass/content-page/content-page.scss')
+    return gulp.src('sass/content-page.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'expanded' }))
         // .pipe(purify(['dist/css/**/*.css']))
         .pipe(autoprefixer('last 5 version'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/content-page/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
         
-        .pipe(gulp.dest('dist/content-page/css'))
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('contentMobileStyles', function() {
+    return gulp.src('sass/content-page-mobile.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        // .pipe(purify(['dist/css/**/*.css']))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('registrationStyles', function() {
+    return gulp.src('sass/registration-page.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        // .pipe(purify(['dist/css/**/*.css']))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('registrationMobileStyles', function() {
+    return gulp.src('sass/registration-page-mobile.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        // .pipe(purify(['dist/css/**/*.css']))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        
+        .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
 gulp.task('personalStyles', function() {
-    return gulp.src('sass/personal-page/personal-page.scss')
+    return gulp.src('sass/personal-page.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'expanded' }))
         // .pipe(purify(['dist/css/**/*.css']))
         .pipe(autoprefixer('last 5 version'))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('dist/personal-page/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(rename({ suffix: '.min' }))
         .pipe(cssnano())
-        
-        .pipe(gulp.dest('dist/personal-page/css'))
+        .pipe(gulp.dest('dist/css'))
         .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('personalMobileStyles', function() {
+    return gulp.src('sass/personal-page-mobile.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('critical-login', function() {
+    critical.generate({
+        inline: true,
+        extract: true,
+        css: ['dist/css/main-page-mobile.min.css', 'dist/css/main-page.min.css'],
+        base: './dist',
+        src: './index.html',
+        dest: 'dist/test-critical.html'
+    });
 });
 
 
@@ -116,11 +212,19 @@ gulp.task('homeScripts', function() {
             sourceDir + '/slick.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/modal.js',
-            sourceDir + '/jquery.mask.min.js',
+            sourceDir + '/jquery.maskedinput.min.js',
             sourceDir + '/jquery.mousewheel.js',
             sourceDir + '/jquery.jscrollpane.min.js',
-            sourceDir + '/function.js',
+            sourceDir + '/device.min.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/fingerprint2.js',
+            sourceDir + '/main-validate.js',
             sourceDir + '/home-main.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/jquery.lazy.js',
+            sourceDir + '/client.min.js'
+            
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -131,27 +235,163 @@ gulp.task('homeScripts', function() {
         .pipe(notify({ message: 'Scripts task complete' }));
 });
 
+// Scripts
+gulp.task('personalScripts', function() {
+
+    return gulp.src([
+            sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/slick.min.js',
+            sourceDir + '/bootstrap-slider.js',
+            sourceDir + '/modal.js',
+            sourceDir + '/dropdown.js',
+            sourceDir + '/jquery.selectric.min.js',
+            sourceDir + '/tab.js',
+            sourceDir + '/jquery.maskedinput.min.js',
+            sourceDir + '/device.min.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/fingerprint2.js',
+            sourceDir + '/validate.js',
+            sourceDir + '/personal-main.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/jquery.lazy.js',
+            sourceDir + '/client.min.js'
+            
+        ])
+
+        //.pipe(browserify(components.scripts.options))
+        .pipe(concat('personal-home.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// Scripts
+gulp.task('contentScripts', function() {
+
+    return gulp.src([
+            sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/bootstrap-slider.js',
+            sourceDir + '/slick.min.js',
+            sourceDir + '/modal.js',
+            sourceDir + '/lightbox.js',
+            sourceDir + '/dropdown.js',
+            sourceDir + '/jquery.selectric.min.js',
+            sourceDir + '/tab.js',
+            sourceDir + '/jquery.maskedinput.min.js',
+            sourceDir + '/device.min.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/fingerprint2.js',
+            sourceDir + '/validate.js',
+            sourceDir + '/content-main.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/client.min.js'
+            
+        ])
+
+        //.pipe(browserify(components.scripts.options))
+        .pipe(concat('content-home.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// Scripts
+gulp.task('homeScriptsAB', function() {
+
+    return gulp.src([
+            sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/slick.min.js',
+            sourceDir + '/bootstrap-slider.js',
+            sourceDir + '/modal.js',
+            sourceDir + '/jquery.maskedinput.min.js',
+            sourceDir + '/jquery.mousewheel.js',
+            sourceDir + '/jquery.jscrollpane.min.js',
+            //sourceDir + '/device.min.js',
+            //sourceDir + '/googleApi.js',
+            //sourceDir + '/forWidget.js',
+            //sourceDir + '/fingerprint2.js',
+            sourceDir + '/main-validate.js',
+            sourceDir + '/home-main-ab.js',
+            //sourceDir + '/functions.js',
+            sourceDir + '/jquery.lazy.js',
+            //sourceDir + '/client.min.js'
+            
+        ])
+
+        //.pipe(browserify(components.scripts.options))
+        .pipe(concat('all-home-ab.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// Scripts
+gulp.task('registrationScripts', function() {
+
+    return gulp.src([
+            sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/bootstrap-slider.js',
+            sourceDir + '/tab.js',
+            sourceDir + '/modal.js',
+            sourceDir + '/jquery.maskedinput.min.js',
+            sourceDir + '/validate.js',
+            sourceDir + '/device.min.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/jquery.selectric.min.js',
+            sourceDir + '/fingerprint2.js',
+            sourceDir + '/registration-main.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/client.min.js'
+        ])
+
+        //.pipe(browserify(components.scripts.options))
+        .pipe(concat('all-registration.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
 
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('mainStyles', 'mainMobileStyles', 'homeScripts');
+    gulp.start('mainStyles','mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles');
 });
 
 gulp.task('server', function() {
     gulp.start('default', 'watch', 'browser-sync', 'rigger');
 });
 
-
 // Watch
 gulp.task('watch', function() {
 
     // Watch .scss files
+    gulp.watch('sass/**/*.scss', ['mainStylesAB', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['mainStylesABMobile', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['mainStyles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['mainMobileStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['registrationStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['registrationMobileStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['personalStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['personalMobileStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['contentMobileStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['contentStyles', browserSync.reload]);
 
     // Watch .js files
     gulp.watch('js/**/*.js', ['homeScripts', browserSync.reload]);
+    gulp.watch('js/**/*.js', ['homeScriptsAB', browserSync.reload]);
+    gulp.watch('js/**/*.js', ['registrationScripts', browserSync.reload]);
+    gulp.watch('js/**/*.js', ['personalScripts', browserSync.reload]);
+
+    gulp.watch('js/**/*.js', ['contentScripts', browserSync.reload]);
+    
 
     // Watch image files
     //gulp.watch('assets/images/**/*', ['images', browserSync.reload]);
