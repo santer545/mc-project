@@ -6,10 +6,14 @@
         background-color: #0073b1;
         padding: 60px 9999px;
         margin: 0 -9999px;
-        
+
         @media screen and (max-width: 1199px) {
-        	padding: 30px 9999px;	
-        	flex-wrap: wrap;
+            padding: 30px 9999px;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: block;
         }
     }
 
@@ -20,14 +24,32 @@
         flex: 0 0 80%;
 
         @media screen and (max-width: 1199px) {
-        	flex: 0 0 100%;
+            flex: 0 0 100%;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: block;
+            text-align: center;
         }
     }
 
     &-menu {
         flex: 0 0 33.3%;
+
         &:not(:last-child) {
             margin-bottom: 40px;
+
+            @media screen and (max-width: 767px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        ul {
+            @media screen and (max-width: 767px) {
+                overflow: hidden;
+                height: 0;
+            }
+            
         }
 
 
@@ -37,7 +59,7 @@
             }
             a {
                 color: #fff;
-                font-size: 14px;	
+                font-size: 14px;
                 text-decoration: none;
                 transition: color 0.3s;
             }
@@ -52,10 +74,18 @@
 
             ul {
                 width: 50%;
+
+                @media screen and (max-width: 767px) {
+                    width: 100%;
+                }
             }
         }
         &__wrapper {
             display: flex;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
         }
     }
 
@@ -63,6 +93,18 @@
         font: 15px / 25px 'HelveticaNeueCyr Bold', Arial, sans-serif;
         color: #fff;
         margin-bottom: 11px;
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &.active {
+            .footer-plus {
+                background-color: transparent;
+            }
+        }
     }
     &-bottom {
         background-color: #1f9bde;
@@ -72,13 +114,23 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
     }
 
     &-text {
         flex: 0 0 50%;
         padding-left: 45px;
         @media screen and (max-width: 1199px) {
-        	flex: 0 0 70%;
+            flex: 0 0 70%;
+        }
+
+        @media screen and (max-width: 767px) {
+            text-align: center;
+            padding-left: 0;
+            flex: 0 0 100%;
         }
 
         p {
@@ -90,15 +142,21 @@
     }
 
     &-logo {
-    	@media screen and (max-width: 1199px) {
-	    	flex: 0 0 30%;
-	    }
+        @media screen and (max-width: 1199px) {
+            flex: 0 0 30%;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: block;
+            margin-bottom: 20px;
+            text-align: center;
+        }
     }
 
     &-right {
-    	@media screen and (max-width: 1199px) {
-        	flex: 0 0 100%;
-        	padding-top: 30px;	
+        @media screen and (max-width: 1199px) {
+            flex: 0 0 100%;
+            padding-top: 30px;
         }
         >ul {
             display: inline-block;
@@ -106,14 +164,14 @@
             border-bottom: 1px solid #338fc1;
 
             li {
-            	&:not(:last-child) {
-            		margin-bottom: 10px;	
-            	}
+                &:not(:last-child) {
+                    margin-bottom: 10px;
+                }
             }
 
             span {
-            	display: inline-block;	
-            	vertical-align: middle;	
+                display: inline-block;
+                vertical-align: middle;
             }
 
             span[class^="icon"] {
@@ -123,7 +181,7 @@
                 margin-bottom: 0;
                 width: 30px;
                 height: 30px;
-            	line-height: 30px;
+                line-height: 30px;
             }
         }
         a[href^=tel] {
@@ -139,15 +197,22 @@
         flex: 0 0 20%;
 
         @media screen and (max-width: 1199px) {
-        	flex: 0 0 100%;
-        	justify-content: center;
-        	padding-top: 30px;	
+            flex: 0 0 100%;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding: 30px 30px 0;
         }
 
         li {
-        	@media screen and (max-width: 1199px) {
-        		margin: 0 30px;	
-        	}
+            @media screen and (max-width: 1199px) {
+                margin: 0 30px;
+            }
+            @media screen and (max-width: 767px) {
+                margin: 0 15px;
+            }
             a {
                 color: rgba(255, 255, 255, 0.6);
                 text-decoration: none;
@@ -159,6 +224,28 @@
                     color: rgba(255, 255, 255, 1);
                 }
             }
+        }
+    }
+
+    &-plus {
+        margin-left: 17px;
+        height: 12px;
+        position: relative;
+        width: 1px;
+        background-color: #fff;
+
+        &:after {
+            background-color: #fff;
+            content: "";
+            height: 1px;
+            left: -6px;
+            position: absolute;
+            top: 6px;
+            width: 12px;
+        }
+
+        @media screen and (min-width: 768px) {
+            display: none;
         }
     }
 }
@@ -203,7 +290,7 @@
     span[class^="icon"] {
         position: absolute;
         top: 10px;
-        right: 50px;
+        right: 10px;
         font-size: 30px;
         cursor: pointer;
         color: #ccc;
@@ -217,6 +304,10 @@
 .btn-callback {
     background-color: #00b181;
     color: #fff;
+
+    @media screen and (max-width: 767px) {
+        width: 100%;
+    }
 }
 
 .callback-holder {
@@ -227,11 +318,20 @@
     position: relative;
     flex: 0 0 60%;
     max-width: 60%;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .callback-form {
     flex: 0 0 35%;
     max-width: 35%;
+
+    @media screen and (max-width: 767px) {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
 }
 
 .call-text {
@@ -412,6 +512,10 @@
             transform: scaleX(1) translate(0, -50%);
         }
     }
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .info-user {
@@ -430,6 +534,10 @@
     visibility: hidden;
     @media screen and (max-width: 1500px) {
         bottom: 70px;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none;
     }
 
     transition: all 0.5s;

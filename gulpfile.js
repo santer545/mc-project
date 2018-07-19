@@ -167,11 +167,16 @@ gulp.task('critical-login', function() {
     critical.generate({
         inline: true,
         extract: true,
-        css: ['dist/css/main-page-mobile.min.css', 'dist/css/main-page.min.css'],
+        css: ['dist/css/main-page.min.css'],
         base: './dist',
         src: './index.html',
         ignore: ['@font-face', /url\(/],
-        dest: 'dist/test-critical.html'
+        dest: 'dist/test-critical.html',
+        dimensions: [
+        {
+            width: 767
+        }
+        ]
     });
 });
 

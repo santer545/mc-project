@@ -44,8 +44,31 @@
         padding: 0 15px;
     }
 
+    .navbar-toggle {
+        font-size: 0;
+        width: 50px;
+        height: 36px;
+        line-height: 36px;
+        background-color: #4281ca;
+        text-align: center;
+        padding: 0;
+        display: inline-block;
+
+        .dot {
+            background-color: #fff;
+            width: 5px;
+            height: 5px;
+            border-radius: 5px;
+            display: inline-block;
+            vertical-align: middle;
+            &:not(:nth-child(3)) {
+                margin-right: 3px;
+            }
+        }
+    }
+
     &-logo {
-        flex: 0 0 40%;
+        flex: 0 0 40%!important;
         max-width: 40%;
         position: relative;
 
@@ -60,8 +83,8 @@
 
             @media screen and (max-width: 536px) {
                 right: 0;
-                bottom: 0;
-                font: 6.9px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                bottom: 4px;
+                font: 7.5px 'HelveticaNeueCyr Roman', Arial, sans-serif;
                 letter-spacing: 1.2px;
             }
         }
@@ -100,7 +123,7 @@
             display: none;
 
             &.active {
-              display: block;
+                display: block;
             }
             li {
                 a {
@@ -110,7 +133,7 @@
                     text-decoration: none;
                     transition: background-color 0.3s;
                     &:hover {
-                      background-color: #f5f5f5;
+                        background-color: #f5f5f5;
                     }
                 }
             }
@@ -216,27 +239,7 @@
     }
 }
 
-.navbar-toggle {
-    font-size: 0;
-    width: 50px;
-    height: 36px;
-    line-height: 36px;
-    background-color: #4281ca;
-    text-align: center;
-    padding: 0;
 
-    .dot {
-        background-color: #fff;
-        width: 5px;
-        height: 5px;
-        border-radius: 5px;
-        display: inline-block;
-        vertical-align: middle;
-        &:not(:nth-child(3)) {
-            margin-right: 3px;
-        }
-    }
-}
 
 .help-tooltip-data {
     position: absolute;

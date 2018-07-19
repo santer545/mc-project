@@ -13,6 +13,8 @@ $(function() {
     goToAnchor();
     accordion();
     showTooltip ();
+    menuShowHide();
+    carouselOnLoadShow();
 
     $('.calculator').attr('style', 'visibility: visible');
 })
@@ -277,7 +279,7 @@ function playMainVideo() {
     })
 
     $(".js-stepVideo").on('click', function() {
-        $(this).hide();
+        $(this).removeClass('hidden');
         video.pause();
         $('.js-instruction-bg').show();
         $('.js-playVideo').show();
@@ -355,11 +357,12 @@ function autoHeightAnimate(element, time) {
 
 function showTooltip () {
     $('.js-show-tooltip').mouseenter(function() {
-        $(this).closest('div').find('.js-tooltip').show(200);
+        $('.js-tooltip').fadeOut();
+        $(this).closest('div').find('.js-tooltip').fadeIn(200);
     })
 
     $('.js-show-tooltip').mouseleave(function() {
-        $(this).closest('div').find('.js-tooltip').hide();
+        $('.js-tooltip').fadeOut();
     });
 
 
@@ -370,4 +373,20 @@ function showTooltip () {
     $('.js-show-tooltip').mouseleave(function() {
         $(this).find('.js-slider-tooltip').fadeOut();
     })
+}
+
+function menuShowHide() {
+    $('.js-gamburger').click(function() {
+        $('.js-menu').addClass('open');
+    });
+
+    $('.js-close-nav').click(function() {
+        $('.js-menu').removeClass('open');
+    })
+}
+
+function carouselOnLoadShow() {
+    $('.js-banner').removeClass('hidden');
+    $('.js-programms').removeClass('hidden');
+    $('.js-reviews').removeClass('hidden');
 }
