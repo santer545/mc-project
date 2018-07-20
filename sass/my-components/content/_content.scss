@@ -346,6 +346,146 @@ html.lb-disable-scrolling {
 
 
 
+//
+// Modals
+// --------------------------------------------------
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+// Kill the scroll on the body
+.modal-open {
+    overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch; // Prevent Chrome on Windows from adding a focus outline. For details, see
+    // https://github.com/twbs/bootstrap/pull/10951.
+    outline: 0; // When fading in the modal, animate it to slide down
+    &.fade .modal-dialog {
+        transform: translate(0,
+        -25%);
+        transition: transform 0.3s ease-out;
+    }
+    &.in .modal-dialog {
+        transform: translate(0, 0)
+    }
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+// Actual modal
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    background-clip: padding-box; // Remove focus outline from opened modal
+    outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7); // Fade for backdrop
+    &.fade {
+        opacity: 0;
+    }
+    &.in {
+        opacity: 1;
+    }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+    color: #0056b8;
+    font: 28px / 1.2 'HelveticaNeueCyr Roman', Arial, sans-serif;
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+
+.icon-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+    color: #ccc;
+    cursor: pointer;
+    z-index: 1;
+}
+
+// Close icon
+.modal-header .close {
+    margin-top: -2px;
+}
+
+// Title text within header
+.modal-title {
+    margin: 0;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+    position: relative;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    @media screen and (max-width: 767px) {
+        padding: 20px;
+    }
+}
+
+// Footer (for actions)
+.modal-footer {
+    padding: 25px 0;
+    background-color: #f0f2f7;
+    border-top: 1px solid #dbdeea;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+.modal-dialog {
+    width: 645px;
+    margin: 30px auto;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+        width: 90%;
+    }
+
+    .btn-programm {
+        font-size: 17px;
+        padding: 5px 15px;
+        width: 100%;
+    }
+}
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
 
 
 
@@ -468,6 +608,7 @@ html.lb-disable-scrolling {
 .slick-arrow.slick-hidden {
     display: none;
 }
+
 
 
 
@@ -693,6 +834,7 @@ html.lb-disable-scrolling {
 
 
 
+
 /* Items box */
 
 .selectric-items {
@@ -849,6 +991,25 @@ textarea.form-control {
     height: 90px;
 }
 
+.error-text,
+.error_text {
+    padding: 15px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin-top: 5px;
+    color: #721c24;
+    background-color: #f8d7da;
+    display: none;
+    font: 12px / 1.2 'HelveticaNeueCyr Light', Arial, sans-serif;
+}
+
+.has-error {
+    .error-text,
+    .error_text {
+        display: none;
+    }
+}
+
 
 
 
@@ -914,6 +1075,7 @@ $backcolor: #f7f7f7) {
     endColorstr='#{$colorend}',
     GradientType=0);
 }
+
 
 
 
@@ -1430,6 +1592,26 @@ $baseBorderRadius: 4px;
     }
 }
 
+.btn-authorize__content {
+    font-size: 0;
+    padding: 0;
+    height: 44px;
+    width: 44px;
+    background: #3068a9 url(../images/test/login.svg) no-repeat 8px 8px;
+    background-size: 19px;
+    background-position: 11px 10px;
+    border-radius: 3px;
+}
+
+.btn-authorize__get {
+    color: #fff;
+    background-color: #4281ca;
+    font-family: 18px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+    border: 0;
+    border-radius: 3px;
+    padding: 10px 25px;
+}
+
 .heading-h2 {
     font: 25px 'HelveticaNeueCyr Roman', Arial, sans-serif;
     color: #0056b8;
@@ -1546,12 +1728,7 @@ $baseBorderRadius: 4px;
 
     &-page {
         background-color: #eceff9;
-        margin-top: 100px;
         padding: 10px 0 60px;
-
-        @media screen and (max-width: 1199px) {
-            margin-top: 70px;
-        }
     }
 
     &-wrapper {
@@ -2341,13 +2518,6 @@ table {
 }
 
 .about {
-    margin-top: 100px;
-    @media screen and (max-width: 991px) {
-        margin-top: 70px;
-    }
-    @media screen and (max-width: 767px) {
-        margin-top: 0;
-    }
     &-nav {
         background-color: #f7f7f7;
         border-top: 1px solid #eaeaea;
@@ -2522,7 +2692,7 @@ table {
             li {
                 margin: 0 5px;
                 background-color: #fff;
-                max-width: 25%;
+                max-width: calc(25% - 10px);
                 color: #003764;
                 padding: 0 30px 30px;
                 @media screen and (max-width: 991px) {
@@ -2808,5 +2978,140 @@ table {
         font-size: 13px;
         color: #7c8295;
         margin-left: 15px;
+    }
+}
+
+// share popups
+// share popups
+.share {
+
+    &-popup {
+        position: fixed;
+        left: 30px;
+        top: 300px;
+        width: 200px;
+        border-radius: 43px 0 43px 0;
+        box-shadow: 10px 18px 85px -19px rgba(239, 227, 227, 0.75);
+        z-index: 20;
+
+        transform: translate(-600px, 0);
+        transition: all 0.3s;
+
+        .btn-content {
+            position: absolute;
+            top: calc(100% - 20px);
+            left: 50%;
+            padding: 9px;
+            font-size: 15px;
+            transform: translate(-50%, 0);
+            background-color: #00b280;
+        }
+
+
+        @media screen and (max-width: 1440px) {
+            top: 130px;
+        }
+
+        &.active {
+            transform: translate(0, 0);
+            opacity: 1;
+            visibility: visible;
+            @media screen and (max-width: 767px) {
+                display: none !important;
+            }
+        }
+
+        &--inverse {
+            min-width: 370px;
+            border: 1px solid #cecece;
+            display: flex;
+            background-color: #eaf1f4;
+
+            .btn-content {
+                position: static;
+                transform: translate(0, 0);
+            }
+
+            .share-left {
+                background-image: url('../assets/images/autumn-banner.png');
+            }
+
+            .share-right {
+                padding-bottom: 60px;
+            }
+        }
+    }
+
+    &-left {
+        width: 40%;
+        background-image: url('../assets/images/share-popup-1.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 43px 0 0 0;
+    }
+
+    &-right {
+        width: 60%;
+        padding: 20px 40px 20px 20px;
+
+        ul {
+            padding: 0 0 0 20px;
+            li {
+                font-size: 14px;
+            }
+        }
+        .btn-personal {
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
+    &-small {
+        color: #828282;
+        font-size: 12px;
+        padding: 0 0 15px;
+    }
+}
+
+.popup-share-img {
+    position: absolute;
+    right: 15px;
+    bottom: 30px;
+    animation-name: rotateScale;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-delay: 0.5s;
+}
+
+.popup-share-text {
+    top: 15px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0 25px;
+    line-height: 20px;
+    strong {
+        display: block;
+        padding: 0 14px;
+    }
+}
+
+.popup-share-zero {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    font: 15px / 18px 'HelveticaNeueCyr Bold', Arial, sans-serif;
+    color: #0054bc;
+    text-transform: uppercase;
+    padding-left: 74px;
+    text-align: left;
+
+    .zero {
+        font-size: 20px;
+    }
+
+    .percent {
+        font-size: 14px;
     }
 }
