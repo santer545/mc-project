@@ -283,6 +283,7 @@ gulp.task('contentScripts', function() {
             sourceDir + '/modal.js',
             sourceDir + '/lightbox.js',
             sourceDir + '/dropdown.js',
+            sourceDir + '/jquery.lazy.js',
             sourceDir + '/jquery.selectric.min.js',
             sourceDir + '/tab.js',
             sourceDir + '/jquery.maskedinput.min.js',
@@ -304,6 +305,7 @@ gulp.task('contentScripts', function() {
         .pipe(gulp.dest('dist/js'))
         .pipe(notify({ message: 'Scripts task complete' }));
 });
+
 
 // Scripts
 gulp.task('homeScriptsAB', function() {
@@ -344,6 +346,7 @@ gulp.task('registrationScripts', function() {
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/tab.js',
             sourceDir + '/modal.js',
+            sourceDir + '/jquery.lazy.js',
             sourceDir + '/jquery.maskedinput.min.js',
             sourceDir + '/validate.js',
             sourceDir + '/device.min.js',

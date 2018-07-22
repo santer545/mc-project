@@ -3,6 +3,11 @@ $(function() {
     customSelect();
     contentDocumentsCarousel();
     accordion();
+    showCallback();
+    lazyLoadImages();
+    sharePopupShow();
+    menuShowHide();
+    sharePopupClose();
 })
 
 // визуализация калькулятора
@@ -59,6 +64,37 @@ function calculatorMain() {
 
 }
 
+function showCallback() {
+    $('.js-callback-close').on('click', function() {
+        $('.js-callback').removeClass('open');
+    })
+
+    $('.js-callback-show').on('click', function() {
+        $('.js-callback').addClass('open');
+    })
+}
+
+function sharePopupShow() {
+    setTimeout(function() {
+        $(".js-share-popup").addClass("active")
+    }, 8000)
+}
+function sharePopupClose() {
+    $(".js-share-close").click(function() {
+        $(this).closest(".share-popup").removeClass("active")
+    })
+}
+
+function menuShowHide() {
+    $('.js-gamburger').click(function() {
+        $('.js-menu').addClass('open');
+    });
+
+    $('.js-close-nav').click(function() {
+        $('.js-menu').removeClass('open');
+    })
+}
+
 function contentDocumentsCarousel() {
     $('.js-slider-for').slick({
         slidesToShow: 1,
@@ -78,6 +114,18 @@ function contentDocumentsCarousel() {
 
 function customSelect() {
     $('select').selectric();
+}
+
+function lazyLoadImages() {
+    $('.js-lazy').Lazy({
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        chainable: true,
+        visibleOnly: true,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        }
+    });
 }
 
 function accordion() {

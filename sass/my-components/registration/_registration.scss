@@ -498,7 +498,145 @@
 
 
 
+//
+// Modals
+// --------------------------------------------------
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+// Kill the scroll on the body
+.modal-open {
+    overflow: hidden;
+}
 
+// Container that the modal scrolls within
+.modal {
+    display: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch; // Prevent Chrome on Windows from adding a focus outline. For details, see
+    // https://github.com/twbs/bootstrap/pull/10951.
+    outline: 0; // When fading in the modal, animate it to slide down
+    &.fade .modal-dialog {
+        transform: translate(0,
+        -25%);
+        transition: transform 0.3s ease-out;
+    }
+    &.in .modal-dialog {
+        transform: translate(0, 0)
+    }
+}
+
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+// Actual modal
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    background-clip: padding-box; // Remove focus outline from opened modal
+    outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.7); // Fade for backdrop
+    &.fade {
+        opacity: 0;
+    }
+    &.in {
+        opacity: 1;
+    }
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+.modal-header {
+    color: #0056b8;
+    font: 28px / 1.2 'HelveticaNeueCyr Roman', Arial, sans-serif;
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+
+.icon-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 10px;
+    color: #ccc;
+    cursor: pointer;
+    z-index: 1;
+}
+
+// Close icon
+.modal-header .close {
+    margin-top: -2px;
+}
+
+// Title text within header
+.modal-title {
+    margin: 0;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+    position: relative;
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    @media screen and (max-width: 767px) {
+        padding: 20px;
+    }
+}
+
+// Footer (for actions)
+.modal-footer {
+    padding: 25px 0;
+    background-color: #f0f2f7;
+    border-top: 1px solid #dbdeea;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+.modal-dialog {
+    width: 645px;
+    margin: 30px auto;
+    position: relative;
+
+    @media screen and (max-width: 767px) {
+        width: 90%;
+    }
+
+    .btn-programm {
+        font-size: 17px;
+        padding: 5px 15px;
+        width: 100%;
+    }
+}
+
+.modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
 
 
 
@@ -1107,10 +1245,9 @@ $baseBorderRadius: 4px;
 .registration {
     background-color: #f1f1f1;
     padding: 70px 0;
-    margin-top: 100px;
 
-    @media screen and (max-width: 1280){
-      margin-top: 70px; 
+    @media screen and (max-width: 991px) {
+        padding: 30px 0;
     }
 
     &-heading {
@@ -1198,10 +1335,18 @@ $baseBorderRadius: 4px;
     &-left {
         flex: 0 0 65%;
         padding-right: 40px;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+        }
     }
 
     &-right {
         flex: 0 0 35%;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+        }
     }
 
     &-video {
@@ -1245,6 +1390,10 @@ $baseBorderRadius: 4px;
             z-index: 3;
             font: 20px 'HelveticaNeueCyr Roman', Arial, sans-serif;
             color: #fff;
+
+            @media screen and (max-width: 991px) {
+                font-size: 14px;
+            }
 
 
             span[class^="icon"] {

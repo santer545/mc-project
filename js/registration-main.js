@@ -2,7 +2,10 @@ $(function() {
     playRegistrationVideo();
     customSelect();
     calculatorMain();
-    goToAnchor()
+    goToAnchor();
+    dropdown();
+    lazyLoadImages();
+    showCallback();
 })
 
 function playRegistrationVideo() {
@@ -13,8 +16,39 @@ function playRegistrationVideo() {
     })
 }
 
+function showCallback() {
+    $('.js-callback-close').on('click', function() {
+        $('.js-callback').removeClass('open');
+    })
+
+    $('.js-callback-show').on('click', function() {
+        $('.js-callback').addClass('open');
+    })
+}
+
 function customSelect() {
-	$('.selectpicker').selectric();
+	$('.selectpicker, select').selectric();
+}
+
+function lazyLoadImages() {
+    $('.js-lazy').Lazy({
+        scrollDirection: 'vertical',
+        effect: 'fadeIn',
+        chainable: true,
+        visibleOnly: true,
+        onError: function(element) {
+            console.log('error loading ' + element.data('src'));
+        }
+    });
+}
+
+// выпадающее меню
+function dropdown() {
+    $('.js-parent').on('click', function(e) {
+        $(this).toggleClass('active');
+        $(this).find('.triangle').toggleClass('active');
+        $(this).find('.js-dropdown').toggleClass('active');
+    })
 }
 
 

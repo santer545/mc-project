@@ -149,12 +149,11 @@
         border-radius: 50%;
         height: 45px;
         width: 45px;
-        line-height: 45px;
+        min-width: 45px;
         vertical-align: middle;
         border: 1px solid #dadada;
         color: #0055b8;
         text-decoration: none;
-        display: block;
 
         @media screen and (max-width: 767px) {
             display: none;
@@ -241,7 +240,7 @@
         background-color: #fff;
 
         @media screen and (max-width: 991px) {
-            flex: 0 0 55%;
+            flex: 0 0 50%;
         }
 
         @media screen and (max-width: 767px) {
@@ -387,7 +386,7 @@
 
 .nav-dots {
     display: none;
-    @media screen and (max-width: 1023px) and (min-width: 768) {
+    @media screen and (max-width: 1023px) and (min-width: 768px) {
         display: flex;
         .dot {
             width: 5px;
