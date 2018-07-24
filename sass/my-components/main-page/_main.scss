@@ -1596,14 +1596,10 @@ input[type="checkbox"]:checked+span:before {
 
 // Баннер
 .banner {
-    margin-top: 100px;
-
-    @media screen and (max-width: 1199px) {
-        margin-top: 70px;
-    }
+   
 
     @media screen and (max-width: 767px) {
-        margin-top: 0;
+   
         position: relative;
     }
 

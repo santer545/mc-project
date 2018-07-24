@@ -8,7 +8,19 @@ $(function() {
     sharePopupShow();
     menuShowHide();
     sharePopupClose();
+    playVideoAbout();
+    stickySidebar();
+    dropdown();
 })
+
+// выпадающее меню
+function dropdown() {
+    $('.js-parent').on('click', function(e) {
+        $(this).toggleClass('active');
+        $(this).find('.triangle').toggleClass('active');
+        $(this).find('.js-dropdown').toggleClass('active');
+    })
+}
 
 // визуализация калькулятора
 function calculatorMain() {
@@ -79,6 +91,7 @@ function sharePopupShow() {
         $(".js-share-popup").addClass("active")
     }, 8000)
 }
+
 function sharePopupClose() {
     $(".js-share-close").click(function() {
         $(this).closest(".share-popup").removeClass("active")
@@ -152,5 +165,21 @@ function accordion() {
             //slideToggle для скрыть/показать текущий контент
             subItem.slideToggle("fast");
         }
+    });
+}
+
+function playVideoAbout() {
+    var video = document.getElementById('video-about');
+    if ($('#aboutVideo').length) {
+        $('#aboutVideo').on('hidden.bs.modal', function() {
+            video.pause();
+        });
+    }
+}
+
+function stickySidebar() {
+    $('#sidebar').stickySidebar({
+        topSpacing: 100,
+        bottomSpacing: 60
     });
 }

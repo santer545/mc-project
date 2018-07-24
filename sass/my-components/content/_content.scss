@@ -720,7 +720,6 @@ html.lb-disable-scrolling {
     width: 45px;
     height: 45px;
     line-height: 45px;
-    background-color: #F8f8f8;
     color: #BBB;
     text-align: center;
     font: 0/0 a;
@@ -902,17 +901,22 @@ html.lb-disable-scrolling {
 .selectric-items li {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0!important;
     font-size: 12px;
     line-height: 20px;
     min-height: 20px;
 }
 
 .selectric-items li {
-    display: block;
-    padding: 10px;
+    padding: 10px 18px;
     color: #666;
+    font-size: 17px;
     cursor: pointer;
+    margin-bottom: 0;
+
+    &:before {
+        display: none;
+    }
 }
 
 .selectric-items li.selected {
@@ -1806,6 +1810,10 @@ $baseBorderRadius: 4px;
     &-page {
         background-color: #eceff9;
         padding: 10px 0 60px;
+
+        @media screen and (max-width: 767px) {
+            padding: 10px 0 30px;
+        }
     }
 
     &-wrapper {
@@ -1817,7 +1825,7 @@ $baseBorderRadius: 4px;
     &-sidebar {
         flex: 0 0 25%;
         max-width: 25%;
-        padding: 0 15px;
+        
 
         @media screen and (max-width: 1199px) {
             flex: 0 0 32%;
@@ -1911,6 +1919,10 @@ $baseBorderRadius: 4px;
             }
         }
     }
+}
+
+.sidebar__inner {
+    padding: 0 15px;
 }
 
 .btn-content {
@@ -2469,6 +2481,10 @@ table {
         color: #0055bc;
         margin-bottom: 20px;
 
+        @media screen and (max-width: 767px) {
+            font-size: 17px;
+        }
+
         strong {
             color: #1f9bde;
         }
@@ -2477,9 +2493,19 @@ table {
     &-description {
         padding: 5px 0;
         font: 18px / 1.3 'HelveticaNeueCyr Roman', Arial, sans-serif;
+        @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
         >div {
             padding-right: 30px;
+
+            @media screen and (max-width: 767px) {
+                flex: 0 0 100%;
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -2495,6 +2521,10 @@ table {
             border-radius: 5px;
             height: 100%;
             position: relative;
+
+            @media screen and (max-width: 991px) {
+                padding: 30px 10px 20px;
+            }
 
             p {
                 margin: 0 0 5px;
@@ -2513,9 +2543,19 @@ table {
             a {
                 text-decoration: none;
                 font: 16px / 16px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                @media screen and (max-width: 991px) {
+                    font-size: 15px;
+                }
                 &:hover {
                     svg {
                         opacity: 1;
+                    }
+                }
+
+                &[href^='mailto'] {
+                    svg {
+                        fill: currentColor;
+                        color: #0056b8;
                     }
                 }
             }
@@ -2552,16 +2592,31 @@ table {
     &-col-4 {
         flex: 0 0 33.3%;
         padding: 0 15px;
+
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &-col-6 {
         flex: 0 0 50%;
         padding: 0 15px;
+
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &-col-8 {
         flex: 0 0 66.66%;
         padding: 0 15px;
+
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &-item {
@@ -2574,16 +2629,33 @@ table {
             background-color: #4c88cd;
             color: #fff;
             height: 70px;
+
+            @media screen and (max-width: 991px) {
+                font-size: 14px;
+            }
         }
 
         &-body {
             padding: 15px 30px;
+            @media screen and (max-width: 991px) {
+                font-size: 14px;
+            }
         }
 
         &-bottom {
             font-family: 'HelveticaNeueCyr Medium', Arial, sans-serif;
             a {
                 text-decoration: none;
+                @media screen and (max-width: 991px) {
+                    font-size: 14px;
+                }
+
+                &[href^='mailto'] {
+                    svg {
+                        fill: currentColor;
+                        color: #0056b8;
+                    }
+                }
             }
             padding-bottom: 20px;
 
@@ -2594,6 +2666,8 @@ table {
                 margin-right: 10px;
                 height: 16px;
             }
+
+
         }
     }
 
@@ -2628,14 +2702,26 @@ table {
         border-radius: 5px;
         padding: 20px;
 
+        @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+        }
+
         &-left {
             flex: 0 0 70%;
             max-width: 70%;
             padding: 0 15px;
 
+            @media screen and (max-width: 767px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
             strong {
                 min-width: 140px;
                 display: inline-block;
+                @media screen and (max-width: 767px) {
+                    display: block;
+                }
             }
         }
 
@@ -2645,6 +2731,11 @@ table {
             max-width: 30%;
             padding: 0 15px;
             text-align: center;
+
+            @media screen and (max-width: 767px) {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
         }
     }
 
@@ -2652,18 +2743,31 @@ table {
         display: flex;
         margin: 0 -15px;
         padding: 10px 0 20px;
+
+        @media screen and (max-width: 767px) {
+            display: block;
+        }
     }
 
     &-form-left {
         flex: 0 0 45%;
         max-width: 45%;
         padding: 0 15px;
+
+        @media screen and (max-width: 767px) {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &-form-right {
         flex: 0 0 55%;
         max-width: 55%;
         padding: 0 15px;
+
+        @media screen and (max-width: 767px) {
+            max-width: 100%;
+        }
 
         textarea {
             height: 100%;
@@ -2849,7 +2953,7 @@ table {
             top: -42px;
             right: -66%;
             bottom: -50px;
-            height: 600px;
+            height: 700px;
             background-image: url(../images/test/content/about-us-top.png);
             background-repeat: no-repeat;
             background-size: cover;

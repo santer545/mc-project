@@ -280,6 +280,7 @@ gulp.task('contentScripts', function() {
             sourceDir + '/jquery-2.2.1.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/slick.min.js',
+            sourceDir + '/jquery.side-bar.js',
             sourceDir + '/modal.js',
             sourceDir + '/lightbox.js',
             sourceDir + '/dropdown.js',
