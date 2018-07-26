@@ -15,3 +15,10 @@ wSgfPlbjW4wkKkd123 - production password
 6. Перейти по ссылке https://mycredit.ua/ru/?imp_page_id={id}, где {id} — идентификатор страницы новостей (блога, акции), которую необходимо импортировать.
 7. Визуально проверить отсутствие ошибок на экране.
 8. Почистить на проде кеш из админки.
+
+
+
+cloudeflare
+
+admin@mycredit.com.ua
+hf1W2zEE5Dnl
