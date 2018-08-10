@@ -23,7 +23,7 @@
         <header class="header" id="header">
             <div class="header-container d-f align-center justify-between">
                 <a href="#" class="header-logo">
-            <img src="/images/logo-img.svg" alt="">
+            <img src="/images/test/logo-img.svg" alt="">
             <span>онлайн кредиты на карту</span>
         </a>
                 <div class="header-nav">
@@ -74,7 +74,7 @@
                         <span class="sr-only">Toggle navigation</span>
                     </button>
                 </div>
-                <a href="#" class="header-language text-center">Ру</a>
+                <a href="#" class="header-language d-f align-center justify-center">Ру</a>
             </div>
         </header>
         <div class="content-page">
@@ -82,128 +82,130 @@
                 <span class="B_crumbBox"><span class="B_firstCrumb"><a class="B_homeCrumb" href="/ru/" title="Главная">Главная</a></span> &nbsp; <a class="B_crumb" href="http://dev.mycredit.ua/ru/akcii/" title="Акции">Акции</a> &nbsp; <span class="B_lastCrumb"><span class="B_currentCrumb">Результаты программы кэшбэк (05.07.18)</span></span>
                 </span>
                 <div class="content-wrapper">
-                    <div class="content-sidebar">
-                        <div class="calculator">
-                            <!--  <div class="calculator-heading calculator-heading__blue">
+                    <div class="content-sidebar" id="sidebar">
+                        <div class="sidebar__inner">
+                            <div class="calculator">
+                                <!--  <div class="calculator-heading calculator-heading__blue">
                                 <div class="calculator-labe">
                                     <img src="/images/personalization/1YearCredit.svg" alt="">
                                 </div>
                                 <strong>1 год как погашен 1-й кредит! Вас ждет подарок</strong>
                                 <a href="ru/lichnyj-kabinet/moi-kredity/">Посмотреть</a>
                             </div> -->
-                            <div class="calculator-heading">
-                                <div class="calculator-labe">
-                                    <img src="/images/0.svg" alt="">
-                                </div>
-                                <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                                <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
-                            </div>
-                            <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
-                                <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
-                                <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
-                                <div class="calculator-row ">
-                                    <div class="calculator-left ">
-                                        <div class="slider-money">
-                                            <div class="slider-money-share">Первый займ - 0%</div>
-                                            <div class="slider-holder d-f align-center justify-between">
-                                                <span class="nameSlider hidden">large_main</span>
-                                                <span class="isPlay hidden" id="isPlay_large_main"></span>
-                                                <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
-                                                <span class="hidden" id="ChildProductsNormal_large_main"></span>
-                                                <label for="money-value_large" class="slider-money--label">Сумма</label>
-                                                <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
-                                                <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
-                                                <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
-                                                <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
-                                                <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
-                                                <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
-                                                <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
-                                                <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
-                                                <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
-                                                <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
-                                                <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
-                                                <div class="slider-control--wr">
-                                                    <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                                    <label for="money-value_large_main">грн</label>
-                                                </div>
-                                            </div>
-                                            <div class="slider-wrapper">
-                                                <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
-                                            </div>
-                                        </div>
-                                        <div class="slider-days">
-                                            <div class="slider-holder d-f align-center justify-between">
-                                                <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
-                                                <div class="slider-control--wr">
-                                                    <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                                    <label><span id="daySelectDay_large_main">дней</span></label>
-                                                </div>
-                                            </div>
-                                            <div class="slider-wrapper">
-                                                <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
-                                            </div>
-                                        </div>
+                                <div class="calculator-heading">
+                                    <div class="calculator-labe">
+                                        <img src="/images/0.svg" alt="">
                                     </div>
-                                    <div class="calculator-right">
-                                        <div class="slider-money--label">Информация о кредите:</div>
-                                        <div class="calculator-start">
-                                            <div class="calculator-holder d-f">
-                                                <div class="calculator-col">Вы берете:</div>
-                                                <div class="calculator-col brand-color">
-                                                    <span id="span_amount_large_main"></span> 1000 грн
+                                    <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+                                    <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
+                                </div>
+                                <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
+                                    <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
+                                    <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
+                                    <div class="calculator-row ">
+                                        <div class="calculator-left ">
+                                            <div class="slider-money">
+                                                <div class="slider-money-share">Первый займ - 0%</div>
+                                                <div class="slider-holder d-f align-center justify-between">
+                                                    <span class="nameSlider hidden">large_main</span>
+                                                    <span class="isPlay hidden" id="isPlay_large_main"></span>
+                                                    <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
+                                                    <span class="hidden" id="ChildProductsNormal_large_main"></span>
+                                                    <label for="money-value_large" class="slider-money--label">Сумма</label>
+                                                    <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
+                                                    <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
+                                                    <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
+                                                    <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
+                                                    <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
+                                                    <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
+                                                    <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
+                                                    <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
+                                                    <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
+                                                    <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
+                                                    <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
+                                                    <div class="slider-control--wr">
+                                                        <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                                        <label for="money-value_large_main">грн</label>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
                                                 </div>
                                             </div>
-                                            <div class="calculator-holder m-b d-f">
-                                                <div class="calculator-col">Ваша комиссия:</div>
-                                                <div class="calculator-col brand-color">
-                                                    20
-                                                    <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
+                                            <div class="slider-days">
+                                                <div class="slider-holder d-f align-center justify-between">
+                                                    <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
+                                                    <div class="slider-control--wr">
+                                                        <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                                        <label><span id="daySelectDay_large_main">дней</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
                                                 </div>
                                             </div>
-                                            <div class="calculator-holder d-f">
-                                                <div class="calculator-col">К возврату:</div>
+                                        </div>
+                                        <div class="calculator-right">
+                                            <div class="slider-money--label">Информация о кредите:</div>
+                                            <div class="calculator-start">
+                                                <div class="calculator-holder d-f">
+                                                    <div class="calculator-col">Вы берете:</div>
+                                                    <div class="calculator-col brand-color">
+                                                        <span id="span_amount_large_main"></span> 1000 грн
+                                                    </div>
+                                                </div>
+                                                <div class="calculator-holder m-b d-f">
+                                                    <div class="calculator-col">Ваша комиссия:</div>
+                                                    <div class="calculator-col brand-color">
+                                                        20
+                                                        <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator-holder d-f">
+                                                    <div class="calculator-col">К возврату:</div>
+                                                    <div class="calculator-col inverse-color">
+                                                        <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator-holder calculator-holder__wide d-f">
+                                                <div class="calculator-col">До:</div>
                                                 <div class="calculator-col inverse-color">
-                                                    <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
+                                                    <span class="loan-days" id="span_amount_all_end_large_main"></span>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="calculator-holder calculator-holder__wide d-f">
-                                            <div class="calculator-col">До:</div>
-                                            <div class="calculator-col inverse-color">
-                                                <span class="loan-days" id="span_amount_all_end_large_main"></span>
+                                            <div class="calculator-btn">
+                                                <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
+                                                    <span>Получить деньги</span><span class="icon-arrow-animate"></span>
+                                                </button>
+                                            </div>
+                                            <div class="calculator-img d-f align-center justify-between">
+                                                <img src="images/calculator/visa-calc.png" alt="">
+                                                <img src="images/calculator/master-calc.png" alt="">
+                                                <img src="images/calculator/privat-calc.png" alt="">
+                                                <img src="images/calculator/pci_calc.png" alt="">
                                             </div>
                                         </div>
-                                        <div class="calculator-btn">
-                                            <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
-                                                <span>Получить деньги</span><span class="icon-arrow-animate"></span>
-                                            </button>
-                                        </div>
-                                        <div class="calculator-img d-f align-center justify-between">
-                                            <img src="images/calculator/visa-calc.png" alt="">
-                                            <img src="images/calculator/master-calc.png" alt="">
-                                            <img src="images/calculator/privat-calc.png" alt="">
-                                            <img src="images/calculator/pci_calc.png" alt="">
-                                        </div>
                                     </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="blog-social">
-                            <div class="blog-social-text">
-                                Ищите уникальные промокоды на скидку в социальных сетях
+                                </form>
                             </div>
-                            <div class="blog-social-wrapper">
-                                <div class="blog-social-item">
-                                    <a href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
+                            <div class="blog-social">
+                                <div class="blog-social-text">
+                                    Ищите уникальные промокоды на скидку в социальных сетях
+                                </div>
+                                <div class="blog-social-wrapper">
+                                    <div class="blog-social-item">
+                                        <a href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
                                         <img src="assets/images/telegram.svg" alt="">
                                         <span>Telegram</span>
                                     </a>
-                                </div>
-                                <div class="blog-social-item">
-                                    <a href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" rel="noopener">
+                                    </div>
+                                    <div class="blog-social-item">
+                                        <a href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" rel="noopener">
                                         <img src="assets/images/facebook.svg" alt="">
                                         <span>Facebook</span>
                                     </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -420,7 +422,7 @@
                     <div class="news-col-6 text-center">
                         <div class="useful-big">
                             <div class="useful-big-wr">
-                                <p> Ищите уникальные промокоды на скидку в социальных сетях  </p>
+                                <p> Ищите уникальные промокоды на скидку в социальных сетях </p>
                                 <div class="useful-social">
                                     <a class="useful-social-item" href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
                                         <img src="assets/images/telegram.svg" alt="">

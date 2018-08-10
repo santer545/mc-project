@@ -215,21 +215,23 @@ gulp.task('homeScripts', function() {
 
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/jquery.mousewheel.js',
+            sourceDir + '/jquery.jscrollpane.min.js',
             sourceDir + '/slick.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/modal.js',
             sourceDir + '/jquery.maskedinput.min.js',
-            sourceDir + '/jquery.mousewheel.js',
-            sourceDir + '/jquery.jscrollpane.min.js',
             sourceDir + '/device.min.js',
-            sourceDir + '/googleApi.js',
-            sourceDir + '/forWidget.js',
-            sourceDir + '/fingerprint2.js',
+            
             sourceDir + '/main-validate.js',
             sourceDir + '/home-main.js',
             sourceDir + '/functions.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/fingerprint2.js',
             sourceDir + '/jquery.lazy.js',
-            sourceDir + '/client.min.js'
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js'
 
         ])
 

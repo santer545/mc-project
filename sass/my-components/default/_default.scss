@@ -14,6 +14,10 @@ body {
     color: #003764;
 }
 
+[disabled] {
+    cursor: not-allowed;
+}
+
 *,
 *:before,
 *:after {
@@ -71,10 +75,15 @@ strong {
     user-select: none;
     border: 1px solid transparent;
     padding: 10px 25px;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     border-radius: 5px;
     transition: all 0.3s;
+
+    @media screen and (max-width: 1280px) {
+        padding: 7px 25px;
+        font-size: 16px;
+    }
 
     &:focus {
         outline: none;

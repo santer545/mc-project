@@ -530,6 +530,8 @@ html.lb-disable-scrolling {
 
 
 
+
+
 /* Slider */
 
 .slick-slider {
@@ -632,6 +634,8 @@ html.lb-disable-scrolling {
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+
 
 
 
@@ -832,6 +836,8 @@ html.lb-disable-scrolling {
     visibility: hidden !important;
     display: block !important;
 }
+
+
 
 
 
@@ -1103,6 +1109,8 @@ textarea.form-control {
 
 
 
+
+
 /*
  * Slider for Bootstrap
  *
@@ -1127,6 +1135,8 @@ $backcolor: #f7f7f7) {
     endColorstr='#{$colorend}',
     GradientType=0);
 }
+
+
 
 
 
@@ -1667,13 +1677,32 @@ $baseBorderRadius: 4px;
     }
 }
 
+.btn-banner {
+    font-family: 'HelveticaNeueCyr Medium', Arial, sans-serif;
+    color: #fff;
+    padding: 10px 25px;
+    background-color: #ed592b;
+    border: none;
+    margin-bottom: 10px;
+
+    &:hover,
+    &:focus {
+        background-color: #d03505;
+        color: #fff;
+    }
+
+    @media screen and (max-width: 767px) {
+        display: none!important;
+    }
+}
+
 .btn-authorize__get {
     color: #fff;
     background-color: #4281ca;
-    font-family: 18px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+    font: 18px 'HelveticaNeueCyr Roman', Arial, sans-serif;
     border: 0;
     border-radius: 3px;
-    padding: 10px 25px;
+    padding: 12px 25px;
 
     @media screen and (max-width: 991px) {
         padding: 10px;
@@ -1684,7 +1713,7 @@ $baseBorderRadius: 4px;
         height: 36px;
         width: 39px;
         font-size: 0;
-        background-image: url(../images/icons/card.svg);
+        background-image: url(../images/test/card.svg);
         background-repeat: no-repeat;
         background-color: #4281ca;
         background-size: 30px;
@@ -1697,6 +1726,12 @@ $baseBorderRadius: 4px;
     color: #0056b8;
     margin: 0 0 20px;
     word-wrap: break-word;
+}
+
+.heading-h3 {
+    font: 22px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+    margin: 0 0 20px;
+    color: #0056b8;
 }
 
 // tabs
@@ -1718,6 +1753,35 @@ $baseBorderRadius: 4px;
 }
 
 .content {
+
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    [class*='col-'] {
+        padding: 0 15px;
+    }
+
+    &-col-6 {
+        flex: 0 0 50%;
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+    }
+    &-col-4 {
+        flex: 0 0 33.3%;
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+    }
+    &-col-8 {
+        flex: 0 0 66.6%;
+        @media screen and (max-width: 767px) {
+            flex: 0 0 100%;
+        }
+    }
 
     h1 {
         font: 32px 'HelveticaNeueCyr Roman', Arial, sans-serif;
@@ -1826,7 +1890,6 @@ $baseBorderRadius: 4px;
         flex: 0 0 25%;
         max-width: 25%;
         
-
         @media screen and (max-width: 1199px) {
             flex: 0 0 32%;
             max-width: 32%;
@@ -2041,7 +2104,7 @@ table {
 // pagination
 .pagination {
     display: flex;
-    padding: 20px 0;
+    padding: 0 0 20px;
 
     li {
         width: 32px;
@@ -2666,8 +2729,6 @@ table {
                 margin-right: 10px;
                 height: 16px;
             }
-
-
         }
     }
 
@@ -3475,4 +3536,534 @@ table {
     position: absolute;
     top: 5px;
     right: 5px;
+}
+
+
+
+// city page 
+
+.content-city {
+    padding-top: 60px;
+}
+// Баннер
+.banner {
+
+
+    @media screen and (max-width: 767px) {
+
+        position: relative;
+    }
+
+    &-top {
+        height: auto;
+    }
+
+    &-carousel {
+        &.hidden {
+            visibility: hidden;
+        }
+    }
+
+
+
+    .slick-slide>div>div>div {
+        height: 670px;
+        background-repeat: no-repeat;
+        @media screen and (max-width: 1280px) {
+            background-position: 20% 0;
+        }
+
+        @media screen and (max-width: 1024px) {
+            height: 200px;
+            background-size: cover;
+        }
+
+        @media screen and (max-width: 767px) {
+            height: 75px;
+            background-image: none !important;
+            background-color: #c8dbf5;
+        }
+    }
+
+    &-heading {
+        font: 35px / 45px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+        text-transform: uppercase;
+        color: #0055b8;
+        padding-top: 40px;
+        margin-bottom: 15px;
+
+        @media screen and (max-width: 1024px) {
+            font: 17px / 25px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 767px) {
+            font-size: 0;
+            padding: 10px 0;
+        }
+
+        strong {
+            display: block;
+            color: #ed592b;
+            @media screen and (max-width: 767px) {
+                font-size: 14px;
+                line-height: 20px;
+                display: inline-block;
+                color: #ed592b;
+                border-bottom: 1px dashed #ed592b;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+    }
+}
+
+// города
+.city {
+    padding: 75px 0 45px;
+    background-color: #f3f5f7;
+    font-size: 19px;
+
+    @media screen and (max-width: 767px) {
+        padding: 30px 0;
+        font-size: 16px;
+    }
+
+    &-holder {
+        padding: 43px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 767px) {
+            padding-top: 20px;
+        }
+    }
+
+    &-modes {
+        padding: 50px 0;
+    }
+
+    &-column {
+        flex: 0 0 20%;
+        padding-right: 10px;
+
+        @media screen and (max-width: 767px) {
+            display: flex;
+            flex: 0 0 100%;
+            justify-content: space-between;
+            padding-right: 0;
+            flex-wrap: wrap;
+        }
+
+        li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #eceff9;
+            border: 1px solid #dbdee9;
+            border-radius: 5px;
+            transition: border .3s;
+
+            @media screen and (max-width: 767px) {
+                flex: 0 0 33.3%;
+                max-width: calc(33.3% - 5px);
+                margin: 0 2.5px 5px;
+                padding: 6px;
+            }
+
+            a {
+                font-size: 13px;
+                color: #0056b8;
+                text-decoration: none;
+                @media screen and (max-width: 767px) {
+                    font-size: 11px;
+                }
+            }
+
+            &:hover {
+                border: 1px solid #0054bc;
+            }
+        }
+
+        span[class^="icon"] {
+            font-size: 10px;
+            margin-right: 5px;
+
+            @media screen and (max-width: 991px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.banner-city,
+.sticky-calc {
+    position: relative;
+
+    // Калькулятор
+    .calculator {
+        position: absolute;
+        bottom: 0;
+        right: 15%;
+        width: 45%;
+        background-color: #fff;
+        border-bottom: 1px solid #eaeaea;
+        border-radius: 5px 5px 0 0;
+        margin-bottom: 0;
+
+        @media screen and (max-width: 1700px) {
+            width: 55%;
+        }
+
+        @media screen and (max-width: 1280px) {
+            width: 70%;
+            right: 5%;
+        }
+
+        @media screen and (max-width: 1024px) {
+            position: static;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 767px) {
+            position: static;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+        &-row {
+            display: flex;
+            flex-wrap: wrap;
+
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+
+        &-formula {
+            color: #ccc;
+            text-decoration: line-through;
+        }
+
+        &-labe {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+
+            img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                @media screen and (max-width: 1280px) {
+                    width: 75px;
+                    height: 75px;
+                }
+            }
+        }
+
+        &-btn {
+            padding-top: 20px;
+        }
+
+        &-left {
+            flex: 0 0 60%;
+            border-right: 1px solid #eaeaea;
+            max-width: 60%;
+
+            @media screen and (max-width: 1024px) {
+                flex: 0 0 55%;
+                max-width: 55%;
+            }
+
+            @media screen and (max-width: 767px) {
+                max-width: none;
+                padding: 20px 15px;
+            }
+        }
+
+        &-right {
+            flex: 0 0 40%;
+            max-width: 40%;
+            padding: 30px 30px 0;
+            @media screen and (max-width: 1024px) {
+                flex: 0 0 45%;
+                max-width: 45%;
+            }
+
+            @media screen and (max-width: 767px) {
+                max-width: none;
+                padding: 0 15px 15px;
+            }
+        }
+
+        &-holder {
+            margin-bottom: 5px;
+
+            &__wide {
+                justify-content: flex-start;
+            }
+        }
+
+        &-start {
+            padding: 20px 0 0;
+            display: block;
+
+            @media screen and (max-width: 767px) {
+                display: flex;
+                padding-top: 20px;
+                justify-content: space-between;
+            }
+        }
+
+        &-holder {
+            @media screen and (max-width: 767px) {
+                flex-wrap: wrap;
+            }
+
+            &__wide {
+                @media screen and (max-width: 767px) {
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        &-col {
+            min-width: 140px;
+            font: 17px / 20px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+
+            @media screen and (max-width: 1280px) {
+                font-size: 16px;
+            }
+
+            @media screen and (max-width: 767px) {
+                font-size: 14px;
+                min-width: 0;
+            }
+        }
+
+        &-img {
+            padding: 10px 0;
+        }
+
+        &-heading {
+            position: relative;
+            padding: 15px 30px;
+            font: 22px / 1.2 'HelveticaNeueCyr Medium', Arial, sans-serif;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+
+            @media screen and (max-width: 767px) {
+                font: 15px / 1.2 'HelveticaNeueCyr Medium', Arial, sans-serif;
+                padding: 10px 110px 10px 15px;
+            }
+
+            strong {
+                color: #0056b8;
+            }
+
+            span[class^="icon"] {
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
+
+            &__blue {
+                background-color: #0090e3;
+                display: flex;
+                justify-content: space-between;
+
+                strong {
+                    color: #fff;
+                }
+
+                .calculator-labe {
+                    right: -25px;
+                    bottom: 10px;
+
+                    @media screen and (max-width: 767px) {
+                        right: 10px;
+                    }
+
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        border-radius: 50%;
+                        @media screen and (max-width: 1280px) {
+                            width: 75px;
+                            height: 75px;
+                        }
+                    }
+                }
+
+                a {
+                    font-family: 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                    color: #fec545;
+                }
+            }
+        }
+    }
+}
+
+.sticky-calc {
+    padding: 51px 0 50px;
+    background-color: #f3f3f3;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    transform: translate(0, -100%);
+    transition: transform 0.3s;
+
+    &.active {
+        transform: translate(0, 0);
+    }
+    .calculator {
+        position: static;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+    }
+    .slider-money--control {
+        background-color: transparent;
+    }
+    .calculator-left {
+        flex: 0 0 45%;
+        padding: 20px 30px;
+    }
+    .calculator-right {
+        background-color: #fff;
+        padding: 30px;
+        border: 1px solid #ddd;
+        flex: 0 0 55%;
+    }
+}
+
+// способы оплаты
+.payment {
+    padding: 75px 0 40px;
+
+    @media screen and (max-width: 767px) {
+        padding: 30px 0;
+    }
+
+    &-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &-item {
+        flex: 0 0 50%;
+        display: flex;
+        padding-right: 40px;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 100%;
+            margin-bottom: 30px;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .visa,
+    .master {
+        position: absolute;
+    }
+
+    .visa {
+        bottom: 100px;
+        left: -15px;
+
+        @media screen and (max-width: 767px) {
+            bottom: 20px;
+        }
+    }
+
+    .master {
+        top: 25px;
+        right: 10px;
+
+        @media screen and (max-width: 767px) {
+            right: 0;
+        }
+    }
+
+
+
+    &-img,
+    &-text {
+        flex: 0 0 50%;
+    }
+
+    &-img {
+        position: relative;
+
+        @media screen and (max-width: 991px) {
+            flex: 0 0 39%;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: inline-block;
+        }
+    }
+
+    &-text {
+        padding-top: 65px;
+        @media screen and (max-width: 991px) {
+            flex: 0 0 61%;
+            padding-top: 0;
+            padding-left: 40px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-left: 0;
+            padding-top: 15px;
+        }
+    }
+}
+
+.terminal-box {
+    position: absolute;
+    right: 30px;
+    top: 3px;
+
+    @media screen and (max-width: 767px) {
+        right: -35px;
+    }
+
+    &__item {
+        box-shadow: -2px 3px 36px -10px rgba(0, 0, 0, .55);
+        margin-bottom: 10px;
+    }
+}
+
+.bank {
+    &-wrapper {
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &-item {
+        flex: 0 0 25%;
+
+        img {
+            width: 80%;
+        }
+    }
 }

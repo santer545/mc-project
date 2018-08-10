@@ -1,22 +1,19 @@
 $(function() {
-    carousels();
+    lazyLoadImages();
     calculatorMain();
+    customScr();
+    carousels();
     dropdown();
     maskes();
-    customScroll();
     showCallback();
-    lazyLoadImages();
     motivationCarousel();
     videoModalShow();
     randomId();
     playMainVideo();
     goToAnchor();
     accordion();
-    showTooltip ();
+    showTooltip();
     menuShowHide();
-    carouselOnLoadShow();
-
-    $('.calculator').attr('style', 'visibility: visible');
 })
 
 $(window).resize(function() {
@@ -90,8 +87,9 @@ function carousels() {
     });
 }
 
+// карусель Почему мы
 function motivationCarousel() {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 991) {
         $('.js-motivation').slick({
             arrows: false,
             slidesToShow: 1,
@@ -166,14 +164,15 @@ function maskes() {
     });
 }
 
-// кастомный скролл
 
-function customScroll() {
+// кастомный скролл
+function customScr() {
     $('.js-seo').jScrollPane({
         arrowScrollOnHover: true
     });
 }
 
+// отобразить колбек
 function showCallback() {
     $('.js-callback-close').on('click', function() {
         $('.js-callback').removeClass('open');
@@ -184,7 +183,7 @@ function showCallback() {
     })
 }
 
-
+// проверка браузера
 function get_name_browser() {
     // получаем данные userAgent
     var ua = navigator.userAgent;
@@ -201,19 +200,17 @@ function get_name_browser() {
     return 'not defined';
 }
 
-
+// lazy load картинок
 function lazyLoadImages() {
     $('.js-lazy').Lazy({
         scrollDirection: 'vertical',
         effect: 'fadeIn',
-        chainable: true,
-        visibleOnly: true,
-        onError: function(element) {
-            console.log('error loading ' + element.data('src'));
-        }
+        effectTime: 1000,
+        threshold: 0
     });
 }
 
+// показать видео на клик
 function videoModalShow() {
     var index;
     $('.people-item').on('click', function() {
@@ -222,6 +219,7 @@ function videoModalShow() {
 
     $('#video-modal').on('shown.bs.modal', function(e) {
         $('.js-video-carousel').slick({
+            fade: true,
             slidesToShow: 1,
             nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
             prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>'
@@ -243,6 +241,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// функция рандомного выбора чисел
 function randomId() {
     var randomMin = 1,
         randomMax = 19;
@@ -268,6 +267,7 @@ function randomId() {
     })
 }
 
+// запуск и остановка видео на главной странице
 function playMainVideo() {
     var video = document.getElementById('main-page-video');
     $(".js-playVideo").on('click', function() {
@@ -279,7 +279,7 @@ function playMainVideo() {
     })
 
     $(".js-stepVideo").on('click', function() {
-        $(this).removeClass('hidden');
+        $(this).removeClass('active');
         video.pause();
         $('.js-instruction-bg').show();
         $('.js-playVideo').show();
@@ -287,6 +287,7 @@ function playMainVideo() {
     })
 }
 
+// переход по якорям
 function goToAnchor() {
     $('.js-anchor a')
 
@@ -326,13 +327,14 @@ function goToAnchor() {
         });
 }
 
+// аккордион
 function accordion() {
     if ($(window).width() < 768) {
         $('.js-accordion').addClass('js-toggle');
         var animateTime = 500,
             navLink = $('.js-toggle');
-            
-            navLink.click(function() {
+
+        navLink.click(function() {
             $(this).toggleClass('active');
             var nav = $(this).closest('.js-footer-menu').find('ul');
             if (nav.height() === 0) {
@@ -355,15 +357,25 @@ function autoHeightAnimate(element, time) {
     element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
 }
 
-function showTooltip () {
-    $('.js-show-tooltip').mouseenter(function() {
-        $('.js-tooltip').fadeOut();
-        $(this).closest('div').find('.js-tooltip').fadeIn(200);
-    })
+// показывать подсказки
+function showTooltip() {
+    // $('.js-show-tooltip').mouseenter(function() {
+    //     $(this).closest('.form-group').find('.js-tooltip').fadeIn();
+    // })
 
-    $('.js-show-tooltip').mouseleave(function() {
-        $('.js-tooltip').fadeOut();
-    });
+    // $('.js-show-tooltip').mouseleave(function() {
+    //     $(this).closest('.form-group').find('.js-tooltip').fadeOut();
+    // });
+
+    $('.js-show-tooltip').hover(
+        function(e) {
+            console.log(e.currentTarget);
+            $(this).closest('.form-group').find('.js-tooltip').removeClass('hidden');
+        },
+        function() {
+            $(this).closest('.form-group').find('.js-tooltip').addClass('hidden');
+        }
+    );
 
 
     $('.js-show-tooltip').mouseenter(function() {
@@ -375,6 +387,7 @@ function showTooltip () {
     })
 }
 
+// показывать меню мобайл
 function menuShowHide() {
     $('.js-gamburger').click(function() {
         $('.js-menu').addClass('open');
@@ -385,8 +398,3 @@ function menuShowHide() {
     })
 }
 
-function carouselOnLoadShow() {
-    $('.js-banner').removeClass('hidden');
-    $('.js-programms').removeClass('hidden');
-    $('.js-reviews').removeClass('hidden');
-}

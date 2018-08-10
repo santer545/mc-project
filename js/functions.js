@@ -3635,10 +3635,16 @@ function sendConfirmEmail() {
 		dataType: 'json',
 		success: function(json){
 			// console.log(json);
+			var link = $('#confirmEmail');
+			var alreadyMessage = $('#already-send');
 			if(json.message){
 				$("#confirm-success").modal();
+	            link.addClass('hidden').prev().addClass('hidden');
+	            alreadyMessage.removeClass('hidden');
 			} else {
 				$("#confirm-error").modal();
+				link.removeClass('hidden').prev().removeClass('hidden');
+                alreadyMessage.addClass('hidden');
 			}
 		},
 		error: function(jqXHR, textStatus){
@@ -3872,10 +3878,11 @@ function submitCreditsForm(formKey, href, amount) {
 
 /**
  * запускает submit формы оплаты кредита
- * 
+ * @param isCurrentCard
+ * @param IsVisaCheckoutPayment
  * @returns {Boolean}
  */
-function submitPay(isCurrentCard) {
+function submitPay(isCurrentCard, isVisaCheckoutPayment) {
 
 	$('.js-btn-pay').attr('disabled', true);	// дизейблим кнопки оплат
 	
@@ -3886,6 +3893,10 @@ function submitPay(isCurrentCard) {
 	} else {
 		document.getElementById("isCurrentCard").value = "0";
 	}
+	
+	if (isVisaCheckoutPayment === 1) {
+		document.getElementById("IsVisaCheckoutPayment").value = "1";
+	}
 		
 	window.document.forms['form_pay'].submit();
 	
@@ -3893,7 +3904,6 @@ function submitPay(isCurrentCard) {
 	
 	return false;
 }
-
 
 /**
  * отсылает данные калькулятора через ajax на локальный сервер для сохранения в $_SESSION, закрывает калькулятор
@@ -3966,6 +3976,43 @@ function test_verify_card(id) {
     );
 }
 */
+
+/**
+ * Проверяет необходимость перезагрузки страницы Мои карты, при необходимости - перегружает
+ */
+function tranzzoCheckRefreshPage(interval_refresh_page) {
+	var url = "/ru/?ajax";	
+
+	var data = {
+        typeData: 'tranzzoCheckRefreshPage'
+    };
+
+	var timerId = setInterval(function() {
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: {data: data},
+			dataType: 'json',
+			success: function(json) {
+				if (json) {
+					var js = json;
+					// console.log(js);
+					if ((js.message == 'OK') && (js.toRefresh == 'yes')) {
+						location.reload(); 
+					}
+				};
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				// console.log(jqXHR); // вывод JSON в консоль
+				console.log('Сообщение об ошибке от сервера: '+textStatus); // вывод JSON в консоль
+				// console.log(errorThrown); // вывод JSON в консоль
+			}
+		});
+
+	}, interval_refresh_page * 1000);
+	
+	return false;
+}
 
 /**
  * отправляет данные по карте в CRM при нажатии на кнопку
@@ -4428,6 +4475,12 @@ function deleteCookie(name) {
 	})
 }
 
+function ajaxError(jqXHR, textStatus, errorThrown) {
+    // console.log(jqXHR); // вывод JSON в консоль
+    console.log('Сообщение об ошибке от сервера: '+textStatus); // вывод JSON в консоль
+    // console.log(errorThrown); // вывод JSON в консоль
+}
+
 /*
 function temp() {
 
@@ -4589,34 +4642,14 @@ $(function() {
 //    animation: true
 //});
 
-function scrollToObject(target) {
-	
-    // Does a scroll target exist?
-    if (target.length) {
-        // Only prevent default if animation is actually gonna happen
-        // event.preventDefault();
-        $('html, body').animate({
-            scrollTop: target.offset().top - 100
-        }, 1000, function() {
-            // Callback after animation
-            // Must change focus!
-            var $target = $(target);
-            // $target.focus();
-            if ($target.is(":focus")) { // Checking if the target was focused
-                return false;
-            } else {
-                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                // $target.focus(); // Set focus again
-            };
-        });
-    }
-}
-
-
 $(document).ready(function() {
 	
+	// тест загрузки скриптов:
+	console.log('run downloadJS');
+	downloadJS();
+
 	// перенесено с главной
-	getSessionData();
+	// getSessionData();
 	onLoadSlider();
 	
 	var score = Math.round(Number($("#ratingScore").text()));
@@ -4705,6 +4738,19 @@ $(document).ready(function() {
     	});
     }
 
+    // если есть элементы ввода карты:
+    if ($(".js-card").length > 0) {
+
+        // событие при вводе номера карты:
+    	$(".js-card").on('keyup', function(event) {
+    		var input = $(this).val().replace(/_+/g, '');
+    		// переход на следующий input, если ввели четыре цифры
+    		if (input.length == 4) {
+                $(this).next().focus();
+    		}
+    	});
+    }
+
     // если есть элементы для выбора доп. карт:
     if ($("#btn-cardsAdditional-select").length > 0) {
 
@@ -4713,7 +4759,7 @@ $(document).ready(function() {
     		onClickCardsAdditional('main');
     	});
 
-        // событие при нажатии на кнопку отрицательного отзыва:
+        // событие при нажатии на кнопку удаления:
     	$("#btn-cardsAdditional-delete").on('click', function(event) {
     		onClickCardsAdditional('delete');
     	});
@@ -4728,14 +4774,44 @@ $(document).ready(function() {
     if ($("#div-beforeunload").length > 0) {
 
     	// событие при нажатии на ссылку:
-		$('body').on('click', 'a[href^="http"][id!="a-beforeunload"], a[href^="/"]:not(.confirm), a.lang-link', function(e) {
+		$('body').on('click', 'a[href^="http"][id!="a-beforeunload"]:not([transport]), a[href^="/"]:not(.confirm), a.lang-link', function(e) {
 			e.preventDefault();	// отключить обработчик
 		    // console.log(e);
 		    var href = e.currentTarget.attributes.href.value;
+                    
 		    $('#a-beforeunload').attr('href', href);
 		    $('#span-beforeunload').text($('#span_beforeunload_text').text());
 		    $('#div-beforeunload').modal('show');
 		});
+                
+                
+        $('.js-leaving-page-interview').on('click', function(e) {
+            e.preventDefault();
+
+            var $this = $(this),
+                reason = [];
+
+            $('input[name="leaving_page_reason"]:checked').each(function() {
+                reason.push($(this).val());
+            });
+
+            var data = {
+                typeData: 'leavingPageReason',
+                pageId: $this.data('id'),
+                leavingPageReason: reason
+            };
+
+            $.ajax({
+                url: '/ru/?ajax',
+                type: 'POST',
+                data: {data: data},
+                dataType: 'json',
+                success: function(json){
+                    window.location = $this.attr('href');
+                },
+                error: ajaxError
+            });
+        });
     }
 	// console.log($('a[href^="http"]'));
 	
@@ -4767,57 +4843,6 @@ $(document).ready(function() {
 			sendConfirmEmail();	// даем команду тклендеру послать письмо подтверждения почтового ящика 
 		});
     }
-
-    // если есть секция пролонгации, или реструктуризации:
-    if ($(".prolongation-item").length > 0) {
-		
-    	// получаем url без якоря:
-    	var indexAnchor = location.href.indexOf("#");
-    	if (indexAnchor === -1) {
-        	var locationHref = location.href;
-    	} else {
-
-    		var anchor = location.href.substring(indexAnchor);
-    		var locationHref = location.href.substring(0, indexAnchor);
-    		location.href = locationHref + '#';
-    		
-    		var anchorOut = '';
-    		if (anchor.substring(0, 21) === '#restructuring-anchor') {
-    			$(".restructurization").removeClass("hidden");
-    			anchorOut = '#restructuring-anchor';
-    		}
-    		else if (anchor.substring(0, 20) === '#prolongation-anchor') {
-    			$(".prolongation").removeClass("hidden");
-    			anchorOut = '#prolongation-anchor';
-    		}
-    		scrollToObject($(anchorOut));	// скролинг до объекта
-    	}
-    	
-    	// обработка кнопки "Продлить":
-    	$(".js-to-prolongation").on('click', function(event){
-
-    		$(".prolongation").removeClass("hidden");
-    		location.href = locationHref + '#prolongation-anchor';
-		});
-    	
-    	$(".js-checkbox-prolong").on('click', function(event){
-
-			var btn = $(this).closest('.prolongation-body').find('.btn-personal');
-			if (this.checked) {
-				$(btn).removeAttr('disabled');
-			} else {
-				$(btn).attr('disabled', true);
-			}
-		});
-    	
-    	// обработка кнопки "Реструктурировать":
-    	// $(".js-to-restructuring").on('click', function(event){
-
-    	//	$(".restructurization").removeClass("hidden");
-    	//	location.href = locationHref + '#restructuring-anchor';
-		// });
-    	
-	};
 
     // если есть кнопка/ссылка просмотра доп.соглашения:
     if ($(".js-btn-dopdogovor").length > 0) {
@@ -4890,6 +4915,60 @@ $(document).ready(function() {
 			sendAjax(data);
 		});
     }
+
+    /* Обрабатывает форму обратной связи.
+     * замыкание в значительной степени повторяет onClickSendEmail(),
+     * но несколько универсальнее.
+     * onClickSendEmail() оставляем пока на всякий случай.
+     */
+    $('.js-send-feedback').on('click', function() {
+		var $form = $($(this).parent('form'));
+		
+		if (!validate($form)) {
+			return false;
+		}
+		
+		var url = "/ru/?ajax",
+			$messageTextarea = $form.find('textarea[name="sendMail[message]"]');
+
+		var data = {
+		    typeData: 'sendEmailtoSupport',
+		    fromName: $form.find('input[name="sendMail[sername]"]').val(),
+		    fromEmail: $form.find('input[name="sendMail[email]"]').val(), 
+		    message: $messageTextarea.val() 
+		};
+
+		// отправить массив на сервер
+		console.log("Передаем запрос ajax " + url);
+
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: {data: data},
+			dataType: 'json',
+			success: function(json){
+				if(json) {
+					//var js = JSON.parse(json);
+					var js = json;
+					
+					console.log(js);
+					if (js.message == 'OK') {
+						$("#div_SendEmail").addClass("bottom-call-hidden");
+						$("#div_resultEmail").removeClass("bottom-call-hidden");
+						$("#thanks").modal("show");
+						$messageTextarea.val("");
+						$("#button_sendMe").removeAttr("disabled");
+					}
+				};
+			},
+		
+			error: function(jqXHR, textStatus, errorThrown){
+				// console.log(jqXHR); // вывод JSON в консоль
+				console.log('Сообщение об ошибке от сервера: '+textStatus); // вывод JSON в консоль
+				// console.log(errorThrown); // вывод JSON в консоль
+			}
+		});
+	});
     
 	//================================================================================================================    
     /*   

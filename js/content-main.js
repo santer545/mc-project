@@ -11,6 +11,13 @@ $(function() {
     playVideoAbout();
     stickySidebar();
     dropdown();
+    bannerCarousel();
+    stickyCalc();
+    stickyCalcHeight();
+})
+
+$(window).resize(function() {
+    $()
 })
 
 // выпадающее меню
@@ -76,6 +83,26 @@ function calculatorMain() {
 
 }
 
+// карусель для банера
+function bannerCarousel() {
+    $('.js-banner').slick({
+        arrows: false,
+        nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
+        prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
+        lazyLoad: 'progressive',
+        responsive: [{
+            breakpoint: 767,
+            settings: {
+                arrows: false,
+                slidesToShow: 1,
+                dots: true
+            }
+        }]
+    });
+}
+
+
+// отображение колбека
 function showCallback() {
     $('.js-callback-close').on('click', function() {
         $('.js-callback').removeClass('open');
@@ -86,18 +113,21 @@ function showCallback() {
     })
 }
 
+// отображение попапа для акций
 function sharePopupShow() {
     setTimeout(function() {
         $(".js-share-popup").addClass("active")
     }, 8000)
 }
 
+// закрыть попап
 function sharePopupClose() {
     $(".js-share-close").click(function() {
         $(this).closest(".share-popup").removeClass("active")
     })
 }
 
+// отображение меню на мобайл
 function menuShowHide() {
     $('.js-gamburger').click(function() {
         $('.js-menu').addClass('open');
@@ -108,6 +138,7 @@ function menuShowHide() {
     })
 }
 
+// карусели для документов
 function contentDocumentsCarousel() {
     $('.js-slider-for').slick({
         slidesToShow: 1,
@@ -125,10 +156,13 @@ function contentDocumentsCarousel() {
     });
 }
 
+
+// кастомный селект
 function customSelect() {
     $('select').selectric();
 }
 
+// lazy load картинок
 function lazyLoadImages() {
     $('.js-lazy').Lazy({
         scrollDirection: 'vertical',
@@ -141,6 +175,7 @@ function lazyLoadImages() {
     });
 }
 
+// аккордион
 function accordion() {
     var accordion = $('.js-accordion');
     var allChildren = $('.js-accordion ul');
@@ -168,6 +203,7 @@ function accordion() {
     });
 }
 
+// запуск и остановка видео на странице о нас
 function playVideoAbout() {
     var video = document.getElementById('video-about');
     if ($('#aboutVideo').length) {
@@ -177,9 +213,32 @@ function playVideoAbout() {
     }
 }
 
+// липкий сайдбар на контентных страницах
 function stickySidebar() {
     $('#sidebar').stickySidebar({
         topSpacing: 100,
         bottomSpacing: 60
     });
+}
+
+// отображение липкого калькулятора сверху в контенте
+function stickyCalc() {
+    $('.js-open-calc').on('click', function() {
+        $(this).attr('disabled', 'disabled');
+        $('.js-sticky').addClass('active');
+        var stickyHeight = stickyCalcHeight() + $('.js-header').height() + 'px';
+
+        $('.js-header').animate({top: stickyHeight}, 300);
+    });
+
+    $('.js-sticky-close').on('click', function() {
+        $('.js-open-calc').removeAttr('disabled');
+        $('.js-header').animate({top: '0px'}, 400);
+        $('.js-sticky').removeClass('active');
+    });
+}
+
+// высота липкого калькулятора
+function stickyCalcHeight() {
+    return $('.js-sticky').height();
 }

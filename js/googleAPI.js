@@ -32,6 +32,7 @@ var componentForm = {
 		street_number: {name: 'short_name', id:'House'},
 		route: {name: 'long_name', id:'adress'},
 		locality: {name: 'long_name', id:'obl_city'},
+		administrative_area_level_2: {name: 'short_name', id:'obl'},	// Для Киева
 		administrative_area_level_1: {name: 'short_name', id:'obl'},
 		//country: {name: 'long_name', id:''},
 		//postal_code: {name: 'short_name', id:''}
@@ -69,6 +70,8 @@ function initAutocomplete() {
 		autocomplete_fact.addListener('place_changed', fillInAddress_fact);
 	}
 	geolocate();
+	getSessionData();
+
 }
 
 function fillInAddress() {
