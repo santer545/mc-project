@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'icomoon-main';
+    font-display: swap;
     src: url('../fonts/icomoon.eot?6ingg5');
     src: url('../fonts/icomoon.eot?6ingg5#iefix') format('embedded-opentype'),
     url('../fonts/icomoon.ttf?6ingg5') format('truetype'),
@@ -582,6 +583,8 @@
 
 
 
+
+
 /*
  * Slider for Bootstrap
  *
@@ -701,7 +704,7 @@ $baseBorderRadius: 4px;
             border-radius: 50%;
             background-color: #0056b8;
             cursor: pointer;
-            background-image: url('../images/test/double-arrows.png');
+            background-image: url('../images/double-arrows.png');
             background-repeat: no-repeat;
             background-position: 49%;
             box-shadow: 2px 2px 16px -1px rgba(0, 0, 0, .75);
@@ -716,6 +719,11 @@ $baseBorderRadius: 4px;
                     content: '\2605'; //unicode star character
                     color: #726204;
                 }
+            }
+            @media screen and (max-width: 767px) {
+                width: 30px !important;
+                height: 30px !important;
+                margin: -13px 0 0 -15px !important;
             }
         }
         .slider-tick-label-container {
@@ -929,6 +937,8 @@ $baseBorderRadius: 4px;
 
 
 
+
+
 /* Slider */
 
 .slick-slider {
@@ -1059,14 +1069,14 @@ $baseBorderRadius: 4px;
     -webkit-overflow-scrolling: touch; // Prevent Chrome on Windows from adding a focus outline. For details, see
     // https://github.com/twbs/bootstrap/pull/10951.
     outline: 0; // When fading in the modal, animate it to slide down
-    &.fade .modal-dialog {
-        transform: translate(0,
-        -25%);
-        transition: transform 0.3s ease-out;
-    }
-    &.in .modal-dialog {
-        transform: translate(0, 0)
-    }
+    // &.fade .modal-dialog {
+    //     transform: translate(0,
+    //     -25%);
+    //     transition: transform 0.3s ease-out;
+    // }
+    // &.in .modal-dialog {
+    //     transform: translate(0, 0)
+    // }
 }
 
 .modal-open .modal {
@@ -1164,9 +1174,14 @@ $baseBorderRadius: 4px;
     }
 
     .btn-programm {
-        font-size: 17px;
-        padding: 5px 15px;
+        font-size: 20px;
+        font-family: 'HelveticaNeueCyr Roman', Arial, sans-serif;
+        padding: 12px 15px;
         width: 100%;
+
+        &[disabled] {
+            opacity: 0.8;
+        }
     }
 }
 
@@ -1178,6 +1193,8 @@ $baseBorderRadius: 4px;
     background-color: transparent!important;
     box-shadow: none!important;
 }
+
+
 
 
 
@@ -1317,6 +1334,8 @@ $baseBorderRadius: 4px;
 
 
 
+
+
 /* Yuk! CSS Hack for IE6 3 pixel bug :( */
 
 * html .jspCorner {
@@ -1413,152 +1432,126 @@ $baseBorderRadius: 4px;
 //     height: 46px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -503px -130px;
 // }
-
 // .bg-easy_1 {
 //     width: 76px;
 //     height: 46px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -503px -196px;
 // }
-
 // .bg-ibox_1 {
 //     width: 76px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -106px -387px;
 // }
-
 // .bg-ibox_1 {
 //     width: 76px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -394px -387px;
 // }
-
 // .bg-master {
 //     width: 74px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -490px -387px;
 // }
-
 // .bg-master_small {
 //     width: 44px;
 //     height: 27px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -503px -327px;
 // }
-
 // .bg-terminal_4 {
 //     width: 76px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -202px -387px;
 // }
-
 // .bg-terminal_4 {
 //     width: 76px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -503px -262px;
 // }
-
 // .bg-tyme_gorizont {
 //     width: 76px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -10px -387px;
 // }
-
 // .bg-tyme_gorizont {
 //     width: 76px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -298px -387px;
 // }
-
 // .bg-visa {
 //     width: 74px;
 //     height: 45px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -10px -452px;
 // }
-
 // .bg-visa_small {
 //     width: 44px;
 //     height: 27px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -320px -266px;
 // }
-
 // .bg-review {
 //     width: 110px;
 //     height: 108px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -10px -10px;
 // }
-
 // .bg-review_2 {
 //     width: 110px;
 //     height: 105px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -140px -138px;
 // }
-
 // .bg-review_3 {
 //     width: 110px;
 //     height: 108px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -10px -138px;
 // }
-
 // .bg-review_4 {
 //     width: 110px;
 //     height: 104px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -270px -10px;
 // }
-
 // .bg-review_5 {
 //     width: 110px;
 //     height: 102px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -270px -134px;
 // }
-
 // .bg-review_6 {
 //     width: 110px;
 //     height: 108px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -140px -10px;
 // }
-
 // .bg-auto {
 //     width: 83px;
 //     height: 100px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -400px -250px;
 // }
-
 // .bg-child {
 //     width: 83px;
 //     height: 100px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -503px -10px;
 // }
-
 // .bg-credit {
 //     width: 83px;
 //     height: 100px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -400px -130px;
 // }
-
 // .bg-health {
 //     width: 83px;
 //     height: 100px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -400px -10px;
 // }
-
 // .bg-need_money {
 //     width: 83px;
 //     height: 100px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -217px -266px;
 // }
-
 // .bg-relax {
 //     width: 83px;
 //     height: 100px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -114px -266px;
 // }
-
 // .bg-Remont {
 //     width: 84px;
 //     height: 101px;
 //     background: url('../images/test/png-sprite/css_sprites.png') -10px -266px;
 // }
-
-
 .heading-h2 {
     position: relative;
     margin: 0 0 29px;
@@ -1603,34 +1596,40 @@ $baseBorderRadius: 4px;
         &.hidden {
             visibility: hidden;
         }
-    } // .slick-dots {
-    //     li.slick-active button {
-    //         background-color: #0053bc;
-    //     }
-    // }
-    // .slick-slide>div>div>div:not([class]) {
-    //     height: 670px;
-    //     background-repeat: no-repeat;
-    //     position: relative;
-    //     @media screen and (max-width: 1440px) {
-    //         height: 535px;
-    //     }
-    //     @media screen and (max-width: 1280px) {
-    //         background-position: 20% 0;
-    //     }
-    //     @media screen and (max-width: 1024px) {
-    //         height: 200px;
-    //         background-size: cover;
-    //     }
-    //     @media screen and (max-width: 767px) {
-    //         height: 75px;
-    //         background-image: none !important;
-    //         background-color: #c8dbf5;
-    //     }
-    // }
-    // .slick-active>div>div>div:not([class]) {
-    //     z-index: 1;
-    // }
+    }
+    .slick-dots {
+        li.slick-active button {
+            background-color: #0053bc;
+        }
+    }
+    .slick-slide>div>div>div:not([class]) {
+        height: 640px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        @media screen and (max-width: 1599px) {
+            height: 600px;
+        }
+
+        @media screen and (max-width: 1440px) {
+            height: 535px;
+        }
+        @media screen and (max-width: 1280px) {
+            background-position: 20% 0;
+        }
+        @media screen and (max-width: 1024px) {
+            height: 200px;
+            background-size: cover;
+        }
+        @media screen and (max-width: 767px) {
+            height: 75px;
+            background-image: none !important;
+            background-color: #c8dbf5;
+        }
+    }
+    .slick-active>div>div>div:not([class]) {
+        z-index: 1;
+    }
     &-heading {
         font: 35px / 45px 'HelveticaNeueCyr Roman', Arial, sans-serif;
         text-transform: uppercase;
@@ -1656,6 +1655,21 @@ $baseBorderRadius: 4px;
         strong {
             display: block;
             color: #ed592b;
+
+            /*@media screen and (max-width: 767px) {
+                font-size: 14px;
+                line-height: 20px;
+                display: inline-block;
+                color: #ed592b;
+                border-bottom: 1px dashed #ed592b;
+                text-transform: uppercase;
+            }*/
+            @media screen and (max-width: 767px) {
+                display: none;
+            }
+        }
+        .banner-mobile_link strong{
+            display: none;
             @media screen and (max-width: 767px) {
                 font-size: 14px;
                 line-height: 20px;
@@ -1665,12 +1679,13 @@ $baseBorderRadius: 4px;
                 text-transform: uppercase;
             }
         }
-    } // .slick-dots {
-    //     position: absolute;
-    //     bottom: 10px;
-    //     left: 0;
-    //     right: 0;
-    // }
+    }
+    .slick-dots {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+    }
 }
 
 .lang-link {
@@ -1705,7 +1720,10 @@ $baseBorderRadius: 4px;
         background-color: #d03505;
         color: #fff;
     }
-
+    @media screen and (max-width: 1440px) {
+        font-size: 16px!important;
+        padding: 5px 25px!important;
+    }
     @media screen and (max-width: 767px) {
         display: none!important;
     }
@@ -1776,18 +1794,24 @@ $baseBorderRadius: 4px;
         position: absolute;
         right: 10px;
         bottom: 10px;
+        display: flex;
+        align-items: center;
+        @media screen and (max-width: 1440px) {
+            bottom: 3px;
+        }
 
         img {
-            width: 150px;
-            height: 150px;
             border-radius: 50%;
-            @media screen and (max-width: 1500px) {
-                width: 100px;
-                height: 100px;
+            box-shadow: 4px -1px 66px -13px #ed9818;
+            @media screen and (max-width: 1440px) {
+                width: 70px;
             }
-            @media screen and (max-width: 1280px) {
-                width: 75px;
-                height: 75px;
+
+            &.regime-labe {
+                position: relative;
+                margin-right: -10px;
+                z-index: 1;
+                box-shadow: 4px -1px 66px -13px #ef5350;
             }
         }
     }
@@ -1811,7 +1835,7 @@ $baseBorderRadius: 4px;
 
         @media screen and (max-width: 767px) {
             max-width: none;
-            padding: 15px 15px;
+            padding: 5px 15px 15px;
         }
     }
 
@@ -1819,6 +1843,9 @@ $baseBorderRadius: 4px;
         flex: 0 0 40%;
         max-width: 40%;
         padding: 30px 30px 0;
+        @media screen and (max-width: 1440px) {
+            padding-top: 20px;
+        }
         @media screen and (max-width: 1024px) {
             flex: 0 0 45%;
             max-width: 45%;
@@ -1835,19 +1862,28 @@ $baseBorderRadius: 4px;
 
         &__wide {
             justify-content: flex-start;
-            @media screen and (max-width: 767px) {
-                padding-right: 32px;
+            @media screen and (min-width: 1025px)  and (max-width: 1340px) {
+                justify-content: space-between;
+                .calculator-col {
+                    min-width: 70px;
+                    &+.calculator-col {
+                        text-align: right;
+                    }
+                }
             }
+            /*@media screen and (max-width: 767px) {
+                padding-right: 32px;
+            }*/
         }
     }
 
     &-start {
-        padding: 20px 0 0;
+        padding: 8px 0 0;
         display: block;
 
         @media screen and (max-width: 767px) {
             display: flex;
-            padding-top: 20px;
+            padding-top: 8px;
             justify-content: space-between;
         }
     }
@@ -1892,10 +1928,11 @@ $baseBorderRadius: 4px;
 
         @media screen and (max-width: 1440px) {
             font-size: 19px;
+            padding: 10px 30px;
         }
         @media screen and (max-width: 767px) {
-            font: 15px / 1.2 'HelveticaNeueCyr Medium', Arial, sans-serif;
-            padding: 10px 110px 10px 15px;
+            font: 14px / 1.2 'HelveticaNeueCyr Medium', Arial, sans-serif;
+            padding: 10px 160px 10px 15px;
         }
 
         &__bonus {
@@ -1937,6 +1974,10 @@ $baseBorderRadius: 4px;
                 display: block;
             }
 
+            @media screen and (max-width: 320px) {
+                padding: 10px 85px 10px 30px;
+            }
+
             strong {
                 color: #fff;
             }
@@ -1966,6 +2007,17 @@ $baseBorderRadius: 4px;
             }
         }
     }
+    .holiday-message--wrapper {
+        font-size: 14px;
+        height: 30px;
+        padding: 10px 0 5px;
+        @media screen and (min-width: 1025px)  and (max-width: 1200px) {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 400px) {
+            font-size: 12px;
+        }
+    }
 }
 
 .m-b {
@@ -1986,7 +2038,7 @@ $baseBorderRadius: 4px;
 
 .slider-wrapper {
     position: relative;
-    margin-bottom: 0;
+    margin-bottom: 3px;
     font-size: 0;
     height: 20px;
     .slider.slider-horizontal {
@@ -2003,7 +2055,7 @@ $baseBorderRadius: 4px;
 
 .slider-money,
 .slider-days {
-    padding: 30px 30px 60px;
+    padding: 30px 30px 20px;
     position: relative;
 
     @media screen and (max-width: 767px) {
@@ -2012,14 +2064,16 @@ $baseBorderRadius: 4px;
 }
 
 .slider-money {
+    padding: 30px 30px 50px;
     @media screen and (max-width: 767px) {
-        padding-bottom: 56px;
+        padding: 5px 0 0;
+        padding-bottom: 30px;
     }
 }
 
 .slider-days {
     @media screen and (max-width: 767px) {
-        padding: 15px 0 0;
+        padding: 5px 0 0;
     }
 }
 
@@ -2055,6 +2109,10 @@ $baseBorderRadius: 4px;
     @media screen and (max-width: 1280px) {
         font-size: 22px;
     }
+
+    @media screen and (max-width: 320px) {
+        font-size: 18px;
+    }
 }
 
 .slider-money--control {
@@ -2064,6 +2122,10 @@ $baseBorderRadius: 4px;
     text-align: right;
     &:focus {
         outline: none;
+    }
+
+    @media screen and (max-width: 320px) {
+        width: 60px;
     }
 }
 
@@ -2104,6 +2166,17 @@ $baseBorderRadius: 4px;
     border-radius: 0 15px 15px 15px;
     background-color: #ff7043;
     display: none;
+
+    @media screen and (max-width: 767px) {
+        bottom: 22px;
+        left: 27%;
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 320px) {
+        left: 20%;
+        font-size: 13px;
+    }
 
     &.active {
         display: block;
@@ -2156,6 +2229,7 @@ $baseBorderRadius: 4px;
     padding-top: 10px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 
     li {
         button {
@@ -2189,11 +2263,6 @@ $baseBorderRadius: 4px;
         justify-content: center;
 
         @media screen and (max-width: 991px) {
-            max-width: 80%;
-            margin: 0 auto;
-        }
-        @media screen and (max-width: 767px) {
-            max-width: 100%;
             display: block;
         }
     }
@@ -2481,7 +2550,7 @@ $baseBorderRadius: 4px;
     vertical-align: middle;
     transition: width 0.3s;
     margin-left: 10px;
-    background-image: url('../images/test/fav-32.png');
+    background-image: url('../images/fav-32.png');
 }
 
 .btn-programm {
@@ -3297,11 +3366,32 @@ $baseBorderRadius: 4px;
 
 // пресса
 .press {
-    padding: 25px 0 0;
+    padding: 25px 0;
     background-color: #eceff9;
 
     @media screen and (max-width: 767px) {
         padding: 30px 0;
+        .slick-dots {
+            padding-top: 0;
+        }
+    }
+    /*.slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 60px;
+        cursor: pointer;
+    }
+
+    .icon-programm-arrow-left {
+        left: -70px;
+    }
+    .icon-programm-arrow-right {
+        right: -70px;
+    }*/
+    .slick-slide div,
+    .slick-slide {
+        outline: none;
     }
     &-wrapper {
         display: flex;
@@ -3319,6 +3409,15 @@ $baseBorderRadius: 4px;
             }
         }
     }
+    .container {
+        &:hover {
+            img {
+                -webkit-filter: grayscale(1);
+                transition: all 0.3s;
+                opacity: .6;
+            }
+        }
+    }
 
     &-item {
         flex: 0 0 33.3%;
@@ -3328,10 +3427,14 @@ $baseBorderRadius: 4px;
         @media screen and (max-width: 991px) {
             flex: 0 0 50%;
         }
+        @media screen and (max-width: 767px) {
+            margin-bottom: 15px;
+        }
         &:hover {
-            img {
-                opacity: 1;
-                -webkit-filter: grayscale(0);
+            >img {
+                opacity: 1 !important;
+                filter: grayscale(0) !important;
+                -webkit-filter: grayscale(0) !important;
             }
         }
 
@@ -3348,6 +3451,15 @@ $baseBorderRadius: 4px;
             @media screen and (max-width: 1199px) {
                 font-size: 17px;
             }
+            @media screen and (max-width: 767px) {
+                font-size: 16px;
+            }
+             @media screen and (max-width: 550px) {
+                font-size: 14px;
+            }
+            &:focus {
+                outline: none;
+            }
         }
 
         img {
@@ -3355,6 +3467,10 @@ $baseBorderRadius: 4px;
             height: 40px;
             margin: 0 0 20px 15px;
             transition: all .5s ease-out;
+            @media screen and (max-width: 767px) {
+                height: 25px;
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -3364,6 +3480,7 @@ $baseBorderRadius: 4px;
         margin-left: 15px;
     }
 }
+
 
 // юр-информация
 .law {
@@ -3415,6 +3532,57 @@ textarea.form-control {
     height: 90px;
 }
 
+
+// custom checkbox
+.agree {
+    cursor: pointer;
+
+    input[type="checkbox"] {
+        display: none;
+        &:checked+.agree-emulator {
+
+            &:before {
+                opacity: 1;
+            }
+        }
+    }
+
+    &-emulator {
+        position: relative;
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+        border: 1px solid #0055B8;
+        background-color: #fff;
+        margin-right: 6px;
+        cursor: pointer;
+        border-radius: 4px;
+        &:before {
+            content: '';
+            width: 9px;
+            height: 6px;
+            position: absolute;
+            left: 3px;
+            top: 3px;
+            border: 1px solid #0055B8;
+            border-top: none;
+            border-right: none;
+            -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            opacity: 0;
+        }
+    }
+    &-text {
+        font: 12px / 17px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+        color: #0056b8;
+
+        a {
+            color: #0056b8;
+        }
+    }
+}
 
 
 // animations 

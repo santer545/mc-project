@@ -6,6 +6,8 @@ $(function() {
     dropdown();
     lazyLoadImages();
     showCallback();
+    maskes();
+    paswwordChecker();
 })
 
 function playRegistrationVideo() {
@@ -27,7 +29,10 @@ function showCallback() {
 }
 
 function customSelect() {
-	$('.selectpicker, select').selectric();
+	$('.selectpicker, select').selectpicker({
+        actionsBox: false,
+        dropupAuto: false
+    });
 }
 
 function lazyLoadImages() {
@@ -143,3 +148,73 @@ function goToAnchor() {
             }
         });
 }
+
+function maskes() {
+    $('.js-code').mask("999999", {
+        autoclear: false
+    });
+
+    $(".js-phone").mask("+38099 999 9999", {
+        autoclear: false
+    });
+}
+
+function paswwordChecker() {
+    var element = document.getElementById('password');
+    var expBigLetter = /[А-ЯЁA-Z]+/,
+        expSmallLetter = /[а-яёa-z]+/,
+        expNumber = /\d+/;
+    if (element) {
+        element.oninput = function() {
+            var val = document.getElementById('password').value;
+
+            var count = val.length;
+
+            var big_letter = document.getElementById('big_letter');
+            var small_letter = document.getElementById('small_letter');
+            var number_symbol = document.getElementById('number_symbol');
+            var count_letter = document.getElementById('count_letter');
+
+
+            if (count >= 6) {
+                count_letter.setAttribute('class', 'active');
+            } else {
+                count_letter.classList.remove('active');
+            }
+
+
+            if (expSmallLetter.test(val)) {
+                small_letter.setAttribute('class', 'active');
+            } else {
+                small_letter.classList.remove('active');
+            }
+            if (expBigLetter.test(val)) {
+                big_letter.setAttribute('class', 'active');
+            } else {
+                big_letter.classList.remove('active');
+            }
+            if (expNumber.test(val)) {
+                number_symbol.setAttribute('class', 'active');
+            } else {
+                number_symbol.classList.remove('active');
+            }
+        }
+    }
+
+}
+
+
+SVG.on(document, 'DOMContentLoaded', function() {
+    // Franky
+
+    var ghost = SVG.select('#ghost');
+    ghost.delay(4000).animate(2000).translate(140,40).translate(120,40).translate(110,40).translate(100,20).translate(0,10).translate(0,0).translate(140,-40).translate(0,-40).loop(10);
+
+    var tongue = SVG.select('.tongue');
+    var tongue_shadow = SVG.select('.tongue-shadow');
+    tongue.delay(22000).animate().style('opacity', 1);
+    tongue_shadow.delay(22000).animate().style('opacity', 1);
+    // brain_middle.delay(2000).animate().style('opacity', 1);
+    // brain_top.delay(2500).animate().style('opacity', 1);
+
+});

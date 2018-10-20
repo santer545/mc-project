@@ -13,14 +13,14 @@
     <meta name="google-site-verification" content="DHkY6ywkpSEqaHBG1aQTBj651kRzAPjpSFXRPSrsERE" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="css/main-page-ab.min.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="css/main-page-ab-mobile.min.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/main-page-ab.min.css">
 </head>
 
 <body class="home-page">
     <div class="wrapper">
         <!-- Header -->
         <header class="header" id="header">
+            <div class="header-backdrop js-backdrop"></div>
             <div class="header-container d-f align-center justify-between">
                 <a href="#" class="header-logo">
                     <img src="/images/logo-img.svg" alt="">
@@ -45,9 +45,9 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/banner-credit-0-1.jpg)">
                                     <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        <img src="/images/banner-credit-left.jpg" alt="">
                                     </div>
                                     <div class="block-heading">
                                         Первый кредит
@@ -74,9 +74,9 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/banner-credit-0-1.jpg)">
                                     <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        <img src="/images/banner-credit-left.jpg" alt="">
                                     </div>
                                     <div class="block-heading">
                                         Первый кредит
@@ -116,9 +116,9 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/banner-credit-0-1.jpg)">
                                     <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        <img src="/images/banner-credit-left.jpg" alt="">
                                     </div>
                                     <div class="block-heading">
                                         Первый кредит
@@ -154,7 +154,7 @@
                         <span class="sr-only">Toggle navigation</span>
                     </button>
                 </div>
-                <a href="#" class="header-language text-center">Ру</a>
+                <a href="#" class="header-language d-f align-center justify-center">Ру</a>
             </div>
         </header>
         <!-- Баннер -->
@@ -1271,7 +1271,7 @@
                         <div class="main-phone">
                             <a href="tel:0800214111">0 800 214 111</a>
                             <span>Бесплатно по Украине со стационарных телефонов</span>
-                            <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
+                        
                         </div>
                     </div>
                 </div>
@@ -1295,52 +1295,7 @@
                 </div>
             </div>
         </footer>
-        <div class="bottom-callback js-callback" id="div_SendEmail">
-            <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
-            <div class="callback-holder d-f">
-                <div class="callback-left">
-                    <figure class="call-img">
-                        <img alt="" class="lazy" src="images/operator.png">
-                    </figure>
-                    <div class="call-img--name">
-                        Ирина Кондрашова <span>специалист по кредитованию</span>
-                    </div>
-                    <div class="call-text">
-                        <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
-                    </div>
-                </div>
-                <div class="callback-form">
-                    <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
-                        <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
-                        <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_sername" class="form-label">ФИО</label>
-                                <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
-                            Отправить
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
-                <span id="span_resultEmail">Сообщение отправлено</span>
-            </div>
-        </div>
+        
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

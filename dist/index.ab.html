@@ -13,8 +13,7 @@
     <meta name="google-site-verification" content="DHkY6ywkpSEqaHBG1aQTBj651kRzAPjpSFXRPSrsERE" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="css/main-page-ab.min.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="css/main-page-ab-mobile.min.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/main-page-ab.min.css">
 </head>
 
 <body class="home-page">
@@ -23,7 +22,7 @@
         <header class="header" id="header">
             <div class="header-container d-f align-center justify-between">
                 <a href="#" class="header-logo">
-                    <img src="/images/logo-img.svg" alt="">
+                    <img src="/images/test/logo-img.svg" alt="">
                     <span>онлайн кредиты на карту</span>
                 </a>
                 <div class="header-nav js-menu">
@@ -91,7 +90,7 @@
                         <li class="custom">
                             <a href="#">Акции</a>
                         </li>
-                        <li class="js-parent nav-dots js-hover-link">
+                        <li class="js-parent nav-dots js-hover-link relative">
                             <span class="dot"></span>
                             <span class="dot"></span>
                             <span class="dot"></span>
@@ -116,15 +115,17 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
-                                    <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
-                                    </div>
-                                    <div class="block-heading">
-                                        Первый кредит
-                                        <br>под 0%
-                                        <div>
-                                            <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                <div class="js-inner-carousel">
+                                    <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                        <div class="header-img">
+                                            <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        </div>
+                                        <div class="block-heading">
+                                            Первый кредит
+                                            <br>под 0%
+                                            <div>
+                                                <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -154,15 +155,16 @@
                         <span class="sr-only">Toggle navigation</span>
                     </button>
                 </div>
-                <a href="#" class="header-language text-center">Ру</a>
+                <a href="#" class="header-language d-f justify-center align-center">Ру</a>
             </div>
         </header>
+        <!-- Баннер -->
         <!-- Баннер -->
         <section class="banner">
             <!-- Swiper -->
             <div class="js-banner">
                 <div>
-                    <div style="background-image: url('images/banner/banner-50-50.jpg')">
+                    <div style="background-image: url('images/test/banner/banner-50-50.jpg')">
                         <div class="banner-top text-center">
                             <div class="container">
                                 <div class="banner-heading">
@@ -175,7 +177,7 @@
                     </div>
                 </div>
                 <div>
-                    <div style="background-image: url('images/banner/01-banner-STUDENT-02.webp')">
+                    <div style="background-image: url('images/test/banner/01-banner-STUDENT-02.webp')">
                         <div class="banner-top text-center">
                             <div class="container">
                                 <div class="banner-heading">
@@ -188,7 +190,7 @@
                     </div>
                 </div>
                 <div>
-                    <div style="background-image: url('images/banner/04-banner-CLIENT.webp')">
+                    <div style="background-image: url('images/test/banner/04-banner-CLIENT.webp')">
                         <div class="banner-top text-center">
                             <div class="container">
                                 <div class="banner-heading">
@@ -202,13 +204,20 @@
                 </div>
             </div>
             <div class="calculator">
-                <div class="calculator-heading">
+                <div class="calculator-heading calculator-heading__blue">
                     <div class="calculator-labe">
-                        <img src="/images/0.svg" alt="">
+                        <img src="/images/test/personalization/1YearCredit.svg" alt="">
+                    </div>
+                    <strong>1 год как погашен 1-й кредит! Вас ждет подарок</strong>
+                    <a href="ru/lichnyj-kabinet/moi-kredity/">Посмотреть</a>
+                </div>
+                <!--<div class="calculator-heading">
+                    <div class="calculator-labe">
+                        <img src="/images/test/0.svg" alt="">
                     </div>
                     <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
                     <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
-                </div>
+                </div>-->
                 <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
                     <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
                     <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
@@ -240,16 +249,16 @@
                                 </div>
                                 <div class="slider-wrapper">
                                     <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
-                                    <div class="d-f align-center justify-between">
-                                        <label for="js-money_large_main" class="slider-label"><span id="minSumLabel_large_main" class="format-number">100</span> грн</label>
-                                        <label class="slider-label slider-label__inverse js-slider-tooltip">
-                                            <div class="slider-tooltip js-slider-tooltip">
-                                                Доступная сумма растет с каждым кредитом
-                                            </div>
-                                            <span>до </span>
-                                            <span class="format-number">10 000</span> грн
-                                        </label>
-                                    </div>
+                                </div>
+                                <div class="d-f align-center justify-between">
+                                    <label for="js-money_large_main" class="slider-label"><span id="minSumLabel_large_main" class="format-number">100</span> грн</label>
+                                    <label class="slider-label slider-label__inverse js-slider-tooltip">
+                                        <div class="slider-tooltip js-slider-tooltip">
+                                            Доступная сумма растет с каждым кредитом
+                                        </div>
+                                        <span>до </span>
+                                        <span class="format-number">10 000</span> грн
+                                    </label>
                                 </div>
                             </div>
                             <div class="slider-days">
@@ -262,17 +271,17 @@
                                 </div>
                                 <div class="slider-wrapper">
                                     <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
-                                    <div class="d-f align-center justify-between">
-                                        <label for="js-days_large_main" class="slider-label">
-                                            <span id="minDayLabel_large_main">1</span>&nbsp;<span id="dayMinDay_large_main">дней</span>
-                                        </label>
-                                        <label for="js-days_large_main" class="slider-label slider-label__inverse">
-                                            <div class="slider-tooltip js-slider-tooltip">
-                                                Вы можете продлить кредит из личного кабинета
-                                            </div>
-                                            <span>до 35</span>&nbsp;<span id="dayMaxDay_large_main">дней</span>
-                                        </label>
-                                    </div>
+                                </div>
+                                <div class="d-f align-center justify-between">
+                                    <label for="js-days_large_main" class="slider-label">
+                                        <span id="minDayLabel_large_main">1</span>&nbsp;<span id="dayMinDay_large_main">дней</span>
+                                    </label>
+                                    <label for="js-days_large_main" class="slider-label slider-label__inverse">
+                                        <div class="slider-tooltip js-slider-tooltip">
+                                            Вы можете продлить кредит из личного кабинета
+                                        </div>
+                                        <span>до 35</span>&nbsp;<span id="dayMaxDay_large_main">дней</span>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -314,10 +323,10 @@
                                 <a data-toggle="modal" data-target="#promo-modal-calc-sign" role="button">У меня есть промокод</a>
                             </div>
                             <div class="calculator-img d-f align-center justify-between">
-                                <img src="images/calculator/visa-calc.png" alt="">
-                                <img src="images/calculator/master-calc.png" alt="">
-                                <img src="images/calculator/privat-calc.png" alt="">
-                                <img src="images/calculator/pci_calc.png" alt="">
+                                <img src="images/test/calculator/visa-calc.png" alt="">
+                                <img src="images/test/calculator/master-calc.png" alt="">
+                                <img src="images/test/calculator/privat-calc.png" alt="">
+                                <img src="images/test/calculator/pci_calc.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -336,16 +345,24 @@
                         </div>
                         <ul>
                             <li>
-                                <strong>беспроцентный кредит</strong> по ставке 0,01%
+                                <span class="icon-zero"></span>
+                                <div><strong>беспроцентный кредит</strong> по ставке 0,01%</div>
                             </li>
                             <li>
-                                <strong>одобряем 4-ре из 5-ти </strong> поданных заявок
+                                <span class="icon-checked"></span>
+                                <div><strong>одобряем 4-ре из 5-ти </strong> поданных заявок</div>
                             </li>
                             <li>
-                                отсрочка платежа:<strong> 3 дня без штрафов</strong>
+                                <span class="icon-shtraph"></span>
+                                <div>
+                                    отсрочка платежа:<strong> 3 дня без штрафов</strong>
+                                </div>
                             </li>
                             <li>
-                                без скан-копий, только <strong>номер паспорта и ИНН</strong>
+                                <span class="icon-pasport"></span>
+                                <div>
+                                    без скан-копий, только <strong>номер паспорта и ИНН</strong>
+                                </div>
                             </li>
                         </ul>
                         <div class="motivation-footer text-center">
@@ -364,16 +381,26 @@
                         </div>
                         <ul>
                             <li>
-                                оформление займа со <strong>скидкой до 20%</strong>
+                                <span class="icon-percent"></span>
+                                <div>
+                                    оформление займа со <strong>скидкой до 20%</strong>
+                                </div>
                             </li>
                             <li>
-                                <strong>увеличенная сумма займа</strong> до 10 000 грн.
+                                <span class="icon-money"></span>
+                                <div><strong>увеличенная сумма займа</strong> до 10 000 грн.</div>
                             </li>
                             <li>
-                                участие в <strong>программе-кэшбэк</strong>
+                                <span class="icon-cacheback"></span>
+                                <div>
+                                    участие в <strong>программе-кэшбэк</strong>
+                                </div>
                             </li>
                             <li>
-                                <strong>автоматическое подтверждение заявки</strong>
+                                <span class="icon-avtomat"></span>
+                                <div>
+                                    <strong>автоматическое подтверждение заявки</strong>
+                                </div>
                             </li>
                         </ul>
                         <div class="motivation-footer text-center">
@@ -394,7 +421,7 @@
                                 <span>Кредит выходного дня</span>
                             </div>
                             <figure class="programms-img">
-                                <img width="363" height="180" alt="" src="images/programms/vihodnoi.jpg">
+                                <img width="363" height="180" alt="" src="images/test/programms/vihodnoi.jpg">
                             </figure>
                             <div class="programms-data">
                                 <div class="programms-holder">
@@ -419,7 +446,7 @@
                                 <span>Деньги под рукой</span>
                             </div>
                             <figure class="programms-img">
-                                <img width="363" height="180" alt="" src="images/programms/programm-1.jpg">
+                                <img width="363" height="180" alt="" src="images/test/programms/programm-1.jpg">
                             </figure>
                             <div class="programms-data">
                                 <div class="programms-holder">
@@ -444,7 +471,7 @@
                                 <span>Студенческий кредит</span>
                             </div>
                             <figure class="programms-img">
-                                <img width="363" height="180" alt="" src="images/programms/programm-2.jpg">
+                                <img width="363" height="180" alt="" src="images/test/programms/programm-2.jpg">
                             </figure>
                             <div class="programms-data">
                                 <div class="programms-holder">
@@ -469,7 +496,7 @@
                                 <span>Деньги до зарплаты</span>
                             </div>
                             <figure class="programms-img">
-                                <img width="363" height="180" alt="" src="images/programms/programm-3.jpg">
+                                <img width="363" height="180" alt="" src="images/test/programms/programm-3.jpg">
                             </figure>
                             <div class="programms-data">
                                 <div class="programms-holder">
@@ -494,7 +521,7 @@
                                 <span>День рождение</span>
                             </div>
                             <figure class="programms-img">
-                                <img width="363" height="180" alt="" src="images/programms/happy-couple-balloons-romance-6249.jpg">
+                                <img width="363" height="180" alt="" src="images/test/programms/happy-couple-balloons-romance-6249.jpg">
                             </figure>
                             <div class="programms-data">
                                 <div class="programms-holder">
@@ -519,7 +546,7 @@
                                 <span>На здоровье</span>
                             </div>
                             <figure class="programms-img">
-                                <img width="363" height="180" alt="" src="images/programms/bolezn.jpg">
+                                <img width="363" height="180" alt="" src="images/test/programms/bolezn.jpg">
                             </figure>
                             <div class="programms-data">
                                 <div class="programms-holder">
@@ -556,7 +583,7 @@
                     <span>Показать шаги</span>
                     <span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>
                 </div>
-                <img alt="myCredit-video" class="instruction-bg" src="images/issue-video-bg.jpg">
+                <img alt="myCredit-video" class="instruction-bg" src="images/test/issue-video-bg.jpg">
                 <div class="embed-wrapper">
                     <div class="embed-responsive embed-responsive-16by9">
                         <video width="320" height="240" preload="none" class="embed-responsive-item" id="main-page-video">
@@ -609,7 +636,7 @@
         <section class="security">
             <div class="security-wrapper">
                 <div class="security-img text-center">
-                    <img alt="" src="images/security.png">
+                    <img alt="" src="images/test/security.png">
                 </div>
                 <div class="security-text">
                     <div class="heading-h2 heading-h2__inverse">Ответственность и гарантия безопасности</div>
@@ -745,7 +772,7 @@
                 <div class="facts-wrapper">
                     <div class="facts-item text-center">
                         <div class="facts-img">
-                            <img alt="" src="images/facts/premiya.png">
+                            <img alt="" src="images/test/facts/premiya.png">
                         </div>
                         <p>
                             <strong>Премия PSMAwards</strong>
@@ -755,7 +782,7 @@
                     </div>
                     <div class="facts-item text-center">
                         <div class="facts-img">
-                            <img alt="" src="images/facts/starQ.png">
+                            <img alt="" src="images/test/facts/starQ.png">
                         </div>
                         <p>
                             <strong>«Звезда качества»</strong>
@@ -765,7 +792,7 @@
                     </div>
                     <div class="facts-item text-center">
                         <div class="facts-img">
-                            <img alt="" src="images/facts/neangelu.png">
+                            <img alt="" src="images/test/facts/neangelu.png">
                         </div>
                         <p>
                             <strong>Группа НЕАНГЕЛЫ</strong>
@@ -775,7 +802,7 @@
                     </div>
                     <div class="facts-item text-center">
                         <div class="facts-img">
-                            <img alt="" src="images/facts/prize.png">
+                            <img alt="" src="images/test/facts/prize.png">
                         </div>
                         <p>
                             <strong>Более 30 призов</strong>
@@ -1065,7 +1092,7 @@
                 <div class="payment-wrapper">
                     <div class="payment-item">
                         <div class="payment-img">
-                            <img src="images/lk.png" alt="">
+                            <img src="images/test/lk.png" alt="">
                             <div class="visa bg-visa"></div>
                             <div class="master bg-master"></div>
                         </div>
@@ -1076,7 +1103,7 @@
                     </div>
                     <div class="payment-item">
                         <div class="payment-img">
-                            <img src="images/terminal.jpg" alt="">
+                            <img src="images/test/terminal.jpg" alt="">
                             <div class="terminal-box">
                                 <div class="terminal-box__item bg-ibox_1"></div>
                                 <div class="terminal-box__item bg-easy_1"></div>
@@ -1095,16 +1122,16 @@
                 </div>
                 <div class="bank-wrapper">
                     <div class="bank-item text-center">
-                        <img src="images/bank-1.jpg" alt="">
+                        <img src="images/test/bank-1.jpg" alt="">
                     </div>
                     <div class="bank-item text-center">
-                        <img src="images/bank-2.jpg" alt="">
+                        <img src="images/test/bank-2.jpg" alt="">
                     </div>
                     <div class="bank-item text-center">
-                        <img src="images/bank-3.jpg" alt="">
+                        <img src="images/test/bank-3.jpg" alt="">
                     </div>
                     <div class="bank-item text-center">
-                        <img src="images/bank-4.jpg" alt="">
+                        <img src="images/test/bank-4.jpg" alt="">
                     </div>
                 </div>
             </div>
@@ -1117,7 +1144,7 @@
                     <div class="press-item">
                         <a class="press-text" href="https://mc.today/mashinnoe-obuchenie-statistika-i-zdravyj-smysl-kak-my-ponimaem-stoit-li-davat-cheloveku-kredit-ivan-krivich-mycredit/" rel="noopener" target="_blank">«Как мы понимаем, стоит ли давать человеку кредит»
                      </a>
-                        <img src="images/pressa/MC.png" alt="">
+                        <img src="images/test/pressa/MC.png" alt="">
                         <div class="press-category">
                             Новостной портал
                         </div>
@@ -1125,7 +1152,7 @@
                     <div class="press-item">
                         <a class="press-text" href="http://fbc.net.ua/programs/biznes-ivan-krivich/" target="_blank" rel="noopener">«Как необходимо защищать данные пользователей»
                      </a>
-                        <img src="images/pressa/first.png" alt="">
+                        <img src="images/test/pressa/first.png" alt="">
                         <div class="press-category">
                             Телеканал
                         </div>
@@ -1133,7 +1160,7 @@
                     <div class="press-item">
                         <a class="press-text" href="https://korrespondent.net/business/financial/3901540-ukraynskyi-rynok-mykrozaimov-v-2017-hodu" rel="noopener" target="_blank">«Почти каждый 6-й украинец пользуется микрокредитом»
                      </a>
-                        <img src="images/pressa/correspondent.png" alt="">
+                        <img src="images/test/pressa/correspondent.png" alt="">
                         <div class="press-category">
                             Газета
                         </div>
@@ -1141,7 +1168,7 @@
                     <div class="press-item">
                         <a class="press-text" href="https://nv.ua/techno/it-industry/credit-2449279.html" target="_blank" rel="noopener">«Как искусственный<br> интеллект помогает выдавать кредиты»
                      </a>
-                        <img src="images/pressa/new-time.png" alt="">
+                        <img src="images/test/pressa/new-time.png" alt="">
                         <div class="press-category">
                             Новостной портал
                         </div>
@@ -1149,7 +1176,7 @@
                     <div class="press-item">
                         <a class="press-text" href="https://ubr.ua/finances/banking-sector/ukraintsy-nachali-brat-kredity-na-lekarstva-i-kommunalku-3838530" rel="noopener" target="_blank">«В ближайшие 2 года в обиход войдет понятие «быстрый онлайн заем»
                      </a>
-                        <img src="images/pressa/ubr.png" alt="">
+                        <img src="images/test/pressa/ubr.png" alt="">
                         <div class="press-category">
                             Новостной портал
                         </div>
@@ -1157,7 +1184,7 @@
                     <div class="press-item">
                         <a class="press-text" href="https://business.vesti-ukr.com/280383-zajm" rel="noopener" target="_blank">«В отличие от банков, MyCredit выдает кредиты даже людям с плохой кредитной историей»
                      </a>
-                        <img src="images/pressa/vesti.png" alt="">
+                        <img src="images/test/pressa/vesti.png" alt="">
                         <div class="press-category">
                             Телеканал
                         </div>
@@ -1271,13 +1298,12 @@
                         <div class="main-phone">
                             <a href="tel:0800214111">0 800 214 111</a>
                             <span>Бесплатно по Украине со стационарных телефонов</span>
-                            <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
                         </div>
                     </div>
                 </div>
                 <div class="footer-bottom">
                     <a href="#" class="footer-logo">
-                        <img src="images/logo_last_white.svg" alt="">
+                        <img src="images/test/logo_last_white.svg" alt="">
                     </a>
                     <div class="footer-text">
                         <p>Первый в Украине сервис кредитования через интернет. Мы предоставляем быстрые и удобные кредиты для всех граждан Украины.
@@ -1295,52 +1321,6 @@
                 </div>
             </div>
         </footer>
-        <div class="bottom-callback js-callback" id="div_SendEmail">
-            <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
-            <div class="callback-holder d-f">
-                <div class="callback-left">
-                    <figure class="call-img">
-                        <img alt="" class="lazy" src="images/operator.png">
-                    </figure>
-                    <div class="call-img--name">
-                        Ирина Кондрашова <span>специалист по кредитованию</span>
-                    </div>
-                    <div class="call-text">
-                        <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
-                    </div>
-                </div>
-                <div class="callback-form">
-                    <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
-                        <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
-                        <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_sername" class="form-label">ФИО</label>
-                                <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
-                            Отправить
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
-                <span id="span_resultEmail">Сообщение отправлено</span>
-            </div>
-        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1450,7 +1430,25 @@
             </div>
         </div>
     </div>
-    <script src="js/all-home-ab.min.js"></script>
+    <script>
+    var cb = function() {
+        var l = document.createElement('link');
+        l.rel = 'stylesheet';
+        l.href = '/css/main-page.min.generate.css?hash=[+hash+]';
+        var h = document.getElementsByTagName('head')[0];
+        h.appendChild(l);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+        webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(cb);
+    else window.addEventListener('load', cb);
+    </script>
+    <script>
+    var downloadScripts = [
+
+    ];
+    </script>
+    <script async src="/js/all-home-ab.min.js"></script>
 </body>
 
 </html>

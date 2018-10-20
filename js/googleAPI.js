@@ -69,8 +69,9 @@ function initAutocomplete() {
 		// fields in the form.
 		autocomplete_fact.addListener('place_changed', fillInAddress_fact);
 	}
+	
 	geolocate();
-	getSessionData();
+	//getSessionData();
 
 }
 
@@ -133,20 +134,30 @@ function geolocate() {
 			if (document.getElementById('fact_autocomplete'))
 				autocomplete_fact.setBounds(circle.getBounds());
 			
+			getSessionData();
+			
 			// getUserLocation();
-		});
+		}, getSessionData);
 	}
 }
 
 /**
  * Получает данные геолокации пользователя, и передает на сервер
  */
-function getUserLocation() {
+/* function getUserLocation() {
 
 	// return;	// временно отключаем 
 	
 	// console.log(position);
-	var geocoder = new google.maps.Geocoder;
+	var geocoder = new google.maps.Geocoder,
+		sessionData = {
+			user_country: '#404',
+			user_area: '#404',
+			user_city: '#404',
+			user_formatted_address: '#404',
+			user_geometry: '#404'
+		};
+	
 	geocoder.geocode({'location': geolocation}, function(results, status) {
 			if (status === 'OK') {
 
@@ -164,29 +175,22 @@ function getUserLocation() {
 				// console.log(userLocation);
 
 				// готовим к отправке:
-				var sessionData = '{"user_country":"' + userLocation.country + '", "user_area":"' + userLocation.area + '", "user_city":"' + userLocation.city +'"}';
-				var data = {
-						typeData: 'userInfo',
-						sessionData: sessionData
+				sessionData = {
+					user_country: userLocation.country,
+					user_area: userLocation.area,
+					user_city: userLocation.city,
+					user_formatted_address: results[0].formatted_address,
+					user_geometry: results[0].geometry
 				};
-				// отправить массив на сервер
-				sendAjax(data);
+				
 
 			} else {
 				// обработка ошибки
-
-				// готовим к отправке:
-				var sessionData = '{"user_country":"#404", "user_area":"#404", "user_city":"#404", "geo_status":"' + status + '"}';
-				var data = {
-						typeData: 'userInfo',
-						sessionData: sessionData
-				};
-				// отправить массив на сервер
-				sendAjax(data);
+				sessionData.geo_status = status;
 			}
 	});
 	
-	return;
-}
+	return sessionData;
+}*/
 
 

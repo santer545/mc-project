@@ -14,11 +14,9 @@ $(function() {
     bannerCarousel();
     stickyCalc();
     stickyCalcHeight();
+    playVideo();
 })
 
-$(window).resize(function() {
-    $()
-})
 
 // выпадающее меню
 function dropdown() {
@@ -203,6 +201,19 @@ function accordion() {
     });
 }
 
+// запуск видео на контентных страницах
+function playVideo() {
+    
+    $('.js-frame').click(function() {
+        var video = $(this).find('.js-video')[0];
+        $(this).addClass('play');
+        $('.numbers-play').addClass('hidden');
+        $('.numbers-gif').addClass('hidden');
+        video.play();
+    });
+    
+}
+
 // запуск и остановка видео на странице о нас
 function playVideoAbout() {
     var video = document.getElementById('video-about');
@@ -215,7 +226,7 @@ function playVideoAbout() {
 
 // липкий сайдбар на контентных страницах
 function stickySidebar() {
-    $('#sidebar').stickySidebar({
+    var sticky = $('#sidebar').stickySidebar({
         topSpacing: 100,
         bottomSpacing: 60
     });
@@ -233,7 +244,7 @@ function stickyCalc() {
 
     $('.js-sticky-close').on('click', function() {
         $('.js-open-calc').removeAttr('disabled');
-        $('.js-header').animate({top: '0px'}, 400);
+        $('.js-header').animate({top: '0px'}, 300);
         $('.js-sticky').removeClass('active');
     });
 }
@@ -242,3 +253,26 @@ function stickyCalc() {
 function stickyCalcHeight() {
     return $('.js-sticky').height();
 }
+
+SVG.on(document, 'DOMContentLoaded', function() {
+
+    // witch
+
+    var w_hand = SVG.select('.witch-hand');
+    w_hand.delay(8000).animate(400).rotate(25).rotate(0);
+
+    var witch = SVG.select('#witch');
+    witch.delay(10000).animate(400).translate(-200, -400);
+
+
+    // monstr
+
+    var monstr_r_leg = SVG.select('.m_r_leg');
+    monstr_r_leg.animate().rotate(-75).reverse().loop();
+
+    var monstr_l_leg = SVG.select('.m_l_leg');
+    monstr_l_leg.delay(300).animate().rotate(55).reverse().loop();
+
+    var monstr = SVG.select('#monster');
+    monstr.animate(14000).translate(-500,0).animate().rotate(-80).delay(200).animate().style('opacity', 0);
+});

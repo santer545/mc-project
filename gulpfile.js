@@ -163,6 +163,32 @@ gulp.task('personalMobileStyles', function() {
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
+gulp.task('Lending1_Styles', function() {
+    return gulp.src('sass/lending1-page.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('Credit_history', function() {
+    return gulp.src('sass/credit-history.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
 gulp.task('critical-login', function() {
     critical.generate({
         inline: true,
@@ -174,8 +200,8 @@ gulp.task('critical-login', function() {
         dest: 'dist/test-critical.html',
         dimensions: [
         {
-            width: 767
-        }
+            width: 767,
+        },
         ]
     });
 });
@@ -224,6 +250,7 @@ gulp.task('homeScripts', function() {
             sourceDir + '/device.min.js',
             
             sourceDir + '/main-validate.js',
+            sourceDir + '/svg.min.js',
             sourceDir + '/home-main.js',
             sourceDir + '/functions.js',
             sourceDir + '/googleApi.js',
@@ -231,7 +258,8 @@ gulp.task('homeScripts', function() {
             sourceDir + '/fingerprint2.js',
             sourceDir + '/jquery.lazy.js',
             sourceDir + '/client.min.js',
-            sourceDir + '/downloadJS.js'
+            sourceDir + '/downloadJS.js',
+            sourceDir + '/iovation.js',
 
         ])
 
@@ -260,6 +288,7 @@ gulp.task('personalScripts', function() {
             sourceDir + '/forWidget.js',
             sourceDir + '/fingerprint2.js',
             sourceDir + '/validate.js',
+            sourceDir + '/svg.min.js',
             sourceDir + '/personal-main.js',
             sourceDir + '/functions.js',
             sourceDir + '/jquery.lazy.js',
@@ -291,14 +320,16 @@ gulp.task('contentScripts', function() {
             sourceDir + '/tab.js',
             sourceDir + '/jquery.maskedinput.min.js',
             sourceDir + '/device.min.js',
+            sourceDir + '/validate.js',
+            sourceDir + '/svg.min.js',
+            sourceDir + '/content-main.js',
+            sourceDir + '/functions.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
             sourceDir + '/fingerprint2.js',
-            sourceDir + '/validate.js',
-            sourceDir + '/content-main.js',
-            sourceDir + '/functions.js',
-            sourceDir + '/client.min.js'
-
+            sourceDir + '/jquery.lazy.js',
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js',
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -347,6 +378,8 @@ gulp.task('registrationScripts', function() {
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
             sourceDir + '/bootstrap-slider.js',
+            sourceDir + '/bootstrap-select.js',
+            sourceDir + '/dropdown.js',
             sourceDir + '/tab.js',
             sourceDir + '/modal.js',
             sourceDir + '/jquery.lazy.js',
@@ -355,11 +388,13 @@ gulp.task('registrationScripts', function() {
             sourceDir + '/device.min.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
-            sourceDir + '/jquery.selectric.min.js',
+            //sourceDir + '/jquery.selectric.min.js',
             sourceDir + '/fingerprint2.js',
+            sourceDir + '/svg.min.js',
             sourceDir + '/registration-main.js',
             sourceDir + '/functions.js',
-            sourceDir + '/client.min.js'
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js'
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -374,7 +409,7 @@ gulp.task('registrationScripts', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('mainStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles');
+    gulp.start('mainStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles', 'Lending1_Styles', 'Credit_history');
 });
 
 gulp.task('server', function() {
@@ -394,7 +429,9 @@ gulp.task('watch', function() {
     gulp.watch('sass/**/*.scss', ['personalStyles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['personalMobileStyles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['contentMobileStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['Lending1_Styles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['contentStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['Credit_history', browserSync.reload]);  
 
     // Watch .js files
     gulp.watch('js/**/*.js', ['homeScripts', browserSync.reload]);

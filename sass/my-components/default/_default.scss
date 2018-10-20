@@ -129,6 +129,14 @@ a.btn {
 
 .d-f {
     display: flex;
+
+    @media screen and (max-width: 767px) {
+        flex-wrap: wrap;
+    }
+}
+
+.sr-only {
+    display: none!important;
 }
 
 .embed-responsive-16by9,
@@ -164,4 +172,9 @@ ol {
 
 a:active {
     color: inherit;
+}
+
+/*color RED for attention sms*/
+.data--attention {
+    color: #ef5350 !important;
 }

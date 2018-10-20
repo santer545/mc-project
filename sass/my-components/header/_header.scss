@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'HelveticaNeueCyr Bold';
+    font-display: swap;
     src: url('../fonts/HelveticaNeueCyr-Bold.eot');
     src: local('☺'), url('../fonts/HelveticaNeueCyr-Bold.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Bold.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Bold.svg') format('svg');
     font-weight: normal;
@@ -8,6 +9,7 @@
 
 @font-face {
     font-family: 'HelveticaNeueCyr Medium';
+    font-display: swap;
     src: url('../fonts/HelveticaNeueCyr-Medium.eot');
     src: local('☺'), url('../fonts/HelveticaNeueCyr-Medium.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Medium.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Medium.svg') format('svg');
     font-weight: normal;
@@ -16,6 +18,7 @@
 
 @font-face {
     font-family: 'HelveticaNeueCyr Roman';
+    font-display: swap;
     src: url('../fonts/HelveticaNeueCyr-Roman.eot');
     src: local('☺'), url('../fonts/HelveticaNeueCyr-Roman.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Roman.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Roman.svg') format('svg');
     font-weight: normal;
@@ -24,6 +27,7 @@
 
 @font-face {
     font-family: 'HelveticaNeueCyr Light';
+    font-display: swap;
     src: url('../fonts/HelveticaNeueCyr-Light.eot');
     src: local('☺'), url('../fonts/HelveticaNeueCyr-Light.woff') format('woff'), url('../fonts/HelveticaNeueCyr-Light.ttf') format('truetype'), url('../fonts/HelveticaNeueCyr-Light.svg') format('svg');
     font-weight: normal;
@@ -51,7 +55,12 @@
         position: static;
     }
 
+    
+
+
+
     .navbar-toggle {
+        display: none!important;
         font-size: 0;
         width: 50px;
         height: 36px;
@@ -60,6 +69,9 @@
         text-align: center;
         padding: 0;
         display: inline-block;
+        @media screen and (max-width: 767px) {
+            display: inline-block!important;
+        }
 
         .dot {
             background-color: #fff;
@@ -72,10 +84,6 @@
                 margin-right: 3px;
             }
         }
-
-        @media screen and (min-width: 768px) {
-            display: none;
-        }
     }
 
     &-container {
@@ -87,13 +95,14 @@
             padding: 0 15px;
         }
         @media screen and (max-width: 767px) {
-            height: 60px;
+            height: 50px;
         }
     }
+
     &-logo {
         position: relative;
         flex: 0 0 auto;
-        z-index: 1; 
+        z-index: 1;
         @media screen and (max-width: 1199px) {
             flex: 0 0 15%;
             max-width: 15%;
@@ -109,39 +118,54 @@
             max-width: 40%;
         }
 
+        @media screen and (max-width: 350px) {
+
+            max-width: 50%;
+            flex: 0 0 50%;
+        }
+
         &:active {
             color: #003764;
         }
         span {
             position: absolute;
             bottom: 4px;
-            right: 3px;
-            font-size: 11px;
-            font-family: 'HelveticaNeueCyr Roman', Arial, sans-serif;
-            letter-spacing: 1.5px;
+            right: -2px;
+            font: 11px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+            letter-spacing: 1.1px;
             color: #0055b8;
             white-space: nowrap;
+
             @media screen and (max-width: 1199px) {
-                font-size: 6.9px;
+                font-size: 7.9px;
                 bottom: 0;
                 right: 0;
                 letter-spacing: 1.3px;
             }
+
             @media screen and (max-width: 991px) {
                 font-size: 6px;
                 letter-spacing: 1.2;
             }
 
             @media screen and (max-width: 767px) {
-                right: 65px;
-                font: 10.9px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                right: 51px;
+                font: 8.9px 'HelveticaNeueCyr Roman', Arial, sans-serif;
                 letter-spacing: 1.8px;
+                bottom: 6px;
             }
+
             @media screen and (max-width: 536px) {
                 right: 0;
                 bottom: 0;
                 font: 7.5px 'HelveticaNeueCyr Roman', Arial, sans-serif;
-                letter-spacing: 1.2px;
+                letter-spacing: 1.5px;
+            }
+
+            @media screen and (max-width: 420px) {
+                font: 6.5px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                bottom: 4px;
+                letter-spacing: 1.1px;
             }
         }
     }
@@ -169,18 +193,22 @@
         }
         .btn {
             position: relative;
-            padding: 10px 45px 10px 20px;
+            padding: 12px 45px 12px 20px;
+            min-width: 125px;
+            text-align: left;
             background-color: #4281ca;
             color: #fff;
+            font: 16px 'HelveticaNeueCyr Medium', Arial, sans-serif;
             @media screen and (max-width: 767px) {
-                font-size: 16px !important;
+                padding: 7px 45px 7px 20px;
+                font-size: 15px !important;
             }
         }
         .user-name {
             display: inline-block;
             vertical-align: middle;
             padding-right: 10px;
-            max-width: 85px;
+            max-width: 95px;
             text-overflow: ellipsis;
             overflow: hidden;
         }
@@ -230,7 +258,7 @@
                 width: 0;
                 height: 0;
                 border-style: solid;
-                border-width: 4px 4px 0 4px;
+                border-width: 5px 5px 0 4px;
                 border-color: #fff transparent transparent transparent;
             }
         }
@@ -391,6 +419,11 @@
             }
         }
     }
+
+    &-btn {
+        position: relative;
+        z-index: 1;
+    }
 }
 
 .nav-dots {
@@ -440,68 +473,24 @@
         &:focus {
             outline: none;
         }
-
     }
+
     &-group {
         position: relative;
         margin-bottom: 28px;
     }
 }
 
-.remember-holder {
-    padding-top: 10px;
-}
-
-.remember-block {
-
-    label {
-        cursor: pointer;
-    }
-    input[type="checkbox"] {
-        display: none;
-    }
-    span {
-        display: inline-block;
-        vertical-align: middle;
-        font-size: 14px;
-    }
-}
-
-.checkbox-emulator {
-    position: relative;
-    width: 17px;
-    height: 17px;
-    border: 1px solid #dedfe1;
-    margin-right: 6px;
-    cursor: pointer;
-
-    &:before {
-        content: "";
-        width: 9px;
-        height: 6px;
-        position: absolute;
-        left: 3px;
-        top: 3px;
-        border: 1px solid #fff;
-        border-top: none;
-        border-right: none;
-        transform: rotate(-45deg);
-        opacity: 0;
-    }
-}
-
-input[type="checkbox"]:checked+span {
-    background-color: #0659b3;
-    border-right-color: #0659b3;
-}
-
-input[type="checkbox"]:checked+span:before {
-    opacity: 1;
-}
-
+//         display: inline-block;
+//         vertical-align: middle;
+//         font-size: 14px;
+//     }
+// }
 .forgot-password {
     color: #0659b3;
     font-size: 14px;
+    display: inline-block;
+    padding-top: 10px;
 }
 
 
@@ -535,6 +524,20 @@ input[type="checkbox"]:checked+span:before {
     .error_text,
     .error-text {
         display: block;
+    }
+}
+
+.captcha {
+    padding-top: 20px;
+
+    &-left {
+        img {
+            height: 55px;
+        }
+    }
+
+    &-right {
+        flex: 0 0 calc(100% - 120px);
     }
 }
 
@@ -592,7 +595,6 @@ input[type="checkbox"]:checked+span:before {
     border-top: 1px solid #ddd;
 }
 
-.navbar-toggle,
 .close-nav,
 .mobile-language {
     @media screen and (min-width: 768px) {
@@ -636,4 +638,46 @@ input[type="checkbox"]:checked+span:before {
     background-color: #fff;
     color: #333;
     z-index: 30;
+
+    &:before {
+        content: "";
+        position: absolute;
+        right: calc(100% - 5px);
+        top: 25px;
+        transform: rotate(45deg);
+        width: 10px;
+        height: 10px;
+        border: 1px solid #ccc;
+        border-top: none;
+        border-right: none;
+        background-color: #f3f3f3;
+        z-index: 1;
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+}
+
+
+// site off
+.site-off {
+    border: 1px solid #f5c6cb;
+    background-color: #f8d7da;
+    .error-text {
+        background-color: transparent;
+        border: none;
+        display: block;
+        padding: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__blue {
+
+        background-color: #c8dffa;
+        border-color: #9bc8fa;
+        .error-text {
+            color: #0053c0;
+        }
+    }
 }

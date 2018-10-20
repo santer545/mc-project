@@ -5,7 +5,7 @@ $(function() {
     carousels();
     dropdown();
     maskes();
-    showCallback();
+    //    showCallback();
     motivationCarousel();
     videoModalShow();
     randomId();
@@ -14,12 +14,17 @@ $(function() {
     accordion();
     showTooltip();
     menuShowHide();
+    promoPopup();
+    promoEnable();
+    androidDetected();
 })
 
 $(window).resize(function() {
     motivationCarousel();
     accordion();
 })
+
+$(window).on('resize', carousels);
 
 
 // выпадающее меню
@@ -34,7 +39,7 @@ function dropdown() {
 
 // Карусели на главной странице
 function carousels() {
-    $('.js-banner').slick({
+    $('.js-banner').not('.slick-initialized').slick({
         arrows: false,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -49,7 +54,7 @@ function carousels() {
         }]
     });
 
-    $('.js-programms').slick({
+    $('.js-programms').not('.slick-initialized').slick({
         slidesToShow: 3,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -72,7 +77,7 @@ function carousels() {
         ]
     });
 
-    $('.js-reviews').slick({
+    $('.js-reviews').not('.slick-initialized').slick({
         slidesToShow: 2,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -85,12 +90,42 @@ function carousels() {
             }
         }]
     });
+    $('.js-pressa').not('.slick-initialized').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        speed: 800,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        responsive: [{
+                breakpoint: 1060,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            }
+        ]
+    });
 }
+
 
 // карусель Почему мы
 function motivationCarousel() {
     if ($(window).width() < 991) {
-        $('.js-motivation').slick({
+        $('.js-motivation').not('.slick-initialized').slick({
             arrows: false,
             slidesToShow: 1,
             dots: true
@@ -173,15 +208,15 @@ function customScr() {
 }
 
 // отобразить колбек
-function showCallback() {
-    $('.js-callback-close').on('click', function() {
-        $('.js-callback').removeClass('open');
-    })
+// function showCallback() {
+//     $('.js-callback-close').on('click', function() {
+//         $('.js-callback').removeClass('open');
+//     })
 
-    $('.js-callback-show').on('click', function() {
-        $('.js-callback').addClass('open');
-    })
-}
+//     $('.js-callback-show').on('click', function() {
+//         $('.js-callback').addClass('open');
+//     })
+// }
 
 // проверка браузера
 function get_name_browser() {
@@ -369,7 +404,7 @@ function showTooltip() {
 
     $('.js-show-tooltip').hover(
         function(e) {
-            console.log(e.currentTarget);
+
             $(this).closest('.form-group').find('.js-tooltip').removeClass('hidden');
         },
         function() {
@@ -398,3 +433,78 @@ function menuShowHide() {
     })
 }
 
+
+// промо
+
+function promoPopup() {
+    setTimeout(function() {
+        $('#promocodePopup').modal('show');
+    }, 900000);
+}
+
+function promoEnable() {
+    $('#promo-checkbox').change(function() {
+        if ($(this).is(":checked")) {
+            $('.js-calc-promocode').removeAttr('disabled');
+        } else {
+            $('.js-calc-promocode').attr('disabled', 'disabled');
+        }
+    });
+}
+
+function androidDetected() {
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+    if (isMobile.Android()) {
+        $('#android').modal('show');
+    }
+}
+
+
+SVG.on(document, 'DOMContentLoaded', function() {
+
+    // Mummy
+
+    var leg = SVG.select('.left-leg');
+    leg.delay(1000).animate().rotate(-45).after(function(situation) {
+        this.animate().rotate(65).reverse().loop(12);
+    });
+
+    var rLeg = SVG.select('#animation_x5F_foot_x5F_R');
+    rLeg.delay(2000).animate().rotate(25).after(function(situation) {
+        this.animate().rotate(-85).reverse().loop(12);
+    });
+
+    var head = SVG.select('#animation_x5F_head');
+    head.animate('=').delay(14000).rotate(-10).after(function(situation) {
+        this.animate(400).rotate(10).reverse().loop(10).delay(1000).translate(0, 90).rotate(-65);
+    });
+
+    var heand_1 = SVG.select('#animation_x5F_hand_x5F_L');
+    heand_1.delay(16500).animate(100).rotate(-10).after(function(situation) {
+        this.animate(100).translate(0, 90);
+    });
+
+    // Franky
+
+    
+});

@@ -532,6 +532,9 @@ html.lb-disable-scrolling {
 
 
 
+
+
+
 /* Slider */
 
 .slick-slider {
@@ -634,6 +637,9 @@ html.lb-disable-scrolling {
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+
+
 
 
 
@@ -836,6 +842,9 @@ html.lb-disable-scrolling {
     visibility: hidden !important;
     display: block !important;
 }
+
+
+
 
 
 
@@ -1111,6 +1120,9 @@ textarea.form-control {
 
 
 
+
+
+
 /*
  * Slider for Bootstrap
  *
@@ -1135,6 +1147,9 @@ $backcolor: #f7f7f7) {
     endColorstr='#{$colorend}',
     GradientType=0);
 }
+
+
+
 
 
 
@@ -1409,7 +1424,7 @@ $baseBorderRadius: 4px;
 
     &-right,
     &-left {
-        padding: 0 20px;
+        padding: 0 15px;
     }
 
     &-right {
@@ -1425,6 +1440,10 @@ $baseBorderRadius: 4px;
             width: 60px;
             height: 60px;
             border-radius: 50%;
+        }
+
+        .regime-labe {
+            margin-right: -20px;
         }
     }
 
@@ -1452,7 +1471,7 @@ $baseBorderRadius: 4px;
 
     &-heading {
         position: relative;
-        padding: 10px 60px 10px 20px;
+        padding: 10px 110px 10px 15px;
         font: 14px / 1.2 'HelveticaNeueCyr Medium', Arial, sans-serif;
         background-color: #f1f1f1;
         border-radius: 5px 5px 0 0;
@@ -1666,14 +1685,14 @@ $baseBorderRadius: 4px;
     padding: 0;
     height: 44px;
     width: 39px;
-    background: #3068a9 url(../images/test/login.svg) no-repeat 8px 8px;
+    background: #3068a9 url(../images/login.svg) no-repeat 8px 8px;
     background-size: 16px;
     background-position: 10px 12px;
     border-radius: 3px;
 
     @media screen and (max-width: 767px) {
         height: 36px;
-        background-position: 10px 9px;
+        background-position: 9px 8px;
     }
 }
 
@@ -1702,18 +1721,20 @@ $baseBorderRadius: 4px;
     font: 18px 'HelveticaNeueCyr Roman', Arial, sans-serif;
     border: 0;
     border-radius: 3px;
-    padding: 12px 25px;
+    padding: 12px 15px;
+    margin-right: 10px;
 
     @media screen and (max-width: 991px) {
         padding: 10px;
         font-size: 17px;
+        margin-right: 0;
     }
 
     @media screen and (max-width: 767px) {
         height: 36px;
         width: 39px;
         font-size: 0;
-        background-image: url(../images/test/card.svg);
+        background-image: url(../images/card.svg);
         background-repeat: no-repeat;
         background-color: #4281ca;
         background-size: 30px;
@@ -1816,23 +1837,24 @@ $baseBorderRadius: 4px;
     ul,
     .custom-ul {
         margin-bottom: 20px;
-        li {
-            position: relative;
-            padding-left: 26px;
-            &:not(:last-child) {
-                margin-bottom: 14px;
-            }
+    }
 
-            &:before {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 8px;
-                width: 6px;
-                height: 6px;
-                border-radius: 50%;
-                background-color: #0059b7;
-            }
+    li {
+        position: relative;
+        padding-left: 26px;
+        &:not(:last-child) {
+            margin-bottom: 14px;
+        }
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #0059b7;
         }
     }
 
@@ -1889,7 +1911,7 @@ $baseBorderRadius: 4px;
     &-sidebar {
         flex: 0 0 25%;
         max-width: 25%;
-        
+
         @media screen and (max-width: 1199px) {
             flex: 0 0 32%;
             max-width: 32%;
@@ -2114,13 +2136,31 @@ table {
         background-color: #dce0ef;
         transition: all .3s;
 
+        &.active {
+            color: #fff;
+            background-color: #0083ca;
+        }
+
         a {
             text-decoration: none;
+            color: #7c8295;
+            transition: color 0.3s;
         }
 
         &.pagination-step {
             width: auto;
             padding: 0 10px;
+
+            img {
+                margin: 0 10px;
+            }
+        }
+
+        &:hover {
+            background-color: #0083ca;
+            a {
+                color: #fff;
+            }
         }
     }
 }
@@ -2129,6 +2169,7 @@ table {
 .share {
 
     &-link {
+        position: relative;
         background-color: #fff;
         display: block;
         text-decoration: none;
@@ -2171,7 +2212,24 @@ table {
     &-section {
         color: #7c8295;
         font: 12px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+
+        img {
+            margin-right: 5px;
+        }
     }
+}
+
+.news-labe {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    border-radius: 0 20px 20px 0;
+    background-color: #ff524e;
+    font: 12px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+    text-align: center;
+    padding: 10px 15px;
+    z-index: 1;
+    color: #fff;
 }
 
 // shrare detail
@@ -2184,6 +2242,31 @@ table {
         border: 1px solid #dbdee9;
         border-bottom: 5px solid #0054bc;
         font-family: 'HelveticaNeueCyr Roman', Arial, sans-serif;
+
+        &-text {
+            margin-bottom: 20px;
+        }
+
+        &-item {
+            padding: 15px;
+            background-color: #eceff9;
+            border: 1px solid #dbdee9;
+            border-radius: 5px;
+            font-size: 14px;
+            margin: 0 5px;
+            color: #0054bc;
+            transition: all .3s;
+            text-decoration: none;
+
+            &:hover {
+                border: 1px solid #0054bc;
+                color: #0054bc;
+            }
+
+            span {
+                display: block;
+            }
+        }
     }
 }
 
@@ -2213,6 +2296,11 @@ table {
     @media screen and (max-width: 991px) {
         flex: 0 0 50%;
         max-width: 50%;
+    }
+
+    @media screen and (max-width: 767px) {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
 
@@ -2959,6 +3047,10 @@ table {
             width: 100px;
             top: 75%;
         }
+
+        @media screen and (max-width: 420px) {
+            top: 93%;
+        }
     }
 
     &-holder {
@@ -3541,10 +3633,10 @@ table {
 
 
 // city page 
-
 .content-city {
     padding-top: 60px;
 }
+
 // Баннер
 .banner {
 
@@ -3636,7 +3728,6 @@ table {
     }
 
     &-holder {
-        padding: 43px 0 0;
         display: flex;
         flex-wrap: wrap;
 
@@ -3650,8 +3741,8 @@ table {
     }
 
     &-column {
-        flex: 0 0 20%;
-        padding-right: 10px;
+        display: flex;
+        flex-wrap: wrap;
 
         @media screen and (max-width: 767px) {
             display: flex;
@@ -3662,12 +3753,22 @@ table {
         }
 
         li {
-            margin-bottom: 10px;
+            margin: 0 5px 10px;
             padding: 10px;
             background-color: #eceff9;
             border: 1px solid #dbdee9;
             border-radius: 5px;
             transition: border .3s;
+
+            &:before {
+                display: none;
+            }
+
+            svg {
+                fill: #0056b8;
+                margin-right: 5px;
+                width: 10px;
+            }
 
             @media screen and (max-width: 767px) {
                 flex: 0 0 33.3%;
@@ -3703,9 +3804,7 @@ table {
 
 .banner-city,
 .sticky-calc {
-    position: relative;
-
-    // Калькулятор
+    position: relative; // Калькулятор
     .calculator {
         position: absolute;
         bottom: 0;
@@ -3772,13 +3871,13 @@ table {
         }
 
         &-left {
-            flex: 0 0 60%;
-            border-right: 1px solid #eaeaea;
-            max-width: 60%;
+            flex: 0 0 50%;
+            border-right: none;
+            max-width: 50%;
 
             @media screen and (max-width: 1024px) {
-                flex: 0 0 55%;
-                max-width: 55%;
+                flex: 0 0 50%;
+                max-width: 50%;
             }
 
             @media screen and (max-width: 767px) {
@@ -3788,17 +3887,21 @@ table {
         }
 
         &-right {
-            flex: 0 0 40%;
-            max-width: 40%;
-            padding: 30px 30px 0;
+            flex: 0 0 30%;
+            max-width: 30%;
+            padding: 20px 20px 0;
             @media screen and (max-width: 1024px) {
-                flex: 0 0 45%;
-                max-width: 45%;
+                flex: 0 0 30%;
+                max-width: 30%;
             }
 
             @media screen and (max-width: 767px) {
                 max-width: none;
                 padding: 0 15px 15px;
+            }
+
+            .slider-money--label {
+                font-size: 21px;
             }
         }
 
@@ -3934,14 +4037,11 @@ table {
         background-color: transparent;
     }
     .calculator-left {
-        flex: 0 0 45%;
         padding: 20px 30px;
     }
     .calculator-right {
         background-color: #fff;
-        padding: 30px;
         border: 1px solid #ddd;
-        flex: 0 0 55%;
     }
 }
 

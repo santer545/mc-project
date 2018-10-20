@@ -120,3 +120,17 @@ function bonusCarousel() {
         ]
     });
 }
+
+SVG.on(document, 'DOMContentLoaded', function() {
+    // Franky
+
+    var frank_hand = SVG.select('.franky-hand');
+    var brain_top = SVG.select('.brain-top');
+    var brain_middle = SVG.select('.brain-middle');
+
+    frank_hand.delay(4000).animate(2000).rotate(35).reverse(true).loop();
+
+    brain_middle.delay(2000).animate().style('opacity', 1);
+    brain_top.delay(2500).animate().style('opacity', 1);
+
+});

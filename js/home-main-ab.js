@@ -22,16 +22,22 @@ $(window).resize(function() {
     dropdown();
 })
 
+$(window).resize(function() {
+    motivationCarousel();
+    accordion();
+})
 
+$(window).on('resize', carousels);
 
 
 
 // Карусели на главной странице
 function carousels() {
-    $('.js-banner').slick({
+    $('.js-banner').not('.slick-initialized').slick({
         arrows: false,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
+        lazyLoad: 'progressive',
         responsive: [{
             breakpoint: 767,
             settings: {
@@ -42,7 +48,7 @@ function carousels() {
         }]
     });
 
-    $('.js-programms').slick({
+    $('.js-programms').not('.slick-initialized').slick({
         slidesToShow: 3,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -65,7 +71,7 @@ function carousels() {
         ]
     });
 
-    $('.js-reviews').slick({
+    $('.js-reviews').not('.slick-initialized').slick({
         slidesToShow: 2,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -80,9 +86,10 @@ function carousels() {
     });
 }
 
+// карусель Почему мы
 function motivationCarousel() {
-    if ($(window).width() < 768) {
-        $('.js-motivation').slick({
+    if ($(window).width() < 991) {
+        $('.js-motivation').not('.slick-initialized').slick({
             arrows: false,
             slidesToShow: 1,
             dots: true
@@ -93,6 +100,7 @@ function motivationCarousel() {
         }
     }
 }
+
 
 // визуализация калькулятора
 function calculatorMain() {
@@ -148,6 +156,7 @@ function calculatorMain() {
 
 }
 
+
 function dropdown() {
     if ($(window).width() < 768) {
         $('.js-hover-link').addClass('js-click').removeClass('js-hover');
@@ -166,6 +175,12 @@ function dropdown() {
             $(this).find('.triangle').removeClass('active');
         })
     }
+
+    $('.js-parent').on('click', function(e) {
+        $(this).toggleClass('active');
+        $(this).find('.triangle').toggleClass('active');
+        $(this).find('.js-dropdown').toggleClass('active');
+    })
 }
 
 
