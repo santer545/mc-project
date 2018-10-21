@@ -504,6 +504,9 @@ SVG.on(document, 'DOMContentLoaded', function() {
         this.animate(100).translate(0, 90);
     });
 
+    var mummy = SVG.select('#mummy');
+    mummy.delay(19000).animate().opacity(0);
+
     // Franky
 
     

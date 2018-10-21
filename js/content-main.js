@@ -274,5 +274,63 @@ SVG.on(document, 'DOMContentLoaded', function() {
     monstr_l_leg.delay(300).animate().rotate(55).reverse().loop();
 
     var monstr = SVG.select('#monster');
-    monstr.animate(14000).translate(-500,0).animate().rotate(-80).delay(200).animate().style('opacity', 0);
+    monstr.animate(14000).translate(-500,0).animate().rotate(-80).delay(200).animate().opacity(0);
+
+
+    // pumpkin
+
+    var pump = SVG.select('.pumpkin-pers');
+    pump.delay(5000).animate(2000).rotate(10).after(function(finish) {
+        this.animate(2000).rotate(-10).reverse().loop(3).delay(500).translate(0, 400).delay(200).translate(400, 400).delay(200).translate(400, 0).delay(1700).animate().opacity(0);
+    });
+
+
+    // zombie
+
+    var zombie_hand = SVG.select('.zombie-hand');
+    zombie_hand.delay(3000).animate().rotate(100);
+
+    var zombie_r_leg = SVG.select('.zombie-r-leg');
+    zombie_r_leg.delay(4000).animate(2000).rotate(-100).after(function(finish) {
+        this.animate(2000).rotate(-80).loop(6);
+    });
+
+    var zombie_l_leg = SVG.select('.zombie-l-leg');
+    zombie_l_leg.delay(5000).animate(2000).rotate(-12).after(function(finish) {
+        this.animate(2000).rotate(-18).loop(6);
+    });
+
+    var zombie = SVG.select('#zombie');
+    zombie.delay(6000).animate(10000).translate(-100, 0).delay(14000).animate().opacity(0);
+
+    var tooth_1 = SVG.select('.tooth-1');
+    tooth_1.delay(16000).animate().style('fill:#000;');
+
+    var tooth_2 = SVG.select('.tooth-2');
+    tooth_2.delay(17000).animate().style('fill:#000;').animate().rotate(4).after(function(finish) {
+        this.animate().rotate(-4).delay(500).animate().opacity(0);
+    })
+
+
+    // death
+
+    var death_hand = SVG.select('.death-right-hand');
+    death_hand.delay(2000).animate().rotate(20).loop(7);
+
+    var death = SVG.select('#death');
+    death.delay(10000).animate().opacity(0).delay(500).style('display','none');
+
+
+    // vampire
+
+    var bat_vamp = SVG.select('#bat-vamp');
+    bat_vamp.delay(6000).animate(200).scale(0, 0).opacity(0);
+
+    var vamp_hand = SVG.select('.vamp-hand');
+    vamp_hand.animate().rotate(10).after(function(finish) {
+        this.animate().rotate(-10).reverse().loop(10);
+    })
+
+    var vamp = SVG.select('#vampire');
+    vamp.delay(13000).animate().opacity(0).style('display', 'none');
 });
