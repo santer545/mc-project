@@ -13,7 +13,7 @@ $(function() {
 function playRegistrationVideo() {
     var video = document.getElementById('js-registration-video');
     $('.js-registration-video-holder').click(function() {
-    	$('.registration-video').addClass('active');
+        $('.registration-video').addClass('active');
         video.play();
     })
 }
@@ -29,7 +29,7 @@ function showCallback() {
 }
 
 function customSelect() {
-	$('.selectpicker, select').selectpicker({
+    $('.selectpicker, select').selectpicker({
         actionsBox: false,
         dropupAuto: false
     });
@@ -202,19 +202,3 @@ function paswwordChecker() {
     }
 
 }
-
-
-SVG.on(document, 'DOMContentLoaded', function() {
-    // Franky
-
-    var ghost = SVG.select('#ghost');
-    ghost.delay(4000).animate(2000).translate(140,40).translate(120,40).translate(110,40).translate(100,20).translate(0,10).translate(0,0).translate(140,-40).translate(0,-40).loop(10);
-
-    var tongue = SVG.select('.tongue');
-    var tongue_shadow = SVG.select('.tongue-shadow');
-    tongue.delay(22000).animate().style('opacity', 1);
-    tongue_shadow.delay(22000).animate().style('opacity', 1);
-    // brain_middle.delay(2000).animate().style('opacity', 1);
-    // brain_top.delay(2500).animate().style('opacity', 1);
-
-});

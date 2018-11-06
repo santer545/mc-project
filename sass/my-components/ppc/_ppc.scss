@@ -1,0 +1,83 @@
+.table-responsive {
+    min-height: .01%;
+    overflow-x: auto;
+
+    table {
+        width: 100%;
+        max-width: 100%;
+        border-collapse: collapse;
+    }
+}
+
+.table-ppc {
+	table {
+		background: rgba(1, 207, 142, 1);
+        background: -moz-linear-gradient(left, rgba(1, 207, 142, 1) 0%, rgba(15, 173, 173, 1) 51%, rgba(31, 145, 202, 1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(1, 207, 142, 1)), color-stop(51%, rgba(15, 173, 173, 1)), color-stop(100%, rgba(31, 145, 202, 1)));
+        background: -webkit-linear-gradient(left, rgba(1, 207, 142, 1) 0%, rgba(15, 173, 173, 1) 51%, rgba(31, 145, 202, 1) 100%);
+        background: -o-linear-gradient(left, rgba(1, 207, 142, 1) 0%, rgba(15, 173, 173, 1) 51%, rgba(31, 145, 202, 1) 100%);
+        background: -ms-linear-gradient(left, rgba(1, 207, 142, 1) 0%, rgba(15, 173, 173, 1) 51%, rgba(31, 145, 202, 1) 100%);
+        background: linear-gradient(to right, rgba(1, 207, 142, 1) 0%, rgba(15, 173, 173, 1) 51%, rgba(31, 145, 202, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#01cf8e', endColorstr='#1f91ca', GradientType=1);
+	}
+    tr:not(:first-child) {
+        background: #fff;
+    }
+
+    th {
+        padding: 16px 8px 30px;
+        color: #fff;
+        font: normal 16px / 16px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+        text-align: left;
+        vertical-align: top;
+        width: 12.5%;
+        min-width: 12.5%;
+
+        @media screen and (max-width: 991px) {
+        	font-size: 14px;
+        	min-width: 120px;
+        }
+
+        &:not(:first-child) {
+        	border-left: 2px solid #fff;
+        }
+
+        &:first-child {
+        	border-radius: 4px 0 0 0;
+        }
+
+        &:last-child {
+        	border-radius: 0 4px 0 0;
+        }
+    }
+
+    td {
+    	padding: 16px 8px 30px;
+        font: 14px / 14px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+        text-align: left;
+        vertical-align: middle;
+        color: #0083CB;
+        border: 2px solid #E2E2E2;
+        border-top: 1px solid #E2E2E2;
+        border-bottom: 1px solid #E2E2E2;
+
+        @media screen and (max-width: 991px) {
+        	font-size: 12px;
+        }
+
+        &:first-child {
+        	border-left: none;
+        }
+
+        &:last-child {
+        	border-right: none;
+        }
+    }
+}
+
+.mycredit-row {
+	td {
+		font: 16px / 19px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+		color: #0055B8;
+	}
+}

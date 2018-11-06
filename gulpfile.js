@@ -49,6 +49,20 @@ gulp.task('mainStylesAB', function() {
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
+// Styles
+gulp.task('contextStyles', function() {
+    return gulp.src('sass/context.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
 gulp.task('mainStylesABMobile', function() {
     return gulp.src('sass/main-page-ab-mobile.scss')
         .pipe(sourcemaps.init())
@@ -206,6 +220,23 @@ gulp.task('critical-login', function() {
     });
 });
 
+gulp.task('critical-main-ab', function() {
+    critical.generate({
+        inline: true,
+        extract: true,
+        css: ['dist/css/main-page-ab.min.css'],
+        base: './dist',
+        src: './index.ab.html',
+        ignore: ['@font-face', /url\(/],
+        dest: 'dist/critical-ab.html',
+        dimensions: [
+        {
+            width: 767,
+        },
+        ]
+    });
+});
+
 
 gulp.task('rigger', function() {
     gulp.src('template/*.html')
@@ -250,9 +281,9 @@ gulp.task('homeScripts', function() {
             sourceDir + '/device.min.js',
             
             sourceDir + '/main-validate.js',
-            sourceDir + '/svg.min.js',
             sourceDir + '/home-main.js',
             sourceDir + '/functions.js',
+            sourceDir + '/uploadFiles.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
             sourceDir + '/fingerprint2.js',
@@ -346,21 +377,25 @@ gulp.task('homeScriptsAB', function() {
 
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/jquery.mousewheel.js',
+            sourceDir + '/jquery.jscrollpane.min.js',
             sourceDir + '/slick.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/modal.js',
             sourceDir + '/jquery.maskedinput.min.js',
-            sourceDir + '/jquery.mousewheel.js',
-            sourceDir + '/jquery.jscrollpane.min.js',
-            //sourceDir + '/device.min.js',
-            //sourceDir + '/googleApi.js',
-            //sourceDir + '/forWidget.js',
-            //sourceDir + '/fingerprint2.js',
+            sourceDir + '/device.min.js',
+            
             sourceDir + '/main-validate.js',
             sourceDir + '/home-main-ab.js',
-            //sourceDir + '/functions.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/uploadFiles.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/fingerprint2.js',
             sourceDir + '/jquery.lazy.js',
-            //sourceDir + '/client.min.js'
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js',
+            sourceDir + '/iovation.js',
 
         ])
 
@@ -409,7 +444,7 @@ gulp.task('registrationScripts', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('mainStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles', 'Lending1_Styles', 'Credit_history');
+    gulp.start('mainStyles', 'contextStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles', 'Lending1_Styles', 'Credit_history');
 });
 
 gulp.task('server', function() {
@@ -423,6 +458,7 @@ gulp.task('watch', function() {
     gulp.watch('sass/**/*.scss', ['mainStylesAB', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['mainStylesABMobile', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['mainStyles', browserSync.reload]);
+    gulp.watch('sass/**/*.scss', ['contextStyles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['mainMobileStyles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['registrationStyles', browserSync.reload]);
     gulp.watch('sass/**/*.scss', ['registrationMobileStyles', browserSync.reload]);

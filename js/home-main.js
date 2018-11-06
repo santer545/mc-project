@@ -16,7 +16,9 @@ $(function() {
     menuShowHide();
     promoPopup();
     promoEnable();
-    androidDetected();
+    //androidDetected();
+    domRangeCreate();
+    slideChange();
 })
 
 $(window).resize(function() {
@@ -480,34 +482,41 @@ function androidDetected() {
 }
 
 
-SVG.on(document, 'DOMContentLoaded', function() {
 
-    // Mummy
 
-    var leg = SVG.select('.left-leg');
-    leg.delay(1000).animate().rotate(-45).after(function(situation) {
-        this.animate().rotate(65).reverse().loop(12);
+//  Copy promocod
+function domRangeCreate() {
+    $('.js-copy').on('click', function() {
+        var target = $(this).closest('.js-copy-area').find('.js-copy-text').get(0);
+        var rng, sel;
+        if (document.createRange) {
+            rng = document.createRange();
+            rng.selectNode(target)
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(rng);
+            document.execCommand("copy");
+        } else {
+            var rng = document.body.createTextRange();
+            rng.moveToElementText(target);
+            rng.select();
+        }
+    })
+}
+
+// detect slick slide changes
+
+function slideChange() {
+    // On before slide change
+    $('.js-banner').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        nextSlide = nextSlide + 1;
+        var el = $('.slick-slide').eq(nextSlide);
+        var element = el.children().children();
+        
+        if(element.hasClass('js-student-banner')) {
+            $('.calculator-labe').addClass('hidden');
+        } else {
+            $('.calculator-labe').removeClass('hidden');
+        }
     });
-
-    var rLeg = SVG.select('#animation_x5F_foot_x5F_R');
-    rLeg.delay(2000).animate().rotate(25).after(function(situation) {
-        this.animate().rotate(-85).reverse().loop(12);
-    });
-
-    var head = SVG.select('#animation_x5F_head');
-    head.animate('=').delay(14000).rotate(-10).after(function(situation) {
-        this.animate(400).rotate(10).reverse().loop(10).delay(1000).translate(0, 90).rotate(-65);
-    });
-
-    var heand_1 = SVG.select('#animation_x5F_hand_x5F_L');
-    heand_1.delay(16500).animate(100).rotate(-10).after(function(situation) {
-        this.animate(100).translate(0, 90);
-    });
-
-    var mummy = SVG.select('#mummy');
-    mummy.delay(19000).animate().opacity(0);
-
-    // Franky
-
-    
-});
+}

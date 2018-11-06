@@ -118,696 +118,207 @@
                                 <div class="calculator-labe">
                                     <img src="/images/0.svg" alt="">
                                 </div>
-                                <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                                <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
-                            </div>
-                            <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
-                                <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
-                                <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
-                                <div class="calculator-row ">
-                                    <div class="calculator-left ">
-                                        <div class="slider-money">
-                                            <div class="slider-money-share">Первый займ - 0%</div>
-                                            <div class="slider-holder d-f align-center justify-between">
-                                                <span class="nameSlider hidden">large_main</span>
-                                                <span class="isPlay hidden" id="isPlay_large_main"></span>
-                                                <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
-                                                <span class="hidden" id="ChildProductsNormal_large_main"></span>
-                                                <label for="money-value_large" class="slider-money--label">Сумма</label>
-                                                <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
-                                                <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
-                                                <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
-                                                <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
-                                                <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
-                                                <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
-                                                <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
-                                                <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
-                                                <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
-                                                <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
-                                                <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
-                                                <div class="slider-control--wr">
-                                                    <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                                    <label for="money-value_large_main">грн</label>
-                                                </div>
-                                            </div>
-                                            <div class="slider-wrapper">
-                                                <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
-                                            </div>
-                                        </div>
-                                        <div class="slider-days">
-                                            <div class="slider-holder d-f align-center justify-between">
-                                                <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
-                                                <div class="slider-control--wr">
-                                                    <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                                    <label><span id="daySelectDay_large_main">дней</span></label>
-                                                </div>
-                                            </div>
-                                            <div class="slider-wrapper">
-                                                <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="calculator-right">
-                                        <div class="slider-money--label">Информация о кредите:</div>
-                                        <div class="calculator-start">
-                                            <div class="calculator-holder d-f">
-                                                <div class="calculator-col">Вы берете:</div>
-                                                <div class="calculator-col brand-color">
-                                                    <span id="span_amount_large_main"></span> 1000 грн
-                                                </div>
-                                            </div>
-                                            <div class="calculator-holder m-b d-f">
-                                                <div class="calculator-col">Ваша комиссия:</div>
-                                                <div class="calculator-col brand-color">
-                                                    20
-                                                    <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
-                                                </div>
-                                            </div>
-                                            <div class="calculator-holder d-f">
-                                                <div class="calculator-col">К возврату:</div>
-                                                <div class="calculator-col inverse-color">
-                                                    <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="calculator-holder calculator-holder__wide d-f">
-                                            <div class="calculator-col">До:</div>
-                                            <div class="calculator-col inverse-color">
-                                                <span class="loan-days" id="span_amount_all_end_large_main"></span>
-                                            </div>
-                                        </div>
-                                        <div class="calculator-btn">
-                                            <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
-                                                <span>Получить деньги</span><span class="icon-arrow-animate"></span>
-                                            </button>
-                                        </div>
-                                        <div class="calculator-img d-f align-center justify-between">
-                                            <img src="images/calculator/visa-calc.png" alt="">
-                                            <img src="images/calculator/master-calc.png" alt="">
-                                            <img src="images/calculator/privat-calc.png" alt="">
-                                            <img src="images/calculator/pci_calc.png" alt="">
-                                        </div>
-                                    </div>
+                                    <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+                                    <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="blog-social">
-                            <div class="blog-social-text">
-                                Ищите уникальные промокоды на скидку в социальных сетях
+                                <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
+                                    <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
+                                    <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
+                                    <div class="calculator-row ">
+                                        <div class="calculator-left ">
+                                            <div class="slider-money">
+                                                <div class="slider-money-share">Первый займ - 0%</div>
+                                                <div class="slider-holder d-f align-center justify-between">
+                                                    <span class="nameSlider hidden">large_main</span>
+                                                    <span class="isPlay hidden" id="isPlay_large_main"></span>
+                                                    <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
+                                                    <span class="hidden" id="ChildProductsNormal_large_main"></span>
+                                                    <label for="money-value_large" class="slider-money--label">Сумма</label>
+                                                    <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
+                                                    <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
+                                                    <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
+                                                    <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
+                                                    <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
+                                                    <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
+                                                    <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
+                                                    <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
+                                                    <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
+                                                    <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
+                                                    <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
+                                                    <div class="slider-control--wr">
+                                                        <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                                        <label for="money-value_large_main">грн</label>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
+                                                </div>
+                                            </div>
+                                            <div class="slider-days">
+                                                <div class="slider-holder d-f align-center justify-between">
+                                                    <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
+                                                    <div class="slider-control--wr">
+                                                        <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                                        <label><span id="daySelectDay_large_main">дней</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-right">
+                                            <div class="slider-money--label">Информация о кредите:</div>
+                                            <div class="calculator-start">
+                                                <div class="calculator-holder d-f">
+                                                    <div class="calculator-col">Вы берете:</div>
+                                                    <div class="calculator-col brand-color">
+                                                        <span id="span_amount_large_main"></span> 1000 грн
+                                                    </div>
+                                                </div>
+                                                <div class="calculator-holder m-b d-f">
+                                                    <div class="calculator-col">Ваша комиссия:</div>
+                                                    <div class="calculator-col brand-color">
+                                                        20
+                                                        <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator-holder d-f">
+                                                    <div class="calculator-col">К возврату:</div>
+                                                    <div class="calculator-col inverse-color">
+                                                        <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator-holder calculator-holder__wide d-f">
+                                                <div class="calculator-col">До:</div>
+                                                <div class="calculator-col inverse-color">
+                                                    <span class="loan-days" id="span_amount_all_end_large_main"></span>
+                                                </div>
+                                            </div>
+                                            <div class="calculator-btn">
+                                                <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
+                                                    <span>Получить деньги</span><span class="icon-arrow-animate"></span>
+                                                </button>
+                                            </div>
+                                            <div class="calculator-img d-f align-center justify-between">
+                                                <img src="images/calculator/visa-calc.png" alt="">
+                                                <img src="images/calculator/master-calc.png" alt="">
+                                                <img src="images/calculator/privat-calc.png" alt="">
+                                                <img src="images/calculator/pci_calc.png" alt="">
+                                        </div>
+                                            </div>
+                                        </div>
+                                </form>
                             </div>
-                            <div class="blog-social-wrapper">
-                                <div class="blog-social-item">
-                                    <a href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
+                            <div class="blog-social">
+                                <div class="blog-social-text">
+                                    Ищите уникальные промокоды на скидку в социальных сетях
+                                </div>
+                                <div class="blog-social-wrapper">
+                                    <div class="blog-social-item">
+                                        <a href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
                                         <img src="assets/images/telegram.svg" alt="">
                                         <span>Telegram</span>
                                     </a>
-                                </div>
-                                <div class="blog-social-item">
-                                    <a href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" rel="noopener">
+                                    </div>
+                                    <div class="blog-social-item">
+                                        <a href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" rel="noopener">
                                         <img src="assets/images/facebook.svg" alt="">
                                         <span>Facebook</span>
                                     </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="content-holder">
-                        <div class="content-inner">
-                            <div class="content">
-                                <div class="heading-h2">Что такое личный кабинет и как мне зарегистрироваться в нем?</div>
-                                <div class="iframe-relative js-frame">
-                                    <div class="zombie">
-                                        <svg version="1.1" id="zombie" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     viewBox="0 0 170 286" style="enable-background:new 0 0 170 286;" xml:space="preserve">
-<style type="text/css">
-    .st0{fill:#36210D;}
-    .st1{fill:url(#SVGID_1_);}
-    .st2{fill:#D1D1D1;}
-    .st3{fill:url(#SVGID_2_);}
-    .st4{fill:url(#SVGID_3_);}
-    .st5{fill:url(#SVGID_4_);}
-    .st6{fill:url(#SVGID_5_);}
-    .st7{fill:#4E6647;}
-    .st8{fill:url(#SVGID_6_);}
-    .st9{fill:#262626;}
-    .st10{fill:#363636;}
-    .st11{fill:#2B2B2B;}
-    .st12{fill:#66855C;}
-    .st13{fill:#42573C;}
-    .st14{fill:#524335;}
-    .st15{fill:url(#SVGID_7_);}
-    .st16{fill:#F5A06F;}
-    .st17{fill:#6B1310;}
-    .st18{fill:#EA2E2D;}
-    .st19{fill:#FFE91F;}
-    .st20{fill:url(#SVGID_8_);}
-    .st21{fill:url(#SVGID_9_);}
-    .st22{fill:url(#SVGID_10_);}
-    .st23{fill:url(#SVGID_11_);}
-    .st24{fill:url(#SVGID_12_);}
-    .st25{fill:#FFFFFF;}
-    .st26{fill:url(#SVGID_13_);}
-    .st27{fill:url(#SVGID_14_);}
-    .st28{fill:#B2B2B2;}
-    .st29{fill:url(#SVGID_15_);}
-    .st30{fill:url(#SVGID_16_);}
-    .st31{fill:url(#SVGID_17_);}
-    .st32{fill:url(#SVGID_18_);}
-    .st33{fill:#4B0D0B;}
-    .st34{fill:#3A737D;}
-    .st35{fill:#FFED4C;}
-    .st36{fill:#618F97;}
-    .st37{fill:#5B100E;}
-    .st38{fill:#D9D9D9;}
-    .st39{fill:#D0885E;}
-    .st40{fill:#D9C61A;}
-    .st41{fill:url(#SVGID_19_);}
-    .st42{fill:#1C1C1C;}
-    .st43{fill:#31402C;}
-    .st44{fill:url(#SVGID_20_);}
-    .st45{fill:url(#SVGID_21_);}
-    .st46{fill:url(#SVGID_22_);}
-    .st47{fill:url(#SVGID_23_);}
-    .st48{fill:url(#SVGID_24_);}
-    .st49{fill:url(#SVGID_25_);}
-    .st50{fill:url(#SVGID_26_);}
-    .st51{fill:#222D1F;}
-    .st52{fill:url(#SVGID_27_);}
-    .st53{fill:#1C2419;}
-    .st54{fill:url(#SVGID_28_);}
-    .st55{fill:#526B4A;}
-</style>
-<g id="animation_x5F_hand_x5F_R_1_">
-    <path class="st0" d="M46.6,181.6c1.1-1.3,3.5-2.6,4-4.3c0.4-1.4-0.4-1.8,1.2-2.7c0.9-0.5,2.4-0.9,2.5-2.2c-0.8-0.2-2.5-0.5-3.3-0.3
-        c2.3-1.9,3.9-4.2,3-7.3c2.1,0.3,4.4,3.5,4.7,5.3c0.3,2.2,0,5.2-1.3,7c-1.2,1.6-6.8,5.8-9.1,4.5L46.6,181.6z"/>
-    
-        <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="14.1811" y1="111.813" x2="68.2964" y2="94.505" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#C27E57"/>
-        <stop  offset="0.4364" style="stop-color:#C27E57"/>
-        <stop  offset="0.7697" style="stop-color:#A8A8A8"/>
-        <stop  offset="1" style="stop-color:#A8A8A8"/>
-    </linearGradient>
-    <path class="st1" d="M22.2,191.3c0,0-1.2,0.4-2.3,0.4c-0.2,0-0.3,0-0.5,0c0.3,0.1,0.5,0.1,0.8,0.1
-        C20.8,191.8,21.4,191.6,22.2,191.3z M21,188.6c0.2,0.7,0.5,1.6,1.1,2.6C21.9,190.9,21.3,189.9,21,188.6z M52,170.4
-        c0.6,0.1,1.1,0.3,1.7,0.4l0.1-0.1c-0.4-0.1-0.7-0.2-1.1-0.2C52.5,170.5,52.2,170.5,52,170.4C52,170.4,52,170.4,52,170.4z M29,169
-        c-2.6,0-4.2,0.3-4.6,0.4c-1.8,2.5-2.2,6.9-3.9,8.4c0,0-2,1.2-3.8,1.2c-0.1,0-0.2,0-0.3,0c-0.1,0-0.1,0-0.2,0c-1.9,0-5.8,2.1-3,5.6
-        c0,0,1.2,0.8,2.2,0.8c0.9,0,1.7-0.6,1.6-3c0,0,0.4-1.9,1.5-1.9c0.4,0,0.8,0.2,1.4,0.8c0.7,2.1-0.2,2.8-4.2,6.7c0,0,1,2.7,3.2,3.6
-        c0,0,0,0,0,0c0.2,0,1.3-0.1,1.1-1.2c-0.3-1.2-1.6-6.1,3.2-6.1c0.1,0,0.2,0,0.4,0c0,0,0.6,3.8,3.6,7.4c0,0,0.5,0.1,1.1,0.1
-        c1.3,0,3.2-0.5,3.6-3.5c0,0,0,0,0,0c-0.2,0-6.9,0-4.4-4.5c0,0,0.7-3,1.9-3c0.3,0,0.7,0.2,1.1,0.7c0.2,1.6,2.2,2.9,3,3.1
-        c0.2,0.1,0.4,0.1,0.6,0.1c2.1,0,4.2-2.8,2.8-3.5c-1.3-0.2-2.1-0.5-2.6-0.9c0.4,0.4,1.1,0.6,1.8,0.8c1.8,0.3,1,1.4,1,1.4
-        c-1.1,2-2.9,2.1-3.4,2.1c-0.1,0-0.2,0-0.2,0c1-0.4,2.1-0.9,1.4-2.2c-0.6-1.1-2.4-1.2-2.9-2.4c-0.2-0.5,0.1-1.2,0-1.7
-        c-0.1-0.5-0.5-1.1-0.8-1.5c-0.8-1-1.8-1.3-3.1-1.7c4.6,0,5.7,1.1,5.9,1.7c-0.1-1-1.2-1.7-5.7-1.8c1.2-0.9,2.7-1.3,4.3-1.3
-        c3.9,0,9,2.1,14.6,4.3c0.8,0.3,1.6,0.6,2.5,0.9c0.5,0.2,1,0.4,1.5,0.5l0.5-0.2l-1.2-0.4l2.9-2l-2-2.4C41.5,169.9,33.7,169,29,169z
-         M26.6,167.8c-0.6,0.1-1.1,0.4-1.6,0.8C25.7,168.2,26.6,167.8,26.6,167.8z"/>
-    <path class="st2" d="M33.8,176.9c0.1,1.1-1,2.5,0.3,3.5c-0.6-0.6-0.8-1.5-0.3-3C33.9,177.3,33.9,177.1,33.8,176.9z"/>
-    
-        <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="14.1222" y1="111.7205" x2="68.2376" y2="94.4125" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#9F6747"/>
-        <stop  offset="0.4364" style="stop-color:#9F6747"/>
-        <stop  offset="0.7697" style="stop-color:#8A8A8A"/>
-        <stop  offset="1" style="stop-color:#8A8A8A"/>
-    </linearGradient>
-    <path class="st3" d="M27.9,175.2c1.3,0.4,2.3,0.7,3.1,1.7c0.3,0.4,0.7,1,0.8,1.5c0.1,0.6-0.2,1.2,0,1.7c0.5,1.2,2.3,1.3,2.9,2.4
-        c0.8,1.3-0.4,1.8-1.4,2.2c0,0,0.1,0,0.2,0c0.6,0,2.3-0.2,3.4-2.1c0,0,0.8-1.1-1-1.4c-0.8-0.1-1.4-0.4-1.8-0.8
-        c-1.3-1-0.2-2.4-0.3-3.5C33.6,176.2,32.5,175.2,27.9,175.2z"/>
-    
-        <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="10.7997" y1="101.3328" x2="64.9151" y2="84.0239" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#9F6747"/>
-        <stop  offset="0.4364" style="stop-color:#9F6747"/>
-        <stop  offset="0.7697" style="stop-color:#8A8A8A"/>
-        <stop  offset="1" style="stop-color:#8A8A8A"/>
-    </linearGradient>
-    <path class="st4" d="M23,184.2c-4.8,0-3.5,4.9-3.2,6.1c0.3,1.1-0.8,1.2-1.1,1.2c0,0,0,0,0,0c0.2,0.1,0.4,0.2,0.6,0.2
-        c0.2,0,0.3,0,0.5,0c1.1,0,2.3-0.4,2.3-0.4s0,0,0-0.1c-0.6-1-1-1.9-1.1-2.6c-0.5-1.7-0.3-3.8,2.4-4.4
-        C23.2,184.2,23.1,184.2,23,184.2z"/>
-    <path class="st2" d="M25,168.6c-0.5,0.3-0.8,0.6-0.8,0.8c0,0,0,0,0.1,0C24.5,169.1,24.8,168.9,25,168.6z M31.9,167.5
-        c-1.8,0-3.6,0.1-5.3,0.3c1.2-0.1,2.5-0.2,3.8-0.2c6.9,0,15.1,1.4,21.6,2.8C46.5,169,38.9,167.5,31.9,167.5z"/>
-    
-        <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="17.6088" y1="122.6212" x2="71.7242" y2="105.3132" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#9F6747"/>
-        <stop  offset="0.4364" style="stop-color:#9F6747"/>
-        <stop  offset="0.7697" style="stop-color:#8A8A8A"/>
-        <stop  offset="1" style="stop-color:#8A8A8A"/>
-    </linearGradient>
-    <path class="st5" d="M30.3,167.7c-1.3,0-2.6,0-3.8,0.2c0,0-0.9,0.4-1.6,0.8c-0.2,0.2-0.4,0.5-0.6,0.7c0.4-0.1,2.1-0.4,4.6-0.4
-        c4.7,0,12.5,0.9,22.2,5.4l-1.6-1.9l4.1-1.7c-0.5-0.1-1.1-0.3-1.7-0.4C45.5,169,37.3,167.7,30.3,167.7z"/>
-    
-        <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="16.5436" y1="119.2906" x2="70.6591" y2="101.9826" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st6" d="M53.2,176.8l-2.9,2l1.2,0.4l2.7-1.3L53.2,176.8z"/>
-    <path class="st7" d="M82,183.4c0,0-26.7,1.7-35.5-1.8l7.7-3.6l-4.6-5.5l8-3.3l-3.7-4.5c0,0,9.3,0.5,30.4,8
-        C84.2,172.7,90.2,180.3,82,183.4z"/>
-</g>
-<g id="animation_x5F_foot_x5F_R" class="zombie-r-leg">
-    
-        <linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="15.9641" y1="69.4024" x2="33.8407" y2="69.4024" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#C27E57"/>
-        <stop  offset="0.4364" style="stop-color:#C27E57"/>
-        <stop  offset="0.7697" style="stop-color:#A8A8A8"/>
-        <stop  offset="1" style="stop-color:#A8A8A8"/>
-    </linearGradient>
-    <path class="st8" d="M34,224.9c0,0-7.2-3.3-14.8-0.6c0,0-4-0.4-2.9-2.5c2.1-4,2.2-8.1,3.5-8.4c-0.7-1.9,1.7-6.2,3.9-5.2
-        c0,0,2.1,0.8-0.1,3.8c0,0,1.8,2.9,1.2,6.8c0,0,4.9,4.1,9,3L34,224.9z"/>
-    <path class="st9" d="M29.3,213.8c0,0,9.2,4.8,33.7,5.8v4.9c0,0-13.4,3.7-36.8,3.5l4.3-2l-3.7-2.3l5.8-1.8l-4-3.1l3.3-1.6
-        L29.3,213.8z"/>
-</g>
-<g id="body">
-    <path class="st10" d="M64.3,209.6c0,0-2.9-1.2-3.9,0.8c-0.9,2-5.6,13.9,12,22c17.6,8,25-0.2,24.4-4.7
-        C96.3,223.1,65.7,209.7,64.3,209.6z"/>
-    <path class="st11" d="M63,225.9c0,0,8.8-0.7,9-6.2c0,0,15.3,9.5,24,10.3c0,0-0.3,6.7-12.3,6.2C71.7,235.7,63,225.9,63,225.9z"/>
-    <path class="st12" d="M80.7,169.2c0,0-14.1,24.1-19.3,40.5c0,0,7.8,12.8,34.6,20.3c0,0,17-18.2,7.8-61.2
-        C103.9,168.9,88,160.5,80.7,169.2z"/>
-    <path class="st10" d="M62.7,213.8c0.5-0.7,4.5-7,4.5-7l-2.9,9L62.7,213.8z"/>
-    <path class="st13" d="M89.8,170c0,0.6,7.6,54.3-17.8,49.7c0,0,12.4,8.7,24,10.3c0,0,16.5-17.1,7.8-62.8L89.8,170z"/>
-    <path class="st14" d="M86.6,176c3.9,2,9.7,1.6,13.6,0.3c1.4-0.5,4.1-1,4.5-2.3c0.4-1.2-0.3-4.7-0.6-6c-2.1-0.8-5.2-0.1-7.3,0.3
-        c-2.5,0.5-8,0.8-9.5,3.5L86.6,176z"/>
-    <path class="st11" d="M83.9,227.2c0,0,5.8-8.4,5.4-7.9c-0.4,0.5-4,9-4,9L83.9,227.2z"/>
-    <path class="st11" d="M87.1,229.2l6.7-7.5l-0.9,9.2L87.1,229.2z"/>
-</g>
-<g id="animation_x5F_foot_x5F_L" class="zombie-l-leg">
-    
-        <linearGradient id="SVGID_7_" gradientUnits="userSpaceOnUse" x1="90.8924" y1="9.4905" x2="107.4129" y2="9.4905" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#C27E57"/>
-        <stop  offset="0.4364" style="stop-color:#C27E57"/>
-        <stop  offset="0.7697" style="stop-color:#A8A8A8"/>
-        <stop  offset="1" style="stop-color:#A8A8A8"/>
-    </linearGradient>
-    <path class="st15" d="M100.1,266.8c0,0,0.7,8,6.6,13.5c0,0,1.6,3.8-0.8,3.8c-4.4,0-8,2-8.9,0.9c-1.3,1.6-6.1,1.5-6.3-1
-        c0,0-0.3-2.3,3.3-1.8c0,0,1.6-2.9,5.2-4.3c0,0,1.2-6.4-1.7-9.5L100.1,266.8z"/>
-    <path class="st10" d="M86,234.6c0,0,6.7,19,6.5,36.9l2.5-0.2l1,3.6l2.1-3.6l3.6,2.8l0.2-4.3l3.6,1.3c0,0-1.5-16.4-15.9-37.3
-        C89.5,233.8,85.7,230.1,86,234.6z"/>
-</g>
-<g id="head">
-    <path class="st16" d="M59.1,162.5c6.4-3.3,8.2-9.8,8.2-14.7c0-10.6-8-14.9-8-14.9l22.1-33.5l38.3,2.6c0,0-4.6,28.2-4.1,29.8
-        c0.5,1.6-11.3,33.7-11.3,33.7l-18.9,9.3l-24.3-9.8C60.4,164.1,59.8,163.3,59.1,162.5z"/>
-    <path class="st17" d="M59.8,163.3c7.9-2.9,10-10.2,10-15.5c0-10.6-8-14.9-8-14.9l22.1-33.5l38.3,2.6c0,0-4.6,28.2-4.1,29.8
-        c0.5,1.6-11.3,33.7-11.3,33.7L88.3,170l-28.4-6.6L59.8,163.3z"/>
-    <path class="st18" d="M103.6,150.9c-1.6,0-3.4,0.5-5.3,2.1c0,0-13.8,0.7-17.3,13.6c7.4-2.5,21.9-8,27.1-14.3
-        C107.2,151.7,105.5,150.9,103.6,150.9z"/>
-    <path class="st19 tooth-1" d="M62,144.5c-1.6,1-5.8-0.8-6.8-2.5c-1-1.7,1.8-8.6,1.8-8.6l7.8,0C64.8,133.5,63.6,143.5,62,144.5z"/>
-    <path class="st19" d="M73,130.7c0,0-3.9,12.7-2.3,14.6c1.6,1.8,10.5-3.7,10.5-3.7l-2.4-11L73,130.7z"/>
-    <path class="st19 tooth-2" d="M86.2,135.9c0,0-2,11.5,0.3,12.7c2.4,1.2,9.6-2.6,9.6-2.6l-4.3-13.6h3.9c0,0,3,7.7,5.1,8.1
-        c2.1,0.3,3-4.8,3-5.9c0-0.7-1.2-9.6-1.2-9.6L86.2,135.9z"/>
-    <path class="st19" d="M100.2,159.7c0,0-1.2-9.3-1.9-10.3c-0.7-1-6.3,0.1-6.7,4.6c-0.4,4.4,2.7,10.2,2.7,10.2L100.2,159.7z"/>
-    <path class="st19" d="M74.6,168c0,0,2.5-10,1.8-10.8c-0.7-0.8-4.8-3.1-5.9-1.6c-1.1,1.5-0.2,12-0.2,12L74.6,168z"/>
-    
-        <linearGradient id="SVGID_8_" gradientUnits="userSpaceOnUse" x1="58.8777" y1="121.18" x2="58.8777" y2="133.8174" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#C2B8A3"/>
-        <stop  offset="0.7333" style="stop-color:#FFFACA"/>
-        <stop  offset="1" style="stop-color:#FFFACA"/>
-    </linearGradient>
-    <path class="st20 tooth-2" d="M62.4,165c0,0-0.1-9.6-0.4-11.6c-0.3-1.9-5.5-1-6.5,0.9c-1,1.9,4.1,9.6,4.1,9.6L62.4,165z"/>
-    
-        <linearGradient id="SVGID_9_" gradientUnits="userSpaceOnUse" x1="159.244" y1="177.0729" x2="26.8069" y2="177.0729" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#C27E57"/>
-        <stop  offset="0.4364" style="stop-color:#C27E57"/>
-        <stop  offset="0.7697" style="stop-color:#A8A8A8"/>
-        <stop  offset="1" style="stop-color:#A8A8A8"/>
-    </linearGradient>
-    <path class="st21" d="M115.5,114.4c-4.2,6.8-13.5,18.7-29.3,21.5c0,0-0.8,0-2.2,0.1l2.1,0l1,0c1.9-0.5,3.6-1,5.3-1.7
-        c1.2-0.5,2.4-1,3.5-1.5c2.7-1.3,5.1-2.8,7.2-4.3C109.4,123.9,113.3,118.5,115.5,114.4z M54,78.6l-0.2,0c0,0-0.1,0.2-0.3,0.6
-        C53.7,79.1,53.9,78.8,54,78.6z M39.3,78.4l-0.6,2.5l0.6-2.4C39.4,78.4,39.4,78.4,39.3,78.4z M125.2,136.7c-0.4,0-0.7-0.1-1-0.2
-        c-2.2-1.1-2.3-5.7-0.2-10.4c1.7-4,4.5-6.6,6.6-6.6c0.4,0,0.7,0.1,1,0.2c2.2,1.1,2.3,5.7,0.2,10.4
-        C130,134.1,127.3,136.7,125.2,136.7z M125.5,119.3c-0.1,0-0.2,0-0.3,0c-1-0.3-1.3-2.4-0.7-4.6c0.6-2,1.7-3.4,2.7-3.4
-        c0.1,0,0.2,0,0.3,0c1,0.3,1.3,2.4,0.7,4.6C127.7,117.8,126.5,119.3,125.5,119.3z M101.3,121.9c-6.6,0-13-5-15.3-12.7
-        c-2.7-9.1,1.5-18.4,9.3-20.9c1.3-0.4,2.5-0.6,3.8-0.6c6.6,0,13,5,15.3,12.7c2.7,9.1-1.5,18.4-9.3,20.9
-        C103.8,121.7,102.5,121.9,101.3,121.9z M84.5,66.3c-3.5,0-7.6,3.1-10.7,4.4c-0.7,0.3-1.3,0.5-2,0.7c0,0.1,0,0.2,0,0.2
-        c6,1.4,11.1,6.1,13,12.7c2.9,9.7-2.2,19.8-11.4,22.7c-1.6,0.5-3.3,0.7-4.9,0.7c-7.5,0-14.6-5.2-16.9-13.1c-1-3.5-1-7-0.2-10.2
-        c-4.7,10.9-15.5,34.8-23.6,46l30.3-9.6l-14.7,15.2l41.6-1.7c0,0,21.2-4.9,31.1-20.9c1.5-3,2.1-5,2.1-5s0,0.4-0.1,1.2c0,0,0,0,0,0
-        c0,0,0,0,0,0c-0.6,6.2-3.6,35.1-9.8,42.7c0,0-0.1,0.1-0.1,0.1c-5.3,6.2-19.8,11.8-27.1,14.3c-1.3,0.4-2.3,0.8-3.1,1
-        c-0.8,0.3-1.3,0.4-1.3,0.4l-3.4-1.5l-10.6-4.7l-1.5-0.7l-9.3-4.1l7.6,8.4l7.9,8.8c0,0,4,0.9,9.5,1.7c4.1,0.6,9,1.2,13.7,1.3
-        c0.4,0,0.9,0,1.3,0c0.2,0,0.4,0,0.7,0c1.1,0,2.2,0,3.3-0.1c3.7-0.2,7.1-0.8,9.4-2.1c0.6-0.3,1.1-0.7,1.5-1.1
-        c26-23.5,52.6-95.1,52.6-95.1l-14.4-8.4c2.2,3.8,3.9,7.9,5,12.4c2.2,9,2.1,20.5-7.2,23.6c-1.5,0.5-2.7,0.8-3.7,0.8
-        c-0.6,0-1.2-0.1-1.6-0.3c0.8,1.2,1,3.6,0.2,6.2c-0.9,3-2.6,5.1-4.1,5.1c-0.2,0-0.3,0-0.5-0.1c-1.5-0.5-2-3.6-1-6.9
-        c0.9-3,2.6-5.1,4.1-5.1c0,0,0,0,0,0c-2-1.7-2.7-5.1-6.2-7.5c-1.1-0.8-2.2-1-3.3-1c-1.4,0-2.9,0.5-4.1,1c-1.3,0.5-2.4,1-3.4,1
-        c-1.5,0-2.5-1.3-2.6-5.9c-0.1-5.7,0.5-14.5-5.5-17.1c-1.2-0.5-2.5-0.8-3.9-0.8c-2,0-4.1,0.5-6.3,1c-2.1,0.5-4.3,1-6.4,1
-        c-0.9,0-1.7-0.1-2.6-0.3c-4.6-1.1-4.6-1.9-4-6.1c0.4-3.1,1.1-5.2-3.2-5.3C84.6,66.3,84.6,66.3,84.5,66.3z M44.6,40.2l-4.4,33.1
-        l0.1-0.1L44.6,40.2z"/>
-    
-        <linearGradient id="SVGID_10_" gradientUnits="userSpaceOnUse" x1="159.272" y1="173.54" x2="26.8353" y2="173.54" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st22" d="M136,106.3c-1.5,0-3.2,2.1-4.1,5.1c-1,3.3-0.5,6.4,1,6.9c0.1,0.1,0.3,0.1,0.5,0.1c1.5,0,3.2-2.1,4.1-5.1
-        c0.8-2.6,0.6-5.1-0.2-6.2C136.8,106.9,136.4,106.6,136,106.3C136,106.3,136,106.3,136,106.3z"/>
-    
-        <linearGradient id="SVGID_11_" gradientUnits="userSpaceOnUse" x1="159.272" y1="170.6685" x2="26.8348" y2="170.6685" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st23" d="M127.2,111.2c-1,0-2.1,1.4-2.7,3.4c-0.6,2.2-0.3,4.3,0.7,4.6c0.1,0,0.2,0,0.3,0c1,0,2.1-1.4,2.7-3.4
-        c0.6-2.2,0.3-4.3-0.7-4.6C127.4,111.2,127.3,111.2,127.2,111.2z"/>
-    
-        <linearGradient id="SVGID_12_" gradientUnits="userSpaceOnUse" x1="159.272" y1="157.7645" x2="26.8352" y2="157.7645" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st24" d="M130.6,119.5c-2.1,0-4.8,2.7-6.6,6.6c-2,4.6-1.9,9.3,0.2,10.4c0.3,0.2,0.6,0.2,1,0.2c2.1,0,4.8-2.7,6.6-6.6
-        c2-4.6,1.9-9.3-0.2-10.4C131.2,119.6,130.9,119.5,130.6,119.5z"/>
-    <path class="st25" d="M44.6,40.2c0,0,11.1,1.5,24.6,3.6c0.3-0.1,0.5-0.2,0.8-0.2C58.6,41.7,44.6,40.2,44.6,40.2z"/>
-    
-        <linearGradient id="SVGID_13_" gradientUnits="userSpaceOnUse" x1="159.272" y1="229.1586" x2="26.8352" y2="229.1586" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#CE9879"/>
-        <stop  offset="0.4364" style="stop-color:#CE9879"/>
-        <stop  offset="0.7697" style="stop-color:#B9B9B9"/>
-        <stop  offset="1" style="stop-color:#B9B9B9"/>
-    </linearGradient>
-    <path class="st26" d="M71.8,71.4c-0.1,0-0.3,0.1-0.4,0.1c0.1,0,0.3,0.1,0.4,0.1C71.8,71.6,71.8,71.5,71.8,71.4z M44.6,40.2l-4.3,33
-        l24.8-28c1.3-0.5,2.7-1,4.1-1.4C55.8,41.7,44.6,40.2,44.6,40.2z"/>
-    
-        <linearGradient id="SVGID_14_" gradientUnits="userSpaceOnUse" x1="159.272" y1="182.6793" x2="26.8352" y2="182.6793" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#CE9879"/>
-        <stop  offset="0.4364" style="stop-color:#CE9879"/>
-        <stop  offset="0.7697" style="stop-color:#B9B9B9"/>
-        <stop  offset="1" style="stop-color:#B9B9B9"/>
-    </linearGradient>
-    <path class="st27" d="M56.4,75.8c-5,1.5-10.2,3.1-15.1,3.1c-0.7,0-1.3,0-2-0.1c0-0.1,0-0.2,0-0.4l-0.6,2.4l-11.9,49.8l1-0.3
-        c8.2-11.2,18.9-35.1,23.6-46c0.5-1.8,1.2-3.5,2.2-5.1c0.2-0.4,0.3-0.6,0.3-0.6l0.2,0C54.7,77.6,55.5,76.6,56.4,75.8z"/>
-    <path class="st17" d="M51.6,94.6c2.9,9.7,12.6,15.2,21.8,12.4c9.2-2.8,14.3-13,11.4-22.7C82,74.6,72.2,69.1,63,71.9
-        C53.9,74.7,48.7,84.9,51.6,94.6z"/>
-    <path class="st17" d="M86,109.2c2.7,9.1,11.2,14.5,19.1,12.1c7.8-2.4,12-11.8,9.3-20.9c-2.7-9.1-11.2-14.5-19.1-12.1
-        C87.5,90.8,83.3,100.1,86,109.2z"/>
-    <path class="st28" d="M87.6,41.3c-6.1,0-12,0.8-17.5,2.3c3.4,0.6,6.7,1.2,9.2,1.8c17.7,2.9,35.7,6.3,37,8.5l28.6,16.7
-        C133.8,51.6,109.9,41.3,87.6,41.3z"/>
-    
-        <linearGradient id="SVGID_15_" gradientUnits="userSpaceOnUse" x1="159.272" y1="209.5401" x2="26.8352" y2="209.5401" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st29" d="M79.3,45.4c1.1,0.3,2,0.5,2.8,0.8c0,0-7.1,3.5-10.2,25.2c0.7-0.2,1.3-0.5,2-0.7c3.1-1.2,7.2-4.4,10.7-4.4
-        c0,0,0.1,0,0.1,0c4.3,0.1,3.6,2.2,3.2,5.3c-0.6,4.2-0.6,5,4,6.1c0.8,0.2,1.7,0.3,2.6,0.3c2.1,0,4.3-0.5,6.4-1c2.1-0.5,4.2-1,6.3-1
-        c1.3,0,2.6,0.2,3.9,0.8c6,2.7,5.5,11.4,5.5,17.1c0.1,4.6,1,5.9,2.6,5.9c0.9,0,2.1-0.5,3.4-1c1.3-0.5,2.7-1,4.1-1
-        c1.1,0,2.2,0.3,3.3,1c3.5,2.4,4.2,5.8,6.2,7.5c0.2,0,0.3,0,0.4,0.1c0.3,0.1,0.6,0.3,0.8,0.7c0.5,0.2,1,0.3,1.6,0.3
-        c1,0,2.2-0.2,3.7-0.8c9.2-3.1,9.3-14.6,7.2-23.6c-1.1-4.5-2.8-8.6-5-12.4l-28.6-16.7C115,51.7,96.9,48.3,79.3,45.4z"/>
-    <path class="st28" d="M40.2,73.4l-0.9,1.1c0,1.3,0,2.6,0,3.9l0.5-2.2L40.2,73.4z"/>
-    
-        <linearGradient id="SVGID_16_" gradientUnits="userSpaceOnUse" x1="159.272" y1="210.0499" x2="26.8352" y2="210.0499" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st30" d="M40.4,73.2l-0.1,0.1l-0.4,2.8l-0.5,2.2c0,0,0,0.1,0,0.1l0.7-2.8L40.4,73.2z"/>
-    
-        <linearGradient id="SVGID_17_" gradientUnits="userSpaceOnUse" x1="159.272" y1="179.2055" x2="26.8359" y2="179.2055" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#5E3D2B"/>
-        <stop  offset="0.4364" style="stop-color:#5E3D2B"/>
-        <stop  offset="0.7697" style="stop-color:#525252"/>
-        <stop  offset="1" style="stop-color:#525252"/>
-    </linearGradient>
-    <path class="st31" d="M136,106.3c0.4,0.3,0.8,0.6,1.3,0.7c-0.2-0.3-0.5-0.5-0.8-0.7C136.3,106.3,136.2,106.3,136,106.3z"/>
-    <path class="st28" d="M70.1,43.6c-0.3,0.1-0.5,0.2-0.8,0.2c3.2,0.5,6.6,1,10,1.6C76.7,44.8,73.5,44.2,70.1,43.6z"/>
-    
-        <linearGradient id="SVGID_18_" gradientUnits="userSpaceOnUse" x1="159.272" y1="224.5262" x2="26.8352" y2="224.5262" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#906A54"/>
-        <stop  offset="0.4364" style="stop-color:#906A54"/>
-        <stop  offset="0.7697" style="stop-color:#818181"/>
-        <stop  offset="1" style="stop-color:#818181"/>
-    </linearGradient>
-    <path class="st32" d="M69.3,43.8c-1.4,0.4-2.8,0.9-4.1,1.4l-24.8,28l-0.3,2.4l-0.7,2.8c0,0.1,0,0.2,0,0.4c0.6,0.1,1.3,0.1,2,0.1
-        c4.9,0,10.1-1.6,15.1-3.1c1.8-1.7,4.1-3.1,6.6-3.9c1.6-0.5,3.3-0.7,4.9-0.7c1.2,0,2.4,0.1,3.5,0.4c0.1,0,0.3-0.1,0.4-0.1
-        c3.1-21.7,10.2-25.2,10.2-25.2c-0.8-0.3-1.7-0.5-2.8-0.8C75.9,44.8,72.5,44.3,69.3,43.8z"/>
-    <path class="st33" d="M67.9,71.2c-1.6,0-3.3,0.2-4.9,0.7c-2.5,0.8-4.8,2.1-6.6,3.9c2-0.6,4-1.3,5.9-1.8c3-0.8,6-1.5,9-2.5
-        C70.3,71.3,69.1,71.2,67.9,71.2z"/>
-    <path class="st18" d="M70.6,104.2c-1.8,0-3.6-0.4-5.3-1.2c-6.3-3-10.7-12.2-7.8-18.6c1.9-4.2,6.6-6.2,11.3-6.2c2.5,0,5,0.5,7.2,1.6
-        c6.3,3,9,10.7,6,17.1C79.9,101.5,75.4,104.2,70.6,104.2z M68.2,76.5c-5.2,0-10.3,2.1-12.4,6.8c-3.2,7,1.6,17.1,8.5,20.4
-        c1.9,0.9,3.9,1.3,5.8,1.3c5.2,0,10.1-3,12.5-8.1c3.2-7,0.3-15.4-6.6-18.7C73.7,77.1,70.9,76.5,68.2,76.5z"/>
-    <path class="st19" d="M65.3,103c6.3,3,13.8,0.3,16.7-6.1c3-6.4,0.3-14-6-17.1c-6.3-3-15.5-1.8-18.4,4.6C54.6,90.7,59,99.9,65.3,103
-        z"/>
-    <path class="st18" d="M101,92.5c3.2,1.1,5.9,3.8,6.9,7.3c1.8,5.9,0.6,13.9-5.2,15.7c-0.8,0.2-1.7,0.4-2.5,0.4
-        c-5.4,0-11.7-4.5-13.3-9.6c-0.2-0.7-0.4-1.4-0.4-2.2c0,1.1,0.1,2.1,0.4,3.2c1.5,5,8.1,9.2,14,9.2c1.1,0,2.2-0.1,3.2-0.5
-        c6.5-2,8-10.1,6.3-16C109.2,95.8,105.4,93,101,92.5z"/>
-    <path class="st19" d="M86.9,106.3c1.8,5.9,10,11,15.8,9.2c5.8-1.8,7-9.8,5.2-15.7c-1.8-5.9-7.9-9.3-13.7-7.5
-        C88.5,94.1,85.2,100.4,86.9,106.3z"/>
-    <path class="st34" d="M95.9,102.9c-0.3,0.8-0.3,1.7-0.1,2.6c0.5,1.8,2.2,3,4,3c0.4,0,0.8-0.1,1.2-0.2c0.5-0.2,1-0.4,1.4-0.7
-        c-1.5-0.7-3.2-2-5.2-3.7C96.8,103.6,96.4,103.2,95.9,102.9z"/>
-    <path class="st34" d="M60.2,87.3c-1.5,1-2.3,3-1.7,4.8c0.5,1.8,2.2,3,4,3c0.4,0,0.8-0.1,1.2-0.2c1.9-0.6,3.1-2.4,3-4.3
-        c-0.9-0.8-1.7-1.5-2.4-2.2c-0.4,0.7-1.1,1.1-1.9,1.1C61.2,89.5,60.2,88.5,60.2,87.3C60.2,87.3,60.2,87.3,60.2,87.3z"/>
-    <path class="st25" d="M60.2,87.3c0,1.3,1,2.3,2.2,2.3c1.2,0,2.2-1,2.2-2.3c0-1.2-1-2.3-2.2-2.3C61.2,85,60.2,86,60.2,87.3z"/>
-    <path class="st25" d="M96.2,101.3c0,1.2,1,2.3,2.2,2.3c1.2,0,2.2-1,2.2-2.3s-1-2.3-2.2-2.3C97.2,99.1,96.2,100.1,96.2,101.3z"/>
-    <path class="st35" d="M97.2,93c-2.4,0-4.5,0.7-5.5,1.8c-1.9,2,0.8,5,4.3,8c0.1-0.3,0.2-0.5,0.4-0.8c-0.1-0.2-0.1-0.5-0.1-0.7
-        c0-1.2,1-2.3,2.2-2.3c0.7,0,1.4,0.4,1.8,0.9c1.7,0.1,3.2,1.3,3.7,3c0.5,1.7-0.1,3.6-1.4,4.6c0.7,0.3,1.4,0.5,2,0.5
-        c0.8,0,1.5-0.3,2.1-1c2.1-2.3,2.2-8.2-1.9-11.6C102.5,93.8,99.7,93,97.2,93z"/>
-    <path class="st36" d="M100.2,100c0.3,0.4,0.4,0.8,0.4,1.3c0,1.2-1,2.3-2.2,2.3c-1,0-1.8-0.6-2.1-1.5c-0.1,0.3-0.3,0.5-0.4,0.8
-        c0.4,0.4,0.9,0.8,1.3,1.1c2,1.6,3.7,3,5.2,3.7c1.3-1.1,1.9-2.9,1.4-4.6C103.4,101.3,101.9,100.1,100.2,100z"/>
-    <path class="st25" d="M98.4,99.1c-1.2,0-2.2,1-2.2,2.3c0,0.3,0,0.5,0.1,0.7c0.3,0.9,1.1,1.5,2.1,1.5c1.2,0,2.2-1,2.2-2.3
-        c0-0.5-0.2-1-0.4-1.3C99.8,99.4,99.1,99.1,98.4,99.1z"/>
-    <path class="st35" d="M68.5,80c-2.7,0-5,0.8-6.2,2c-0.8,0.9-0.9,1.9-0.4,3.1c0.2,0,0.3-0.1,0.5-0.1c1.2,0,2.2,1,2.2,2.1
-        c0.9,0.5,1.6,1.4,1.9,2.4c0.1,0.3,0.2,0.7,0.2,1c0.6,0.5,1.2,1,1.8,1.6c3.2,2.7,5.9,4.6,8,4.6c0.9,0,1.6-0.3,2.3-1.1
-        c2.3-2.6,2.4-9.2-2.1-13C74.4,80.8,71.3,80,68.5,80z"/>
-    <path class="st36" d="M64.7,87.2c0,0,0,0.1,0,0.1c0,0.4-0.1,0.8-0.3,1.1c0.7,0.7,1.5,1.5,2.4,2.2c0-0.3-0.1-0.7-0.2-1
-        C66.2,88.5,65.5,87.7,64.7,87.2z"/>
-    <path class="st25" d="M62.5,85c-0.2,0-0.4,0-0.5,0.1c0.4,1,1.3,2.2,2.4,3.3c0.2-0.3,0.3-0.7,0.3-1.1c0,0,0-0.1,0-0.1
-        C64.6,86,63.6,85,62.5,85z"/>
-    <path class="st16" d="M159.2,79l-46.7-24.4L44.6,40.2c0,0,52.8,6,68.3,11.3C128.3,56.9,145.9,68.9,159.2,79z"/>
-    <path class="st37" d="M118.1,109.5c-0.6,1.3-1.3,2.6-2,3.8c-0.2,0.3-0.4,0.7-0.6,1.1C117.2,111.7,118,109.7,118.1,109.5
-        C118.1,109.5,118.1,109.5,118.1,109.5"/>
-    <path class="st38" d="M43.4,135.9c3.3,0.3,7.7,0.5,12.5,0.6c0.1-0.2,0.1-0.4,0.2-0.5L43.4,135.9z"/>
-    <path class="st39" d="M64.4,135.9c0,0.2-0.1,0.4-0.1,0.5c0.5,0,1,0,1.5,0c-0.1-0.2-0.3-0.4-0.4-0.5L64.4,135.9z"/>
-    <path class="st37" d="M65.4,135.9c0.1,0.2,0.3,0.3,0.4,0.5c1.9,0,3.8-0.1,5.7-0.1c0-0.1,0.1-0.3,0.1-0.4L65.4,135.9z"/>
-    <path class="st40" d="M56.1,135.9c-0.1,0.2-0.1,0.4-0.2,0.5c1.4,0,2.8,0,4.2,0c1.4,0,2.8,0,4.2,0c0-0.2,0.1-0.4,0.1-0.5L56.1,135.9
-        z"/>
-    <path class="st37" d="M80,136l0,0.2c1.6-0.1,3-0.1,4.1-0.1L80,136z"/>
-    <path class="st40" d="M71.6,136c0,0.1-0.1,0.3-0.1,0.4c3.2-0.1,6.2-0.2,8.6-0.2l0-0.2L71.6,136z"/>
-    
-        <linearGradient id="SVGID_19_" gradientUnits="userSpaceOnUse" x1="159.272" y1="163.1785" x2="26.8352" y2="163.1785" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#A56B4A"/>
-        <stop  offset="0.4364" style="stop-color:#A56B4A"/>
-        <stop  offset="0.7697" style="stop-color:#8F8F8F"/>
-        <stop  offset="1" style="stop-color:#8F8F8F"/>
-    </linearGradient>
-    <path class="st41" d="M116.1,113.3c-9.9,16-31.1,20.9-31.1,20.9l-41.6,1.7l12.7,0l8.3,0l0.9,0l6.2,0l8.4,0l4.1,0
-        c1.4-0.1,2.2-0.1,2.2-0.1c15.8-2.8,25.1-14.7,29.3-21.5C115.7,114,115.9,113.7,116.1,113.3z M118.2,109.4
-        C118.1,109.5,118.1,109.5,118.2,109.4C118.1,109.5,118.1,109.5,118.2,109.4C118.1,109.5,118.2,109.4,118.2,109.4z"/>
-    <path class="st42" d="M149.4,54.6c9.7,3.8,20.3,14.1,20.3,14.1c-6.8-25.9-24-27.3-28.3-28.3l0,0l0,0c18.9-21.3-0.6-32.5-0.6-32.5
-        c2.4,13.5-6.2,27.7-6.2,27.7s3.7-39.1-33.9-35.3c-7.7,0.8,1.4,3.1,1.4,3.1c18.5,11.7,19.5,23.3,19.5,23.3s-7-14.5-37.9-20.2
-        C52.8,0.7,35.2,20,35.2,20c17.9-0.7,24.1,4.1,24.1,4.1c-37.8,7.2-49,42.6-49,42.6C27.7,53.5,37,51.1,37,51.1
-        C9.5,71.7,0.8,97,0.8,97c5.2-5.6,27.4-17.3,50.6-25.7C74.7,63,98.8,54.8,98.8,54.8c-2.4,6.5-13.9,21.6-13.9,21.6
-        c18.8-2.1,28.8-12.9,28.8-12.9s2.6-3.4,2.4,1.2c-2,19.5,3.5,8.8,3.5,8.8c-2,9.1,0.5,23.5,0.5,23.5c6.4-3.1,9.7-12.2,9.7-12.2
-        c0.2,0.8,0.4,1.6,0.5,2.5c0.1,7.3-1.1,18.1-7.4,28.3c0,0,11-3.7,20.6-20.6c9.2,15.5,9,34.3,9,34.3
-        C177.9,78.1,149.4,54.6,149.4,54.6z M141.8,40.4L141.8,40.4L141.8,40.4z"/>
-</g>
-<g id="animation_x5F_hand_x5F_L" class="zombie-hand">
-    <path class="st43" d="M110.4,208.2c0.6-1.6,0.8-4.5,2-6.2c1.5-2,5.1-1.9,7-3.3c-0.8-0.2-1-1.7-1-2.5c0-1.3,0.6-1.7,1.4-2.6
-        c0.8-0.9,4.5-3.5,3.9-4.8c-0.3-0.7-2.8-1.3-3.3-1.5c-1.8-0.5-3.2-0.3-4.9,0.3c-2.2,0.8-4,1.9-5.2,4c-1.6,2.8-3.3,6.7-2.8,10.1
-        c0.1,0.8,0.5,1.8,0.7,2.5L110.4,208.2z"/>
-    
-        <linearGradient id="SVGID_20_" gradientUnits="userSpaceOnUse" x1="147.7459" y1="56.9825" x2="114.3375" y2="104.8101" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#C27E57"/>
-        <stop  offset="0.4364" style="stop-color:#C27E57"/>
-        <stop  offset="0.7697" style="stop-color:#A8A8A8"/>
-        <stop  offset="1" style="stop-color:#A8A8A8"/>
-    </linearGradient>
-    <path class="st44" d="M150.7,224.1C150.7,224.1,150.7,224.1,150.7,224.1C150.7,224.2,150.7,224.2,150.7,224.1
-        C150.7,224.2,150.7,224.2,150.7,224.1z M148.9,222c-0.6,0-1.4,0.4-2.5,1.6c0,0,0,0.1,0,0.1c0.8-0.4,1.3-1.6,2.3-1.6
-        c0.1,0,0.1,0,0.2,0c0.5,0.1,0.9,0.3,1.3,0.7C149.9,222.4,149.5,222,148.9,222z M122.4,215.3c-0.5,0-1.5-0.8-2.5-1.9
-        c-1.1-1.4-1.8-2.9-1.4-3.2c0.1-0.1,0.1-0.1,0.3-0.1c0.5,0,1.5,0.8,2.5,1.9c1.1,1.4,1.8,2.9,1.4,3.2
-        C122.6,215.3,122.5,215.3,122.4,215.3z M119.9,209.8c-0.2,0-0.7-0.4-1.1-1c-0.5-0.7-0.7-1.3-0.5-1.5c0,0,0.1,0,0.1,0
-        c0.2,0,0.7,0.4,1.1,1C120,209,120.2,209.7,119.9,209.8C120,209.8,120,209.8,119.9,209.8z M117.9,209.7c-0.4,0-1.1-0.6-1.7-1.5
-        c-0.7-1-1-2-0.7-2.2c0,0,0.1,0,0.1,0c0.4,0,1.1,0.6,1.7,1.5c0.7,1,1,2,0.7,2.2C118,209.7,117.9,209.7,117.9,209.7z M114.6,197.7
-        c-0.1,0-0.1,0.1-0.2,0.1c-1.8,1.3-2.8,4-2.8,4.6l-1.1-1.1c0.4,0.6,0.8,1.2,1.2,1.9c4.5,6.8,11.6,16.8,18.7,22.2
-        c0.5,0.3,1.1,0.4,1.7,0.4c1.7,0,3.6-1,5.4-2c1.8-1,3.5-2,4.9-2c0,0,0,0,0.1,0c0,0,0.5,3.5,1.7,4.8c0.6,0.6,1.9,1.2,3.2,1.2
-        c1.5,0,3-0.8,3.4-3.4c0,0,0,0,0,0c0,0.1-0.1,0.3-0.2,0.5l-0.1-0.7c0,0,0.1-0.1,0.1-0.1c-0.2-0.2-0.6-0.3-1.1-0.3
-        c-0.5,0-0.9,0.1-1.2,0.1c-1.1,0.3-2,0.8-2.2,1.9c0,0,0,0,0,0h0c0,0,0,0,0,0c-0.4-1.2-1.2-2.1-1.4-3.4c-0.2-1.3,0.1-2.2,0.9-3.2
-        c-0.2,0.8-0.1,1.7,0.1,2.6c-0.1-0.6-0.1-1.3-0.1-2.2c1.1-2.1,2.3-2,8.2-2.3c0,0,2.6-5.7-2.3-7.1c0,0-1.2,5.2-4.5,5.2
-        c-0.6,0-1.2-0.1-1.8-0.5c0,0,2.5-3.4,3-8.2c0,0-1.1-1.8-3-1.8c-0.8,0-1.9,0.3-3,1.3c0,0,5.1,4.7-0.1,6.5c0,0-1.9,1.2-3,1.2
-        c-0.6,0-1.1-0.4-0.9-1.5c1-1.4,0.6-3.8,0.1-4.5c-0.5-0.9-1.6-1.3-2.7-1.3c-1.4,0-2.7,0.6-2.5,1.6c4.7,6.2-5.9,2.9,1,9.9
-        c0.2,0,0.4,0,0.7-0.1l0,0.8c0,0-0.9,1.4-2.6,1.4c-1.6,0-3.9-1.1-6.9-5.5C121.1,208.6,116.9,201.7,114.6,197.7z M119.3,195.9
-        c0,0-0.1,0-0.2,0c2.4,6,5.7,14.1,7.5,16.6c2.2,3,3.5,4.9,5.6,5.4C127,214.9,123,204.6,119.3,195.9z M111.5,182.7l-3.3,10.3l7.2-5.5
-        C114.1,185.2,112.8,183.5,111.5,182.7z"/>
-    
-        <linearGradient id="SVGID_21_" gradientUnits="userSpaceOnUse" x1="136.8059" y1="49.3055" x2="103.3979" y2="97.1335" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st45" d="M115.6,206c0,0-0.1,0-0.1,0c-0.3,0.2,0,1.2,0.7,2.2c0.6,0.9,1.3,1.5,1.7,1.5c0,0,0.1,0,0.1,0
-        c0.3-0.2,0-1.2-0.7-2.2C116.7,206.6,116,206,115.6,206z"/>
-    
-        <linearGradient id="SVGID_22_" gradientUnits="userSpaceOnUse" x1="138.1026" y1="50.2115" x2="104.6946" y2="98.0385" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st46" d="M118.4,207.3C118.4,207.3,118.4,207.4,118.4,207.3c-0.3,0.2-0.1,0.8,0.4,1.5c0.4,0.6,0.9,1,1.1,1
-        c0,0,0.1,0,0.1,0c0.2-0.1,0-0.8-0.5-1.5C119.1,207.8,118.7,207.3,118.4,207.3z"/>
-    
-        <linearGradient id="SVGID_23_" gradientUnits="userSpaceOnUse" x1="137.1628" y1="49.5548" x2="103.7548" y2="97.3828" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st47" d="M118.8,210c-0.1,0-0.2,0-0.3,0.1c-0.4,0.4,0.3,1.8,1.4,3.2c1,1.2,2,1.9,2.5,1.9c0.1,0,0.2,0,0.3-0.1
-        c0.4-0.4-0.3-1.8-1.4-3.2C120.3,210.8,119.3,210,118.8,210z"/>
-    <path class="st2" d="M150.2,222.8c0.3,0.4,0.5,1,0.5,1.3c0,0,0.1-0.1,0.1-0.1C150.7,223.6,150.5,223.2,150.2,222.8z M145.7,221.8
-        c0.2,1.4,0.6,1.8,0.6,1.8c0,0,0,0,0.1-0.1C146.1,223,145.9,222.4,145.7,221.8z"/>
-    
-        <linearGradient id="SVGID_24_" gradientUnits="userSpaceOnUse" x1="150.1792" y1="58.6469" x2="116.7702" y2="106.4749" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#9F6747"/>
-        <stop  offset="0.4364" style="stop-color:#9F6747"/>
-        <stop  offset="0.7697" style="stop-color:#8A8A8A"/>
-        <stop  offset="1" style="stop-color:#8A8A8A"/>
-    </linearGradient>
-    <path class="st48" d="M145.6,219.2c-0.7,1-1.1,1.9-0.9,3.2c0.2,1.3,1,2.2,1.4,3.4c0.3-1.1,1.2-1.6,2.2-1.9c0.3-0.1,0.7-0.1,1.2-0.1
-        c0.5,0,0.9,0.1,1.1,0.3c0,0,0,0,0,0c-0.1-0.4-0.3-0.9-0.5-1.3c-0.3-0.4-0.8-0.6-1.3-0.7c-0.1,0-0.1,0-0.2,0c-1,0-1.5,1.1-2.3,1.6
-        c0,0,0-0.1,0-0.1c0,0,0,0-0.1,0.1c0,0-0.4-0.4-0.6-1.8C145.5,220.9,145.4,220,145.6,219.2z"/>
-    <path class="st2" d="M150.7,224.2c0,0.1,0.1,0.2,0.1,0.3C150.8,224.4,150.8,224.3,150.7,224.2z"/>
-    
-        <linearGradient id="SVGID_25_" gradientUnits="userSpaceOnUse" x1="150.0395" y1="58.5491" x2="116.6305" y2="106.3771" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#9F6747"/>
-        <stop  offset="0.4364" style="stop-color:#9F6747"/>
-        <stop  offset="0.7697" style="stop-color:#8A8A8A"/>
-        <stop  offset="1" style="stop-color:#8A8A8A"/>
-    </linearGradient>
-    <path class="st49" d="M146.2,225.9C146.2,225.9,146.2,225.9,146.2,225.9L146.2,225.9C146.2,225.9,146.2,225.9,146.2,225.9z
-         M150.7,224.2c0,0-0.1,0.1-0.1,0.1l0.1,0.7c0.1-0.2,0.2-0.3,0.2-0.5C150.8,224.5,150.8,224.3,150.7,224.2
-        C150.7,224.2,150.7,224.2,150.7,224.2z"/>
-    <path class="st2" d="M132.2,217.9c0.8,0.5,1.7,0.8,2.6,0.8c-0.3-0.2-0.5-0.5-0.7-0.7c-0.2,0-0.4,0-0.6,0
-        C133.1,218,132.6,218,132.2,217.9z"/>
-    
-        <linearGradient id="SVGID_26_" gradientUnits="userSpaceOnUse" x1="141.8168" y1="52.8056" x2="108.4078" y2="100.6336" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#9F6747"/>
-        <stop  offset="0.4364" style="stop-color:#9F6747"/>
-        <stop  offset="0.7697" style="stop-color:#8A8A8A"/>
-        <stop  offset="1" style="stop-color:#8A8A8A"/>
-    </linearGradient>
-    <path class="st50" d="M134.8,217.9c-0.2,0-0.5,0.1-0.7,0.1c0.2,0.2,0.4,0.4,0.7,0.7L134.8,217.9z M119.1,195.9
-        c-0.8,0.2-3.1,0.9-4.5,1.8c2.3,4,6.5,10.8,10.7,16.9c3,4.3,5.3,5.5,6.9,5.5c1.7,0,2.6-1.4,2.6-1.4c-0.9-0.1-1.8-0.3-2.6-0.8
-        c-2.1-0.5-3.4-2.4-5.6-5.4C124.8,210,121.5,201.9,119.1,195.9z"/>
-    <path class="st28" d="M118.9,194.7c0,0-0.1,0.1-0.1,0.1c0.1,0.3,0.3,0.7,0.4,1c0.1,0,0.1,0,0.1,0L118.9,194.7z M108.2,193l-1.5,1.1
-        l0.5,3.7l0.4,0.5c0.1-0.4,0.2-0.7,0.3-1.1c-0.4-0.7-0.7-1.1-0.7-1.1L108.2,193z M115.8,187.2l-0.4,0.3c0,0.1,0.1,0.1,0.1,0.2
-        c0,0,0,0,0,0c0.1-0.1,0.3-0.1,0.4-0.1L115.8,187.2z"/>
-    <path class="st51" d="M107.9,197.2c-0.1,0.4-0.2,0.7-0.3,1.1l2.9,3.2C109.4,199.6,108.5,198.1,107.9,197.2z M115.9,187.5
-        c-0.1,0-0.3,0.1-0.4,0.1c0,0,0,0,0,0c0.3,0.5,0.5,0.9,0.8,1.4c0.1-0.1,0.1-0.1,0.1-0.1c0,0,0,0,0,0c0,0.1,0.4,1,1,2.5
-        c0.5,1,1,2.1,1.4,3.3c0,0,0-0.1,0.1-0.1L115.9,187.5z"/>
-    
-        <linearGradient id="SVGID_27_" gradientUnits="userSpaceOnUse" x1="140.5773" y1="51.9402" x2="107.1683" y2="99.7672" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#87583D"/>
-        <stop  offset="0.4364" style="stop-color:#87583D"/>
-        <stop  offset="0.7697" style="stop-color:#757575"/>
-        <stop  offset="1" style="stop-color:#757575"/>
-    </linearGradient>
-    <path class="st52" d="M117.4,191.6c0.5,1.2,1,2.7,1.7,4.3c0.1,0,0.1,0,0.2,0c-0.1-0.4-0.3-0.7-0.4-1
-        C118.4,193.7,117.9,192.6,117.4,191.6z M115.4,187.5l-7.2,5.5l-1,3.1c0.1,0,0.3,0.4,0.7,1.1c0.6,0.9,1.5,2.4,2.7,4.2l1.1,1.1
-        c-0.1-0.6,1-3.4,2.8-4.6c0.1,0,0.1-0.1,0.2-0.1c-1.2-2.1-1.9-3.3-1.9-3.3s2.8-4.6,3.6-5.3c-0.3-0.5-0.5-1-0.8-1.4
-        C115.4,187.6,115.4,187.5,115.4,187.5z"/>
-    <path class="st53" d="M116.4,189c0,0-0.1,0-0.1,0.1c0.4,0.8,0.8,1.6,1.2,2.4C116.8,190.1,116.5,189.1,116.4,189
-        C116.4,189,116.4,189,116.4,189z"/>
-    
-        <linearGradient id="SVGID_28_" gradientUnits="userSpaceOnUse" x1="142.6879" y1="53.4148" x2="109.2799" y2="101.2418" gradientTransform="matrix(1 0 0 -1 0 285.89)">
-        <stop  offset="0" style="stop-color:#6F4832"/>
-        <stop  offset="0.4364" style="stop-color:#6F4832"/>
-        <stop  offset="0.7697" style="stop-color:#606060"/>
-        <stop  offset="1" style="stop-color:#606060"/>
-    </linearGradient>
-    <path class="st54" d="M116.2,189.1c-0.7,0.7-3.6,5.3-3.6,5.3s0.7,1.3,1.9,3.3c1.5-1,3.7-1.6,4.5-1.8c-0.7-1.7-1.3-3.2-1.7-4.3
-        C117,190.7,116.6,189.9,116.2,189.1z"/>
-    <path class="st55" d="M90.5,179.5c0,0,16.3,27,19.6,28.9l-0.2-9.3l8-0.2l-0.5-9.3l6.5-0.3c0,0-3.7-6.4-21.9-18.7
-        c0,0-2.9-0.4-3.6-0.3C95.4,170.8,89.8,172.1,90.5,179.5z"/>
-    <path class="st55" d="M117.2,189.6c-1.9-2.7-2.9-3.8-5.5-5.6c-2.5-1.7-4.6-3.9-7.2-5.5c-2.6-1.6-5.6-3.4-8.6-4.1
-        c-1.2-0.3-4.5-0.1-4.8,1.6c0,0,0-4.3,6-5.8c0.2,0,2.8-0.1,3.1-0.1l1.3,0.1c0,0,19.1,14,22.3,18.6L117.2,189.6z"/>
-    <path class="st43" d="M90.6,181.1c0,0-1-11.8,12.2-10.7C102.8,170.4,87.7,167,90.6,181.1z"/>
-</g>
-</svg>
-
-                                    </div>
-    <img src="images/registration/kakpoluchitodobrenie.jpg" alt="myCredit-video" class="numbers-gif">
-    <div class="numbers-play text-center" id="numbers-play">
-        <div class="numbers-play--holder js-play">
-            <img src="images/play.svg" width="98" height="98" alt="">
-            <p>Как получить одобрение по заявке на кредит в MyCredit</p>
-        </div>
-    </div>
-    <div class="embed-responsive embed-responsive-16by9">
-        <video width="320" height="240" preload="none" class="js-video embed-responsive-item" controls="">
-            <source src="/assets/video/video-content-1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-</div>
-                                <p>Детально рассмотрим вид личного кабинета.</p>
-                                <p>Обратите внимание на меню вкладок вверху страницы, тут вы можете переключаться между разными разделами личного кабинета:</p>
-                                <ol class="faq-ol">
-                                    <li>
-                                        <p>Вкладка «Мой Кредит» - показывает всю подробную информацию по вашему кредиту, дату погашения, сумму и проценты.</p>
-                                        <a href="/images/test/faq/Р1.В1.1(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.1(rus).jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Вкладка «Мои данные» показывает заполненные вами личные данные: контактную информацию, личные данные, занятость. Нажав на один из пунктов в главном окне вы можете исправить некорректные данные, либо внести изменения.</p>
-                                        <p>Окно редактирования личных данных выглядит следующим образом.</p>
-                                        <a href="/images/test/faq/Р1.В1.3(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.3(rus).jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Во вкладке «Мои бонусы» содержится информация о скидках, доступной сумме займа, активности, статусе и достижениях клиента.</p>
-                                        <a href="/images/test/faq/P1.B1.bonus(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/P1.B1.bonus(rus).jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Вкладка «Мои карты» показывает банковские карты, которые вы привязали, а также требования к банковским картам.</p>
-                                        <a href="/images/test/faq/lkabinet_rus12.jpg" data-lightbox="roadtrip"><img src="/images/test/faq/lkabinet_rus12.jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Вкладка «История кредитов» показывает все кредиты взятые вами, а также историю их погашения.</p>
-                                        <a href="/images/test/faq/Р1.В1.6(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.6(rus).jpg" alt=""></a>
-                                    </li>
-                                </ol>
-                                <p>Чтобы зарегистрироваться и <a href="ru/">получить кредит</a> в компании MyCredit зайдите на официальный сайт MyCredit, где вы можете сразу перейти к регистрации личного кабинета и непосредственно к оформлению кредита.</p>
-                                <ul>
-                                    <li>Выберите нужную вам сумму и нажмите кнопку «Оформить кредит».</li>
-                                    <li>Заполните контактные данные. Введите код из сообщения, которое придет на указанный вами номер мобильного телефона. После придумайте пароль, содержащий не менее 6 знаков, включая цифры и буквы верхнего и нижнего регистра. Далее заполните личные данные - введите ваши паспортные данные, ИНН, дату рождения и адрес проживания.</li>
-                                    <li>Вы попадаете на страницу, где нужно указать информацию о вашей занятости и дополнительном доходе. Вводите только достоверную информацию и рабочие номера телефонов.</li>
-                                    <li>Далее укажите данные вашей личной банковской карты и пройдите ее верификацию – подтверждение того, что карта находится в ваших руках. Процесс верификации проходит максимально просто. На указанной вами карте будет временно заблокирована одна гривна. На ваш номер телефона поступит SMS-сообщение с кодом для проверки, который нужно будет ввести в специальное поле. Это позволит убедиться, что оформить займ на карту пытаетесь именно вы.
-                                        <blockquot>Мы не симаем деньги с карты клиента, а лишь временно блокируем определенную сумму. В течение суток эта сумма станет доступна.</blockquot>
-                                    </li>
-                                    <li>Система автоматически определяет достоверность заполненных вами данных, и в случае корректного заполнения вы попадете в личный кабинет пользователя.</li>
-                                    <li>Войдите в личный кабинет на сайте, используя ваш номер телефона и придуманный вами пароль.</li>
-                                    <li>Ознакомьтесь с текстом договора и поставьте галочку в пункте «Согласен с условиями договора». После подтверждения согласия с условиями договора на ваш телефонный номер будет выслано SMS-сообщение с кодом для подписания заявки. Введите код на сайте и ожидайте окончательного решения.</li>
-                                </ul>
-                                <div class="faq-heading">Был ли этот ответ вам полезен?</div>
-                                <div class="faq-like  d-f align-center">
-                                    <div class="faq-like-buttons">
-                                        <button class="btn btn-like" id="btn_like_positive">Да</button>
-                                        <button class="btn btn-like" id="btn_like_negative">Нет</button>
-                                        <span id="span_page_rating" class="hidden">70</span>
-                                    </div>
-                                    <div class="faq-like-values">
-                                        <div>
-                                            <img src="assets/images/like.svg" alt="">
-                                            <span id="span_like_positive">0</span>
+                        <div class="content-holder">
+                            <div class="content-inner">
+                                <div class="content">
+                                    <div class="heading-h2">Что такое личный кабинет и как мне зарегистрироваться в нем?</div>
+                                    <div class="iframe-relative js-frame">
+                                        <img src="images/registration/kakpoluchitodobrenie.jpg" alt="myCredit-video" class="numbers-gif">
+                                        <div class="numbers-play text-center" id="numbers-play">
+                                            <div class="numbers-play--holder js-play">
+                                                <img src="images/play.svg" width="98" height="98" alt="">
+                                                <p>Как получить одобрение по заявке на кредит в MyCredit</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <img src="assets/images/dislike.svg" alt="">
-                                            <span id="span_like_negative">0</span>
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <video width="320" height="240" preload="none" class="js-video embed-responsive-item" controls="">
+                                                <source src="/assets/video/video-content-1.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="faq-contacts">
-                                    <span>Всё еще остались вопросы? Тогда звоните нам:</span>
-                                    <div class="faq-phones">
-                                        <a href="tel:0733694111" class="lifecell">073 369 41 11</a>
-                                        <a href="tel:0673694111" class="kyivstar">067 369 41 11</a>
-                                        <a href="tel:0503694111" class="mts">050 369 41 11</a>
+                                    <p>Детально рассмотрим вид личного кабинета.</p>
+                                    <p>Обратите внимание на меню вкладок вверху страницы, тут вы можете переключаться между разными разделами личного кабинета:</p>
+                                    <ol class="faq-ol">
+                                        <li>
+                                            <p>Вкладка «Мой Кредит» - показывает всю подробную информацию по вашему кредиту, дату погашения, сумму и проценты.</p>
+                                            <a href="/images/test/faq/Р1.В1.1(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.1(rus).jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Вкладка «Мои данные» показывает заполненные вами личные данные: контактную информацию, личные данные, занятость. Нажав на один из пунктов в главном окне вы можете исправить некорректные данные, либо внести изменения.</p>
+                                            <p>Окно редактирования личных данных выглядит следующим образом.</p>
+                                            <a href="/images/test/faq/Р1.В1.3(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.3(rus).jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Во вкладке «Мои бонусы» содержится информация о скидках, доступной сумме займа, активности, статусе и достижениях клиента.</p>
+                                            <a href="/images/test/faq/P1.B1.bonus(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/P1.B1.bonus(rus).jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Вкладка «Мои карты» показывает банковские карты, которые вы привязали, а также требования к банковским картам.</p>
+                                            <a href="/images/test/faq/lkabinet_rus12.jpg" data-lightbox="roadtrip"><img src="/images/test/faq/lkabinet_rus12.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Вкладка «История кредитов» показывает все кредиты взятые вами, а также историю их погашения.</p>
+                                            <a href="/images/test/faq/Р1.В1.6(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.6(rus).jpg" alt=""></a>
+                                        </li>
+                                    </ol>
+                                    <p>Чтобы зарегистрироваться и <a href="ru/">получить кредит</a> в компании MyCredit зайдите на официальный сайт MyCredit, где вы можете сразу перейти к регистрации личного кабинета и непосредственно к оформлению кредита.</p>
+                                    <ul>
+                                        <li>Выберите нужную вам сумму и нажмите кнопку «Оформить кредит».</li>
+                                        <li>Заполните контактные данные. Введите код из сообщения, которое придет на указанный вами номер мобильного телефона. После придумайте пароль, содержащий не менее 6 знаков, включая цифры и буквы верхнего и нижнего регистра. Далее заполните личные данные - введите ваши паспортные данные, ИНН, дату рождения и адрес проживания.</li>
+                                        <li>Вы попадаете на страницу, где нужно указать информацию о вашей занятости и дополнительном доходе. Вводите только достоверную информацию и рабочие номера телефонов.</li>
+                                        <li>Далее укажите данные вашей личной банковской карты и пройдите ее верификацию – подтверждение того, что карта находится в ваших руках. Процесс верификации проходит максимально просто. На указанной вами карте будет временно заблокирована одна гривна. На ваш номер телефона поступит SMS-сообщение с кодом для проверки, который нужно будет ввести в специальное поле. Это позволит убедиться, что оформить займ на карту пытаетесь именно вы.
+                                            <blockquot>Мы не симаем деньги с карты клиента, а лишь временно блокируем определенную сумму. В течение суток эта сумма станет доступна.</blockquot>
+                                        </li>
+                                        <li>Система автоматически определяет достоверность заполненных вами данных, и в случае корректного заполнения вы попадете в личный кабинет пользователя.</li>
+                                        <li>Войдите в личный кабинет на сайте, используя ваш номер телефона и придуманный вами пароль.</li>
+                                        <li>Ознакомьтесь с текстом договора и поставьте галочку в пункте «Согласен с условиями договора». После подтверждения согласия с условиями договора на ваш телефонный номер будет выслано SMS-сообщение с кодом для подписания заявки. Введите код на сайте и ожидайте окончательного решения.</li>
+                                    </ul>
+                                    <div class="faq-heading">Был ли этот ответ вам полезен?</div>
+                                    <div class="faq-like  d-f align-center">
+                                        <div class="faq-like-buttons">
+                                            <button class="btn btn-like" id="btn_like_positive">Да</button>
+                                            <button class="btn btn-like" id="btn_like_negative">Нет</button>
+                                            <span id="span_page_rating" class="hidden">70</span>
+                                        </div>
+                                        <div class="faq-like-values">
+                                            <div>
+                                                <img src="assets/images/like.svg" alt="">
+                                                <span id="span_like_positive">0</span>
+                                            </div>
+                                            <div>
+                                                <img src="assets/images/dislike.svg" alt="">
+                                                <span id="span_like_negative">0</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="faq-person">
-                                        <img src="assets/images/personal/review-person.png" alt="">
-                                        <span>
-										<strong>Роман</strong>
-										Кредитный эксперт MyCredit
-									</span>
+                                    <div class="faq-contacts">
+                                        <span>Всё еще остались вопросы? Тогда звоните нам:</span>
+                                        <div class="faq-phones">
+                                            <a href="tel:0733694111" class="lifecell">073 369 41 11</a>
+                                            <a href="tel:0673694111" class="kyivstar">067 369 41 11</a>
+                                            <a href="tel:0503694111" class="mts">050 369 41 11</a>
+                                        </div>
+                                        <div class="faq-person">
+                                            <img src="assets/images/personal/review-person.png" alt="">
+                                            <span>
+                                        <strong>Роман</strong>
+                                        Кредитный эксперт MyCredit
+                                    </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -815,156 +326,155 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Footer -->
-        <footer class="footer" id="footer">
-            <div class="container">
-                <div class="footer-top">
-                    <div class="footer-left">
-                        <div class="footer-menu">
-                            <div class="footer-heading">О нас</div>
-                            <ul>
-                                <li><a href="">Правовая информация</a></li>
-                                <li><a href="">Договор займа</a></li>
-                                <li><a href="">Финансовая отчетность</a></li>
-                                <li><a href="">Политика конфиденциальности</a></li>
-                                <li><a href="">Партнерам</a></li>
-                                <li><a href="">Отзывы</a></li>
-                                <li><a href="">Контакты</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-menu">
-                            <div class="footer-heading">Часто задаваемые вопросы</div>
-                            <ul>
-                                <li><a href="">Как получить кредит?</a></li>
-                                <li><a href="">Как погасить / продлить кредит</a></li>
-                                <li><a href="">Почему мне отказали в выдаче кредита</a></li>
-                                <li><a href="">Блог</a></li>
-                                <li><a href="">Новости</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-menu">
-                            <div class="footer-heading">Как вернуть кредит</div>
-                            <ul>
-                                <li><a href="">В интернете</a></li>
-                                <li><a href="">Оплата кредита через терминал</a></li>
-                                <li><a href="">В кассе банка</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-menu footer-menu__wide">
-                            <div class="footer-heading">Услуги кредитования</div>
-                            <div class="footer-menu__wrapper">
+            <!-- Footer -->
+            <footer class="footer" id="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="footer-left">
+                            <div class="footer-menu">
+                                <div class="footer-heading">О нас</div>
                                 <ul>
-                                    <li><a href="">Деньги до зарплаты онлайн за 20 минут</a></li>
-                                    <li><a href="">Кредит от 18 лет без справок и поручителей </a></li>
-                                    <li><a href="">Кредиты без залога в Киеве, Харькове и всей Украине</a></li>
-                                    <li><a href="">Потребительский кредит онлайн в Украине</a></li>
-                                    <li><a href="">Кредит для пенсионеров в Украине</a></li>
-                                    <li><a href="">Микрокредит и микрозайм онлайн на карту</a></li>
-                                    <li><a href="">Кредит онлайн с плохой кредитной историей в Украине</a></li>
+                                    <li><a href="">Правовая информация</a></li>
+                                    <li><a href="">Договор займа</a></li>
+                                    <li><a href="">Финансовая отчетность</a></li>
+                                    <li><a href="">Политика конфиденциальности</a></li>
+                                    <li><a href="">Партнерам</a></li>
+                                    <li><a href="">Отзывы</a></li>
+                                    <li><a href="">Контакты</a></li>
                                 </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <div class="footer-heading">Часто задаваемые вопросы</div>
                                 <ul>
-                                    <li><a href="">Взять кредит онлайн без справки о доходах в Украине</a></li>
-                                    <li><a href="">Деньги в долг на карту</a></li>
-                                    <li><a href="">Краткосрочный кредит на 1 месяц</a></li>
-                                    <li><a href="">Беспроцентный кредит под 0% без переплат</a></li>
-                                    <li><a href="">Кредит 365 дней в году</a></li>
-                                    <li><a href="">Кредитный калькулятор онлайн в Украине</a></li>
-                                    <li><a href="">Пролонгация кредита от Mycredit</a></li>
+                                    <li><a href="">Как получить кредит?</a></li>
+                                    <li><a href="">Как погасить / продлить кредит</a></li>
+                                    <li><a href="">Почему мне отказали в выдаче кредита</a></li>
+                                    <li><a href="">Блог</a></li>
+                                    <li><a href="">Новости</a></li>
                                 </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <div class="footer-heading">Как вернуть кредит</div>
+                                <ul>
+                                    <li><a href="">В интернете</a></li>
+                                    <li><a href="">Оплата кредита через терминал</a></li>
+                                    <li><a href="">В кассе банка</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu footer-menu__wide">
+                                <div class="footer-heading">Услуги кредитования</div>
+                                <div class="footer-menu__wrapper">
+                                    <ul>
+                                        <li><a href="">Деньги до зарплаты онлайн за 20 минут</a></li>
+                                        <li><a href="">Кредит от 18 лет без справок и поручителей </a></li>
+                                        <li><a href="">Кредиты без залога в Киеве, Харькове и всей Украине</a></li>
+                                        <li><a href="">Потребительский кредит онлайн в Украине</a></li>
+                                        <li><a href="">Кредит для пенсионеров в Украине</a></li>
+                                        <li><a href="">Микрокредит и микрозайм онлайн на карту</a></li>
+                                        <li><a href="">Кредит онлайн с плохой кредитной историей в Украине</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="">Взять кредит онлайн без справки о доходах в Украине</a></li>
+                                        <li><a href="">Деньги в долг на карту</a></li>
+                                        <li><a href="">Краткосрочный кредит на 1 месяц</a></li>
+                                        <li><a href="">Беспроцентный кредит под 0% без переплат</a></li>
+                                        <li><a href="">Кредит 365 дней в году</a></li>
+                                        <li><a href="">Кредитный калькулятор онлайн в Украине</a></li>
+                                        <li><a href="">Пролонгация кредита от Mycredit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-right text-center">
+                            <ul>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-lifecell-1"></span><span>073 369 41 41</span></a>
+                                </li>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-lifecell-12"></span><span>073 369 41 41</span></a>
+                                </li>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-mts"></span><span>073 369 41 41</span></a>
+                                </li>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-viber"></span><span>073 369 41 41</span></a>
+                                </li>
+                            </ul>
+                            <div class="main-phone">
+                                <a href="tel:0800214111">0 800 214 111</a>
+                                <span>Бесплатно по Украине со стационарных телефонов</span>
+                                <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-right text-center">
-                        <ul>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-lifecell-1"></span><span>073 369 41 41</span></a>
-                            </li>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-lifecell-12"></span><span>073 369 41 41</span></a>
-                            </li>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-mts"></span><span>073 369 41 41</span></a>
-                            </li>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-viber"></span><span>073 369 41 41</span></a>
-                            </li>
-                        </ul>
-                        <div class="main-phone">
-                            <a href="tel:0800214111">0 800 214 111</a>
-                            <span>Бесплатно по Украине со стационарных телефонов</span>
-                            <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <a href="#" class="footer-logo">
+                    <div class="footer-bottom">
+                        <a href="#" class="footer-logo">
                         <img src="images/logo_last_white.svg" alt="">
                     </a>
-                    <div class="footer-text">
-                        <p>Первый в Украине сервис кредитования через интернет. Мы предоставляем быстрые и удобные кредиты для всех граждан Украины.
-                            <br>© 2015 - 2018 MyCredit - Кредит онлайн на банковскую карту за 20 минут </p>
-                        <p>Разработка и поддержка сайта — <a href="#">Artjoker</a></p>
+                        <div class="footer-text">
+                            <p>Первый в Украине сервис кредитования через интернет. Мы предоставляем быстрые и удобные кредиты для всех граждан Украины.
+                                <br>© 2015 - 2018 MyCredit - Кредит онлайн на банковскую карту за 20 минут </p>
+                            <p>Разработка и поддержка сайта — <a href="#">Artjoker</a></p>
+                        </div>
+                        <ul class="footer-social">
+                            <li><a href=""><span class="icon-telegram-1"></span></a></li>
+                            <li><a href=""><span class="icon-vk-social-network-logo"></span></a></li>
+                            <li><a href=""><span class="icon-facebook-logo"></span></a></li>
+                            <li><a href=""><span class="icon-instagram-logo"></span></a></li>
+                            <li><a href=""><span class="icon-youtube-logo"></span></a></li>
+                            <li><a href=""><span class="icon-google-plus-logo"></span></a></li>
+                        </ul>
                     </div>
-                    <ul class="footer-social">
-                        <li><a href=""><span class="icon-telegram-1"></span></a></li>
-                        <li><a href=""><span class="icon-vk-social-network-logo"></span></a></li>
-                        <li><a href=""><span class="icon-facebook-logo"></span></a></li>
-                        <li><a href=""><span class="icon-instagram-logo"></span></a></li>
-                        <li><a href=""><span class="icon-youtube-logo"></span></a></li>
-                        <li><a href=""><span class="icon-google-plus-logo"></span></a></li>
-                    </ul>
                 </div>
-            </div>
-        </footer>
-        <div class="bottom-callback js-callback" id="div_SendEmail">
-            <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
-            <div class="callback-holder d-f">
-                <div class="callback-left">
-                    <figure class="call-img">
-                        <img alt="" class="lazy" src="images/operator.png">
+            </footer>
+            <div class="bottom-callback js-callback" id="div_SendEmail">
+                <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
+                <div class="callback-holder d-f">
+                    <div class="callback-left">
+                        <figure class="call-img">
+                            <img alt="" class="lazy" src="images/operator.png">
                     </figure>
-                    <div class="call-img--name">
-                        Ирина Кондрашова <span>специалист по кредитованию</span>
+                            <div class="call-img--name">
+                                Ирина Кондрашова <span>специалист по кредитованию</span>
+                            </div>
+                            <div class="call-text">
+                                <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
+                            </div>
                     </div>
-                    <div class="call-text">
-                        <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
+                    <div class="callback-form">
+                        <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
+                            <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
+                            <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
+                            <div class="form-group">
+                                <div class="form-control--wr">
+                                    <label for="send_sername" class="form-label">ФИО</label>
+                                    <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-control--wr">
+                                    <label for="send_email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-control--wr">
+                                    <label for="message" class="form-label">Сообщение</label>
+                                    <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
+                                Отправить
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <div class="callback-form">
-                    <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
-                        <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
-                        <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_sername" class="form-label">ФИО</label>
-                                <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
-                            Отправить
-                        </button>
-                    </form>
+                <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
+                    <span id="span_resultEmail">Сообщение отправлено</span>
                 </div>
-            </div>
-            <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
-                <span id="span_resultEmail">Сообщение отправлено</span>
             </div>
         </div>
-    </div>
-    <script src="js/content-home.min.js"></script>
+        <script src="js/content-home.min.js"></script>
 </body>
 
 </html>

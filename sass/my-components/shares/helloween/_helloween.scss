@@ -3,28 +3,50 @@
 .mummy {
     position: fixed;
     width: 400px;
+    text-align: center;
     height: 0;
     z-index: 10;
     right: 0;
     margin-top: 280px;
     top: 100px;
     overflow: hidden;
-    animation-name: heightAnimate;
-    animation-duration: 14s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+
+    &.active {
+        animation-name: heightAnimate;
+        animation-duration: 14s;
+        animation-fill-mode: forwards;
+    }
+
+	@media screen and (max-width: 1440px) {
+		width: 300px;
+	}
+    @media screen and (max-width: 767px) {
+        
+        top: 20px;
+        text-align: right;
+    }
+
+
 
     svg {
         width: 200px;
-        height: 280px;
+
+        @media screen and (max-width: 1440px) {
+        	width: 100px;
+        }
+
+
+        // height: 280px;
     }
+
+
 }
 
 .left-leg {
     transform-origin: 0 -40px;
 }
 
-.right-left {
+.right-leg {
     transform-origin: 30px 0;
 }
 
@@ -38,13 +60,26 @@
     left: 0;
     top: 100px;
     overflow: hidden;
-    animation-name: opacityAnimate;
-    animation-duration: 5s;
-    animation-fill-mode: both;
+
+    &.active {
+        animation-name: opacityAnimate;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+    }
+
+
+    @media screen and (max-width: 767px) {
+        width: 300px;
+        top: 20px;
+    }
 
     svg {
         width: 200px;
         height: 280px;
+
+        @media screen and (max-width: 767px) {
+            width: 100px;
+        }
     }
 }
 
@@ -62,19 +97,25 @@
 
 .ghost {
     position: fixed;
-    width: 400px;
     opacity: 0;
     z-index: 10;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    animation-name: opacityAnimate;
-    animation-duration: 5s;
-    animation-fill-mode: both;
+
+    &.active {
+        animation-name: opacityAnimate;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+    }
+
 
     svg {
         width: 200px;
-        height: 280px;
+
+        @media screen and (max-width: 767px) {
+            width: 100px;
+        }
     }
 }
 
@@ -84,10 +125,14 @@
     z-index: 10;
     left: 50%;
     top: 120px;
-    animation-name: batAnimate;
-    animation-duration: 25s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+
+    &.active {
+        animation-name: batAnimate;
+        animation-duration: 25s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
     transform-origin: 50% 50%;
 
     svg {
@@ -101,13 +146,20 @@
     left: 200px;
     top: -300px;
     overflow: hidden;
-    animation-name: witchAnimate;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
+
+    &.active {
+        animation-name: witchAnimate;
+        animation-duration: 4s;
+        animation-fill-mode: forwards;
+    }
+
 
     svg {
         width: 200px;
-        height: 280px;
+
+        @media screen and (max-width: 767px) {
+            width: 100px;
+        }
     }
 }
 
@@ -133,10 +185,6 @@
     z-index: 10;
     left: 60%;
     top: 60px;
-    // overflow: hidden;
-    // animation-name: witchAnimate;
-    // animation-duration: 4s;
-    // animation-fill-mode: forwards;
 
     svg {
         width: 60px;
@@ -164,14 +212,27 @@
     margin-top: 280px;
     top: 300px;
     overflow: hidden;
-    animation-name: pumpkinAnimate;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+
+    &.active {
+        animation-name: pumpkinAnimate;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+
+
+    @media screen and (max-width: 767px) {
+        width: 300px;
+        left: 20%;
+        text-align: center;
+    }
 
     svg {
         width: 200px;
-        height: 280px;
+
+        @media screen and (max-width: 767px) {
+            width: 100px;
+        }
     }
 }
 
@@ -181,10 +242,13 @@
     right: 10%;
     top: 300px;
     opacity: 0;
-    animation-name: zombieAnimate;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+
+    &.active {
+        animation-name: zombieAnimate;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+    }
+
 
     svg {
         width: 200px;
@@ -210,10 +274,14 @@
     right: 20%;
     top: 300px;
     opacity: 0;
-    animation-name: zombieAnimate;
-    animation-duration: 5s;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+
+    &.active {
+        animation-name: zombieAnimate;
+        animation-duration: 5s;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+
 
     svg {
         width: 200px;
@@ -233,10 +301,14 @@
     z-index: 10;
     left: 50%;
     top: 120px;
-    animation-name: batVampAnimate;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+
+    &.active {
+        animation-name: batVampAnimate;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
     transform-origin: 50% 50%;
 
     svg {
@@ -297,6 +369,28 @@
     }
 }
 
+@media screen and (max-width: 767px) {
+    @keyframes heightAnimate {
+
+        0% {
+            height: 0;
+            transform: translate(0, 0);
+        }
+
+        30% {
+            height: 280px;
+            transform: translate(0, 0);
+            margin-top: 0;
+        }
+
+        100% {
+            height: 280px;
+            transform: translate(-300px, 0);
+            margin-top: 0;
+        }
+    }
+}
+
 @keyframes zombieAnimate {
 
     to {
@@ -343,6 +437,28 @@
         height: 280px;
         transform: translate(0, 0);
         margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    @keyframes pumpkinAnimate {
+
+        0% {
+            height: 0;
+            transform: translate(0, 0);
+        }
+
+        30% {
+            height: 160px;
+            transform: translate(0, 0);
+            margin-top: 0;
+        }
+
+        100% {
+            height: 160px;
+            transform: translate(0, 0);
+            margin-top: 0;
+        }
     }
 }
 
@@ -417,5 +533,306 @@
     100% {
         opacity: 0;
         transform: translate(-400px, -250px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Yulia
+
+.hallowen-banner .banner-left_deco {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    overflow: hidden;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    .banner-left_img {
+        display: flex;
+        align-items: flex-end;
+        width: 30%;
+        left: 3%;
+
+        @media screen and (max-width: 1700px) {
+            left: -5%;
+            width: 32%;
+        }
+
+        @media screen and (max-width: 1500px) {
+            left: 0;
+        }
+
+        @media screen and (max-width: 1440px) {
+            left: 3%;
+        }
+
+        @media screen and (max-width: 1300px) {
+            left: -5%;
+            width: 35%;
+        }
+
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+
+        .vampire-bg {
+            width: 13%;
+
+            @media screen and (max-width: 1700px) {
+                width: 11%;
+            }
+
+            @media screen and (max-width: 1500px) {
+                width: 16%;
+                margin-left: 9%;
+            }
+
+            @media screen and (max-width: 1440px) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: 1300px) {
+                margin-left: 14%;
+            }
+
+            @media screen and (max-width: 1280px) {
+                margin-left: 0;
+            }
+
+            @media screen and (max-width: 1024px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.banner-spinne_img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18%;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+
+    img {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+.hallowen-banner .banner-android .banner-heading .banner-mobile_link strong {
+    border-bottom: 1px dashed #ed592b;
+
+    @media screen and (max-width: 350px) {
+        border: none!important;
+    }
+
+    @media screen and (max-width: 350px) {
+        border: none !important;
+    }
+}
+
+/********modal-Promo-Code********/
+.modal {
+    &.halloween-pop-up {
+        overflow: scroll;
+    }
+
+    &-dialog {
+
+        &__halloween {
+            padding: 130px 24px 44px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 400px;
+            background-color: #1F1F1F;
+            background-image: url('../images/hallowen/Mask-bg-popUp.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            border-radius: 8px;
+
+            @media screen and (max-width: 767px) {
+                padding: 130px 8px 16px !important;
+                width: calc(100% - 20px) !important;
+                max-width: 400px !important;
+            }
+
+            @media screen and (max-height: 500px) {
+                position: relative;
+                height: auto;
+                width: calc(100% - 20px) !important;
+                top: 0 !important;
+                left: 50% !important;
+                transform: translate(-50%, 0%) !important;
+            }
+
+            .icon-close {
+                font-size: 10px;
+                color: #fff;
+                opacity: 1;
+            }
+
+            .top-center {
+                height: 160px;
+                width: 160px;
+                border-radius: 50%;
+                top: 0;
+                left: 50%;
+                color: #fff;
+                transform: translate(-50%, -50%);
+                opacity: 1;
+                background: #0083CB url('../images/hallowen/blue-mask.png');
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 64px;
+                font-family: 'HelveticaNeueCyr Bold';
+
+                @media screen and (max-width: 767px) {
+                    top: 5px !important;
+                    transform: translate(-50%, 0%) !important;
+                    height: 120px !important;
+                    width: 120px !important;
+                    font-size: 55px !important;
+                }
+
+                span {
+                    position: relative;
+
+                    &::after {
+                        content: "%";
+                        font-size: 30px;
+                        display: inline-block;
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        transform: translate(100%, -28%);
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        &::after {
+                            transform: translate(100%, -50%);
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &-content {
+
+        &__halloween {
+            color: #fff;
+
+            .halloween-heading {
+                font: 18px /24px 'HelveticaNeueCyr Bold', Arial, sans-serif;
+                margin-bottom: 24px;
+
+                >span {
+                    font-size: 21px;
+                }
+
+                @media screen and (max-width: 767px) {
+                    font-size: 16px;
+                    line-height: 22px;
+                    margin-bottom: 16px;
+                }
+            }
+
+            .halloween-promoCode {
+                display: inline-block;
+                border-radius: 100px;
+                padding: 8px 24px;
+                margin-bottom: 8px;
+                background-color: #E5F0F8;
+                border: 2px dashed #3055b4;
+                color: #3055B4;
+                font-family: 'HelveticaNeueCyr Medium';
+                font-size: 45px;
+                line-height: 45px;
+
+                @media screen and (max-width: 767px) {
+                    padding: 8px 10px;
+                    font-size: 40px;
+                }
+
+                &+span {
+                    display: block;
+                    font: 12px /14px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                    margin-bottom: 16px;
+
+                    @media screen and (max-width: 767px) {
+                        font-size: 9px;
+                    }
+                }
+            }
+
+            @media screen and (max-height: 400px) {
+                padding-top: 24px;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 40px;
+            }
+
+            .halloween-img {
+                background-image: radial-gradient(25% 50% at 50% 50%, '#ffe9a64d', transparent);
+                margin-bottom: 8px;
+
+                img {
+                    max-height: 102px;
+                }
+
+                &.vampire_head {
+                    text-align: left;
+
+                    img {
+                        margin-left: 24px;
+
+                        @media screen and (max-width: 320px) {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+
+            .btn-halloween {
+                font: 18px /18px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+                background-color: #45BC75;
+                background: linear-gradient(to bottom, #52E08C, #45BC75);
+                color: #fff;
+                border-radius: 4px;
+                box-shadow: 0px 6px 24px -7px rgba(0, 0, 0, 0.75);
+                width: 100%;
+                padding: 16px;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    background: linear-gradient(to bottom, #45BC75, #52E08C);
+                }
+            }
+        }
     }
 }

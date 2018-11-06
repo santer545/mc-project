@@ -462,6 +462,9 @@
         background-image: url(../assets/images/close-popup-bg.jpg);
         background-repeat: no-repeat;
         box-shadow: -15px 21px 61px -16px rgba(0, 0, 0, .75);
+        @media screen and (max-width: 991px) {
+            background-position: -65px 0;
+        }
         @media screen and (max-width: 767px) {
             background-image: none;
             padding: 12% 30px;
@@ -472,16 +475,12 @@
         width: 800px;
         border-radius: 5px;
         border: none;
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 991px) {
             width: 90%;
         }
     }
     .heading-h2 {
         font: 29px / 35px 'HelveticaNeueCyr Roman', Arial, sans-serif;
-    }
-
-    .icon-close {
-        top: -15px;
     }
 }
 

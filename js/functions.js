@@ -3602,9 +3602,10 @@ function recordEmailSiteOnline() {
  * @param phoneId		- ID-элемента с введенным номером телефона
  * @param filePrefix	- начало имени файла
  * @param phoneFrom		- с какой формы запись
+ * @param partner		- партнер, от которого пришли
  * @returns
  */
-function recordPhone(phoneId, filePrefix, phoneFrom) {
+function recordPhone(phoneId, filePrefix, phoneFrom, partner) {
 
 	var url = "/ru/?ajax";
 
@@ -3614,7 +3615,8 @@ function recordPhone(phoneId, filePrefix, phoneFrom) {
 		typeData: 'recordPhone',
 		phone: phone,
 		filePrefix: filePrefix,
-		phoneFrom: phoneFrom
+		phoneFrom: phoneFrom,
+		partner: partner
 	};
 
 	// отправить массив на сервер
@@ -5191,10 +5193,6 @@ $(function () {
 //});
 
 $(document).ready(function () {
-
-	// отображение поля для ввода своего варианта
-	myOwnTargetLoan();
-
 	// загрузка скриптов:
 	downloadJS(0);
 
@@ -5500,8 +5498,9 @@ $(document).ready(function () {
 			var phoneId = "phoneFromForm";
 			var filePrefix = 'phoneFromForm';
 			var phoneFrom = 'Осенний розыгрыш';
+			var partner = $("#utm_source").val();
 
-			recordPhone(phoneId, filePrefix, phoneFrom);
+			recordPhone(phoneId, filePrefix, phoneFrom, partner);
 		});
 		
 		$("#phoneFromForm").on('keyup', function (event) {
@@ -5599,6 +5598,22 @@ $(document).ready(function () {
 			}
 		});
 	});
+	
+	// Показывает историю платежей
+	$('.js-payments-toggle').on('click', function(e) {
+		e.preventDefault();
+		
+		$payments = $('#payments-wrapper-' + $(this).data('target-id'));
+		
+		if (!$payments.length) {
+			return;
+		}
+		
+		$('#credits-history-wrapper').toggle();
+		$payments.toggle();
+		document.body.scrollTop = 0; // For Safari
+		document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	});
 
 	// если есть кнопки пролонгации
 	$('.js-btn-prolongate').on('click', function() {
@@ -5645,6 +5660,47 @@ $(document).ready(function () {
 			deleteUploadedFile(photoId, 'photoLK');
 	    });
 	}
+	
+	// Обработка селекта с показом соответствующего выбору текстового поля
+	// и включение для этого поля обязательности
+	$('select.js-select-has-depends').on('change', function() {
+		var select = this,
+			selectedValue = $(this).find('option:selected').val();
+		
+		$('.' + select.id + '-depend').each(function() {
+			if (this.id == select.id + '-depend-' + selectedValue) {
+				$(this).removeClass('hidden');
+				
+				if ($(this).data('required')) {
+					$(this).prop('required', true);
+				}
+			} else {
+				$(this).addClass('hidden');
+				$(this).prop('required', false);
+				$(this).next('.error_text').hide();
+				$(this).parents('.has-error').removeClass('has-error');
+			}
+		});
+	});
+
+	// если есть секции с партнерами:
+	if ($(".js-partners-item").length > 0) {
+
+		$(".js-partners-item").on('click', function (event) {
+
+			// обрабатываем клик по партнеру (заполняем форму): 
+			$('#partner_id').val($(this).data("id"));
+			$('#partner_name').val($(this).data("name"));
+			$('#partner_company').val($(this).data("company"));
+			$('#partner_email').val($(this).data("email"));
+			$('#partner_info').val($(this).data("info"));
+			$('#partner_accesses').val($(this).data("accesses"));
+			$('#partner_status').val($(this).data("status"));
+		});
+
+	}
+
+
 	//
 
 	//================================================================================================================    

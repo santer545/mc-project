@@ -358,6 +358,18 @@
     strong {
         color: #fff;
     }
+    .banner-mobile_link strong {
+        border-bottom: none;
+    }
+}
+
+.banner-left_deco {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    overflow: hidden;
 }
 .banner-left_img {
     position: absolute;
