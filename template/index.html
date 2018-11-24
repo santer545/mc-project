@@ -17,7 +17,7 @@
     <!-- <link rel="stylesheet" href="css/main-page-mobile.min.css" media="screen and (max-width: 767px)"> -->
 </head>
 
-<body class="home-page">
+<body class="home-page home-page-black--Friday">
     <div class="wrapper">
         <!-- Header -->
         <header class="header" id="header">
@@ -82,12 +82,34 @@
             <!-- Swiper -->
             <div class="js-banner banner-carousel">
                 <div>
-                    <div style="background-image: url('images/test/banner/android-bg.jpg')">
+                    <div style="background-image: url('images/Black-Friday/banner-background-friday.jpg')">
+                        <div class="banner-left_deco black-banner">
+                            <div class="banner-left_img">
+                                <img class="js-lazy" data-src="images/Black-Friday/banner-girl-friday.png" alt="">
+                            </div>
+                            <div class="banner-right_img">
+                                <img class="js-lazy" data-src="images/Black-Friday/banner-Friday--logo.png" alt="">
+                            </div>
+                        </div>
+                        <div class="banner-top text-center black-banner">
+                            <div class="container">
+                                <div class="banner-heading">
+                                    ЧЕРНАЯ НЕДЕЛЯ В MYCREDIT
+                                    <strong>5 НОЧЕЙ СУПЕРСКИДОК ДО 50%</strong>
+                                    <a class="banner-mobile_link" href=""><strong>5 НОЧЕЙ СУПЕРСКИДОК ДО 50%</strong></a>
+                                </div>
+                                <a href="" class="btn btn-banner">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div style="background-image: url('images/test/banner/android-bg.webp')">
                         <div class="banner-left_deco">
                             <div class="banner-left_img">
                                 <img class="js-lazy" data-src="images/test/banner/android-girl.png" alt="">
                             </div>
-                        </div>
+                            </div>
                             <div class="banner-top banner-android text-center">
                                 <div class="container">
                                     <div class="banner-heading">
@@ -142,7 +164,6 @@
                     </div>
                 </div>
                 <div class="calculator">
-                    
                     <div class="calculator-heading">
                         <div class="calculator-labe">
                             <img alt="" class="regime-labe" src="assets/regime.svg">
@@ -155,7 +176,6 @@
                             </span>
                             <strong> Решение за 20 минут</strong> Вы получите деньги в <strong id="span_get_money_large_"> <strong>14:35</strong></strong>
                         </div>
-                        
                         <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
                             <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
                             <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
@@ -685,45 +705,48 @@
                     Видеоотзывы
                 </div>
                 <ul class="people-list d-f align-center justify-center" id="html5-videos">
-                    <li class="people-item d-f bg-review align-center justify-center">
+                    <li class="people-item d-f bg-review align-center justify-center  sprite sprite-review">
                         <a class="item" data-toggle="modal" data-target="#video-modal">
                             <span class="icon-issue-play"><span class="path1"></span><span class="path2"></span></span>
                         
                         <span class="people-name">Анна, 28 лет</span>
                     </a>
                     </li>
-                    <li class="people-item d-f bg-review_2 align-center justify-center">
+                    <li class="people-item d-f bg-review_2 align-center justify-center sprite sprite-review-2">
                         <div class="people-lay"></div>
                         <a class="item" data-toggle="modal" data-target="#video-modal">
                             <span class="icon-issue-play"><span class="path1"></span><span class="path2"></span></span>
                         <span class="people-name">Сергей, 50 лет</span>
                     </a>
                     </li>
-                    <li class="people-item d-f bg-review_3 align-center justify-center">
+                    <li class="people-item d-f bg-review_3 align-center justify-center sprite sprite-review-3">
                         <a class="item" data-toggle="modal" data-target="#video-modal">
                         <span class="icon-issue-play"><span class="path1"></span><span class="path2"></span></span>
                         <span class="people-name">Андрей, 60 года</span>
                     </a>
                     </li>
-                    <li class="people-item d-f bg-review_4 align-center justify-center">
+                    <li class="people-item d-f bg-review_4 align-center justify-center sprite sprite-review-4">
                         <a class="item" data-toggle="modal" data-target="#video-modal">
                         <span class="icon-issue-play"><span class="path1"></span><span class="path2"></span></span>
                         <span class="people-name">Карина, 30 лет</span>
                     </a>
                     </li>
-                    <li class="people-item d-f bg-review_5 align-center justify-center">
+                    <li class="people-item d-f bg-review_5 align-center justify-center sprite sprite-review-5">
                         <a class="item" data-toggle="modal" data-target="#video-modal">
                         <span class="icon-issue-play"><span class="path1"></span><span class="path2"></span></span>
                         <span class="people-name">Максим, 33 года</span>
                     </a>
                     </li>
-                    <li class="people-item d-f bg-review_6 align-center justify-center">
+                    <li class="people-item d-f bg-review_6 align-center justify-center sprite sprite-review-6">
                         <a class="item" data-toggle="modal" data-target="#video-modal">
                         <span class="icon-issue-play"><span class="path1"></span><span class="path2"></span></span>
                         <span class="people-name">Светлана, 36 лет</span>
                     </a>
                     </li>
                 </ul>
+                <div class="text-center padding-wr">
+                <button class="btn btn-phone">Оформить кредит</button>
+            </div>
             </div>
         </section>
         <!-- Факты -->
@@ -737,47 +760,57 @@
                         <div class="facts-img">
                             <img alt="" src="images/facts/premiya.png">
                         </div>
-                            <p>
-                                <strong>Премия PSMAwards</strong>
-                                <br> за «Лучший сервис
-                                <br>онлайн-кредитования»
-                            </p>
+                        <p>
+                            <strong>Премия PSMAwards</strong>
+                            <br> за «Лучший сервис
+                            <br>онлайн-кредитования»
+                        </p>
+                    </div>
+                    <div class="facts-item text-center">
+                        <div class="facts-img">
+                            <img alt="" src="images/facts/starQ.png">
                         </div>
-                        <div class="facts-item text-center">
-                            <div class="facts-img">
-                                <img alt="" src="images/facts/starQ.png">
+                        <p>
+                            <strong>«Звезда качества»</strong>
+                            <br>и звание «Лучшее
+                            <br>предприятие страны»
+                        </p>
+                    </div>
+                    <div class="facts-item text-center">
+                        <div class="facts-img">
+                            <img alt="" src="images/facts/neangelu.png">
                         </div>
-                                <p>
-                                    <strong>«Звезда качества»</strong>
-                                    <br>и звание «Лучшее
-                                    <br>предприятие страны»
-                                </p>
-                            </div>
-                            <div class="facts-item text-center">
-                                <div class="facts-img">
-                                    <img alt="" src="images/facts/neangelu.png">
+                        <p>
+                            <strong>Группа НЕАНГЕЛЫ</strong>
+                            <br> - лицо бренда
+                            <br> MyCredit в 2017 году
+                        </p>
+                    </div>
+                    <div class="facts-item text-center">
+                        <div class="facts-img">
+                            <img alt="" src="images/facts/prize.png">
                         </div>
-                                    <p>
-                                        <strong>Группа НЕАНГЕЛЫ</strong>
-                                        <br> - лицо бренда
-                                        <br> MyCredit в 2017 году
-                                    </p>
-                                </div>
-                                <div class="facts-item text-center">
-                                    <div class="facts-img">
-                                        <img alt="" src="images/facts/prize.png">
+                        <p>
+                            <strong>Более 30 призов</strong>
+                            <br>и промокодов
+                            <br>дарим ежемесячно
+                        </p>
+                    </div>
+                    <div class="facts-item text-center">
+                        <div class="facts-img">
+                            <img alt="" src="images/facts/Tabletki.png">
                         </div>
-                                        <p>
-                                            <strong>Более 30 призов</strong>
-                                            <br>и промокодов
-                                            <br>дарим ежемесячно
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                        <p>
+                            <strong>1 грн в  «Таблеточки»</strong>
+                            <br>с каждого
+                            <br>выданного кредита
+                        </p>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- SEO-текст -->
-        <section class="seo-text">
+        <section class="seo-text" style="display: block; background-image: url('../images/test/seo-bg-gray.jpg');">
             <div class="container">
                 <div class="seo-holder">
                     <div class="content">
@@ -1234,6 +1267,43 @@
                 </div>
             </div>
         </section>
+        <!-- Форма захвата
+        <section class="mailSubs">
+            <div class="container">
+                <div class="mailSubs-wrapper">
+                    <div class="mailSubs-img">
+                        <img src="images/form-mail-img.png" alt="">
+                    </div>
+                    <div class="heading-h3">Узнавайте первыми про акции, новости и скидки</div>
+                    <form name="" id="" action="" method="post" class="form js_validate">
+                        <input id="" type="" name="" value="" placeholder="Ваше имя" class="form-control">
+                        <input id="" type="" name="" value="" placeholder="Ваш email" class="form-control" required data-validate="" autocomplete="off">
+                        <button id="" type="button" class="btn standart orange">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+        <section class="mailSubs">
+            <div class="container">
+                <div class="mailSubs-wrapper">
+                    <div class="mailSubs-img">
+                        <img src="images/form-mail-img.png" alt="">
+                    </div>
+                    <div class="heading-h3">Узнавайте первыми про акции, новости и скидки</div>
+                    <form name="" id="esputnik-subscribe" action="" method="post" class="form js_validate js-email-subscribe">
+                        <div class="form-control--wr">
+                            <input id="esputnik-subscribe-name" type="text" name="" value="" placeholder="Ваше имя" class="form-control" required>
+                            <span class="error_text">Будь ласка, введіть Ваше ім'я російською або українською мовою.</span>
+                        </div>
+                        <div class="form-control--wr">
+                            <input id="esputnik-subscribe-email" type="email" name="" value="" placeholder="Ваш email" class="form-control" required data-validate="email" autocomplete="off">
+                            <span class="error_text">Будь ласка, введіть свою коректну адресу електронної пошти</span>
+                        </div>
+                        <button type="submit" class="btn standart orange">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section>
         <!-- Footer -->
         <footer class="footer" id="footer">
             <div class="container">
@@ -1335,7 +1405,6 @@
                     </div>
                     <ul class="footer-social">
                         <li><a href=""><span class="icon-telegram-1"></span></a></li>
-                        <li><a href=""><span class="icon-vk-social-network-logo"></span></a></li>
                         <li><a href=""><span class="icon-facebook-logo"></span></a></li>
                         <li><a href=""><span class="icon-instagram-logo"></span></a></li>
                         <li><a href=""><span class="icon-youtube-logo"></span></a></li>
@@ -1481,12 +1550,50 @@
                     </div>
                 </div>
             </div>
-    </div>
         </div>
-        <script>
-        var downloadScripts = [];
-        </script>
-        <script src="js/all-home.min.js"></script>
+    </div>
+    <!-- форма захвата thank-popup -->
+    <div class="modal fade personalEmail" id="" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog__personalEmail modal-dialog__personalEmail--white" role="document">
+            <span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+            <div class="modal-content__personalEmail">
+                <div class="personalEmail-img">
+                    <svg width="80" height="50" viewBox="0 0 80 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M79.9997 2.99586C80.0253 1.19818 78.383 -0.250833 76.6153 0.0364857H3.00044C2.97267 0.0360859 2.94492 0.036087 2.91719 0.0364868C1.30584 0.0378596 0 1.36097 0 2.99291V47.0436C0 48.6764 1.30719 50 2.9197 50H77.08C78.6925 50 79.9997 48.6764 79.9997 47.0436V2.99586ZM66.0793 6.86304C66.4868 6.58643 66.291 5.94933 65.7985 5.94933H14.1227C13.631 5.94933 13.4346 6.58478 13.8407 6.86219L39.2323 24.2081C39.6305 24.4689 40.1278 24.4683 40.5256 24.2063L66.0793 6.86304ZM6.62143 9.06309C6.28957 8.83638 5.83939 9.07403 5.83939 9.47595V39.8318C5.83939 40.2627 6.3481 40.4918 6.67078 40.2062L26.0275 23.0736C26.2714 22.8578 26.2471 22.4701 25.9781 22.2864L6.62143 9.06309ZM32.1591 26.5088C31.7808 26.2504 31.2753 26.2821 30.9323 26.5857L12.1468 43.2128C11.8021 43.5178 12.0179 44.0872 12.4782 44.0872H67.7507C68.2103 44.0872 68.4264 43.5192 68.083 43.2136L49.1623 26.3755C48.8201 26.071 48.3148 26.0379 47.9359 26.2951L43.7556 29.1323L43.7464 29.1384C41.3944 30.7087 38.3607 30.7087 36.0087 29.1384L35.9958 29.1298L32.1591 26.5088ZM54.0782 22.8785C53.8349 22.6619 53.8603 22.2742 54.1299 22.0913L73.3795 9.02655C73.7115 8.80124 74.1603 9.03904 74.1603 9.44027V39.6358C74.1603 40.0673 73.6503 40.2962 73.3279 40.0093L54.0782 22.8785Z" fill="white"/>
+</svg>
+                </div>
+                <div class="personalEmail-text text-center" data-dismiss="modal">
+                    <strong>Спасибо!</strong>
+                    На указанный email мы отправили письмо с подтверждением подписки на рассылку
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- форма захвата registration-popup -->
+     <div class="modal fade in personalEmail personalEmail__modal-form js-modal-show-60" style="display: block;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog__personalEmail" role="document">
+            <span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+            <div class="modal-content__personalEmail">
+                <div class="personalEmail_heading text-center">Подпишитесь и лучшие статьи будут прилетать Вам на почту</div>
+                <img src="images/form-mailModal-img.png" alt="">
+                <form name="" id="esputnik-subscribe-modal" action="" method="post" class="form js_validate js-email-subscribe">
+                    <div class="form-control--wr">
+                        <input type="text" name="name" value="" placeholder="Ваше имя" class="form-control" required>
+                        <span class="error_text">Будь ласка, введіть Ваше ім'я російською або українською мовою.</span>
+                    </div>
+                    <div class="form-control--wr">
+                        <input type="email" name="email" value="" placeholder="Ваш email" class="form-control" required data-validate="email" autocomplete="off">
+                        <span class="error_text">Будь ласка, введіть свою коректну адресу електронної пошти</span>
+                    </div>
+                    <button type="submit" class="btn standart orange">Подписаться</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    var downloadScripts = [];
+    </script>
+    <script src="js/all-home.min.js"></script>
 </body>
 
 </html>

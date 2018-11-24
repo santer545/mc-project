@@ -884,6 +884,10 @@
             }
         }
 
+        .icon-close {
+            top: 10px;
+        }
+
         >ul>li {
 
             padding: 40px 20px;
@@ -1055,6 +1059,16 @@
             position: relative;
             bottom: auto;
             left: auto;
+        }
+
+        @media screen and (max-width: 1199px) {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        img {
+            margin-bottom: -12px;
         }
 
     }

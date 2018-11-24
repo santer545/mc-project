@@ -16,7 +16,7 @@ $(function() {
     menuShowHide();
     promoPopup();
     promoEnable();
-    //androidDetected();
+    androidDetected();
     domRangeCreate();
     slideChange();
 })
@@ -58,6 +58,7 @@ function carousels() {
 
     $('.js-programms').not('.slick-initialized').slick({
         slidesToShow: 3,
+        lazyLoad: 'ondemand',
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
         responsive: [{
@@ -94,6 +95,7 @@ function carousels() {
     });
     $('.js-pressa').not('.slick-initialized').slick({
         slidesToShow: 3,
+        lazyLoad: 'ondemand',
         slidesToScroll: 3,
         speed: 800,
         infinite: true,
@@ -512,11 +514,56 @@ function slideChange() {
         nextSlide = nextSlide + 1;
         var el = $('.slick-slide').eq(nextSlide);
         var element = el.children().children();
-        
-        if(element.hasClass('js-student-banner')) {
+
+        if (element.hasClass('js-student-banner')) {
             $('.calculator-labe').addClass('hidden');
         } else {
             $('.calculator-labe').removeClass('hidden');
         }
     });
+}
+
+function get_name_browser() {
+    // получаем данные userAgent
+    var ua = navigator.userAgent;
+    // с помощью регулярок проверяем наличие текста,
+    // соответствующие тому или иному браузеру
+    if (ua.search(/Chrome/) > 0) return 'Google Chrome';
+    if (ua.search(/Firefox/) > 0) return 'Firefox';
+    if (ua.search(/Opera/) > 0) return 'Opera';
+    if (ua.search(/Safari/) > 0) return 'Safari';
+    if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+    // условий может быть и больше.
+    // сейчас сделаны проверки только 
+    // для популярных браузеров
+    return 'not defined';
+}
+
+function renameImageForBrowsers() {
+
+    if (get_name_browser() != 'Google Chrome') {
+        $('.js-banner-webp, .nav-banner').each(function(item) {
+            console.log('Outside');
+            var style = $(this).attr('style');
+
+            if (~style.indexOf("webp")) {
+                var newStyle = style.substr(-7);
+                var arr = style.split('');
+
+                for (var i = 0; i < newStyle.length; i++) {
+                    arr.pop();
+                }
+
+                var str = arr.join('');
+                var finalStr;
+                if (get_name_browser() == 'not defined' || get_name_browser() == 'Internet Explorer') {
+                    finalStr = str + 'jpg';
+                } else {
+                    finalStr = str + '.jpg\')';
+                }
+
+                $(this).attr('style', finalStr);
+            }
+        });
+    }
 }

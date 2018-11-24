@@ -47,6 +47,7 @@ function carousels() {
 
     $('.js-programms').not('.slick-initialized').slick({
         slidesToShow: 3,
+        lazyLoad: 'ondemand',
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
         responsive: [{
@@ -80,6 +81,37 @@ function carousels() {
                 dots: true
             }
         }]
+    });
+
+    $('.js-pressa').not('.slick-initialized').slick({
+        slidesToShow: 3,
+        lazyLoad: 'ondemand',
+        slidesToScroll: 3,
+        speed: 800,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        responsive: [{
+                breakpoint: 1060,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            }
+        ]
     });
 
     $('.js-pressa').not('.slick-initialized').slick({

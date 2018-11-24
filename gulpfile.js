@@ -5,6 +5,7 @@
 
 // Load plugins
 var gulp = require('gulp'),
+    install = require('gulp-start'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
@@ -24,6 +25,20 @@ var gulp = require('gulp'),
 // Styles
 gulp.task('mainStyles', function() {
     return gulp.src('sass/main-page.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+// Styles
+gulp.task('puzzleStyles', function() {
+    return gulp.src('sass/puzzle.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 5 version'))
@@ -203,7 +218,7 @@ gulp.task('Credit_history', function() {
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
-gulp.task('critical-login', function() {
+gulp.task('critical-login', function(done) {
     critical.generate({
         inline: true,
         extract: true,
@@ -218,9 +233,10 @@ gulp.task('critical-login', function() {
         },
         ]
     });
+    done();
 });
 
-gulp.task('critical-main-ab', function() {
+gulp.task('critical-main-ab', function(done) {
     critical.generate({
         inline: true,
         extract: true,
@@ -235,6 +251,7 @@ gulp.task('critical-main-ab', function() {
         },
         ]
     });
+    done();
 });
 
 
@@ -282,7 +299,7 @@ gulp.task('homeScripts', function() {
             
             sourceDir + '/main-validate.js',
             sourceDir + '/home-main.js',
-            sourceDir + '/functions.js',
+            sourceDir + '/function_main.js',
             sourceDir + '/uploadFiles.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
@@ -296,6 +313,28 @@ gulp.task('homeScripts', function() {
 
         //.pipe(browserify(components.scripts.options))
         .pipe(concat('all-home.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// Scripts
+gulp.task('newyear', function() {
+
+    return gulp.src([
+            sourceDir + '/modal.js',
+            sourceDir + '/jquery.maskedinput.min.js',
+            sourceDir + '/main-validate.js',
+            sourceDir + '/downloadJS.js',
+            sourceDir + '/jquery.snap-puzzle.min.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/newyear-main.js',
+
+        ])
+
+        //.pipe(browserify(components.scripts.options))
+        .pipe(concat('newyear-home.js'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))

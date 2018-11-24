@@ -120,6 +120,9 @@
 
 .icon-telegram-1:before {
     content: "\e94c";
+    position: relative;
+    top: -3px;
+    font-size: 33px;
 }
 
 .icon-lifecell-12:before {
@@ -2418,6 +2421,10 @@ $baseBorderRadius: 4px;
                     font-size: 35px;
                     margin-right: 15px;
                 }
+
+                >div {
+                    min-height: 50px;
+                }
             }
         }
     }
@@ -3129,10 +3136,13 @@ $baseBorderRadius: 4px;
     &-wrapper {
         display: flex;
         flex-wrap: wrap;
+        @media screen and (min-width: 768px)  and (max-width: 991px) {
+            padding: 0 10%;
+        }
     }
 
     &-item {
-        flex: 0 0 25%;
+        flex: 0 0 20%;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -3143,6 +3153,9 @@ $baseBorderRadius: 4px;
         @media screen and (max-width: 991px) {
             flex: 0 0 50%;
             margin-bottom: 20px;
+            &:first-child {
+                flex: 0 0 100%; 
+            }
         }
 
         @media screen and (max-width: 767px) {
@@ -3156,11 +3169,14 @@ $baseBorderRadius: 4px;
             padding-top: 30px;
 
             @media screen and (max-width: 991px) {
-                padding-left: 10px;
+                //padding-left: 10px;
+                flex: 0 0 100%;
             }
 
             @media screen and (max-width: 767px) {
                 padding: 0 0 0 30px;
+                flex: none;
+                width: 155px;
             }
         }
     }
@@ -3627,7 +3643,166 @@ $baseBorderRadius: 4px;
         margin-bottom: 20px;
     }
 }
+//Форма захвата
+.mailSubs {
+    background-color: #15CD8C;
+    background-image: linear-gradient( to bottom, #eceff9 50px, #15CD8C 51px, #15CD8C);
+    padding-top: 50px;
+    @media screen and (max-width: 991px) {
+        background-image: none;
+        padding-top: 0;
+    }
+    
+    &-wrapper{
+        
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        position: relative;
+        padding:24px 0 0 280px;
+        
+        @media screen and (max-width: 1199px) {
+            padding-left: 245px;
+        }
 
+        @media screen and (max-width: 991px) {
+            justify-content: center;
+            padding-left: 0;
+        }
+
+        @media screen and (max-width: 550px) {
+            padding-bottom: 20px;
+            margin: 0; 
+        }
+
+        .form-control--wr {
+            width: auto;
+            @media screen and (max-width: 550px) {
+                width: 290px;
+            }
+        }
+        .form .error_text {
+            width: 275px;
+            padding: 8px 16px;
+            @media screen and (max-width: 1199px) {
+                width: 245px;
+                margin-bottom: 4px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: -12px;
+            }
+            @media screen and (max-width: 550px) {
+                width: 100%;
+                margin-top: -6px;
+            }
+        }
+    }
+
+    &-img{
+        font-size: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @media screen and (max-width: 550px) {
+            display: none;
+        }
+    }
+
+    .heading-h3 {
+        margin:0 0 24px;
+        color: #fff;
+        width: 100%;
+        @media screen and (max-width: 991px) {
+           text-align: center;
+        }
+        @media screen and (max-width: 550px) {
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+    }
+
+    form {
+        display: flex;
+        width: 100%;
+        padding:0 0 40px;
+        @media screen and (max-width: 991px) {
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+            padding-bottom: 20px;
+            width: auto;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-left: 200px;
+        }
+
+        @media screen and (max-width: 550px) {
+            padding: 0;
+            align-items: center;
+        }
+    }
+
+    .form-control {
+        width: 275px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 18px;
+        color: #003764;
+        margin-right: 16px;
+        border-radius: 4px;
+        &::placeholder {
+            color: #003764;
+        }
+        &:last-of-type {
+            margin-right: 24px;
+        }
+
+        @media screen and (max-width: 1199px) {
+            width: 245px;
+            &:last-of-type {
+                margin-right: 16px;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            margin:0 0 16px;
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+        @media screen and (max-width: 550px) {
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    }
+    .btn {
+        width: 200px;
+        @media screen and (max-width: 1199px) {
+            width: 180px;
+        }
+    }
+}
+.home-page .mailSubs {
+    background-image: linear-gradient( to bottom, #fff 50px, #15CD8C 51px, #15CD8C);
+}
+
+.btn.orange {
+    height: 45px;
+    line-height: 23px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 4px;
+    background-color:: #ff885e;
+    box-shadow: 0 17px 29px -12px rgba(0,0,0,.2);
+    &:hover {
+        background-color: #FF713F;
+    }
+    @media screen and (max-width: 550px) {
+        font-size: 16px;
+    }
+}
 
 
 .btn-user-close {

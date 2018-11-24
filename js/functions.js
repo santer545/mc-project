@@ -5056,7 +5056,7 @@ $(function () {
 		if ((e.keyCode) == 13) {
 			//$('[data-id=card_year]').trigger('click');
 		}
-	})
+	});
 
 
 	a.each(function (i, item) {
@@ -5080,8 +5080,8 @@ $(function () {
 					}
 				default:
 			}
-		})
-	})
+		});
+	});
 
 
 
@@ -5488,6 +5488,13 @@ $(document).ready(function () {
 		});
 	}
 
+	// Показываем модалку через 60 сек.
+	if ($('.js-modal-show-60').length > 0) {
+		setTimeout(function () {
+			$('.js-modal-show-60').modal('show');
+        }, 5000);
+    }
+
 	// если есть секции с кнопками сохранения введенного телефона:
 	if ($("input").is("#phoneFromForm")) {
 
@@ -5513,7 +5520,36 @@ $(document).ready(function () {
 			}
 		});
 	}
-	//
+	
+	// Обработка формы подписки
+	$('.js-email-subscribe').on('submit', function(e) {
+		e.preventDefault();
+		
+		var form = this,
+			data = {
+				typeData: 'addEsputnikSubscriber',
+				name: $(form).find('[name=name]').val(),
+				email: $(form).find('[name=email]').val()
+			};
+
+		$('.personalEmail__modal-form').modal('hide');
+		$('#wait-modal-common').modal('show');
+
+		sendAjax(data, function(response) {
+			$('#wait-modal-common').modal('hide');
+			if (response.message == 'OK') {
+				var $thanksForSubscribePopup = $('#thanks-for-subscribe-popup');
+
+				$thanksForSubscribePopup.modal('show');
+				
+				if (form.id == 'esputnik-subscribe') {
+					$thanksForSubscribePopup.find('.modal-dialog__personalEmail').addClass('modal-dialog__personalEmail--white');
+				}
+			} else {
+				alert('Ошибка на сервере! Попробуйте еще раз.'); //TODO
+			}
+		});
+	});
 	
 	/* Обрабатывает форму обратной связи.
 	 * замыкание в значительной степени повторяет onClickSendEmail(),
@@ -5763,76 +5799,3 @@ $(document).ready(function () {
 //	var _mark = parseInt($(this).index()) + 1;
 //	onClickGoogleStars(_mark);
 //})
-
-// это для тестирования:
-
-// Only works after `FB.init` is called
-function myFacebookLogin() {
-
-	FB_api = function () {
-
-		FB.api(
-				// response.authResponse.userID + '/email',
-				'/me?', {
-					fields: 'id,significant_other,domains,about,email,name,age_range,birthday,context,devices,education,first_name,gender,' +
-							'languages,last_name,link,locale,location,relationship_status,religion,timezone,updated_time,work,' +
-							'verified,' +
-							'accounts,friendlists,friends,family,groups'
-				},
-				function (response) {
-					if (response && !response.error) {
-						//console.log('api_true');
-						// console.log(response);
-						console.log(response.link);
-						$("#facebook").val(response.link);
-						/* handle the result */
-					} else {
-						console.log('api_error');
-						console.log(response);
-					}
-				}
-		)
-	};
-
-	FB.getLoginStatus(function (response) {
-		if (response.status === 'connected') {
-			console.log('Logged in.');
-			// console.log(response);
-
-			$("#facebook_userID").val(response.authResponse.userID);
-			$("#facebook_accessToken").val(response.authResponse.accessToken);
-
-			FB_api();
-
-		} else {
-			console.log('for login');
-			// FB.login();
-
-			FB.login(function (response) {
-				if (response.authResponse) {
-					// var access_token = FB.getAuthResponse()['accessToken'];
-					//console.log('Access Token = '+ access_token);
-					// console.log('response = ');
-					// console.log(response);
-
-					$("#facebook_userID").val(response.authResponse.userID);
-					$("#facebook_accessToken").val(response.authResponse.accessToken);
-
-					FB_api();
-
-				} else {
-					console.log('User cancelled login or did not fully authorize.');
-				}
-			}, {scope: ''});
-		}
-	});
-
-	/*
-	 FB.login(function(){
-	 console.log('FB.login');
-	 
-	 
-	 }, {scope: 'publish_actions'});
-	 */
-
-}

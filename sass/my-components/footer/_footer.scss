@@ -217,6 +217,7 @@
 
         @media screen and (max-width: 536px) {
             justify-content: flex-start;
+            padding: 30px 15px 0;
         }
 
         li {
@@ -696,6 +697,162 @@
             padding: 2px;
             transform: rotate(-45deg) scale(0);
             transition: transform 0.3s;
+        }
+    }
+}
+//форма захвата thank-popup + registration-popup
+.personalEmail {
+    .modal-dialog__personalEmail {
+        width: 650px;
+        background-color: #15CD8C;
+        padding: 24px 108px 95px;
+        color: #fff;
+        font: 20px/28px HelveticaNeueCyr Light,Arial,sans-serif;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 8px;
+        transform: translate(-50%, -50%);
+        &--white {
+            background-color: #fff;
+            color: #003764;
+            svg path{
+                fill: #003764;
+            }
+            .icon-close {
+                color: #003764;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            top: 50%;
+            left: 10px;
+            right: 10px;
+            width: auto;
+            transform: translateY(-50%);
+            padding:  64px 32px;
+            text-align: center;
+        }
+        @media screen and (max-width: 550px) {
+            font: 16px/20px HelveticaNeueCyr Light,Arial,sans-serif;
+            padding:  48px 24px;
+        }
+    }
+    .icon-close {
+        top: 10px;
+        color: #fff;
+        font-size: 10px;
+    }
+    &-img {
+        display: flex;
+        justify-content: center;
+        padding: 64px 0 48px;
+        @media screen and (max-width: 767px) {
+            padding: 0 0 32px;
+        }
+        @media screen and (max-width: 550px) {
+            padding: 0 0 24px;
+        }
+    }
+    &-text {
+        strong {
+            padding: 16px 0;
+            font-size: 24px;
+            display: block;
+            @media screen and (max-width: 550px) {
+                font-size: 20px;
+            }
+        } 
+    }
+    &_heading {
+        color: #fff;
+        font: 24px/27px HelveticaNeueCyr Medium,Arial,sans-serif;
+        @media screen and (max-width: 550px) {
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    .form-control {
+        width: 312px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 16px;
+        color: #777777;
+        border-radius: 4px;
+        margin-bottom: 24px;
+        &::placeholder {
+            color: #777777;
+        }
+        @media screen and (max-width: 550px) {
+            width: 100%;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+    }
+    .btn {
+        width: 225px;
+        margin: 0 auto;
+        @media screen and (max-width: 550px) {
+            width: 100%;
+        }
+    }
+}
+//Форма захвата - modal-registration-popup
+.personalEmail__modal-form {
+    .modal-dialog__personalEmail {
+        padding: 32px 32px 56px;
+        width: 656px;
+        @media screen and (max-width: 767px) {
+            width: auto;
+            padding: 24px 24px 56px;
+        }
+        @media screen and (max-width: 550px) {
+            padding: 24px 16px 32px;
+        }
+    }
+    .modal-content__personalEmail {
+        .personalEmail_heading {
+            max-width: 500px;
+            margin: auto;
+            @media screen and (max-width: 550px) {
+                font-size: 16px;
+            }
+        }    
+        >img {
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            width: 312px;
+            @media screen and (max-width: 767px) {
+                width: 45%;
+            }
+            @media screen and (max-width: 550px) {
+              display: none;
+            }
+        }
+        >form {
+            float: right;
+            max-width: 312px;
+            padding-top: 60px;
+            @media screen and (max-width: 550px) {
+                padding-top: 24px; 
+                float: none;
+                margin: 0 auto;
+            }
+            >button {
+                margin: 0 auto;
+                display: block;
+            }
+        }
+        .form .error_text {
+            padding: 8px 16px;
+            margin-top: -20px;
+            margin-bottom: 4px;
+            width: 312px;
+            text-align: left;
+            @media screen and (max-width: 550px) {
+                margin-top: -6px;
+                width: 100%;
+            }
         }
     }
 }
