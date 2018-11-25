@@ -13,14 +13,15 @@
     <meta name="google-site-verification" content="DHkY6ywkpSEqaHBG1aQTBj651kRzAPjpSFXRPSrsERE" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="css/main-page-ab.min.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="css/main-page-ab-mobile.min.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/main-page-ab.min.css">
 </head>
 
 <body class="home-page">
+    <div class="overlay js-overlay"></div>
     <div class="wrapper">
         <!-- Header -->
         <header class="header" id="header">
+            <div class="header-backdrop js-backdrop"></div>
             <div class="header-container d-f align-center justify-between">
                 <a href="#" class="header-logo">
                     <img src="/images/logo-img.svg" alt="">
@@ -31,7 +32,7 @@
                     <ul>
                         <li class="js-hover js-hover-link">
                             <span>О нас<span class="triangle"></span></span>
-                            <div class="dropdown-block js-block">
+                            <div class="dropdown-block js-block active">
                                 <div class="block-text">
                                     <div class="header-heading">
                                         О компании MyCredit
@@ -45,21 +46,65 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                <div class="block-carousel hidden" style="background-image: url(/images/banner-credit-0-1.jpg)">
                                     <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        <img src="/images/banner-credit-left.jpg" alt="">
                                     </div>
-                                    <div class="block-heading">
-                                        Первый кредит
-                                        <br>под 0%
-                                        <div>
-                                            <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                        <div class="block-heading">
+                                            Первый кредит
+                                            <br>под 0%
+                                            <div>
+                                                <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                    <div class="block-carousel block-carousel__mobile js-header-carousel">
+                                        <div>
+                                            <div style="background-image: url(/images/banner-credit-0-1.jpg)">
+                                                <div class="header-img">
+                                                    <img src="/images/banner-credit-left.jpg" alt="">
+                                                </div>
+                                                    <div class="block-heading">
+                                                        Первый кредит
+                                                        <br>под 0%
+                                                        <div>
+                                                            <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div style="background-image: url(/images/banner-credit-0-1.jpg)">
+                                                    <div class="header-img">
+                                                        <img src="/images/banner-credit-left.jpg" alt="">
+                                                        <div class="block-heading">
+                                                            Первый кредит
+                                                            <br>под 0%
+                                                            <div>
+                                                                <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div style="background-image: url(/images/banner-credit-0-1.jpg)">
+                                                    <div class="header-img">
+                                                        <img src="/images/banner-credit-left.jpg" alt="">
+                                                        <div class="block-heading">
+                                                            Первый кредит
+                                                            <br>под 0%
+                                                            <div>
+                                                                <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                         </li>
-                        <li class="js-hover js-hover-link">
+                        <li class="js-hover js-hover-link bordered-link">
                             <span>Как получить<span class="triangle"></span></span>
                             <div class="dropdown-block js-block">
                                 <div class="block-text">
@@ -74,19 +119,19 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/banner-credit-0-1.jpg)">
                                     <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        <img src="/images/banner-credit-left.jpg" alt="">
                                     </div>
-                                    <div class="block-heading">
-                                        Первый кредит
-                                        <br>под 0%
-                                        <div>
-                                            <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                        <div class="block-heading">
+                                            Первый кредит
+                                            <br>под 0%
+                                            <div>
+                                                <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </li>
                         <li class="custom">
                             <a href="#">Акции</a>
@@ -116,19 +161,19 @@
                                     <li><a href="#">Как продлить</a></li>
                                     <li><a href="#">Как погасить</a></li>
                                 </ul>
-                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/test/banner-credit-0-1.jpg)">
+                                <div class="block-carousel js-header-carousel" style="background-image: url(/images/banner-credit-0-1.jpg)">
                                     <div class="header-img">
-                                        <img src="/images/test/banner-credit-left.jpg" alt="">
+                                        <img src="/images/banner-credit-left.jpg" alt="">
                                     </div>
-                                    <div class="block-heading">
-                                        Первый кредит
-                                        <br>под 0%
-                                        <div>
-                                            <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                        <div class="block-heading">
+                                            Первый кредит
+                                            <br>под 0%
+                                            <div>
+                                                <a class="btn btn-header" href="http://dev.mycredit.ua/ru/registration/">Оформить кредит</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </li>
                     </ul>
                     <div class="mobile-language">
@@ -154,7 +199,7 @@
                         <span class="sr-only">Toggle navigation</span>
                     </button>
                 </div>
-                <a href="#" class="header-language text-center">Ру</a>
+                <a href="#" class="header-language d-f align-center justify-center">Ру</a>
             </div>
         </header>
         <!-- Баннер -->
@@ -206,123 +251,123 @@
                     <div class="calculator-labe">
                         <img src="/images/0.svg" alt="">
                     </div>
-                    <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                    <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
-                </div>
-                <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
-                    <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
-                    <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
-                    <div class="calculator-row ">
-                        <div class="calculator-left ">
-                            <div class="slider-money">
-                                <div class="slider-money-share">Первый займ - 0%</div>
-                                <div class="slider-holder d-f align-center justify-between">
-                                    <span class="nameSlider hidden">large_main</span>
-                                    <span class="isPlay hidden" id="isPlay_large_main"></span>
-                                    <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
-                                    <span class="hidden" id="ChildProductsNormal_large_main"></span>
-                                    <label for="money-value_large" class="slider-money--label">Какая сумма вам нужна?</label>
-                                    <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
-                                    <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
-                                    <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
-                                    <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
-                                    <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
-                                    <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
-                                    <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
-                                    <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
-                                    <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
-                                    <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
-                                    <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
-                                    <div class="slider-control--wr">
-                                        <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                        <label for="money-value_large_main">грн</label>
-                                    </div>
-                                </div>
-                                <div class="slider-wrapper">
-                                    <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
-                                    <div class="d-f align-center justify-between">
-                                        <label for="js-money_large_main" class="slider-label"><span id="minSumLabel_large_main" class="format-number">100</span> грн</label>
-                                        <label class="slider-label slider-label__inverse js-slider-tooltip">
-                                            <div class="slider-tooltip js-slider-tooltip">
-                                                Доступная сумма растет с каждым кредитом
-                                            </div>
-                                            <span>до </span>
-                                            <span class="format-number">10 000</span> грн
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slider-days">
-                                <div class="slider-holder d-f align-center justify-between">
-                                    <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
-                                    <div class="slider-control--wr">
-                                        <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                        <label><span id="daySelectDay_large_main">дней</span></label>
-                                    </div>
-                                </div>
-                                <div class="slider-wrapper">
-                                    <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
-                                    <div class="d-f align-center justify-between">
-                                        <label for="js-days_large_main" class="slider-label">
-                                            <span id="minDayLabel_large_main">1</span>&nbsp;<span id="dayMinDay_large_main">дней</span>
-                                        </label>
-                                        <label for="js-days_large_main" class="slider-label slider-label__inverse">
-                                            <div class="slider-tooltip js-slider-tooltip">
-                                                Вы можете продлить кредит из личного кабинета
-                                            </div>
-                                            <span>до 35</span>&nbsp;<span id="dayMaxDay_large_main">дней</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="calculator-right">
-                            <div class="slider-money--label">Информация о кредите:</div>
-                            <div class="calculator-start">
-                                <div class="calculator-holder d-f">
-                                    <div class="calculator-col">Вы берете:</div>
-                                    <div class="calculator-col brand-color">
-                                        <span id="span_amount_large_main"></span> 1000 грн
-                                    </div>
-                                </div>
-                                <div class="calculator-holder m-b d-f">
-                                    <div class="calculator-col">Ваша комиссия:</div>
-                                    <div class="calculator-col brand-color">
-                                        20
-                                        <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
-                                    </div>
-                                </div>
-                                <div class="calculator-holder d-f">
-                                    <div class="calculator-col">К возврату:</div>
-                                    <div class="calculator-col inverse-color">
-                                        <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="calculator-holder calculator-holder__wide">
-                                <div class="calculator-col">До:</div>
-                                <div class="calculator-col inverse-color">
-                                    <span class="loan-days" id="span_amount_all_end_large_main"></span>
-                                </div>
-                            </div>
-                            <div class="calculator-btn">
-                                <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
-                                    <span>Получить деньги</span><span class="icon-arrow-animate"></span>
-                                </button>
-                            </div>
-                            <div class="promo-linkwrapper text-center">
-                                <a data-toggle="modal" data-target="#promo-modal-calc-sign" role="button">У меня есть промокод</a>
-                            </div>
-                            <div class="calculator-img d-f align-center justify-between">
-                                <img src="images/calculator/visa-calc.png" alt="">
-                                <img src="images/calculator/master-calc.png" alt="">
-                                <img src="images/calculator/privat-calc.png" alt="">
-                                <img src="images/calculator/pci_calc.png" alt="">
-                            </div>
-                        </div>
+                        <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+                        <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
                     </div>
-                </form>
-            </div>
+                    <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
+                        <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
+                        <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
+                        <div class="calculator-row ">
+                            <div class="calculator-left ">
+                                <div class="slider-money">
+                                    <div class="slider-money-share">Первый займ - 0%</div>
+                                    <div class="slider-holder d-f align-center justify-between">
+                                        <span class="nameSlider hidden">large_main</span>
+                                        <span class="isPlay hidden" id="isPlay_large_main"></span>
+                                        <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
+                                        <span class="hidden" id="ChildProductsNormal_large_main"></span>
+                                        <label for="money-value_large" class="slider-money--label">Какая сумма вам нужна?</label>
+                                        <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
+                                        <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
+                                        <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
+                                        <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
+                                        <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
+                                        <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
+                                        <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
+                                        <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
+                                        <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
+                                        <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
+                                        <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
+                                        <div class="slider-control--wr">
+                                            <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                            <label for="money-value_large_main">грн</label>
+                                        </div>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
+                                        <div class="d-f align-center justify-between">
+                                            <label for="js-money_large_main" class="slider-label"><span id="minSumLabel_large_main" class="format-number">100</span> грн</label>
+                                            <label class="slider-label slider-label__inverse js-slider-tooltip">
+                                                <div class="slider-tooltip js-slider-tooltip">
+                                                    Доступная сумма растет с каждым кредитом
+                                                </div>
+                                                <span>до </span>
+                                                <span class="format-number">10 000</span> грн
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slider-days">
+                                    <div class="slider-holder d-f align-center justify-between">
+                                        <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
+                                        <div class="slider-control--wr">
+                                            <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                            <label><span id="daySelectDay_large_main">дней</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
+                                        <div class="d-f align-center justify-between">
+                                            <label for="js-days_large_main" class="slider-label">
+                                                <span id="minDayLabel_large_main">1</span>&nbsp;<span id="dayMinDay_large_main">дней</span>
+                                            </label>
+                                            <label for="js-days_large_main" class="slider-label slider-label__inverse">
+                                                <div class="slider-tooltip js-slider-tooltip">
+                                                    Вы можете продлить кредит из личного кабинета
+                                                </div>
+                                                <span>до 35</span>&nbsp;<span id="dayMaxDay_large_main">дней</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calculator-right">
+                                <div class="slider-money--label">Информация о кредите:</div>
+                                <div class="calculator-start">
+                                    <div class="calculator-holder d-f">
+                                        <div class="calculator-col">Вы берете:</div>
+                                        <div class="calculator-col brand-color">
+                                            <span id="span_amount_large_main"></span> 1000 грн
+                                        </div>
+                                    </div>
+                                    <div class="calculator-holder m-b d-f">
+                                        <div class="calculator-col">Ваша комиссия:</div>
+                                        <div class="calculator-col brand-color">
+                                            20
+                                            <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
+                                        </div>
+                                    </div>
+                                    <div class="calculator-holder d-f">
+                                        <div class="calculator-col">К возврату:</div>
+                                        <div class="calculator-col inverse-color">
+                                            <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculator-holder calculator-holder__wide">
+                                    <div class="calculator-col">До:</div>
+                                    <div class="calculator-col inverse-color">
+                                        <span class="loan-days" id="span_amount_all_end_large_main"></span>
+                                    </div>
+                                </div>
+                                <div class="calculator-btn">
+                                    <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
+                                        <span>Получить деньги</span><span class="icon-arrow-animate"></span>
+                                    </button>
+                                </div>
+                                <div class="promo-linkwrapper text-center">
+                                    <a data-toggle="modal" data-target="#promo-modal-calc-sign" role="button">У меня есть промокод</a>
+                                </div>
+                                <div class="calculator-img d-f align-center justify-between">
+                                    <img src="images/calculator/visa-calc.png" alt="">
+                                    <img src="images/calculator/master-calc.png" alt="">
+                                    <img src="images/calculator/privat-calc.png" alt="">
+                                    <img src="images/calculator/pci_calc.png" alt="">
+                            </div>
+                                </div>
+                            </div>
+                    </form>
+                </div>
         </section>
         <!-- Почему я возьму кредит-->
         <section class="motivation">
@@ -396,23 +441,23 @@
                             <figure class="programms-img">
                                 <img width="363" height="180" alt="" src="images/programms/vihodnoi.jpg">
                             </figure>
-                            <div class="programms-data">
-                                <div class="programms-holder">
-                                    <div class="programms-col">Сумма</div>
-                                    <div class="programms-col text-right"><strong>500 грн</strong></div>
+                                <div class="programms-data">
+                                    <div class="programms-holder">
+                                        <div class="programms-col">Сумма</div>
+                                        <div class="programms-col text-right"><strong>500 грн</strong></div>
+                                    </div>
+                                    <div class="programms-holder">
+                                        <div class="programms-col">На срок</div>
+                                        <div class="programms-col text-right"><strong>5 дней</strong></div>
+                                    </div>
                                 </div>
-                                <div class="programms-holder">
-                                    <div class="programms-col">На срок</div>
-                                    <div class="programms-col text-right"><strong>5 дней</strong></div>
+                                <div class="programms-info">
+                                    Собираешься на отдых с друзьями или ждешь гостей на выходных? Этот тип займа поможет хорошо провести время!
                                 </div>
-                            </div>
-                            <div class="programms-info">
-                                Собираешься на отдых с друзьями или ждешь гостей на выходных? Этот тип займа поможет хорошо провести время!
-                            </div>
-                            <div class="programms-footer text-center">
-                                <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
-                                    <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
-                            </div>
+                                <div class="programms-footer text-center">
+                                    <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
+                                        <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
+                                </div>
                         </div>
                         <div>
                             <div class="programms-heading">кредит
@@ -421,23 +466,23 @@
                             <figure class="programms-img">
                                 <img width="363" height="180" alt="" src="images/programms/programm-1.jpg">
                             </figure>
-                            <div class="programms-data">
-                                <div class="programms-holder">
-                                    <div class="programms-col">Сумма</div>
-                                    <div class="programms-col text-right"><strong>1000 грн</strong></div>
+                                <div class="programms-data">
+                                    <div class="programms-holder">
+                                        <div class="programms-col">Сумма</div>
+                                        <div class="programms-col text-right"><strong>1000 грн</strong></div>
+                                    </div>
+                                    <div class="programms-holder">
+                                        <div class="programms-col">На срок</div>
+                                        <div class="programms-col text-right"><strong>5 дней</strong></div>
+                                    </div>
                                 </div>
-                                <div class="programms-holder">
-                                    <div class="programms-col">На срок</div>
-                                    <div class="programms-col text-right"><strong>5 дней</strong></div>
+                                <div class="programms-info">
+                                    Внезапные неприятности застали врасплох? С этим типом краткосрочных кредитов деньги всегда у вас под рукой!
                                 </div>
-                            </div>
-                            <div class="programms-info">
-                                Внезапные неприятности застали врасплох? С этим типом краткосрочных кредитов деньги всегда у вас под рукой!
-                            </div>
-                            <div class="programms-footer text-center">
-                                <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
-                                    <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
-                            </div>
+                                <div class="programms-footer text-center">
+                                    <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
+                                        <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
+                                </div>
                         </div>
                         <div>
                             <div class="programms-heading">кредит
@@ -446,23 +491,23 @@
                             <figure class="programms-img">
                                 <img width="363" height="180" alt="" src="images/programms/programm-2.jpg">
                             </figure>
-                            <div class="programms-data">
-                                <div class="programms-holder">
-                                    <div class="programms-col">Сумма</div>
-                                    <div class="programms-col text-right"><strong>1000 грн</strong></div>
+                                <div class="programms-data">
+                                    <div class="programms-holder">
+                                        <div class="programms-col">Сумма</div>
+                                        <div class="programms-col text-right"><strong>1000 грн</strong></div>
+                                    </div>
+                                    <div class="programms-holder">
+                                        <div class="programms-col">На срок</div>
+                                        <div class="programms-col text-right"><strong>10 дней</strong></div>
+                                    </div>
                                 </div>
-                                <div class="programms-holder">
-                                    <div class="programms-col">На срок</div>
-                                    <div class="programms-col text-right"><strong>10 дней</strong></div>
+                                <div class="programms-info">
+                                    Не хватает денег на обучение или развлечения с друзьями? Мы предоставляем кредиты всем студентам!
                                 </div>
-                            </div>
-                            <div class="programms-info">
-                                Не хватает денег на обучение или развлечения с друзьями? Мы предоставляем кредиты всем студентам!
-                            </div>
-                            <div class="programms-footer text-center">
-                                <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
-                                    <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
-                            </div>
+                                <div class="programms-footer text-center">
+                                    <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
+                                        <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
+                                </div>
                         </div>
                         <div>
                             <div class="programms-heading">кредит
@@ -471,23 +516,23 @@
                             <figure class="programms-img">
                                 <img width="363" height="180" alt="" src="images/programms/programm-3.jpg">
                             </figure>
-                            <div class="programms-data">
-                                <div class="programms-holder">
-                                    <div class="programms-col">Сумма</div>
-                                    <div class="programms-col text-right"><strong>1500 грн</strong></div>
+                                <div class="programms-data">
+                                    <div class="programms-holder">
+                                        <div class="programms-col">Сумма</div>
+                                        <div class="programms-col text-right"><strong>1500 грн</strong></div>
+                                    </div>
+                                    <div class="programms-holder">
+                                        <div class="programms-col">На срок</div>
+                                        <div class="programms-col text-right"><strong>10 дней</strong></div>
+                                    </div>
                                 </div>
-                                <div class="programms-holder">
-                                    <div class="programms-col">На срок</div>
-                                    <div class="programms-col text-right"><strong>10 дней</strong></div>
+                                <div class="programms-info">
+                                    До зарплаты еще целая неделя, а деньги уже на исходе? Этот тип займа подстрахует вас и спасет от непредвиденных растрат!
                                 </div>
-                            </div>
-                            <div class="programms-info">
-                                До зарплаты еще целая неделя, а деньги уже на исходе? Этот тип займа подстрахует вас и спасет от непредвиденных растрат!
-                            </div>
-                            <div class="programms-footer text-center">
-                                <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
-                                    <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
-                            </div>
+                                <div class="programms-footer text-center">
+                                    <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
+                                        <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
+                                </div>
                         </div>
                         <div>
                             <div class="programms-heading">кредит
@@ -496,23 +541,23 @@
                             <figure class="programms-img">
                                 <img width="363" height="180" alt="" src="images/programms/happy-couple-balloons-romance-6249.jpg">
                             </figure>
-                            <div class="programms-data">
-                                <div class="programms-holder">
-                                    <div class="programms-col">Сумма</div>
-                                    <div class="programms-col text-right"><strong>1600 грн</strong></div>
+                                <div class="programms-data">
+                                    <div class="programms-holder">
+                                        <div class="programms-col">Сумма</div>
+                                        <div class="programms-col text-right"><strong>1600 грн</strong></div>
+                                    </div>
+                                    <div class="programms-holder">
+                                        <div class="programms-col">На срок</div>
+                                        <div class="programms-col text-right"><strong>15 дней</strong></div>
+                                    </div>
                                 </div>
-                                <div class="programms-holder">
-                                    <div class="programms-col">На срок</div>
-                                    <div class="programms-col text-right"><strong>15 дней</strong></div>
+                                <div class="programms-info">
+                                    Близится важная дата? Сервис МyCredit поможет сделать расходы менее ощутимыми для вашего кошелька!
                                 </div>
-                            </div>
-                            <div class="programms-info">
-                                Близится важная дата? Сервис МyCredit поможет сделать расходы менее ощутимыми для вашего кошелька!
-                            </div>
-                            <div class="programms-footer text-center">
-                                <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
-                                    <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
-                            </div>
+                                <div class="programms-footer text-center">
+                                    <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
+                                        <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
+                                </div>
                         </div>
                         <div>
                             <div class="programms-heading">кредит
@@ -521,23 +566,23 @@
                             <figure class="programms-img">
                                 <img width="363" height="180" alt="" src="images/programms/bolezn.jpg">
                             </figure>
-                            <div class="programms-data">
-                                <div class="programms-holder">
-                                    <div class="programms-col">Сумма</div>
-                                    <div class="programms-col text-right"><strong>2000 грн</strong></div>
+                                <div class="programms-data">
+                                    <div class="programms-holder">
+                                        <div class="programms-col">Сумма</div>
+                                        <div class="programms-col text-right"><strong>2000 грн</strong></div>
+                                    </div>
+                                    <div class="programms-holder">
+                                        <div class="programms-col">На срок</div>
+                                        <div class="programms-col text-right"><strong>18 дней</strong></div>
+                                    </div>
                                 </div>
-                                <div class="programms-holder">
-                                    <div class="programms-col">На срок</div>
-                                    <div class="programms-col text-right"><strong>18 дней</strong></div>
+                                <div class="programms-info">
+                                    Проблемы со здоровьем застали врасплох? Этот тип кредита поможет справится с внезапными медицинскими расходами!
                                 </div>
-                            </div>
-                            <div class="programms-info">
-                                Проблемы со здоровьем застали врасплох? Этот тип кредита поможет справится с внезапными медицинскими расходами!
-                            </div>
-                            <div class="programms-footer text-center">
-                                <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
-                                    <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
-                            </div>
+                                <div class="programms-footer text-center">
+                                    <button class="btn btn-programm" onclick="onClickGreatRates('prefix1', 500, 5, 'Holiday');">
+                                        <span>Подать заявку</span><span class="icon-arrow-animate"></span></button>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -611,39 +656,39 @@
                 <div class="security-img text-center">
                     <img alt="" src="images/security.png">
                 </div>
-                <div class="security-text">
-                    <div class="heading-h2 heading-h2__inverse">Ответственность и гарантия безопасности</div>
-                    <ul class="security-list">
-                        <li class="d-f align-center">
-                            <div class="security-icon align-center justify-center d-f">
-                                <span class="icon-secure-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span></span>
-                            </div>
-                            <div class="security-info">
-                                <span>Честные условия оформления займа - без скрытых платежей и дополнительных комиссий</span>
-                                <a href="http://dev.mycredit.ua/ru/how-it-work/">Подробнее</a>
-                            </div>
-                        </li>
-                        <li class="d-f align-center">
-                            <div class="security-icon align-center justify-center d-f">
-                                <span class="icon-secure-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
-                            </div>
-                            <div class="security-info">
-                                <span>Защита передачи Ваших данных и ответственность за их сохранность подтверждено сертификатом PCI DSS</span>
-                                <a href="http://dev.mycredit.ua/ru/politika-konfidencialnosti/">Подробнее</a>
-                            </div>
-                        </li>
-                        <li class="d-f align-center">
-                            <div class="security-icon align-center justify-center d-f">
-                                <span class="icon-secure-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span></span>
-                            </div>
-                            <div class="security-info">
-                                <span>Официальная лицензия на предоставления услуг по кредитованию</span>
-                                <a href="http://dev.mycredit.ua/ru/documents-license/">Подробнее</a>
-                            </div>
-                        </li>
-                    </ul>
+                    <div class="security-text">
+                        <div class="heading-h2 heading-h2__inverse">Ответственность и гарантия безопасности</div>
+                        <ul class="security-list">
+                            <li class="d-f align-center">
+                                <div class="security-icon align-center justify-center d-f">
+                                    <span class="icon-secure-1"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span></span>
+                                </div>
+                                <div class="security-info">
+                                    <span>Честные условия оформления займа - без скрытых платежей и дополнительных комиссий</span>
+                                    <a href="http://dev.mycredit.ua/ru/how-it-work/">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="d-f align-center">
+                                <div class="security-icon align-center justify-center d-f">
+                                    <span class="icon-secure-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                                </div>
+                                <div class="security-info">
+                                    <span>Защита передачи Ваших данных и ответственность за их сохранность подтверждено сертификатом PCI DSS</span>
+                                    <a href="http://dev.mycredit.ua/ru/politika-konfidencialnosti/">Подробнее</a>
+                                </div>
+                            </li>
+                            <li class="d-f align-center">
+                                <div class="security-icon align-center justify-center d-f">
+                                    <span class="icon-secure-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span><span class="path11"></span></span>
+                                </div>
+                                <div class="security-info">
+                                    <span>Официальная лицензия на предоставления услуг по кредитованию</span>
+                                    <a href="http://dev.mycredit.ua/ru/documents-license/">Подробнее</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
         </section>
         <!-- Reviews -->
         <section class="reviews">
@@ -747,44 +792,44 @@
                         <div class="facts-img">
                             <img alt="" src="images/facts/premiya.png">
                         </div>
-                        <p>
-                            <strong>Премия PSMAwards</strong>
-                            <br> за «Лучший сервис
-                            <br>онлайн-кредитования»
-                        </p>
-                    </div>
-                    <div class="facts-item text-center">
-                        <div class="facts-img">
-                            <img alt="" src="images/facts/starQ.png">
+                            <p>
+                                <strong>Премия PSMAwards</strong>
+                                <br> за «Лучший сервис
+                                <br>онлайн-кредитования»
+                            </p>
                         </div>
-                        <p>
-                            <strong>«Звезда качества»</strong>
-                            <br>и звание «Лучшее
-                            <br>предприятие страны»
-                        </p>
-                    </div>
-                    <div class="facts-item text-center">
-                        <div class="facts-img">
-                            <img alt="" src="images/facts/neangelu.png">
+                        <div class="facts-item text-center">
+                            <div class="facts-img">
+                                <img alt="" src="images/facts/starQ.png">
                         </div>
-                        <p>
-                            <strong>Группа НЕАНГЕЛЫ</strong>
-                            <br> - лицо бренда
-                            <br> MyCredit в 2017 году
-                        </p>
-                    </div>
-                    <div class="facts-item text-center">
-                        <div class="facts-img">
-                            <img alt="" src="images/facts/prize.png">
+                                <p>
+                                    <strong>«Звезда качества»</strong>
+                                    <br>и звание «Лучшее
+                                    <br>предприятие страны»
+                                </p>
+                            </div>
+                            <div class="facts-item text-center">
+                                <div class="facts-img">
+                                    <img alt="" src="images/facts/neangelu.png">
                         </div>
-                        <p>
-                            <strong>Более 30 призов</strong>
-                            <br>и промокодов
-                            <br>дарим ежемесячно
-                        </p>
-                    </div>
-                </div>
-            </div>
+                                    <p>
+                                        <strong>Группа НЕАНГЕЛЫ</strong>
+                                        <br> - лицо бренда
+                                        <br> MyCredit в 2017 году
+                                    </p>
+                                </div>
+                                <div class="facts-item text-center">
+                                    <div class="facts-img">
+                                        <img alt="" src="images/facts/prize.png">
+                        </div>
+                                        <p>
+                                            <strong>Более 30 призов</strong>
+                                            <br>и промокодов
+                                            <br>дарим ежемесячно
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
         </section>
         <!-- SEO-текст -->
         <section class="seo-text">
@@ -1097,17 +1142,17 @@
                     <div class="bank-item text-center">
                         <img src="images/bank-1.jpg" alt="">
                     </div>
-                    <div class="bank-item text-center">
-                        <img src="images/bank-2.jpg" alt="">
+                        <div class="bank-item text-center">
+                            <img src="images/bank-2.jpg" alt="">
                     </div>
-                    <div class="bank-item text-center">
-                        <img src="images/bank-3.jpg" alt="">
+                            <div class="bank-item text-center">
+                                <img src="images/bank-3.jpg" alt="">
                     </div>
-                    <div class="bank-item text-center">
-                        <img src="images/bank-4.jpg" alt="">
+                                <div class="bank-item text-center">
+                                    <img src="images/bank-4.jpg" alt="">
                     </div>
-                </div>
-            </div>
+                                </div>
+                            </div>
         </section>
         <!-- Пресса -->
         <section class="press">
@@ -1271,7 +1316,6 @@
                         <div class="main-phone">
                             <a href="tel:0800214111">0 800 214 111</a>
                             <span>Бесплатно по Украине со стационарных телефонов</span>
-                            <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
                         </div>
                     </div>
                 </div>
@@ -1295,52 +1339,6 @@
                 </div>
             </div>
         </footer>
-        <div class="bottom-callback js-callback" id="div_SendEmail">
-            <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
-            <div class="callback-holder d-f">
-                <div class="callback-left">
-                    <figure class="call-img">
-                        <img alt="" class="lazy" src="images/operator.png">
-                    </figure>
-                    <div class="call-img--name">
-                        Ирина Кондрашова <span>специалист по кредитованию</span>
-                    </div>
-                    <div class="call-text">
-                        <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
-                    </div>
-                </div>
-                <div class="callback-form">
-                    <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
-                        <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
-                        <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_sername" class="form-label">ФИО</label>
-                                <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
-                            Отправить
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
-                <span id="span_resultEmail">Сообщение отправлено</span>
-            </div>
-        </div>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1450,6 +1448,9 @@
             </div>
         </div>
     </div>
+    <script>
+    var downloadScripts = [];
+    </script>
     <script src="js/all-home-ab.min.js"></script>
 </body>
 

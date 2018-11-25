@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=2.0">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/puzzle.min.css">
+</head>
+
+<body id="body">
+    <noscript class="error-js">
+        Для полной функциональности этого сайта необходимо включить JavaScript.
+    </noscript>
+    <div class="wrapper">
+        <header class=" header js-header header-content " id="header">
+            <div class="header-container d-f align-center justify-between">
+                <a href="/ru/" class="header-logo">
+			<img src="images/test/logo-img.jpg" alt="logo" width="210" height="40">
+			<span>онлайн кредиты на карту</span>
+		</a>
+                <div class="header-nav js-menu">
+                    <span class="icon-close close-nav js-close-nav"></span>
+                    <ul>
+                        <li>
+                            <a href="http://mycredit7:8080/ru/about/" alt="О нас" title="О нас">О нас</a>
+                        </li>
+                        <li class="js-parent">
+                            <span>Как получить?</span><span class="triangle"></span>
+                            <ul class="dropdown js-dropdown">
+                                <li><a href="http://mycredit7:8080/ru/faq/oformlenie-zayavki/kak-podat-zayavku-na-oformlenie-kredita/">Как получить?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/how-it-work/#promo1">Как это работает?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/faq/pogasitprodlit-kredit/na-skolko-dnej-vozmozhno-prodlit-kredit/">Как продлить?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/how-to-extend/">Как погасить?</a></li>
+                            </ul>
+                        </li>
+                        <li class="custom">
+                            <a href="http://mycredit7:8080/ru/akcii/" alt="Акции" title="Акции">Акции</a>
+                        </li>
+                        <li class="js-parent nav-dots">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <ul class="dropdown js-dropdown">
+                                <li class="js-anchor"><a href="/ru/#motivation">Почему мы?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/faq/">Вопрос-ответ</a></li>
+                            </ul>
+                        </li>
+                        <li class="js-anchor">
+                            <a href="http://mycredit7:8080/ru/optimizaciya-glavnoj/#motivation" alt="" title="">Почему мы?</a>
+                        </li>
+                        <li>
+                            <a href="http://mycredit7:8080/ru/faq/" alt="Справка" title="Справка">Вопрос-ответ</a>
+                        </li>
+                    </ul>
+                    <div class="mobile-language">
+                        <span id="language" class="hidden">ru</span>
+                        <div>Сменить язык:
+                            <a href="/ua/novyj-god-2019/"
+					   class="lang-link lang-link--rus">
+						<span class="lang-ukr">Украинский</span>
+						<span class="lang-rus">Русский</span>
+					</a>
+                        </div>
+                        <span id="language" class="hidden">ru</span>
+                    </div>
+                </div>
+                <div class="header-btn">
+                    <button type="button" class="btn btn-authorize" data-toggle="modal" data-target="#modal_auth">Мой кабинет</button>
+                    <button type="button" class="btn navbar-toggle js-gamburger">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="sr-only">Toggle navigation</span>
+                    </button>
+                </div>
+                <span id="language" class="hidden">ru</span>
+                <a href="/ua/novyj-god-2019/"
+		   class="lang-link d-f align-center justify-center header-language lang-link--rus">
+			<span class="lang-ukr">Укр</span>
+			<span class="lang-rus">Ру</span>
+		</a>
+                <span id="lang" class="hidden">ru</span>
+            </div>
+        </header>
+        <div class="text-center hidden site-off">
+            <span class="error-text"></span>
+        </div>
+        <div class="first-screen">
+            <div class="puzzle-container">
+                <div class="socks-list d-f justify-between top">
+                    <div>
+                        <img src="assets/images/newyear2019/sock-1.png" alt="" data-toggle="modal" data-target="#sock-popup-1">
+</div>
+<div>
+    <img src="assets/images/newyear2019/sock-2.png" data-toggle="modal" data-target="#sock-popup-2" alt="">
+</div>
+    <div>
+        <img src="assets/images/newyear2019/sock-3.png" alt="" data-toggle="modal" data-target="#sock-popup-3">
+</div>
+        <div>
+            <img src="assets/images/newyear2019/sock-4.png" alt="" data-toggle="modal" data-target="#sock-popup-4">
+</div>
+            <div>
+                <img src="assets/images/newyear2019/sock-5.png" alt="" data-toggle="modal" data-target="#sock-popup-5">
+</div>
+            </div>
+            <div class="puzzle-start d-f justify-center">
+            	
+                	<img src="assets/images/newyear2019/venok-2.png" alt="">
+                	<div class="puzzle-start__content">
+                		<p>Собирай пазлы - получай
+<strong>10 крутых подарков и скидку 50%</strong></p>
+<button class="btn-puzzle btn" data-toggle="modal" data-target="#start-modal">На старт</button>
+                	</div>
+</div>
+                <div class="socks-list d-f justify-between bottom">
+                    <div>
+                        <img src="assets/images/newyear2019/sock-6.png" alt="" data-toggle="modal" data-target="#sock-popup-6">
+</div>
+                        <div>
+                            <img src="assets/images/newyear2019/sock-7.png" alt="" data-toggle="modal" data-target="#sock-popup-7">
+</div>
+                            <div>
+                                <img src="assets/images/newyear2019/sock-8.png" alt="" data-toggle="modal" data-target="#sock-popup-8">
+</div>
+                                <div>
+                                    <img src="assets/images/newyear2019/sock-9.png" alt="" data-toggle="modal" data-target="#sock-popup-9">
+</div>
+                                    <div>
+                                        <img src="assets/images/newyear2019/sock-10.png" alt="" data-toggle="modal" data-target="#sock-popup-10">
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="second-screen">
+                                <div class="puzzle-container">
+                                    <div class="d-f justify-end">
+                                        <div class="puzzle-toolbar d-f justify-between">
+                                            <div class="puzzle-toolbar__left d-f align-center text-center">
+                                                Открыто подарков
+                                            </div>
+                                            <div class="puzzle-toolbar__center  d-f align-center justify-center">
+                                                <img class="active" src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+                                                <img src="assets/images/newyear2019/sock.png" alt="">
+</div>
+                                                <div class="puzzle-toolbar__right d-f align-center justify-center">
+                                                    <img class="option js-option" src="assets/images/newyear2019/option.png">
+                                                    <div class="option-holder js-option-holder align-center justify-between">
+                                                        <button class="btn btn-sound"></button>
+                                                        <button class="btn btn-music"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="puzzle-area">
+                                            <div id="puzzle-containment" class="puzzle-containment">
+                                                <div class="pure-g d-f">
+                                                    <div class="puzzle-build">
+                                                        <img id="source_image" class="pure-img" src="assets/images/newyear2019/grinch.jpg">
+</div>
+                                                        <div class="puzzle-parts">
+                                                            <div id="pile">
+                                                                <div id="puzzle_solved">
+                                                                    <h2 style="margin:0 0 20px">Well done!</h2>
+                                                                    <a class="pure-button button-lg restart-puzzle" data-grid="3">Restart Puzzle</a>
+                                                                    <br><br>
+                                                                    <a href="#" class="restart-puzzle" data-grid="5">5x5</a>
+                                                                    &nbsp; <a href="#" class="restart-puzzle" data-grid="7">7x7</a>
+                                                                    &nbsp; <a href="#" class="restart-puzzle" data-grid="10">10x10</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center">
+                                                    <button class="btn btn-puzzle" data-toggle="modal" data-target="#grinch-modal"><span class="d-f align-center"><span class="btn-picture"><span></span></span>Просмотр картинки</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="puzzle-rools">
+                                    		<div class="snowball">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball snowball__small">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball snowball__small snowball__small--second">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball snowball__small snowball__small--third">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                    		<div class="snowball">
+                                    			<img src="assets/images/newyear2019/snowball.png" alt="">
+                                    		</div>
+                                        	<div class="puzzle-container">
+                                        		<div class="heading-rools text-center">Как стать участником акции и выиграть призы?</div>
+                                        		<div class="snowballs">
+                                        			<img src="assets/images/newyear2019/small-snow.png" alt="">
+                                        			<img src="assets/images/newyear2019/small-snow.png" alt="">
+                                        			<img src="assets/images/newyear2019/small-snow.png" alt="">
+                                        		</div>
+                                        		<ol>
+                                        			<li>Пройди все уровни и собери 10 пазлов в новогодней игре от MyCredit</li>
+                                        			<li>На каждом уровне подтверди участие в новогоднем розыгрыше</li>
+                                        			<li>Следи за результатами розыгрыша каждую неделю в разделе «Акции»</li>
+                                        		</ol>
+                                        		<div class="start-wrapper">
+                                        			<button class="btn btn-puzzle btn-puzzle__inverse">На старт</button>
+                                        		</div>
+                                        		<div>
+                                        			<a href="#">Правила участия в акции</a>
+                                        		</div>
+                                        	</div>
+                                        </div>
+                                    <footer class="footer" id="footer">
+                                        <div class="container">
+                                            <div class="footer-top">
+                                                <div class="footer-left">
+                                                    <div class="footer-menu js-footer-menu">
+                                                        <div class="footer-heading js-accordion">О нас <span class="footer-plus"></span></div>
+                                                        <ul class="footer-menu">
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/documents-license/" alt="Правовая информация" title="Правовая информация">Правовая информация</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/kreditnyj-dogovor1/" alt="Договор займа" title="Договор займа">Договор займа</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/finansovaya-otchetnost/" alt="Финансовая отчетность" title="Финансовая отчетность">Финансовая отчетность</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/politika-konfidencialnosti/" alt="Политика конфиденциальности" title="Политика конфиденциальности">Политика конфиденциальности</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/partners/" alt="Партнерам" title="Партнерам">Партнерам</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/otzyvy/" alt="Отзывы" title="Отзывы">Отзывы</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/contacts/" alt="Контакты" title="Контакты">Контакты</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="footer-menu js-footer-menu">
+                                                        <div class="footer-heading js-accordion">Часто задаваемые вопросы <span class="footer-plus"></span></div>
+                                                        <ul>
+                                                            <li><a href="http://mycredit7:8080/ru/faq/oformlenie-zayavki/kak-podat-zayavku-na-oformlenie-kredita/" alt="Как получить кредит?" title="Как получить кредит?">Как подать запрос?</a></li>
+                                                            <li><a href="http://mycredit7:8080/ru/faq/#questions_75" alt="Как погасить / продлить кредит" title="Как погасить / продлить кредит">Как погасить / продлить кредит</a></li>
+                                                            <li><a href="http://mycredit7:8080/ru/faq/#question_82" alt="Почему мне отказали в выдаче кредита" title="Почему мне отказали в выдаче кредита">Почему мне отказали в выдаче кредита</a></li>
+                                                            <li><a href="http://mycredit7:8080/ru/blog/" alt="Телефон для подтверждения" title="Телефон для подтверждения">Блог</a></li>
+                                                            <li><a href="http://mycredit7:8080/ru/news/" alt="Телефон для подтверждения" title="Телефон для подтверждения">Новости</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="footer-menu js-footer-menu">
+                                                        <div class="footer-heading js-accordion">Как вернуть кредит <span class="footer-plus"></span></div>
+                                                        <ul>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/how-to-extend/v-internete/" alt="В интернете" title="В интернете">В интернете</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/how-to-extend/in-terminal/" alt="Оплата кредита через терминал" title="Оплата кредита через терминал">Оплата кредита через терминал</a></li>
+                                                            <li>
+                                                                <a href="http://mycredit7:8080/ru/how-to-extend/in-bank/" alt="В кассе банка" title="В кассе банка">В кассе банка</a></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="footer-menu footer-menu__wide js-footer-menu">
+                                                        <div class="footer-heading js-accordion">Услуги кредитования <span class="footer-plus"></span></div>
+                                                        <div class="footer-menu__wrapper">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/dengi-do-zp/" alt="Деньги до зарплаты онлайн за 20 минут" title="Деньги до зарплаты онлайн за 20 минут">Деньги до зарплаты онлайн за 20 минут</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kredit-bez-poruchitelej/" alt="Кредит от 18 лет без справок и поручителей " title="Кредит от 18 лет без справок и поручителей ">Кредит от 18 лет без справок и поручителей </a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kredit-bez-zaloga/" alt="Кредиты без залога в Киеве, Харькове и всей Украине" title="Кредиты без залога в Киеве, Харькове и всей Украине">Кредиты без залога в Киеве, Харькове и всей Украине</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/potrebitelskij-kredit/" alt="Потребительский кредит онлайн в Украине" title="Потребительский кредит онлайн в Украине">Потребительский кредит онлайн в Украине</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kredit-pensioneram/" alt="Кредит для пенсионеров в Украине" title="Кредит для пенсионеров в Украине">Кредит для пенсионеров в Украине</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/mikrokredit-i-mikrozajm/" alt="Микрокредит и микрозайм онлайн на карту" title="Микрокредит и микрозайм онлайн на карту">Микрокредит и микрозайм онлайн на карту</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kredit-onlajn-s-plohoj-kreditnoj-istoriej-v-ukraine/" alt="Кредит онлайн с плохой кредитной историей в Украине" title="Кредит онлайн с плохой кредитной историей в Украине">Кредит онлайн с плохой кредитной историей в Украине</a></li>
+                                                            </ul>
+                                                            <ul class="">
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/vzyat-kredit-onlajn-bez-spravki-o-dohodah-v-ukraine/" alt="Взять кредит онлайн без справки о доходах в Украине" title="Взять кредит онлайн без справки о доходах в Украине">Взять кредит онлайн без справки о доходах в Украине</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/dengi-v-dolg/" alt="Деньги в долг на карту" title="Деньги в долг на карту">Деньги в долг на карту</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kratkosrochnyj-kredit-na-1-mesyac/" alt="Краткосрочный кредит на 1 месяц" title="Краткосрочный кредит на 1 месяц">Краткосрочный кредит на 1 месяц</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/besprocentnyj-kredit-pod-0-bez-pereplat/" alt="Беспроцентный кредит под 0% без переплат" title="Беспроцентный кредит под 0% без переплат">Беспроцентный кредит под 0% без переплат</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kredit-365-dnej-v-godu/" alt="Кредит 365 дней в году" title="Кредит 365 дней в году">Кредит 365 дней в году</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/kreditnyj-kalkulyator-onlajn-v-ukraine/" alt="Кредитный калькулятор онлайн в Украине" title="Кредитный калькулятор онлайн в Украине">Кредитный калькулятор онлайн в Украине</a></li>
+                                                                <li>
+                                                                    <a href="http://mycredit7:8080/ru/uslugi-kreditovaniya/prolongaciya-kredita-ot-mycredit/" alt="Пролонгация кредита от Mycredit" title="Пролонгация кредита от Mycredit">Пролонгация кредита от Mycredit</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="footer-right text-center">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="tel:0733694111"><span class="icon-lifecell-1"></span><span>073 369 41 11</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="tel:0673694111"><span class="icon-lifecell-12"></span><span>067 369 41 11</span></a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="tel:0503694111"><span class="icon-mts"></span><span>050 369 41 11</span></a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="main-phone">
+                                                        <a href="tel:0800214111">0 800 214 111</a>
+                                                        <span>Бесплатно по Украине со стационарных телефонов</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="footer-bottom">
+                                                <a href="/ru/" class="footer-logo">
+
+<img alt="" width="250" height="90" class="js-lazy" data-src="/images/test/logo_last_white.svg">
+
+
+</a>
+                                                <div class="footer-text">
+                                                    <p>Первый в Украине сервис кредитования через интернет.<br> Мы предоставляем быстрые и удобные кредиты для всех граждан Украины. <br>© 2015 - 2018 MyCredit - Кредит онлайн на банковскую карту за 20 минут <br><br> Разработка и поддержка сайта — <a target="_blank" rel="noopener" href="https://artjoker.ua/ru/">Artjoker</a></p>
+                                                </div>
+                                                <ul class="footer-social" itemscope itemtype="http://schema.org/Organization">
+                                                    <link itemprop="url" href="http://mycredit7:8080/">
+                                                    <li>
+                                                        <a itemprop="sameAs" href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" title="telegram" rel="noopener">
+	<span class="icon-telegram-1"></span>
+</a>
+                                                    </li>
+                                                    <li>
+                                                        <a itemprop="sameAs" href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" title="facebook" rel="noopener">
+	<span class="icon-facebook-logo"></span>
+</a>
+                                                    </li>
+                                                    <li>
+                                                        <a itemprop="sameAs" href="https://www.instagram.com/my_credit/" target="_blank" title="instagram" rel="noopener">
+	<span class="icon-instagram-logo"></span>
+</a>
+                                                    </li>
+                                                    <li>
+                                                        <a itemprop="sameAs" href="https://www.youtube.com/c/MyCreditComUa" target="_blank" title="youtube" rel="noopener">
+	<span class="icon-youtube-logo"></span>
+</a>
+                                                    </li>
+                                                    <li>
+                                                        <a itemprop="sameAs" href="https://plus.google.com/u/0/+MyCreditComUa" target="_blank" title="google" rel="noopener">
+	<span class="icon-google-plus-logo"></span>
+</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </footer>
+                                    <script>
+                                        var downloadScripts = [
+
+];
+</script>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+                                    <script>
+                                        !function(a){function f(a,b){if(!(a.originalEvent.touches.length>1)){a.preventDefault();var c=a.originalEvent.changedTouches[0],d=document.createEvent("MouseEvents");d.initMouseEvent(b,!0,!0,window,1,c.screenX,c.screenY,c.clientX,c.clientY,!1,!1,!1,!1,0,null),a.target.dispatchEvent(d)}}if(a.support.touch="ontouchend"in document,a.support.touch){var e,b=a.ui.mouse.prototype,c=b._mouseInit,d=b._mouseDestroy;b._touchStart=function(a){var b=this;!e&&b._mouseCapture(a.originalEvent.changedTouches[0])&&(e=!0,b._touchMoved=!1,f(a,"mouseover"),f(a,"mousemove"),f(a,"mousedown"))},b._touchMove=function(a){e&&(this._touchMoved=!0,f(a,"mousemove"))},b._touchEnd=function(a){e&&(f(a,"mouseup"),f(a,"mouseout"),this._touchMoved||f(a,"click"),e=!1)},b._mouseInit=function(){var b=this;b.element.bind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),c.call(b)},b._mouseDestroy=function(){var b=this;b.element.unbind({touchstart:a.proxy(b,"_touchStart"),touchmove:a.proxy(b,"_touchMove"),touchend:a.proxy(b,"_touchEnd")}),d.call(b)}}}(jQuery);
+</script>
+                                    <script async src="/js/newyear-home.min.js"></script>
+                                </div>
+
+        <div class="modal fade" id="modal_auth" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" onshow="onshow">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <span class="icon-close" data-dismiss="modal" aria-label="Close"></span> Вход в личный кабинет
+                    </div>
+                    <div class="modal-error-wrapper"></div>
+                    <form name="auth" id="modal_auth" action="http://mycredit7:8080/ru/lichnyj-kabinet/moi-kredity/" id="js-modal-form" method="post" class="form js_validate">
+                        <input type='hidden' name='CSRFName' value='CSRFGuard_337120278' />
+                        <input type='hidden' name='CSRFToken' value='zATiizh64i5FfkAbnrRf5Yh3tD2ZkYfa3Edi39eyFeifGi2Kfb7y9daDAdbHbBEY' />
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="login" class="form-label js-show-tooltip"><span class="icon-ico-question"><span class="path1"></span><span class="path2"></span></span> Ваш телефон</label>
+                                <div class="form-control--wr">
+                                    <input name="auth[login]" placeholder="Номер мобильного телефона" id="login_auth" type="tel" class="form-control js-phone" value="" required onKeyUp="onKeyUpPhone('login_auth');" data-validate="phone" autocomplete="off">
+                                    <div class="help-tooltip-data js-tooltip hidden">Введите Ваш номер мобильного телефона</div>
+                                    <span class="error_text">Поле «Ваш телефон» не заполнено</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="password-1" class="form-label js-show-tooltip"><span class="icon-ico-question"><span class="path1"></span><span class="path2"></span></span> Ваш пароль</label>
+                                <div class="form-control--wr">
+                                    <input type="password" name="auth[prevent_autofill]" id="prevent_autofill" autocomplete="off" style="display:none" tabindex="-1" />
+                                    <input name="auth[password]" id="password-1-auth" type="password" class="form-control form-control-white" required placeholder="Пароль" autocomplete="off" value="" readonly>
+                                    <div class="help-tooltip-data js-tooltip hidden">Введите пароль придуманный при регистрации. Пароль должен содержать минимум 6 символов, включая буквы верхнего и нижнего регистра и цифры</div>
+                                    <span class="error_text"> Введите  пароль придуманный при регистрации</span>
+                                    <div class="captcha">
+                                        <label for="captcha" class="form-label">Введите символы с картинки:</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group hidden" id="div_code">
+                                <label for="code" class="form-label">Код активации</label>
+                                <div class="form-control--wr">
+                                    <input type="hidden" name="auth[code]" id="code" class="form-control">
+                                    <span class="error_text"></span>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button id="buttonLogin1" type="button" class="btn btn-personal js-btn-success btn-login" data-sitekey="0" onclick='onClickLogin();'>Войти
+                                </button>
+                                <div class="text-center">
+                                    <a class="forgot-password" href="http://mycredit7:8080/ru/restore-password/">Забыли пароль?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer modal-footer--login text-center">
+                            <div class="modal-bottom">
+                                <div class="hidden-xs">У вас еще нет учетной записи?<br></div>
+                                <a href="http://mycredit7:8080/ru/registration/">Зарегистрироваться</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <div class="modal fade" id="grinch-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+                <div class="modal-body modal-body__video">
+                    <img id="source_image" src="assets/images/newyear2019/grinch.jpg">
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Preview popups -->
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-1.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-2.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-3.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-4.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-5.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-6.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-7.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-8.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-9" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-9.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-puzzle-preview" id="sock-popup-10" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog__video" role="document">
+            <div class="modal-content modal-content__video">
+            	
+                <div class="modal-body modal-body__video">
+                	<div class="sock-popup-holder">
+                		<div class="preview-gift">
+                			<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                			<div class="preview-top">
+                				<img src="assets/images/newyear2019/popup-top.png" alt="">
+                			</div>
+                			Электрочайник RUSSELL
+                			<div class="preview-img">
+                				<img src="assets/images/newyear2019/present-10.png" alt="">
+                				<div class="preview-labe">3 штуки</div>
+                			</div>
+                		</div>
+                    	<img id="source_image" src="assets/images/newyear2019/sock-popup.png">
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+    <!-- -->
+    <div class="modal fade modal-puzzle" id="start-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+            	<span class="icon-close" data-dismiss="modal" aria-label="Close"></span>
+                <div class="modal-body modal-body__puzzle">
+                	<div class="heading-puzzle text-center">Оставь свои контакты для регистрации в игре</div>
+                	<div class="puzzle-form">
+	                    <form action="" class="form js_validate">
+	                    	<div class="form-group">
+	                    		<label for="" class="form-label">Ваше имя</label>
+	                    		<input type="text" class="form-control" placeholder="Иван Иванов" required>
+	                    	</div>
+	                    	<div class="form-group">
+	                    		<label for="" class="form-label">Ваше Телефон</label>
+	                    		<input type="tel" class="form-control js-phone" placeholder="" data-validate="phone" required>
+	                    	</div>
+	                    	<div class="form-group">
+	                    		<label for="" class="form-label">Ваше email</label>
+	                    		<input type="email" class="form-control" placeholder="example@gmail.com" data-validate="email" required>
+	                    	</div>
+	                    	<button class="btn btn-puzzle" type="submit">Играть</button>
+	                    </form>
+                    </div>
+				</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -13,68 +13,80 @@
     <meta name="google-site-verification" content="DHkY6ywkpSEqaHBG1aQTBj651kRzAPjpSFXRPSrsERE" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="css/content-page.min.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="css/content-page-mobile.min.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/content-page.min.css">
 </head>
 
 <body class="home-page">
+    
     <div class="wrapper">
         <!-- Header -->
-        <header class="header" id="header">
+        <header class=" header header-content " id="header">
             <div class="header-container d-f align-center justify-between">
-                <a href="#" class="header-logo">
-            <img src="/images/logo-img.svg" alt="">
+                <a href="/ru/" class="header-logo">
+            <img src="/images/test/logo-img.jpg" alt="logo" width="210" height="40">
             <span>онлайн кредиты на карту</span>
         </a>
-                <div class="header-nav">
+                <div class="header-nav js-menu">
                     <span class="icon-close close-nav js-close-nav"></span>
                     <ul>
-                        <li><a href="#">О нас</a></li>
+                        <li>
+                            <a href="http://mycredit7:8080/ru/about/" alt="О нас" title="О нас">О нас</a>
+                        </li>
                         <li class="js-parent">
-                            <span>Как получить</span><span class="triangle"></span>
+                            <span>Как получить?</span><span class="triangle"></span>
                             <ul class="dropdown js-dropdown">
-                                <li><a href="#">Как получить</a></li>
-                                <li><a href="#">Как это работает?</a></li>
-                                <li><a href="#">Как продлить</a></li>
-                                <li><a href="#">Как погасить</a></li>
+                                <li><a href="http://mycredit7:8080/ru/faq/oformlenie-zayavki/kak-podat-zayavku-na-oformlenie-kredita/">Как получить?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/how-it-work/#promo1">Как это работает?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/faq/pogasitprodlit-kredit/na-skolko-dnej-vozmozhno-prodlit-kredit/">Как продлить?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/how-to-extend/">Как погасить?</a></li>
                             </ul>
                         </li>
                         <li class="custom">
-                            <a href="#">Акции</a>
+                            <span>Акции</span>
                         </li>
                         <li class="js-parent nav-dots">
                             <span class="dot"></span>
                             <span class="dot"></span>
                             <span class="dot"></span>
                             <ul class="dropdown js-dropdown">
-                                <li><a href="#">Почему мы</a></li>
-                                <li><a href="#">Вопрос-ответ</a></li>
+                                <li class="js-anchor"><a href="/ru/#motivation">Почему мы?</a></li>
+                                <li><a href="http://mycredit7:8080/ru/faq/">Вопрос-ответ</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Почему мы?</a></li>
-                        <li><a href="#">Вопрос-ответ</a></li>
+                        <li class="js-anchor">
+                            <a href="http://mycredit7:8080/ru/optimizaciya-glavnoj/#motivation" alt="" title="">Почему мы?</a>
+                        </li>
+                        <li>
+                            <a href="http://mycredit7:8080/ru/faq/" alt="Справка" title="Справка">Вопрос-ответ</a>
+                        </li>
                     </ul>
                     <div class="mobile-language">
                         <span id="language" class="hidden">ru</span>
                         <div>Сменить язык:
-                            <a href="#" class="lang-link">
+                            <a href="/ua/akcii/?news_start=" class="lang-link lang-link--rus">
                         <span class="lang-ukr">Украинский</span>
                         <span class="lang-rus">Русский</span>
                     </a>
                         </div>
-                        <span id="lang" class="hidden">ru</span>
+                        <span id="language" class="hidden">ru</span>
                     </div>
                 </div>
                 <div class="header-btn">
-                    <button class="btn btn-authorize" data-toggle="modal" data-target="#modal_auth">Мой кабинет</button>
-                    <button type="button" class="btn navbar-toggle js-toggle">
+                    <button type="button" class="btn btn-authorize__content" data-toggle="modal" data-target="#modal_auth">Мой кабинет</button>
+                    <button type="button" class="btn btn-authorize__get js-open-calc">Получить кредит</button>
+                    <button type="button" class="btn navbar-toggle js-gamburger">
                         <span class="dot"></span>
                         <span class="dot"></span>
                         <span class="dot"></span>
                         <span class="sr-only">Toggle navigation</span>
                     </button>
                 </div>
-                <a href="#" class="header-language text-center">Ру</a>
+                <span id="language" class="hidden">ru</span>
+                <a href="/ua/akcii/?news_start=" class="lang-link d-f align-center justify-center header-language lang-link--rus">
+            <span class="lang-ukr">Укр</span>
+            <span class="lang-rus">Ру</span>
+        </a>
+                <span id="lang" class="hidden">ru</span>
             </div>
         </header>
         <div class="content-page">
@@ -215,7 +227,6 @@
                         <div class="main-phone">
                             <a href="tel:0800214111">0 800 214 111</a>
                             <span>Бесплатно по Украине со стационарных телефонов</span>
-                            <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
                         </div>
                     </div>
                 </div>
@@ -239,54 +250,156 @@
                 </div>
             </div>
         </footer>
-        <div class="bottom-callback js-callback" id="div_SendEmail">
-            <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
-            <div class="callback-holder d-f">
-                <div class="callback-left">
-                    <figure class="call-img">
-                        <img alt="" class="lazy" src="images/operator.png">
-                    </figure>
-                    <div class="call-img--name">
-                        Ирина Кондрашова <span>специалист по кредитованию</span>
+         <!-- Sticky calc -->
+        <div class="sticky-calc js-sticky">
+            <div class="container">
+                <form name="form_slider_large_[+prefix+]" action="[~~1~~]" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_[+prefix+]');">
+                    <div class="calculator-row [[if?&is=`[*isRepeated*]:=:1`&then=`repeated-loan`&else=``]]">
+                        <div class="calculator-left [[if?&is=`[*id*]:in:173`&then=`calculator-left--ab`]]">
+                            <div class="slider-holder">
+                                <div class="slider-money">
+                                    <div class="slider-money-share">[#1360#] - 0%</div>
+                                    <div class="slider-money--holder">
+                                        <span class="nameSlider hidden">large_[+prefix+]</span>
+                                        <span class="isPlay hidden" id="isPlay_large_[+prefix+]">[+isPlay+]</span>
+                                        <span class="hidden" id="ChildProducts_large_[+prefix+]">[*ChildProducts*]</span>
+                                        <span class="hidden" id="ChildProductsNormal_large_[+prefix+]">[*ChildProductsNormal*]</span>
+                                        <label for="money-value_large" class="slider-money--label">[#885#]</label>
+                                        <input type="hidden" name="orderCredit[pageId]" id="pageId_[+prefix+]" value="[*id*]">
+                                        <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_[+prefix+]" value="">
+                                        <input type="hidden" name="orderCredit[percent]" id="percent-value_large_[+prefix+]" value="[*percent*]">
+                                        <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_[+prefix+]" value="[*percentNormal*]">
+                                        <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_[+prefix+]" value="[*maxDay*]">
+                                        <input type="hidden" name="orderCredit[minDay]" id="minDay_large_[+prefix+]" value="[*minDay*]">
+                                        <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_[+prefix+]" value="[*maxSum*]">
+                                        <input type="hidden" name="orderCredit[minSum]" id="minSum_large_[+prefix+]" value="[*minSum*]">
+                                        <input type="hidden" name="orderCredit[step]" id="step_large_[+prefix+]" value="[*step*]">
+                                        <input type="hidden" name="orderCredit[resolution]" id="resolution_large_[+prefix+]" value="[*resolution*]">
+                                        <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_[+prefix+]" value="[*intervalStopSlider*]">
+                                        <div class="slider-control--wr">
+                                            <input name="orderCredit[money-value]" id="money-value_large_[+prefix+]" value="[*selectSum*]" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_[+prefix+]')" onchange="reloadCred('large_[+prefix+]');" pattern="\d+">
+                                            <label for="money-value_large_[+prefix+]">[#86#]</label>
+                                        </div>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="js-money_large_[+prefix+]" data-slider-id='ex1Slider' type="text" data-slider-min="[*minSum*]" data-slider-max="[*maxSum*]" data-slider-step="[*step*]" data-slider-value="[*selectSum*]" onchange="reloadCred('large_[+prefix+]');"> [[--
+                                        <input id="js-money_large_[+prefix+]" data-slider-id='ex2Slider' type="text" data-slider-min="[*minSum*]" data-slider-max="[*maxSum*]" data-slider-ticks="[10, 50, 70, 100]" data-slider-ticks-snap-bounds="1" data-slider-ticks-labels='["$100", "$5000", "$7000"]' data-slider-step="1" data-slider-value="[*selectSum*]" onchange="reloadCred1('large_[+prefix+]');"> --]]
+                                        <label for="js-money_large_[+prefix+]" class="slider-label"><span id="minSumLabel_large_[+prefix+]" class="format-number">[*minSum*]</span> [#86#]</label>
+                                        [[if?&is=`[*id*]:!in:173:and:[*maxSum*]:
+                                        <:10000`&then=` [[-- label для отображения 10 000 на калькуляторе --]] <label class="slider-label slider-label--right slider-label--nomargin js-slider-tooltip">
+                                            <div class="slider-tooltip js-slider-tooltip">
+                                                [#1349#]
+                                            </div>
+                                            <span>до </span>
+                                            <span class="format-number">10 000</span> [#86#]
+                                            </label>
+                                            `&else=` [[-- обычная крайняя сумма на калькуляторе --]]
+                                            <label for="js-money_large_[+prefix+]" class="slider-label slider-label--right" id="maxSum_large_[+prefix+]">
+                                                <span class="format-number">[*maxSum*]</span><span> [#86#]</span>
+                                            </label>
+                                            `]]
+                                    </div>
+                                </div>
+                                <div class="slider-days">
+                                    <div class="slider-money--holder">
+                                        <label for="day-value_large_[+prefix+]" class="slider-money--label">[#202#]?</label>
+                                        <div class="slider-control--wr">
+                                            <input id="day-value_large_[+prefix+]" name="orderCredit[day-value]" value="[*selectDay*]" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_[+prefix+]')" onchange="reloadCred('large_[+prefix+]');" pattern="\d+">
+                                            <label><span id="daySelectDay_large_[+prefix+]">[#87#]</span></label>
+                                        </div>
+                                    </div>
+                                    <div class="slider-wrapper">
+                                        <input id="js-days_large_[+prefix+]" data-slider-id='ex1Slider' type="text" data-slider-min="[*minDay*]" data-slider-max="[*maxDay*]" data-slider-step="1" data-slider-value="[*selectDay*]" onchange="reloadCred('large_[+prefix+]');">
+                                        <label for="js-days_large_[+prefix+]" class="slider-label">
+                                            <span id="minDayLabel_large_[+prefix+]">[*minDay*]</span>&nbsp;<span id="dayMinDay_large_[+prefix+]">[#87#]</span>
+                                        </label>
+                                        <label for="js-days_large_[+prefix+]" class="slider-label slider-label--right  [[if?&is=`[*id*]:!in:173`&then=`slider-label--nomargin`]]">
+                                            [[if?&is=`[*id*]:!in:173`&then=`
+                                            <div class="slider-tooltip js-slider-tooltip">
+                                                [#1353#]
+                                            </div>
+                                            `]] [[-- если хотим, чтобы "максимально дней" зависело от продукта:
+                                            <span>[*maxDay*]</span>&nbsp;<span id="dayMaxDay_large_[+prefix+]">[#87#]</span> --]]
+                                            <span>до</span>&nbsp;<span id="span_dayMaxDayManual_large_[+prefix+]">35</span>&nbsp;<span id="dayMaxDayManual_large_[+prefix+]">[#87#]</span>
+                                        </label>
+                                        [[if?&is=`[*id*]:=:158`&then=`
+                                        <span id="spanLanding" class="spanLanding hidden">После 7 кредита</span> `]]
+                                    </div>
+                                    [[if?&is=`[*id*]:=:158`&then=`
+                                    <p class="landing-slider-text">[#1596#]</p>
+                                    `]]
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator-right">
+                            <div class="stages">
+                                <p class="calculator-heading">[#886#]:</p>
+                                <div class="calculator-table--wr">
+                                    <table class="calculator-table">
+                                        <tr>
+                                            <td class="calculator-td-heading">[#887#]:</td>
+                                            <td class="calculator-take-sum"><span id="span_amount_large_[+prefix+]" class="loan-info--sum format-number"></span> [#86#]</td>
+                                        </tr>
+                                        [[--
+                                        <tr> На срок
+                                            <td class="calculator-td-take">[#888#]: </td>
+                                            <td class="calculator-take-sum"><span id="span_amount_day_large_[+prefix+]" class="loan-days"></span>
+                                                <span id="daySelectDay2_large_[+prefix+]">[#87#]</span>
+                                            </td>
+                                        </tr> --]] [[-- Ваша комиссия --]]
+                                        <tr>
+                                            <td class="calculator-td-take"><span class="your">[#1601#]</span><span class="komission"> [#1669#]</span>: </td>
+                                            <td class="calculator-take-sum">
+                                                <span class="calculator-formula hidden"><span id="span_commission_old_large_[+prefix+]">0</span> [#86#]</span>
+                                                <span><span id="span_commission_large_[+prefix+]">0</span> [#86#]</span>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="calculator-table--wr">
+                                    <table class="calculator-table">
+                                        <tr>
+                                            <td class="calculator-td-heading">[#655#]:</td>
+                                            <td class="calculator-give-sum"><span id="span_amount_all_large_[+prefix+]" class="loan-info--sum format-number"> </span> [#86#]</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="calculator-td-give">До:</td>
+                                            <td class="calculator-give-sum"><span class="loan-days" id="span_amount_all_end_large_[+prefix+]"> </span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                [[if?&is=`[*id*]:!=:2`&then=`
+                                <div class="text-center">
+                                    [[if?&is=`[*id*]:=:158`&then=`
+                                    <button class="btn btn-arrow-animate btn-block" type="button" onclick="location.href = '[~~159~~]';">
+                                        `]] [[if?&is=`[*id*]:=:159`&then=`
+                                        <button class="btn btn-arrow-animate btn-block" type="button" onclick="onClockCreateWidget([*satelliteId*]);">
+                                            `]] [[if?&is=`[*id*]:!in:158,159`&then=`
+                                            <button class="btn btn-arrow-animate btn-block" type="button" onclick="onClickSubmitSlider('large_[+prefix+]');">
+                                                `]]
+                                                <span>[#582#]</span><span class="icon-arrow-animate"></span>
+                                            </button>
+                                </div>
+                                <div class="promo-linkwrapper text-center">
+                                    [[-- У меня есть промокод --]] [[if?&is=`[*auth*]:!empty`&then=`
+                                    <a data-toggle="modal" data-target="#promo-modal-calc" role="button">[#1108#]</a> `&else=`
+                                    <a data-toggle="modal" data-target="#promo-modal-calc-sign" role="button">[#1108#]</a> `]]
+                                </div>
+                                `]]
+                            </div>
+                            <ul class="calculator-images">
+                                <li><img src="assets/images/visa-calc.png" alt=""></li>
+                                <li><img src="assets/images/master-calc.png" alt=""></li>
+                                <li><img src="assets/images/privat-calc.png" alt=""></li>
+                                <li><img src="assets/images/pci_calc.png" alt=""></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="call-text">
-                        <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
-                    </div>
-                </div>
-                <div class="callback-form">
-                    <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
-                        <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
-                        <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_sername" class="form-label">ФИО</label>
-                                <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
-                            Отправить
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
-                <span id="span_resultEmail">Сообщение отправлено</span>
+                </form>
             </div>
         </div>
     </div>
-    <script src="js/all-home.min.js"></script>
+    <script src="js/content-home.min.js"></script>
 </body>
 
 </html>

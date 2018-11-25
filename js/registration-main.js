@@ -6,12 +6,14 @@ $(function() {
     dropdown();
     lazyLoadImages();
     showCallback();
+    maskes();
+    paswwordChecker();
 })
 
 function playRegistrationVideo() {
     var video = document.getElementById('js-registration-video');
     $('.js-registration-video-holder').click(function() {
-    	$('.registration-video').addClass('active');
+        $('.registration-video').addClass('active');
         video.play();
     })
 }
@@ -27,7 +29,10 @@ function showCallback() {
 }
 
 function customSelect() {
-	$('.selectpicker, select').selectric();
+    $('.selectpicker, select').selectpicker({
+        actionsBox: false,
+        dropupAuto: false
+    });
 }
 
 function lazyLoadImages() {
@@ -142,4 +147,58 @@ function goToAnchor() {
                 }
             }
         });
+}
+
+function maskes() {
+    $('.js-code').mask("999999", {
+        autoclear: false
+    });
+
+    $(".js-phone").mask("+38099 999 9999", {
+        autoclear: false
+    });
+}
+
+function paswwordChecker() {
+    var element = document.getElementById('password');
+    var expBigLetter = /[А-ЯЁA-Z]+/,
+        expSmallLetter = /[а-яёa-z]+/,
+        expNumber = /\d+/;
+    if (element) {
+        element.oninput = function() {
+            var val = document.getElementById('password').value;
+
+            var count = val.length;
+
+            var big_letter = document.getElementById('big_letter');
+            var small_letter = document.getElementById('small_letter');
+            var number_symbol = document.getElementById('number_symbol');
+            var count_letter = document.getElementById('count_letter');
+
+
+            if (count >= 6) {
+                count_letter.setAttribute('class', 'active');
+            } else {
+                count_letter.classList.remove('active');
+            }
+
+
+            if (expSmallLetter.test(val)) {
+                small_letter.setAttribute('class', 'active');
+            } else {
+                small_letter.classList.remove('active');
+            }
+            if (expBigLetter.test(val)) {
+                big_letter.setAttribute('class', 'active');
+            } else {
+                big_letter.classList.remove('active');
+            }
+            if (expNumber.test(val)) {
+                number_symbol.setAttribute('class', 'active');
+            } else {
+                number_symbol.classList.remove('active');
+            }
+        }
+    }
+
 }

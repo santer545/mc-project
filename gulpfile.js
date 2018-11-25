@@ -5,6 +5,7 @@
 
 // Load plugins
 var gulp = require('gulp'),
+    install = require('gulp-start'),
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
@@ -36,8 +37,36 @@ gulp.task('mainStyles', function() {
 });
 
 // Styles
+gulp.task('puzzleStyles', function() {
+    return gulp.src('sass/puzzle.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+// Styles
 gulp.task('mainStylesAB', function() {
     return gulp.src('sass/main-page-ab.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+// Styles
+gulp.task('contextStyles', function() {
+    return gulp.src('sass/context.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({ style: 'expanded' }))
         .pipe(autoprefixer('last 5 version'))
@@ -163,7 +192,33 @@ gulp.task('personalMobileStyles', function() {
         .pipe(notify({ message: 'Styles task complete' }));
 });
 
-gulp.task('critical-login', function() {
+gulp.task('Lending1_Styles', function() {
+    return gulp.src('sass/lending1-page.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('Credit_history', function() {
+    return gulp.src('sass/credit-history.scss')
+        .pipe(sourcemaps.init())
+        .pipe(sass({ style: 'expanded' }))
+        .pipe(autoprefixer('last 5 version'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist/css'))
+        .pipe(notify({ message: 'Styles task complete' }));
+});
+
+gulp.task('critical-login', function(done) {
     critical.generate({
         inline: true,
         extract: true,
@@ -174,10 +229,29 @@ gulp.task('critical-login', function() {
         dest: 'dist/test-critical.html',
         dimensions: [
         {
-            width: 767
-        }
+            width: 767,
+        },
         ]
     });
+    done();
+});
+
+gulp.task('critical-main-ab', function(done) {
+    critical.generate({
+        inline: true,
+        extract: true,
+        css: ['dist/css/main-page-ab.min.css'],
+        base: './dist',
+        src: './index.ab.html',
+        ignore: ['@font-face', /url\(/],
+        dest: 'dist/critical-ab.html',
+        dimensions: [
+        {
+            width: 767,
+        },
+        ]
+    });
+    done();
 });
 
 
@@ -215,26 +289,52 @@ gulp.task('homeScripts', function() {
 
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/jquery.mousewheel.js',
+            sourceDir + '/jquery.jscrollpane.min.js',
             sourceDir + '/slick.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/modal.js',
             sourceDir + '/jquery.maskedinput.min.js',
-            sourceDir + '/jquery.mousewheel.js',
-            sourceDir + '/jquery.jscrollpane.min.js',
             sourceDir + '/device.min.js',
+            
+            sourceDir + '/main-validate.js',
+            sourceDir + '/home-main.js',
+            sourceDir + '/function_main.js',
+            sourceDir + '/uploadFiles.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
             sourceDir + '/fingerprint2.js',
-            sourceDir + '/main-validate.js',
-            sourceDir + '/home-main.js',
-            sourceDir + '/functions.js',
             sourceDir + '/jquery.lazy.js',
-            sourceDir + '/client.min.js'
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js',
+            sourceDir + '/iovation.js',
 
         ])
 
         //.pipe(browserify(components.scripts.options))
         .pipe(concat('all-home.js'))
+        .pipe(uglify())
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dist/js'))
+        .pipe(notify({ message: 'Scripts task complete' }));
+});
+
+// Scripts
+gulp.task('newyear', function() {
+
+    return gulp.src([
+            sourceDir + '/modal.js',
+            sourceDir + '/jquery.maskedinput.min.js',
+            sourceDir + '/main-validate.js',
+            sourceDir + '/downloadJS.js',
+            sourceDir + '/jquery.snap-puzzle.min.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/newyear-main.js',
+
+        ])
+
+        //.pipe(browserify(components.scripts.options))
+        .pipe(concat('newyear-home.js'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('dist/js'))
@@ -258,6 +358,7 @@ gulp.task('personalScripts', function() {
             sourceDir + '/forWidget.js',
             sourceDir + '/fingerprint2.js',
             sourceDir + '/validate.js',
+            sourceDir + '/svg.min.js',
             sourceDir + '/personal-main.js',
             sourceDir + '/functions.js',
             sourceDir + '/jquery.lazy.js',
@@ -280,6 +381,7 @@ gulp.task('contentScripts', function() {
             sourceDir + '/jquery-2.2.1.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/slick.min.js',
+            sourceDir + '/jquery.side-bar.js',
             sourceDir + '/modal.js',
             sourceDir + '/lightbox.js',
             sourceDir + '/dropdown.js',
@@ -288,14 +390,16 @@ gulp.task('contentScripts', function() {
             sourceDir + '/tab.js',
             sourceDir + '/jquery.maskedinput.min.js',
             sourceDir + '/device.min.js',
+            sourceDir + '/validate.js',
+            sourceDir + '/svg.min.js',
+            sourceDir + '/content-main.js',
+            sourceDir + '/functions.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
             sourceDir + '/fingerprint2.js',
-            sourceDir + '/validate.js',
-            sourceDir + '/content-main.js',
-            sourceDir + '/functions.js',
-            sourceDir + '/client.min.js'
-
+            sourceDir + '/jquery.lazy.js',
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js',
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -312,21 +416,25 @@ gulp.task('homeScriptsAB', function() {
 
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
+            sourceDir + '/jquery.mousewheel.js',
+            sourceDir + '/jquery.jscrollpane.min.js',
             sourceDir + '/slick.min.js',
             sourceDir + '/bootstrap-slider.js',
             sourceDir + '/modal.js',
             sourceDir + '/jquery.maskedinput.min.js',
-            sourceDir + '/jquery.mousewheel.js',
-            sourceDir + '/jquery.jscrollpane.min.js',
-            //sourceDir + '/device.min.js',
-            //sourceDir + '/googleApi.js',
-            //sourceDir + '/forWidget.js',
-            //sourceDir + '/fingerprint2.js',
+            sourceDir + '/device.min.js',
+            
             sourceDir + '/main-validate.js',
             sourceDir + '/home-main-ab.js',
-            //sourceDir + '/functions.js',
+            sourceDir + '/functions.js',
+            sourceDir + '/uploadFiles.js',
+            sourceDir + '/googleApi.js',
+            sourceDir + '/forWidget.js',
+            sourceDir + '/fingerprint2.js',
             sourceDir + '/jquery.lazy.js',
-            //sourceDir + '/client.min.js'
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js',
+            sourceDir + '/iovation.js',
 
         ])
 
@@ -344,6 +452,8 @@ gulp.task('registrationScripts', function() {
     return gulp.src([
             sourceDir + '/jquery-2.2.1.min.js',
             sourceDir + '/bootstrap-slider.js',
+            sourceDir + '/bootstrap-select.js',
+            sourceDir + '/dropdown.js',
             sourceDir + '/tab.js',
             sourceDir + '/modal.js',
             sourceDir + '/jquery.lazy.js',
@@ -352,11 +462,13 @@ gulp.task('registrationScripts', function() {
             sourceDir + '/device.min.js',
             sourceDir + '/googleApi.js',
             sourceDir + '/forWidget.js',
-            sourceDir + '/jquery.selectric.min.js',
+            //sourceDir + '/jquery.selectric.min.js',
             sourceDir + '/fingerprint2.js',
+            sourceDir + '/svg.min.js',
             sourceDir + '/registration-main.js',
             sourceDir + '/functions.js',
-            sourceDir + '/client.min.js'
+            sourceDir + '/client.min.js',
+            sourceDir + '/downloadJS.js'
         ])
 
         //.pipe(browserify(components.scripts.options))
@@ -371,7 +483,7 @@ gulp.task('registrationScripts', function() {
 
 // Default task
 gulp.task('default', function() {
-    gulp.start('mainStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles');
+    gulp.start('mainStyles', 'puzzleStyles', 'contextStyles', 'mainStylesAB', 'contentScripts', 'homeScriptsAB', 'mainStylesABMobile', 'mainMobileStyles', 'homeScripts', 'registrationStyles', 'registrationMobileStyles', 'registrationScripts', 'personalStyles', 'personalScripts', 'personalMobileStyles', 'contentStyles', 'contentMobileStyles', 'Lending1_Styles', 'Credit_history');
 });
 
 gulp.task('server', function() {
@@ -382,24 +494,30 @@ gulp.task('server', function() {
 gulp.task('watch', function() {
 
     // Watch .scss files
-    gulp.watch('sass/**/*.scss', ['mainStylesAB', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['mainStylesABMobile', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['mainStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['mainMobileStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['registrationStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['registrationMobileStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['personalStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['personalMobileStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['contentMobileStyles', browserSync.reload]);
-    gulp.watch('sass/**/*.scss', ['contentStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['mainStylesAB', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['mainStylesABMobile', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['mainStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['contextStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['mainMobileStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['registrationStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['registrationMobileStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['personalStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['personalMobileStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['contentMobileStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['Lending1_Styles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['contentStyles', browserSync.reload]);
+    //gulp.watch('sass/**/*.scss', ['Credit_history', browserSync.reload]);  
+    gulp.watch('sass/**/*.scss', ['puzzleStyles', browserSync.reload]);  
+    
 
     // Watch .js files
-    gulp.watch('js/**/*.js', ['homeScripts', browserSync.reload]);
-    gulp.watch('js/**/*.js', ['homeScriptsAB', browserSync.reload]);
-    gulp.watch('js/**/*.js', ['registrationScripts', browserSync.reload]);
-    gulp.watch('js/**/*.js', ['personalScripts', browserSync.reload]);
+    //gulp.watch('js/**/*.js', ['homeScripts', browserSync.reload]);
+    //gulp.watch('js/**/*.js', ['homeScriptsAB', browserSync.reload]);
+    //gulp.watch('js/**/*.js', ['registrationScripts', browserSync.reload]);
+    //gulp.watch('js/**/*.js', ['personalScripts', browserSync.reload]);
 
-    gulp.watch('js/**/*.js', ['contentScripts', browserSync.reload]);
+    //gulp.watch('js/**/*.js', ['contentScripts', browserSync.reload]);
+    gulp.watch('js/**/*.js', ['newyear', browserSync.reload]);
 
 
     // Watch image files

@@ -1,0 +1,408 @@
+// модалка для мобильного приложения
+
+.modal {
+    &-dialog {
+
+        &__android {
+            position: fixed;
+            height: calc(100vh - 60px);
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            background-image: url('../images/android/android-bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            border-radius: 8px;
+            overflow: hidden;
+
+            @media screen and (max-height: 400px) {
+                position: relative;
+                height: auto;
+                width: calc(100% - 20px);
+            }
+
+            .icon-close {
+                font-size: 20px;
+                color: #fff;
+                opacity: 1;
+                top: 10px;
+            }
+        }
+    }
+
+    &-content {
+        &__android {
+            position: absolute;
+            top: 50%;
+            left: 16px;
+            right: 16px;
+            transform: translate(0, -50%);
+            
+            @media screen and (max-height: 400px) {
+                transform: translate(0, 0);
+                position: static;
+                padding-top: 60px;
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 40px;
+            }
+        }
+    }
+}
+
+.android-heading {
+    font: 18px /21px 'HelveticaNeueCyr Light', Arial, sans-serif;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.android-img {
+    margin-bottom: 20px;
+    position: relative;
+
+    img {
+        max-height: 180px;
+    }
+}
+
+.android-bottom {
+    >div {
+        padding-top: 25px;
+        color: #fff;
+        font: 14px / 14px 'HelveticaNeueCyr Light', Arial, sans-serif;
+    }
+}
+
+.android-circle {
+    right: -16px;
+    top: 30%;
+    position: absolute;
+}
+
+.android-text {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.btn-android {
+    background-color: #FC7F2B;
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 6px 24px -7px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    padding: 9px 25px;
+}
+
+.top-left {
+    width: 101px;
+    height: 101px;
+    border-radius: 101px;
+    position: absolute;
+    left: -37px;
+    top: -50px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01cf8f+0,0fadac+51,1f91ca+100 */
+    background: #01cf8f;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #01cf8f 0%, #0fadac 51%, #1f91ca 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #01cf8f 0%, #0fadac 51%, #1f91ca 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #01cf8f 0%, #0fadac 51%, #1f91ca 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#01cf8f', endColorstr='#1f91ca', GradientType=0);
+    /* IE6-9 */
+}
+
+.top-center {
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: #0055B8;
+    opacity: 0.9;
+    position: absolute;
+    top: 20px;
+    left: 60%;
+}
+
+.center-center {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #0055B8;
+    position: absolute;
+    left: 16px;
+    top: 40%;
+}
+
+.right-center {
+    top: 65%;
+    right: 60px;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 12px;
+    background-color: #15CD8C;
+}
+
+.bottom-center {
+    left: 56px;
+    bottom: -38px;
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    border-radius: 65px;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1ca54+0,ffe9a6+41 */
+    background: #f1ca54;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f1ca54 0%, #ffe9a6 41%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f1ca54 0%, #ffe9a6 41%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f1ca54 0%, #ffe9a6 41%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1ca54', endColorstr='#ffe9a6', GradientType=0);
+    /* IE6-9 */
+}
+
+
+
+// application section on main page
+
+.application {
+    position: relative;
+    padding: 130px 0;
+    overflow: hidden;
+    &-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &-img {
+
+        @media screen and (max-width: 767px) {
+            order: 2;
+        }
+    }
+
+    &-text {
+        padding-left: 100px;
+        font: 24px / 34px 'HelveticaNeueCyr Roman', Arial, sans-serif;
+        color: #0055B8;
+
+        @media screen and (max-width: 767px) {
+            padding-left: 0;
+            font-size: 20px;
+            order: 1;
+            text-align: center;
+        }
+        .application-heading {
+            color: #0055B8;
+        }
+    }
+
+    &-heading {
+        font: 40px / 47px 'HelveticaNeueCyr Medium', Arial, sans-serif;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 991px) {
+            font-size: 35px;
+            line-height: 40px;
+        }
+
+        @media screen and (max-width: 767px) {
+            font-size: 30px;
+        }
+
+        @media screen and (max-width: 350px) {
+            font-size: 25px;
+            line-height: 30px;
+        }
+    }
+
+    &-btn {
+        padding-top: 70px;
+
+        @media screen and (max-width: 991px) {
+            padding-top: 35px;
+        }
+
+        @media screen and (max-width: 350px) {
+            padding-top: 20px;
+        }
+    }
+}
+
+.main-left-top {
+    width: 250px;
+    height: 250px;
+    border-radius: 250px;
+    position: absolute;
+    left: -65px;
+    top: -84px;
+
+    background: #01cf8f;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #01cf8f 0%, #0fadac 51%, #1f91ca 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #01cf8f 0%, #0fadac 51%, #1f91ca 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #01cf8f 0%, #0fadac 51%, #1f91ca 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#01cf8f', endColorstr='#1f91ca', GradientType=0);
+
+    @media screen and (max-width: 991px) {
+        left: -105px;
+        top: -135px;
+    }
+}
+
+.main-center-top {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 28px;
+    background-color: #0083CB;
+    top: 90px;
+    left: 45%;
+}
+
+.main-right-top {
+    position: absolute;
+    top: 70px;
+    right: 10%;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #0083CB;
+}
+
+.main-left-center {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    background-color: #15CD8C;
+}
+
+.main-center-center {
+    position: absolute;
+    top: 70%;
+    right: 30%;
+    width: 18px;
+    height: 18px;
+    border-radius: 18px;
+    background-color: #15CD8C;
+}
+
+.main-center-bottom {
+    position: absolute;
+    bottom: 50px;
+    left: 35%;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #0083CB;
+
+    @media screen and (max-width: 767px) {
+        left: 5%;
+    }
+}
+
+.main-center-circle {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    right: 45%;
+    bottom: -60px;
+    border-radius: 115px;
+    background: #f1ca54;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f1ca54 0%, #ffe9a6 41%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f1ca54 0%, #ffe9a6 41%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f1ca54 0%, #ffe9a6 41%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f1ca54', endColorstr='#ffe9a6', GradientType=0);
+    /* IE6-9 */
+}
+
+.circle-main {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+
+    @media screen and (max-width: 991px) {
+        max-width: 100px;
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 70px;
+    }
+
+    @media screen and (max-width: 350px) {
+        max-width: 50px;
+    }
+}
+
+
+// конец модалки 
+
+
+//баннер
+.banner-android .banner-heading {
+    color: #fff;
+    strong {
+        color: #fff;
+    }
+    .banner-mobile_link strong {
+        border-bottom: none;
+    }
+}
+
+.banner-left_deco {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    overflow: hidden;
+}
+.banner-left_img {
+    position: absolute;
+    width: 35%;
+    left: 0;
+    bottom: 0;
+    @media screen and (max-width: 1700px) {
+        left: -12%;
+        width: 40%;
+    }
+    @media screen and (max-width: 1500px) {
+        left: -6%;
+    }
+    @media screen and (max-width: 1440px) {
+        width: 50%;
+        left: -12%;
+    }
+    @media screen and (max-width: 1300px) {
+        left: -17%;
+    }
+    @media screen and (max-width: 1024px) {
+        width: 30%;
+        bottom: -20px;
+        left: 0;
+    }
+    @media screen and (max-width: 900px) {
+        width: 40%;
+        left: -12%;
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+//конец баннер

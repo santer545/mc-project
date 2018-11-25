@@ -1,28 +1,32 @@
 $(function() {
-    carousels();
+    lazyLoadImages();
     calculatorMain();
+    customScr();
+    carousels();
     dropdown();
     maskes();
-    customScroll();
-    showCallback();
-    lazyLoadImages();
+    //    showCallback();
     motivationCarousel();
     videoModalShow();
     randomId();
     playMainVideo();
     goToAnchor();
     accordion();
-    showTooltip ();
+    showTooltip();
     menuShowHide();
-    carouselOnLoadShow();
-
-    $('.calculator').attr('style', 'visibility: visible');
+    promoPopup();
+    promoEnable();
+    androidDetected();
+    domRangeCreate();
+    slideChange();
 })
 
 $(window).resize(function() {
     motivationCarousel();
     accordion();
 })
+
+$(window).on('resize', carousels);
 
 
 // выпадающее меню
@@ -37,7 +41,7 @@ function dropdown() {
 
 // Карусели на главной странице
 function carousels() {
-    $('.js-banner').slick({
+    $('.js-banner').not('.slick-initialized').slick({
         arrows: false,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -52,8 +56,9 @@ function carousels() {
         }]
     });
 
-    $('.js-programms').slick({
+    $('.js-programms').not('.slick-initialized').slick({
         slidesToShow: 3,
+        lazyLoad: 'ondemand',
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
         responsive: [{
@@ -75,7 +80,7 @@ function carousels() {
         ]
     });
 
-    $('.js-reviews').slick({
+    $('.js-reviews').not('.slick-initialized').slick({
         slidesToShow: 2,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -88,11 +93,43 @@ function carousels() {
             }
         }]
     });
+    $('.js-pressa').not('.slick-initialized').slick({
+        slidesToShow: 3,
+        lazyLoad: 'ondemand',
+        slidesToScroll: 3,
+        speed: 800,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        responsive: [{
+                breakpoint: 1060,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            }
+        ]
+    });
 }
 
+
+// карусель Почему мы
 function motivationCarousel() {
-    if ($(window).width() < 768) {
-        $('.js-motivation').slick({
+    if ($(window).width() < 991) {
+        $('.js-motivation').not('.slick-initialized').slick({
             arrows: false,
             slidesToShow: 1,
             dots: true
@@ -166,25 +203,26 @@ function maskes() {
     });
 }
 
-// кастомный скролл
 
-function customScroll() {
+// кастомный скролл
+function customScr() {
     $('.js-seo').jScrollPane({
         arrowScrollOnHover: true
     });
 }
 
-function showCallback() {
-    $('.js-callback-close').on('click', function() {
-        $('.js-callback').removeClass('open');
-    })
+// отобразить колбек
+// function showCallback() {
+//     $('.js-callback-close').on('click', function() {
+//         $('.js-callback').removeClass('open');
+//     })
 
-    $('.js-callback-show').on('click', function() {
-        $('.js-callback').addClass('open');
-    })
-}
+//     $('.js-callback-show').on('click', function() {
+//         $('.js-callback').addClass('open');
+//     })
+// }
 
-
+// проверка браузера
 function get_name_browser() {
     // получаем данные userAgent
     var ua = navigator.userAgent;
@@ -201,19 +239,17 @@ function get_name_browser() {
     return 'not defined';
 }
 
-
+// lazy load картинок
 function lazyLoadImages() {
     $('.js-lazy').Lazy({
         scrollDirection: 'vertical',
         effect: 'fadeIn',
-        chainable: true,
-        visibleOnly: true,
-        onError: function(element) {
-            console.log('error loading ' + element.data('src'));
-        }
+        effectTime: 1000,
+        threshold: 0
     });
 }
 
+// показать видео на клик
 function videoModalShow() {
     var index;
     $('.people-item').on('click', function() {
@@ -222,6 +258,7 @@ function videoModalShow() {
 
     $('#video-modal').on('shown.bs.modal', function(e) {
         $('.js-video-carousel').slick({
+            fade: true,
             slidesToShow: 1,
             nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
             prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>'
@@ -243,6 +280,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// функция рандомного выбора чисел
 function randomId() {
     var randomMin = 1,
         randomMax = 19;
@@ -268,6 +306,7 @@ function randomId() {
     })
 }
 
+// запуск и остановка видео на главной странице
 function playMainVideo() {
     var video = document.getElementById('main-page-video');
     $(".js-playVideo").on('click', function() {
@@ -279,7 +318,7 @@ function playMainVideo() {
     })
 
     $(".js-stepVideo").on('click', function() {
-        $(this).removeClass('hidden');
+        $(this).removeClass('active');
         video.pause();
         $('.js-instruction-bg').show();
         $('.js-playVideo').show();
@@ -287,6 +326,7 @@ function playMainVideo() {
     })
 }
 
+// переход по якорям
 function goToAnchor() {
     $('.js-anchor a')
 
@@ -326,13 +366,14 @@ function goToAnchor() {
         });
 }
 
+// аккордион
 function accordion() {
     if ($(window).width() < 768) {
         $('.js-accordion').addClass('js-toggle');
         var animateTime = 500,
             navLink = $('.js-toggle');
-            
-            navLink.click(function() {
+
+        navLink.click(function() {
             $(this).toggleClass('active');
             var nav = $(this).closest('.js-footer-menu').find('ul');
             if (nav.height() === 0) {
@@ -355,15 +396,25 @@ function autoHeightAnimate(element, time) {
     element.stop().animate({ height: autoHeight }, time); // Animate to Auto Height
 }
 
-function showTooltip () {
-    $('.js-show-tooltip').mouseenter(function() {
-        $('.js-tooltip').fadeOut();
-        $(this).closest('div').find('.js-tooltip').fadeIn(200);
-    })
+// показывать подсказки
+function showTooltip() {
+    // $('.js-show-tooltip').mouseenter(function() {
+    //     $(this).closest('.form-group').find('.js-tooltip').fadeIn();
+    // })
 
-    $('.js-show-tooltip').mouseleave(function() {
-        $('.js-tooltip').fadeOut();
-    });
+    // $('.js-show-tooltip').mouseleave(function() {
+    //     $(this).closest('.form-group').find('.js-tooltip').fadeOut();
+    // });
+
+    $('.js-show-tooltip').hover(
+        function(e) {
+
+            $(this).closest('.form-group').find('.js-tooltip').removeClass('hidden');
+        },
+        function() {
+            $(this).closest('.form-group').find('.js-tooltip').addClass('hidden');
+        }
+    );
 
 
     $('.js-show-tooltip').mouseenter(function() {
@@ -375,6 +426,7 @@ function showTooltip () {
     })
 }
 
+// показывать меню мобайл
 function menuShowHide() {
     $('.js-gamburger').click(function() {
         $('.js-menu').addClass('open');
@@ -385,8 +437,133 @@ function menuShowHide() {
     })
 }
 
-function carouselOnLoadShow() {
-    $('.js-banner').removeClass('hidden');
-    $('.js-programms').removeClass('hidden');
-    $('.js-reviews').removeClass('hidden');
+
+// промо
+
+function promoPopup() {
+    setTimeout(function() {
+        $('#promocodePopup').modal('show');
+    }, 900000);
+}
+
+function promoEnable() {
+    $('#promo-checkbox').change(function() {
+        if ($(this).is(":checked")) {
+            $('.js-calc-promocode').removeAttr('disabled');
+        } else {
+            $('.js-calc-promocode').attr('disabled', 'disabled');
+        }
+    });
+}
+
+function androidDetected() {
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
+
+    if (isMobile.Android()) {
+        $('#android').modal('show');
+    }
+}
+
+
+
+
+//  Copy promocod
+function domRangeCreate() {
+    $('.js-copy').on('click', function() {
+        var target = $(this).closest('.js-copy-area').find('.js-copy-text').get(0);
+        var rng, sel;
+        if (document.createRange) {
+            rng = document.createRange();
+            rng.selectNode(target)
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(rng);
+            document.execCommand("copy");
+        } else {
+            var rng = document.body.createTextRange();
+            rng.moveToElementText(target);
+            rng.select();
+        }
+    })
+}
+
+// detect slick slide changes
+
+function slideChange() {
+    // On before slide change
+    $('.js-banner').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        nextSlide = nextSlide + 1;
+        var el = $('.slick-slide').eq(nextSlide);
+        var element = el.children().children();
+
+        if (element.hasClass('js-student-banner')) {
+            $('.calculator-labe').addClass('hidden');
+        } else {
+            $('.calculator-labe').removeClass('hidden');
+        }
+    });
+}
+
+function get_name_browser() {
+    // получаем данные userAgent
+    var ua = navigator.userAgent;
+    // с помощью регулярок проверяем наличие текста,
+    // соответствующие тому или иному браузеру
+    if (ua.search(/Chrome/) > 0) return 'Google Chrome';
+    if (ua.search(/Firefox/) > 0) return 'Firefox';
+    if (ua.search(/Opera/) > 0) return 'Opera';
+    if (ua.search(/Safari/) > 0) return 'Safari';
+    if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+    // условий может быть и больше.
+    // сейчас сделаны проверки только 
+    // для популярных браузеров
+    return 'not defined';
+}
+
+function renameImageForBrowsers() {
+
+    if (get_name_browser() != 'Google Chrome') {
+        $('.js-banner-webp, .nav-banner').each(function(item) {
+            console.log('Outside');
+            var style = $(this).attr('style');
+
+            if (~style.indexOf("webp")) {
+                var newStyle = style.substr(-7);
+                var arr = style.split('');
+
+                for (var i = 0; i < newStyle.length; i++) {
+                    arr.pop();
+                }
+
+                var str = arr.join('');
+                var finalStr;
+                if (get_name_browser() == 'not defined' || get_name_browser() == 'Internet Explorer') {
+                    finalStr = str + 'jpg';
+                } else {
+                    finalStr = str + '.jpg\')';
+                }
+
+                $(this).attr('style', finalStr);
+            }
+        });
+    }
 }

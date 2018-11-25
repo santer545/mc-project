@@ -14,24 +14,27 @@ $(function() {
     showTooltip();
     dropdown();
     menuShowHide();
-})
+    domRangeCreate();
+    slideChange();
+});
 
 $(window).resize(function() {
     motivationCarousel();
     accordion();
     dropdown();
-})
+});
 
-
+$(window).on('resize', dropdown);
 
 
 
 // Карусели на главной странице
 function carousels() {
-    $('.js-banner').slick({
+    $('.js-banner').not('.slick-initialized').slick({
         arrows: false,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
+        lazyLoad: 'progressive',
         responsive: [{
             breakpoint: 767,
             settings: {
@@ -42,8 +45,9 @@ function carousels() {
         }]
     });
 
-    $('.js-programms').slick({
+    $('.js-programms').not('.slick-initialized').slick({
         slidesToShow: 3,
+        lazyLoad: 'ondemand',
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
         responsive: [{
@@ -65,7 +69,7 @@ function carousels() {
         ]
     });
 
-    $('.js-reviews').slick({
+    $('.js-reviews').not('.slick-initialized').slick({
         slidesToShow: 2,
         nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
         prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
@@ -78,11 +82,87 @@ function carousels() {
             }
         }]
     });
+
+    $('.js-pressa').not('.slick-initialized').slick({
+        slidesToShow: 3,
+        lazyLoad: 'ondemand',
+        slidesToScroll: 3,
+        speed: 800,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        responsive: [{
+                breakpoint: 1060,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            }
+        ]
+    });
+
+    $('.js-pressa').not('.slick-initialized').slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        speed: 800,
+        infinite: true,
+        arrows: false,
+        dots: true,
+        autoplay: true,
+        autoplaySpeed: 3500,
+        responsive: [{
+                breakpoint: 1060,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    arrows: false,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true
+                }
+            }
+        ]
+    });
+
+    setTimeout(function() {
+        $('.js-header-carousel').not('.slick-initialized').slick({
+            arrows: false,
+            lazyLoad: 'progressive',
+            slidesToShow: 1,
+            dots: true
+        });
+    }, 500)
+
 }
 
+$(window).on('resize orientationchange', function() {
+    $('.js-header-carousel').slick('resize');
+});
+
+// карусель Почему мы
 function motivationCarousel() {
-    if ($(window).width() < 768) {
-        $('.js-motivation').slick({
+    if ($(window).width() < 991) {
+        $('.js-motivation').not('.slick-initialized').slick({
             arrows: false,
             slidesToShow: 1,
             dots: true
@@ -93,6 +173,7 @@ function motivationCarousel() {
         }
     }
 }
+
 
 // визуализация калькулятора
 function calculatorMain() {
@@ -148,24 +229,34 @@ function calculatorMain() {
 
 }
 
+
 function dropdown() {
-    if ($(window).width() < 768) {
+    if ($(window).width() < 1199) {
         $('.js-hover-link').addClass('js-click').removeClass('js-hover');
-        $('.js-click').on('click', function() {
+        $(document).on('click', '.js-hover-link', function(e) {
             $(this).find('.js-block').toggleClass('active');
             $(this).find('.triangle').toggleClass('active');
-        })
+        });
+
     } else {
         $('.js-hover-link').addClass('js-hover').removeClass('js-link');
         $('.js-hover').mouseenter(function() {
             $(this).find('.js-block').addClass('active');
             $(this).find('.triangle').addClass('active');
+            $('.js-overlay').addClass('active');
         })
         $('.js-hover').mouseleave(function() {
             $(this).find('.js-block').removeClass('active');
             $(this).find('.triangle').removeClass('active');
+            $('.js-overlay').removeClass('active');
         })
     }
+
+    $(document).on('click', '.js-parent', function(e) {
+        $(this).toggleClass('active');
+        $(this).children('.triangle').toggleClass('active');
+        $(this).children('.js-dropdown').toggleClass('active');
+    })
 }
 
 
@@ -423,9 +514,49 @@ function showTooltip() {
 function menuShowHide() {
     $('.js-gamburger').click(function() {
         $('.js-menu').addClass('open');
+        console.log('Gamburger!');
     });
 
     $('.js-close-nav').click(function() {
         $('.js-menu').removeClass('open');
     })
+}
+
+
+
+//  Copy promocod
+function domRangeCreate() {
+    $('.js-copy').on('click', function() {
+        var target = $(this).closest('.js-copy-area').find('.js-copy-text').get(0);
+        var rng, sel;
+        if (document.createRange) {
+            rng = document.createRange();
+            rng.selectNode(target)
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            sel.addRange(rng);
+            document.execCommand("copy");
+        } else {
+            var rng = document.body.createTextRange();
+            rng.moveToElementText(target);
+            rng.select();
+        }
+    })
+}
+
+// detect slick slide changes
+
+function slideChange() {
+    // On before slide change
+    $('.js-banner').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        nextSlide = nextSlide + 1;
+        var el = $('.slick-slide').eq(nextSlide);
+        var element = el.children().children();
+
+        if (element.hasClass('js-student-banner')) {
+            $('.calculator-labe').addClass('hidden');
+        } else {
+            $('.calculator-labe').removeClass('hidden');
+        }
+    });
 }

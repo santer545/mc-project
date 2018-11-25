@@ -1,0 +1,560 @@
+body {
+	font-size: 18px;
+	@media screen and (max-width: 1199px)  {
+		font-size: 16px;
+	}
+	@media screen and (max-width: 767px) {
+		font-size: 14px;
+	}
+}
+.container {
+	padding: 0 15px;
+}
+.section {
+	padding-top: 60px;
+	padding-bottom: 60px;
+	@media screen and (max-width: 991px) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	@media screen and (max-width: 767px) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+.text-bold {
+	font-family: 'HelveticaNeueCyr Bold';
+	font-weight: bold;
+}
+.heading-1,
+.heading-2,
+.heading-3 {
+	font-family: 'HelveticaNeueCyr Roman';
+	font-size: 40px;
+	line-height: 57px;
+	text-align: center;
+	color: #0055b8;
+	@media screen and (max-width: 1199px) {
+		font-size: 28px;
+	    line-height: 38px;
+	}
+	@media screen and (max-width: 767px) {
+	    font-size: 24px;
+	    line-height: 34px;
+	}
+
+
+	>span {
+		color: #00b181;
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 35px;
+			height: 35px;
+			background: url(../images/lending1/time.svg) no-repeat 50% 50%;
+			background-size: contain;
+			vertical-align: middle;
+			@media screen and (max-width: 1199px) {
+		        width: 29px;
+				height: 29px;
+				vertical-align: text-bottom;
+		    }
+		}
+	}
+}
+
+.heading-2 {
+	font-size: 26px;
+	line-height: 26px;
+	@media screen and (max-width: 1199px) {
+	    font-size: 22px;
+	}
+	@media screen and (max-width: 767px) {
+	    font-size: 20px;
+	}
+}
+
+
+.heading-3 {
+	font-size: 22px;
+	line-height: 24px;
+	@media screen and (max-width: 1199px) {
+	    font-size: 20px;
+	}
+	@media screen and (max-width: 767px) {
+	    font-size: 18px;
+	}
+	@media screen and (max-width: 400px) {
+	    font-size: 15px;
+	}
+}
+
+
+.btn-programm {
+    background-color: #00b181;
+    color: #fff;
+    font-size: 20px;
+    overflow: hidden;
+    border-color: transparent;
+    border-width: 0;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    transition-property: color;
+    transition-duration: .3s;
+    &::before {
+    	content: "";
+	    position: absolute;
+	    z-index: -1;
+	    top: -17px;
+	    left: -35px;
+	    right: -35px;
+	    bottom: -17px;
+	    background: #00b181;
+	    border-radius: 100%;
+	    transform: scale(1);
+	    transition-property: transform;
+	    transition-duration: .3s;
+	    transition-timing-function: ease-out;
+	}
+    &:hover {
+    	background-color: #3068a9;
+    	&::before {
+			transform: scale(0);
+    	}
+    }
+}
+
+/**********aboutUs**********/
+.aboutUs {
+	background-color: #f5f5f5;
+	margin-top: -100px;
+	@media screen and (max-width: 1199px) {
+        margin-top: -70px;
+    }
+    @media screen and (max-width: 767px) {
+	    margin-top: -50px; 
+	}
+	
+	.heading-1 {
+		text-align: left;
+	}
+
+	&_leftBlock  {
+		width: 50%;
+		background:#f5f5f5 url(../images/lending1/bg.jpg) no-repeat 50% 50%;
+		background-size: cover;
+		@media screen and (max-width: 1199px) {
+	        width: 35%;
+	    }
+	    @media screen and (max-width: 767px) {
+	        display: none; 
+	    }
+	}
+
+
+	&_rightBlock  {
+		width: 50%;
+		max-width: 600px;
+		padding: 175px 60px 40px 60px;
+		color: #393939;
+		@media screen and (max-width: 1199px) {
+	        padding: 130px 40px 40px 40px;
+	        width: 65%;
+	    }
+	    @media screen and (max-width: 991px) {
+			padding-top: 100px;
+	    }
+	    @media screen and (max-width: 767px) {
+	        width: auto;
+	        margin: auto;
+	        padding: 120px 20px 40px 20px;
+
+	    }
+	    @media screen and (max-width: 375px) {
+	        padding-top: 120px;
+	    }
+
+		ul {
+			margin-bottom: 30px;
+			margin-top: 10px;
+			@media screen and (max-width: 767px) {
+				margin-bottom: 20px;
+				margin-top: 20px;
+			}
+
+			>li{
+				padding: 10px 10px 10px  50px;
+				position: relative;
+				font-size: 20px;
+				@media screen and (max-width: 1199px) {
+					font-size: 16px;
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 18px;
+					padding: 5px 5px 5px  40px;
+				}
+				@media screen and (max-width: 767px)  {
+					font-size: 14px;
+				}
+
+				&::before {
+					content: "";
+					display: inline-block;
+					position: absolute;
+					top: 9px;
+					left: 0;
+					width: 30px;
+					height: 30px;
+					background: url(../images/lending1/check.svg) no-repeat 50% 50%;
+					background-size: contain;
+					@media screen and (max-width: 1199px) {
+						top: 6px;
+					}
+					@media screen and (max-width: 767px) {
+						top: 4px;
+						width: 20px;
+						height: 20px;
+					}
+				}
+			}
+		}
+	}
+
+
+	&_btn {
+		@media screen and (max-width: 375px) {
+			text-align: center;
+		}
+
+		span {
+			font-family: 'HelveticaNeueCyr Light';
+			padding-left: 20px;
+			font-size: 15px;
+			color: #8c8b8b;
+			@media screen and (max-width: 375px) {
+				display: block;
+			    margin-top: 10px;
+			    padding-left: 0;
+			}
+		}
+	}
+
+
+	&_footer {
+		padding-top: 100px;
+		@media screen and (max-width: 1199px) {
+			padding-top: 70px;
+		}
+		@media screen and (max-width: 991px) {
+			padding-top: 50px;
+		}
+		@media screen and (max-width: 767px) {
+			text-align: center;
+			justify-content: space-between;
+	    }
+	    @media screen and (max-width: 375px) {
+	    	padding-top: 30px;
+	    }
+
+		img {
+			margin-right: 30px;
+			transition: all .5s ease-out;
+			filter: grayscale(1);
+			opacity: .5;
+			@media screen and (max-width: 767px) {
+				max-width: 33%;
+				margin-right: 0;
+		    } 
+			&:hover {
+				filter: grayscale(0);
+				opacity: 1;
+			}
+		}
+	}
+}
+
+/**********whyWe**********/
+.whyWe {
+	text-align: center;
+
+
+	ul {	
+		flex-wrap: wrap;
+		padding: 50px 0;
+		font-size: 18px;
+		line-height: 25px;
+		@media screen and (max-width: 1199px)  {
+			font-size: 16px;
+			line-height: 21px;
+		}
+		@media screen and (max-width: 991px) {
+			padding: 30px 0;
+		}
+		@media screen and (max-width: 767px) {
+			padding-top: 20px;
+			font-size: 14px;
+			line-height: 18px;
+		}
+
+		>li {
+			flex: 0 0 25%;
+	        max-width: 25%;
+	        padding: 0 25px;
+	        @media screen and (max-width: 991px) {
+	        	padding: 0 15px;
+	        }
+	        @media screen and (max-width: 767px) {
+	        	flex: 0 0 50%;
+	        	max-width: 50%;
+	        }
+	        @media screen and (max-width: 500px) {
+	        	flex: 0 0 100%;
+	        	max-width: 100%;
+	        }
+
+			>div {
+				height: 150px;
+				padding: 10px;
+				@media screen and (max-width: 991px) {
+					height: 120px;
+				}
+				@media screen and (max-width: 500px) {
+					height: 100px;
+				}
+				img {
+					@media screen and (max-width: 991px) {
+						max-width: 100px;
+					}
+					@media screen and (max-width: 767px) {
+					 		max-width: 80px;
+					}
+					@media screen and (max-width: 500px) {
+						max-width: 70px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/**********howTake**********/
+.howTake {
+	border-bottom: solid 1px #ebebeb;
+	border-top: solid 1px #ebebeb;
+	background: url(../images/lending1/bghand.png) no-repeat 100% 35%;
+	background-size: 45%;
+	@media screen and (max-width: 500px) {
+		background-image: none;
+	}
+	
+	.heading-1 {
+		padding-bottom: 15px;
+	}
+
+	.heading-2 {
+		text-align: left;
+	}
+
+
+	&_block {
+
+		&_items{
+			flex: 0 0 50%;
+	        max-width: 50%;
+	        padding-left: 10%;
+	        padding-bottom: 80px;
+	
+	        img {
+	        	margin-left: -10%;
+	        }
+
+			&:first-child {
+				border-right: dashed 1px #8ee1dc;
+				padding-right: 6%;
+				padding-left: 0;
+				@media screen and (max-width: 767px) {
+					border-right: none;
+					padding: 0 0 0 20px; 
+				}
+				img {
+		        	margin-left: 0;
+		        	margin-right: -10%;
+		        }
+			}
+			
+			p {
+				padding: 30px 0 20px;
+				font-size: 18px;
+				@media screen and (max-width: 1199px)  {
+					font-size: 16px;
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 14px;
+					line-height: 18px;
+					padding-top: 20px;
+					margin-bottom: 0;
+				}
+			}
+
+			p:first-of-type {
+				padding-bottom: 0;
+				margin-bottom: 10px; 
+			}
+
+			p+p {
+				padding-top: 0;
+			}
+
+			&.last-item {
+				padding-left: 6%;
+				img {
+		        	margin-left: 0;
+		        }			
+			}
+
+			&.item-img {
+				@media screen and (max-width: 767px) {
+					display: none;
+				}
+			}
+			@media screen and (max-width: 1199px) {
+				padding-bottom: 60px;
+			}
+			@media screen and (max-width: 991px) {
+				padding-bottom: 40px;
+			}
+			@media screen and (max-width: 767px) {
+				flex: 0 0 100%;
+	       		max-width: 100%;
+			 	padding: 0 0 0 20px;
+			 	border-left: dashed 1px #8ee1dc;
+			}
+		}
+	}
+
+	.stepNumber {
+		width: 130px;
+		margin: 15px auto;
+		padding: 15px 40px;
+		background-color: #e5f8fb;
+		border-radius: 26px;
+		font-family: 'HelveticaNeueCyr Medium';
+		font-size: 18px;
+		line-height: 25px;
+		color: #00b8d4;
+		text-align: center;
+		transition: all 0.3s;
+		&.finish {
+			background-color: #e6f7f1;
+			&:hover {
+				background-color: #e7faf3;
+			}
+		}
+		&:hover {
+			background-color: #c5f1f8;
+		}
+		@media screen and (max-width: 767px) {
+			margin: 15px auto 15px -10px ;
+			padding: 10px;
+			width: 80px;
+			font-size: 14px;
+		}
+	}
+}
+
+/**********PayCredit**********/
+.PayCredit {
+
+	&_img>div {
+		flex: 0 0 50%;
+	    max-width: 50%;
+	    text-align: center;
+	    padding: 20px 0;
+		font-family: 'HelveticaNeueCyr Medium';
+		@media screen and (max-width: 767px) {
+			padding: 20px 15px;
+		}
+	    img {
+	    	display: block;
+	    	margin: auto;
+	    	margin-bottom: 20px;
+	    }
+	    p {
+			text-align: center;
+			margin-top: 20px;
+			@media screen and (max-width: 530px) {
+				min-height: 40px;
+			}
+		}
+	}
+
+	.heading-1+p {
+		text-align: center;
+		margin-top: 20px;
+		@media screen and (max-width: 530px) {
+			min-height: 40px;
+		}
+	}
+}
+
+/**********Conditions**********/
+.Conditions {
+	background-color: #f6f6f6;
+	
+	ul {
+		padding: 15px 0;
+		li {
+			position: relative;
+			padding: 5px 0 5px 25px;
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 9px;
+				left: 0;
+				width: 6px;
+				height: 6px;
+				background-color: #1f9bde;
+				border-radius: 50%;
+				@media screen and (max-width: 1199px) {
+					top: 6px;
+				}
+				@media screen and (max-width: 767px) {
+					top: 4px;
+				}
+			}
+		}
+	}
+
+	.example {
+		background-color: #fff;
+		border: solid 1px #d8d8d8;
+		border-radius: 5px;
+		padding: 25px;
+		margin-top: 30px;
+		@media screen and (max-width: 400px) {
+		    padding: 15px;
+		}
+	}
+
+	.heading-1 {
+		padding-bottom: 30px;
+		@media screen and (max-width: 1199px) {
+			padding-bottom:25px;
+		}
+		@media screen and (max-width: 991px) {
+			padding-bottom: 20px;
+		}
+	}
+	
+	.heading-2 {
+		padding-top: 20px;
+		text-align: left;
+	}
+
+	.heading-3 {
+		text-align: left;
+		padding-bottom: 20px;
+	}
+}

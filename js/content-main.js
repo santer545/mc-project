@@ -8,7 +8,24 @@ $(function() {
     sharePopupShow();
     menuShowHide();
     sharePopupClose();
+    playVideoAbout();
+    stickySidebar();
+    dropdown();
+    bannerCarousel();
+    stickyCalc();
+    stickyCalcHeight();
+    playVideo();
 })
+
+
+// выпадающее меню
+function dropdown() {
+    $('.js-parent').on('click', function(e) {
+        $(this).toggleClass('active');
+        $(this).find('.triangle').toggleClass('active');
+        $(this).find('.js-dropdown').toggleClass('active');
+    })
+}
 
 // визуализация калькулятора
 function calculatorMain() {
@@ -64,6 +81,26 @@ function calculatorMain() {
 
 }
 
+// карусель для банера
+function bannerCarousel() {
+    $('.js-banner').slick({
+        arrows: false,
+        nextArrow: '<span class="icon-programm-arrow-right"><span class="path1"></span><span class="path2"></span></span>',
+        prevArrow: '<span class="icon-programm-arrow-left"><span class="path1"></span><span class="path2"></span></span>',
+        lazyLoad: 'progressive',
+        responsive: [{
+            breakpoint: 767,
+            settings: {
+                arrows: false,
+                slidesToShow: 1,
+                dots: true
+            }
+        }]
+    });
+}
+
+
+// отображение колбека
 function showCallback() {
     $('.js-callback-close').on('click', function() {
         $('.js-callback').removeClass('open');
@@ -74,17 +111,21 @@ function showCallback() {
     })
 }
 
+// отображение попапа для акций
 function sharePopupShow() {
     setTimeout(function() {
         $(".js-share-popup").addClass("active")
     }, 8000)
 }
+
+// закрыть попап
 function sharePopupClose() {
     $(".js-share-close").click(function() {
         $(this).closest(".share-popup").removeClass("active")
     })
 }
 
+// отображение меню на мобайл
 function menuShowHide() {
     $('.js-gamburger').click(function() {
         $('.js-menu').addClass('open');
@@ -95,6 +136,7 @@ function menuShowHide() {
     })
 }
 
+// карусели для документов
 function contentDocumentsCarousel() {
     $('.js-slider-for').slick({
         slidesToShow: 1,
@@ -112,10 +154,13 @@ function contentDocumentsCarousel() {
     });
 }
 
+
+// кастомный селект
 function customSelect() {
     $('select').selectric();
 }
 
+// lazy load картинок
 function lazyLoadImages() {
     $('.js-lazy').Lazy({
         scrollDirection: 'vertical',
@@ -128,6 +173,7 @@ function lazyLoadImages() {
     });
 }
 
+// аккордион
 function accordion() {
     var accordion = $('.js-accordion');
     var allChildren = $('.js-accordion ul');
@@ -153,4 +199,57 @@ function accordion() {
             subItem.slideToggle("fast");
         }
     });
+}
+
+// запуск видео на контентных страницах
+function playVideo() {
+    
+    $('.js-frame').click(function() {
+        var video = $(this).find('.js-video')[0];
+        $(this).addClass('play');
+        $('.numbers-play').addClass('hidden');
+        $('.numbers-gif').addClass('hidden');
+        video.play();
+    })
+}
+
+
+// запуск и остановка видео на странице о нас
+function playVideoAbout() {
+    var video = document.getElementById('video-about');
+    if ($('#aboutVideo').length) {
+        $('#aboutVideo').on('hidden.bs.modal', function() {
+            video.pause();
+        });
+    }
+}
+
+// липкий сайдбар на контентных страницах
+function stickySidebar() {
+    var sticky = $('#sidebar').stickySidebar({
+        topSpacing: 100,
+        bottomSpacing: 60
+    });
+}
+
+// отображение липкого калькулятора сверху в контенте
+function stickyCalc() {
+    $('.js-open-calc').on('click', function() {
+        $(this).attr('disabled', 'disabled');
+        $('.js-sticky').addClass('active');
+        var stickyHeight = stickyCalcHeight() + $('.js-header').height() + 'px';
+
+        $('.js-header').animate({ top: stickyHeight }, 300);
+    });
+
+    $('.js-sticky-close').on('click', function() {
+        $('.js-open-calc').removeAttr('disabled');
+        $('.js-header').animate({ top: '0px' }, 300);
+        $('.js-sticky').removeClass('active');
+    });
+}
+
+// высота липкого калькулятора
+function stickyCalcHeight() {
+    return $('.js-sticky').height();
 }

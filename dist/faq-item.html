@@ -13,8 +13,7 @@
     <meta name="google-site-verification" content="DHkY6ywkpSEqaHBG1aQTBj651kRzAPjpSFXRPSrsERE" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" href="css/content-page.min.css" media="screen and (min-width: 768px)">
-    <link rel="stylesheet" href="css/content-page-mobile.min.css" media="screen and (max-width: 767px)">
+    <link rel="stylesheet" href="css/content-page.min.css">
 </head>
 
 <body class="home-page">
@@ -119,191 +118,207 @@
                                 <div class="calculator-labe">
                                     <img src="/images/0.svg" alt="">
                                 </div>
-                                <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
-                                <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
-                            </div>
-                            <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
-                                <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
-                                <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
-                                <div class="calculator-row ">
-                                    <div class="calculator-left ">
-                                        <div class="slider-money">
-                                            <div class="slider-money-share">Первый займ - 0%</div>
-                                            <div class="slider-holder d-f align-center justify-between">
-                                                <span class="nameSlider hidden">large_main</span>
-                                                <span class="isPlay hidden" id="isPlay_large_main"></span>
-                                                <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
-                                                <span class="hidden" id="ChildProductsNormal_large_main"></span>
-                                                <label for="money-value_large" class="slider-money--label">Сумма</label>
-                                                <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
-                                                <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
-                                                <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
-                                                <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
-                                                <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
-                                                <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
-                                                <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
-                                                <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
-                                                <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
-                                                <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
-                                                <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
-                                                <div class="slider-control--wr">
-                                                    <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                                    <label for="money-value_large_main">грн</label>
-                                                </div>
-                                            </div>
-                                            <div class="slider-wrapper">
-                                                <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
-                                            </div>
-                                        </div>
-                                        <div class="slider-days">
-                                            <div class="slider-holder d-f align-center justify-between">
-                                                <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
-                                                <div class="slider-control--wr">
-                                                    <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
-                                                    <label><span id="daySelectDay_large_main">дней</span></label>
-                                                </div>
-                                            </div>
-                                            <div class="slider-wrapper">
-                                                <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="calculator-right">
-                                        <div class="slider-money--label">Информация о кредите:</div>
-                                        <div class="calculator-start">
-                                            <div class="calculator-holder d-f">
-                                                <div class="calculator-col">Вы берете:</div>
-                                                <div class="calculator-col brand-color">
-                                                    <span id="span_amount_large_main"></span> 1000 грн
-                                                </div>
-                                            </div>
-                                            <div class="calculator-holder m-b d-f">
-                                                <div class="calculator-col">Ваша комиссия:</div>
-                                                <div class="calculator-col brand-color">
-                                                    20
-                                                    <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
-                                                </div>
-                                            </div>
-                                            <div class="calculator-holder d-f">
-                                                <div class="calculator-col">К возврату:</div>
-                                                <div class="calculator-col inverse-color">
-                                                    <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="calculator-holder calculator-holder__wide d-f">
-                                            <div class="calculator-col">До:</div>
-                                            <div class="calculator-col inverse-color">
-                                                <span class="loan-days" id="span_amount_all_end_large_main"></span>
-                                            </div>
-                                        </div>
-                                        <div class="calculator-btn">
-                                            <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
-                                                <span>Получить деньги</span><span class="icon-arrow-animate"></span>
-                                            </button>
-                                        </div>
-                                        <div class="calculator-img d-f align-center justify-between">
-                                            <img src="images/calculator/visa-calc.png" alt="">
-                                            <img src="images/calculator/master-calc.png" alt="">
-                                            <img src="images/calculator/privat-calc.png" alt="">
-                                            <img src="images/calculator/pci_calc.png" alt="">
-                                        </div>
-                                    </div>
+                                    <span class="icon-clock-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+                                    <strong>Решение за 20 минут!</strong> Вы получите деньги уже в <strong id="span_get_money_large_">10:22</strong>
                                 </div>
-                            </form>
-                        </div>
-                        <div class="blog-social">
-                            <div class="blog-social-text">
-                                Ищите уникальные промокоды на скидку в социальных сетях
+                                <form name="form_slider_large_main" action="/" method="POST" onSubmit="return false;" onclick="onClickFormSlider('large_main');">
+                                    <input type='hidden' name='CSRFName' value='CSRFGuard_496208770' />
+                                    <input type='hidden' name='CSRFToken' value='bZDGGNF9n74k9BA8ss8aSdy2fiffGDR8syY2ATTDYriaFfdkn3ZGBaDFBS9KAHQT' />
+                                    <div class="calculator-row ">
+                                        <div class="calculator-left ">
+                                            <div class="slider-money">
+                                                <div class="slider-money-share">Первый займ - 0%</div>
+                                                <div class="slider-holder d-f align-center justify-between">
+                                                    <span class="nameSlider hidden">large_main</span>
+                                                    <span class="isPlay hidden" id="isPlay_large_main"></span>
+                                                    <span class="hidden" id="ChildProducts_large_main">[{"MinAmount":100,"MaxAmount":500,"MinTerm":1,"MaxTerm":31,"InterestRate":"0.0400"}]</span>
+                                                    <span class="hidden" id="ChildProductsNormal_large_main"></span>
+                                                    <label for="money-value_large" class="slider-money--label">Сумма</label>
+                                                    <input type="hidden" name="orderCredit[pageId]" id="pageId_main" value="1">
+                                                    <input type="hidden" name="orderCredit[flagClickFromPlay]" id="flagClickFromPlay_large_main" value="">
+                                                    <input type="hidden" name="orderCredit[percent]" id="percent-value_large_main" value="0.4000">
+                                                    <input type="hidden" name="orderCredit[percentNormal]" id="percent-valueNormal_large_main" value="-1">
+                                                    <input type="hidden" name="orderCredit[maxday]" id="maxDay_large_main" value="31">
+                                                    <input type="hidden" name="orderCredit[minDay]" id="minDay_large_main" value="1">
+                                                    <input type="hidden" name="orderCredit[maxSum]" id="maxSum_large_main" value="3000">
+                                                    <input type="hidden" name="orderCredit[minSum]" id="minSum_large_main" value="100">
+                                                    <input type="hidden" name="orderCredit[step]" id="step_large_main" value="50">
+                                                    <input type="hidden" name="orderCredit[resolution]" id="resolution_large_main" value="20">
+                                                    <input type="hidden" name="orderCredit[intervalStopSlider]" id="intervalStopSlider_large_main" value="0">
+                                                    <div class="slider-control--wr">
+                                                        <input name="orderCredit[money-value]" id="money-value_large_main" value="1000" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                                        <label for="money-value_large_main">грн</label>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <input id="js-money_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="100" data-slider-max="3000" data-slider-step="50" data-slider-value="1000" onchange="reloadCred('large_main');">
+                                                </div>
+                                            </div>
+                                            <div class="slider-days">
+                                                <div class="slider-holder d-f align-center justify-between">
+                                                    <label for="day-value_large_main" class="slider-money--label">На какой срок?</label>
+                                                    <div class="slider-control--wr">
+                                                        <input id="day-value_large_main" name="orderCredit[day-value]" value="14" class="slider-money--control format-number" onkeyup="onkeyUpSlider(event, 'large_main')" onchange="reloadCred('large_main');" pattern="\d+">
+                                                        <label><span id="daySelectDay_large_main">дней</span></label>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <input id="js-days_large_main" data-slider-id='ex1Slider' type="text" data-slider-min="1" data-slider-max="31" data-slider-step="1" data-slider-value="14" onchange="reloadCred('large_main');">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="calculator-right">
+                                            <div class="slider-money--label">Информация о кредите:</div>
+                                            <div class="calculator-start">
+                                                <div class="calculator-holder d-f">
+                                                    <div class="calculator-col">Вы берете:</div>
+                                                    <div class="calculator-col brand-color">
+                                                        <span id="span_amount_large_main"></span> 1000 грн
+                                                    </div>
+                                                </div>
+                                                <div class="calculator-holder m-b d-f">
+                                                    <div class="calculator-col">Ваша комиссия:</div>
+                                                    <div class="calculator-col brand-color">
+                                                        20
+                                                        <span class="calculator-formula hidden"><span id="span_commission_old_large_main"></span> грн</span>
+                                                    </div>
+                                                </div>
+                                                <div class="calculator-holder d-f">
+                                                    <div class="calculator-col">К возврату:</div>
+                                                    <div class="calculator-col inverse-color">
+                                                        <span id="span_amount_all_large_main" class="loan-info--sum format-number"></span> 1020 грн
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="calculator-holder calculator-holder__wide d-f">
+                                                <div class="calculator-col">До:</div>
+                                                <div class="calculator-col inverse-color">
+                                                    <span class="loan-days" id="span_amount_all_end_large_main"></span>
+                                                </div>
+                                            </div>
+                                            <div class="calculator-btn">
+                                                <button class="btn btn-block" type="button" onclick="onClickSubmitSlider('large_main');">
+                                                    <span>Получить деньги</span><span class="icon-arrow-animate"></span>
+                                                </button>
+                                            </div>
+                                            <div class="calculator-img d-f align-center justify-between">
+                                                <img src="images/calculator/visa-calc.png" alt="">
+                                                <img src="images/calculator/master-calc.png" alt="">
+                                                <img src="images/calculator/privat-calc.png" alt="">
+                                                <img src="images/calculator/pci_calc.png" alt="">
+                                        </div>
+                                            </div>
+                                        </div>
+                                </form>
                             </div>
-                            <div class="blog-social-wrapper">
-                                <div class="blog-social-item">
-                                    <a href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
+                            <div class="blog-social">
+                                <div class="blog-social-text">
+                                    Ищите уникальные промокоды на скидку в социальных сетях
+                                </div>
+                                <div class="blog-social-wrapper">
+                                    <div class="blog-social-item">
+                                        <a href="https://t.me/joinchat/AAAAAEQioSB3Uk-xYfyemQ" target="_blank" rel="noopener">
                                         <img src="assets/images/telegram.svg" alt="">
                                         <span>Telegram</span>
                                     </a>
-                                </div>
-                                <div class="blog-social-item">
-                                    <a href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" rel="noopener">
+                                    </div>
+                                    <div class="blog-social-item">
+                                        <a href="https://www.facebook.com/Mycredit-1024366047631998/" target="_blank" rel="noopener">
                                         <img src="assets/images/facebook.svg" alt="">
                                         <span>Facebook</span>
                                     </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="content-holder">
-                        <div class="content-inner">
-                            <div class="content">
-                                <div class="heading-h2">Что такое личный кабинет и как мне зарегистрироваться в нем?</div>
-                                <p>Детально рассмотрим вид личного кабинета.</p>
-                                <p>Обратите внимание на меню вкладок вверху страницы, тут вы можете переключаться между разными разделами личного кабинета:</p>
-                                <ol class="faq-ol">
-                                    <li>
-                                        <p>Вкладка «Мой Кредит» - показывает всю подробную информацию по вашему кредиту, дату погашения, сумму и проценты.</p>
-                                        <a href="/images/test/faq/Р1.В1.1(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.1(rus).jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Вкладка «Мои данные» показывает заполненные вами личные данные: контактную информацию, личные данные, занятость. Нажав на один из пунктов в главном окне вы можете исправить некорректные данные, либо внести изменения.</p>
-                                        <p>Окно редактирования личных данных выглядит следующим образом.</p>
-                                        <a href="/images/test/faq/Р1.В1.3(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.3(rus).jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Во вкладке «Мои бонусы» содержится информация о скидках, доступной сумме займа, активности, статусе и достижениях клиента.</p>
-                                        <a href="/images/test/faq/P1.B1.bonus(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/P1.B1.bonus(rus).jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Вкладка «Мои карты» показывает банковские карты, которые вы привязали, а также требования к банковским картам.</p>
-                                        <a href="/images/test/faq/lkabinet_rus12.jpg" data-lightbox="roadtrip"><img src="/images/test/faq/lkabinet_rus12.jpg" alt=""></a>
-                                    </li>
-                                    <li>
-                                        <p>Вкладка «История кредитов» показывает все кредиты взятые вами, а также историю их погашения.</p>
-                                        <a href="/images/test/faq/Р1.В1.6(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.6(rus).jpg" alt=""></a>
-                                    </li>
-                                </ol>
-                                <p>Чтобы зарегистрироваться и <a href="ru/">получить кредит</a> в компании MyCredit зайдите на официальный сайт MyCredit, где вы можете сразу перейти к регистрации личного кабинета и непосредственно к оформлению кредита.</p>
-                                <ul>
-                                    <li>Выберите нужную вам сумму и нажмите кнопку «Оформить кредит».</li>
-                                    <li>Заполните контактные данные. Введите код из сообщения, которое придет на указанный вами номер мобильного телефона. После придумайте пароль, содержащий не менее 6 знаков, включая цифры и буквы верхнего и нижнего регистра. Далее заполните личные данные - введите ваши паспортные данные, ИНН, дату рождения и адрес проживания.</li>
-                                    <li>Вы попадаете на страницу, где нужно указать информацию о вашей занятости и дополнительном доходе. Вводите только достоверную информацию и рабочие номера телефонов.</li>
-                                    <li>Далее укажите данные вашей личной банковской карты и пройдите ее верификацию – подтверждение того, что карта находится в ваших руках. Процесс верификации проходит максимально просто. На указанной вами карте будет временно заблокирована одна гривна. На ваш номер телефона поступит SMS-сообщение с кодом для проверки, который нужно будет ввести в специальное поле. Это позволит убедиться, что оформить займ на карту пытаетесь именно вы.
-                                        <blockquot>Мы не симаем деньги с карты клиента, а лишь временно блокируем определенную сумму. В течение суток эта сумма станет доступна.</blockquot>
-                                    </li>
-                                    <li>Система автоматически определяет достоверность заполненных вами данных, и в случае корректного заполнения вы попадете в личный кабинет пользователя.</li>
-                                    <li>Войдите в личный кабинет на сайте, используя ваш номер телефона и придуманный вами пароль.</li>
-                                    <li>Ознакомьтесь с текстом договора и поставьте галочку в пункте «Согласен с условиями договора». После подтверждения согласия с условиями договора на ваш телефонный номер будет выслано SMS-сообщение с кодом для подписания заявки. Введите код на сайте и ожидайте окончательного решения.</li>
-                                </ul>
-                                <div class="faq-heading">Был ли этот ответ вам полезен?</div>
-                                <div class="faq-like  d-f align-center">
-                                    <div class="faq-like-buttons">
-                                        <button class="btn btn-like" id="btn_like_positive">Да</button>
-                                        <button class="btn btn-like" id="btn_like_negative">Нет</button>
-                                        <span id="span_page_rating" class="hidden">70</span>
-                                    </div>
-                                    <div class="faq-like-values">
-                                        <div>
-                                            <img src="assets/images/like.svg" alt="">
-                                            <span id="span_like_positive">0</span>
+                        <div class="content-holder">
+                            <div class="content-inner">
+                                <div class="content">
+                                    <div class="heading-h2">Что такое личный кабинет и как мне зарегистрироваться в нем?</div>
+                                    <div class="iframe-relative js-frame">
+                                        <img src="images/registration/kakpoluchitodobrenie.jpg" alt="myCredit-video" class="numbers-gif">
+                                        <div class="numbers-play text-center" id="numbers-play">
+                                            <div class="numbers-play--holder js-play">
+                                                <img src="images/play.svg" width="98" height="98" alt="">
+                                                <p>Как получить одобрение по заявке на кредит в MyCredit</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <img src="assets/images/dislike.svg" alt="">
-                                            <span id="span_like_negative">0</span>
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <video width="320" height="240" preload="none" class="js-video embed-responsive-item" controls>
+                                                <source src="/assets/video/video-content-1.mp4" type="video/mp4">
+                                                Your browser does not support the video tag.
+                                            </video>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="faq-contacts">
-                                    <span>Всё еще остались вопросы? Тогда звоните нам:</span>
-                                    <div class="faq-phones">
-                                        <a href="tel:0733694111" class="lifecell">073 369 41 11</a>
-                                        <a href="tel:0673694111" class="kyivstar">067 369 41 11</a>
-                                        <a href="tel:0503694111" class="mts">050 369 41 11</a>
+                                    <p>Детально рассмотрим вид личного кабинета.</p>
+                                    <p>Обратите внимание на меню вкладок вверху страницы, тут вы можете переключаться между разными разделами личного кабинета:</p>
+                                    <ol class="faq-ol">
+                                        <li>
+                                            <p>Вкладка «Мой Кредит» - показывает всю подробную информацию по вашему кредиту, дату погашения, сумму и проценты.</p>
+                                            <a href="/images/test/faq/Р1.В1.1(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.1(rus).jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Вкладка «Мои данные» показывает заполненные вами личные данные: контактную информацию, личные данные, занятость. Нажав на один из пунктов в главном окне вы можете исправить некорректные данные, либо внести изменения.</p>
+                                            <p>Окно редактирования личных данных выглядит следующим образом.</p>
+                                            <a href="/images/test/faq/Р1.В1.3(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.3(rus).jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Во вкладке «Мои бонусы» содержится информация о скидках, доступной сумме займа, активности, статусе и достижениях клиента.</p>
+                                            <a href="/images/test/faq/P1.B1.bonus(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/P1.B1.bonus(rus).jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Вкладка «Мои карты» показывает банковские карты, которые вы привязали, а также требования к банковским картам.</p>
+                                            <a href="/images/test/faq/lkabinet_rus12.jpg" data-lightbox="roadtrip"><img src="/images/test/faq/lkabinet_rus12.jpg" alt=""></a>
+                                        </li>
+                                        <li>
+                                            <p>Вкладка «История кредитов» показывает все кредиты взятые вами, а также историю их погашения.</p>
+                                            <a href="/images/test/faq/Р1.В1.6(rus).jpg" data-lightbox="roadtrip"><img src="/images/test/faq/Р1.В1.6(rus).jpg" alt=""></a>
+                                        </li>
+                                    </ol>
+                                    <p>Чтобы зарегистрироваться и <a href="ru/">получить кредит</a> в компании MyCredit зайдите на официальный сайт MyCredit, где вы можете сразу перейти к регистрации личного кабинета и непосредственно к оформлению кредита.</p>
+                                    <ul>
+                                        <li>Выберите нужную вам сумму и нажмите кнопку «Оформить кредит».</li>
+                                        <li>Заполните контактные данные. Введите код из сообщения, которое придет на указанный вами номер мобильного телефона. После придумайте пароль, содержащий не менее 6 знаков, включая цифры и буквы верхнего и нижнего регистра. Далее заполните личные данные - введите ваши паспортные данные, ИНН, дату рождения и адрес проживания.</li>
+                                        <li>Вы попадаете на страницу, где нужно указать информацию о вашей занятости и дополнительном доходе. Вводите только достоверную информацию и рабочие номера телефонов.</li>
+                                        <li>Далее укажите данные вашей личной банковской карты и пройдите ее верификацию – подтверждение того, что карта находится в ваших руках. Процесс верификации проходит максимально просто. На указанной вами карте будет временно заблокирована одна гривна. На ваш номер телефона поступит SMS-сообщение с кодом для проверки, который нужно будет ввести в специальное поле. Это позволит убедиться, что оформить займ на карту пытаетесь именно вы.
+                                            <blockquot>Мы не симаем деньги с карты клиента, а лишь временно блокируем определенную сумму. В течение суток эта сумма станет доступна.</blockquot>
+                                        </li>
+                                        <li>Система автоматически определяет достоверность заполненных вами данных, и в случае корректного заполнения вы попадете в личный кабинет пользователя.</li>
+                                        <li>Войдите в личный кабинет на сайте, используя ваш номер телефона и придуманный вами пароль.</li>
+                                        <li>Ознакомьтесь с текстом договора и поставьте галочку в пункте «Согласен с условиями договора». После подтверждения согласия с условиями договора на ваш телефонный номер будет выслано SMS-сообщение с кодом для подписания заявки. Введите код на сайте и ожидайте окончательного решения.</li>
+                                    </ul>
+                                    <div class="faq-heading">Был ли этот ответ вам полезен?</div>
+                                    <div class="faq-like d-f">
+                                        <div class="faq-like-buttons">
+                                            <button class="btn btn-like" id="btn_like_positive">Да</button>
+                                            <button class="btn btn-like" id="btn_like_negative">Нет</button>
+                                            <span id="span_page_rating" class="hidden">70</span>
+                                        </div>
+                                        <div class="faq-like-values d-f">
+                                            <div class="faq-like-item d-f align-center justify-center">
+                                                <img src="assets/images/like.svg" alt="">
+                                                <span id="span_like_positive">0</span>
+                                            </div>
+                                            <div class="faq-like-item d-f align-center justify-center">
+                                                <img src="assets/images/dislike.svg" alt="">
+                                                <span id="span_like_negative">0</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="faq-person">
-                                        <img src="assets/images/personal/review-person.png" alt="">
-                                        <span>
-										<strong>Роман</strong>
-										Кредитный эксперт MyCredit
-									</span>
+                                    <div class="faq-contacts">
+                                        <span>Всё еще остались вопросы? Тогда звоните нам:</span>
+                                        <ul class="faq-phones d-f justify-center">
+                                            <li><span class="icon-lifecell-1"></span><a href="tel:0733694111" class="lifecell">073 369 41 11</a></li>
+                                            <li><span class="icon-lifecell-12"></span><a href="tel:0673694111" class="kyivstar">067 369 41 11</a></li>
+                                            <li><span class="icon-mts"></span><a href="tel:0503694111" class="mts">050 369 41 11</a></li>
+                                        </ul>
+                                        <div class="faq-person d-f align-center justify-center">
+                                            <img src="assets/images/personal/review-person.png" alt="">
+                                            <div>
+                                                <strong>Роман</strong>
+                                                <div>Кредитный эксперт MyCredit</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -311,156 +326,114 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- Footer -->
-        <footer class="footer" id="footer">
-            <div class="container">
-                <div class="footer-top">
-                    <div class="footer-left">
-                        <div class="footer-menu">
-                            <div class="footer-heading">О нас</div>
-                            <ul>
-                                <li><a href="">Правовая информация</a></li>
-                                <li><a href="">Договор займа</a></li>
-                                <li><a href="">Финансовая отчетность</a></li>
-                                <li><a href="">Политика конфиденциальности</a></li>
-                                <li><a href="">Партнерам</a></li>
-                                <li><a href="">Отзывы</a></li>
-                                <li><a href="">Контакты</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-menu">
-                            <div class="footer-heading">Часто задаваемые вопросы</div>
-                            <ul>
-                                <li><a href="">Как получить кредит?</a></li>
-                                <li><a href="">Как погасить / продлить кредит</a></li>
-                                <li><a href="">Почему мне отказали в выдаче кредита</a></li>
-                                <li><a href="">Блог</a></li>
-                                <li><a href="">Новости</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-menu">
-                            <div class="footer-heading">Как вернуть кредит</div>
-                            <ul>
-                                <li><a href="">В интернете</a></li>
-                                <li><a href="">Оплата кредита через терминал</a></li>
-                                <li><a href="">В кассе банка</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-menu footer-menu__wide">
-                            <div class="footer-heading">Услуги кредитования</div>
-                            <div class="footer-menu__wrapper">
+            <!-- Footer -->
+            <footer class="footer" id="footer">
+                <div class="container">
+                    <div class="footer-top">
+                        <div class="footer-left">
+                            <div class="footer-menu">
+                                <div class="footer-heading">О нас</div>
                                 <ul>
-                                    <li><a href="">Деньги до зарплаты онлайн за 20 минут</a></li>
-                                    <li><a href="">Кредит от 18 лет без справок и поручителей </a></li>
-                                    <li><a href="">Кредиты без залога в Киеве, Харькове и всей Украине</a></li>
-                                    <li><a href="">Потребительский кредит онлайн в Украине</a></li>
-                                    <li><a href="">Кредит для пенсионеров в Украине</a></li>
-                                    <li><a href="">Микрокредит и микрозайм онлайн на карту</a></li>
-                                    <li><a href="">Кредит онлайн с плохой кредитной историей в Украине</a></li>
+                                    <li><a href="">Правовая информация</a></li>
+                                    <li><a href="">Договор займа</a></li>
+                                    <li><a href="">Финансовая отчетность</a></li>
+                                    <li><a href="">Политика конфиденциальности</a></li>
+                                    <li><a href="">Партнерам</a></li>
+                                    <li><a href="">Отзывы</a></li>
+                                    <li><a href="">Контакты</a></li>
                                 </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <div class="footer-heading">Часто задаваемые вопросы</div>
                                 <ul>
-                                    <li><a href="">Взять кредит онлайн без справки о доходах в Украине</a></li>
-                                    <li><a href="">Деньги в долг на карту</a></li>
-                                    <li><a href="">Краткосрочный кредит на 1 месяц</a></li>
-                                    <li><a href="">Беспроцентный кредит под 0% без переплат</a></li>
-                                    <li><a href="">Кредит 365 дней в году</a></li>
-                                    <li><a href="">Кредитный калькулятор онлайн в Украине</a></li>
-                                    <li><a href="">Пролонгация кредита от Mycredit</a></li>
+                                    <li><a href="">Как получить кредит?</a></li>
+                                    <li><a href="">Как погасить / продлить кредит</a></li>
+                                    <li><a href="">Почему мне отказали в выдаче кредита</a></li>
+                                    <li><a href="">Блог</a></li>
+                                    <li><a href="">Новости</a></li>
                                 </ul>
+                            </div>
+                            <div class="footer-menu">
+                                <div class="footer-heading">Как вернуть кредит</div>
+                                <ul>
+                                    <li><a href="">В интернете</a></li>
+                                    <li><a href="">Оплата кредита через терминал</a></li>
+                                    <li><a href="">В кассе банка</a></li>
+                                </ul>
+                            </div>
+                            <div class="footer-menu footer-menu__wide">
+                                <div class="footer-heading">Услуги кредитования</div>
+                                <div class="footer-menu__wrapper">
+                                    <ul>
+                                        <li><a href="">Деньги до зарплаты онлайн за 20 минут</a></li>
+                                        <li><a href="">Кредит от 18 лет без справок и поручителей </a></li>
+                                        <li><a href="">Кредиты без залога в Киеве, Харькове и всей Украине</a></li>
+                                        <li><a href="">Потребительский кредит онлайн в Украине</a></li>
+                                        <li><a href="">Кредит для пенсионеров в Украине</a></li>
+                                        <li><a href="">Микрокредит и микрозайм онлайн на карту</a></li>
+                                        <li><a href="">Кредит онлайн с плохой кредитной историей в Украине</a></li>
+                                    </ul>
+                                    <ul>
+                                        <li><a href="">Взять кредит онлайн без справки о доходах в Украине</a></li>
+                                        <li><a href="">Деньги в долг на карту</a></li>
+                                        <li><a href="">Краткосрочный кредит на 1 месяц</a></li>
+                                        <li><a href="">Беспроцентный кредит под 0% без переплат</a></li>
+                                        <li><a href="">Кредит 365 дней в году</a></li>
+                                        <li><a href="">Кредитный калькулятор онлайн в Украине</a></li>
+                                        <li><a href="">Пролонгация кредита от Mycredit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-right text-center">
+                            <ul>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-lifecell-1"></span><span>073 369 41 41</span></a>
+                                </li>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-lifecell-12"></span><span>073 369 41 41</span></a>
+                                </li>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-mts"></span><span>073 369 41 41</span></a>
+                                </li>
+                                <li>
+                                    <a href="tel:0733694141"><span class="icon-viber"></span><span>073 369 41 41</span></a>
+                                </li>
+                            </ul>
+                            <div class="main-phone">
+                                <a href="tel:0800214111">0 800 214 111</a>
+                                <span>Бесплатно по Украине со стационарных телефонов</span>
+                                <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
                             </div>
                         </div>
                     </div>
-                    <div class="footer-right text-center">
-                        <ul>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-lifecell-1"></span><span>073 369 41 41</span></a>
-                            </li>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-lifecell-12"></span><span>073 369 41 41</span></a>
-                            </li>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-mts"></span><span>073 369 41 41</span></a>
-                            </li>
-                            <li>
-                                <a href="tel:0733694141"><span class="icon-viber"></span><span>073 369 41 41</span></a>
-                            </li>
-                        </ul>
-                        <div class="main-phone">
-                            <a href="tel:0800214111">0 800 214 111</a>
-                            <span>Бесплатно по Украине со стационарных телефонов</span>
-                            <button class="btn btn-phone js-callback-show" onclick="onClickSendMe();">Написать нам</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <a href="#" class="footer-logo">
+                    <div class="footer-bottom">
+                        <a href="#" class="footer-logo">
                         <img src="images/logo_last_white.svg" alt="">
                     </a>
-                    <div class="footer-text">
-                        <p>Первый в Украине сервис кредитования через интернет. Мы предоставляем быстрые и удобные кредиты для всех граждан Украины.
-                            <br>© 2015 - 2018 MyCredit - Кредит онлайн на банковскую карту за 20 минут </p>
-                        <p>Разработка и поддержка сайта — <a href="#">Artjoker</a></p>
-                    </div>
-                    <ul class="footer-social">
-                        <li><a href=""><span class="icon-telegram-1"></span></a></li>
-                        <li><a href=""><span class="icon-vk-social-network-logo"></span></a></li>
-                        <li><a href=""><span class="icon-facebook-logo"></span></a></li>
-                        <li><a href=""><span class="icon-instagram-logo"></span></a></li>
-                        <li><a href=""><span class="icon-youtube-logo"></span></a></li>
-                        <li><a href=""><span class="icon-google-plus-logo"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-        <div class="bottom-callback js-callback" id="div_SendEmail">
-            <span class="icon-close js-callback-close" onclick="onClickCloseEmail();"></span>
-            <div class="callback-holder d-f">
-                <div class="callback-left">
-                    <figure class="call-img">
-                        <img alt="" class="lazy" src="images/operator.png">
-                    </figure>
-                    <div class="call-img--name">
-                        Ирина Кондрашова <span>специалист по кредитованию</span>
-                    </div>
-                    <div class="call-text">
-                        <img src="images/quot.png" alt=""> У вас есть вопрос по оформлению займа в MyCredit? <strong>Напишите нам, мы поможем его решить!</strong>
+                        <div class="footer-text">
+                            <p>Первый в Украине сервис кредитования через интернет. Мы предоставляем быстрые и удобные кредиты для всех граждан Украины.
+                                <br>© 2015 - 2018 MyCredit - Кредит онлайн на банковскую карту за 20 минут </p>
+                            <p>Разработка и поддержка сайта — <a href="#">Artjoker</a></p>
+                        </div>
+                        <ul class="footer-social">
+                            <li><a href=""><span class="icon-telegram-1"></span></a></li>
+                            <li><a href=""><span class="icon-vk-social-network-logo"></span></a></li>
+                            <li><a href=""><span class="icon-facebook-logo"></span></a></li>
+                            <li><a href=""><span class="icon-instagram-logo"></span></a></li>
+                            <li><a href=""><span class="icon-youtube-logo"></span></a></li>
+                            <li><a href=""><span class="icon-google-plus-logo"></span></a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="callback-form">
-                    <form name="sendMail" id="sendMail" action="http://dev.mycredit.ua/ru/contacts/" method="POST" class="form js_validate" onclick="onClickFormSendMail();">
-                        <input type="hidden" name="CSRFName" value="CSRFGuard_755083114">
-                        <input type="hidden" name="CSRFToken" value="FR8Thd7a2Ta49A8e3iB4kaYH5R8Df9ERdkbkyTB7Sy8frRT8EHAfAedSETrQ9Atn">
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_sername" class="form-label">ФИО</label>
-                                <input type="text" class="form-control" id="send_sername" name="sendMail[sername]" required="">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="send_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="send_email" name="sendMail[email]" required="" data-validate="email" onkeyup="onKeyUpToEnter('email', event);">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-control--wr">
-                                <label for="message" class="form-label">Сообщение</label>
-                                <textarea name="sendMail[message]" id="message" class="write-us form-control" required=""></textarea>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-callback js-callback" onclick="if (validate($(this).parents('.js_validate'))) onClickSendEmail();">
-                            Отправить
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div id="div_resultEmail" class="form-group hidden callback-result bottom-call-hidden">
-                <span id="span_resultEmail">Сообщение отправлено</span>
-            </div>
+            </footer>
         </div>
-    </div>
-    <script src="js/content-home.min.js"></script>
+        <script>
+        var downloadScripts = [
+            
+        ];
+        </script>
+        <script src="js/content-home.min.js"></script>
 </body>
 
 </html>
