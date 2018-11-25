@@ -1,0 +1,864 @@
+2018-07-27 01:15:48+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 01:20:01+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 01:32:25+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 01:35:34+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+)
+
+
+2018-07-27 01:35:38+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+)
+
+
+2018-07-27 01:35:41+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+)
+
+
+2018-07-27 01:35:41+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 01:35:43+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 01:35:43+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:31:53+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 02:32:37+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:32:41+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:32:44+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:32:44+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:33:23+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:33:27+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:40:32+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+)
+
+
+2018-07-27 02:40:36+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+)
+
+
+2018-07-27 02:40:36+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:42:26+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 02:43:29+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:43:37+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:43:41+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:43:45+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:43:47+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:43:49+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1581
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 1
+            [IsMain] => 
+        )
+
+    [1] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 02:43:49+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 03:20:32+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1582
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 03:48:39+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 03:49:06+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 03:49:08+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 03:51:00+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1591
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:04:33+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 04:04:38+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+)
+
+
+2018-07-27 04:21:35+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:23:20+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:23:50+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:27:23+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:28:19+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:30:28+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1583
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:30:34+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1583
+            [Card] => 516800******3711
+            [CardDate] => 7/19
+            [Verified] => 1
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:31:23+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:31:27+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:44:09+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 04:57:29+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:01:47+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:01:50+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:02:07+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:02:57+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:03:22+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:03:27+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:09:59+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1592
+            [Card] => 516875******5968
+            [CardDate] => 12/18
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:14:20+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1591
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
+2018-07-27 05:14:24+03:00 METHOD: getCards (TKLenderAPI.tranzooGetCardsAll) 
+response=Array
+(
+    [0] => Array
+        (
+            [CardId] => 1591
+            [Card] => 516936******7226
+            [CardDate] => 3/27
+            [Verified] => 
+            [IsMain] => 1
+        )
+
+)
+
+
