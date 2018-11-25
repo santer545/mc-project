@@ -19,6 +19,7 @@ function showOptions() {
 }
 
 $(function() {
+    startToPlay();
     showOptions();
     $('#pile').height($('#source_image').height());
     start_puzzle(3);
@@ -33,4 +34,17 @@ $(function() {
         $('#source_image').snapPuzzle('refresh');
     });
 });
+
+function startToPlay() {
+    $('.js-play').on('click', function(e) {
+        e.preventDefault();
+        console.log('Jopa!!!');
+        $('#start-modal').modal('hide');
+        $('.first-screen').addClass('process');
+        $('html, body').animate({
+          scrollTop: $("div.second-screen").offset().top
+        }, 1000)
+        $('.second-screen').addClass('active');
+    })
+}
 

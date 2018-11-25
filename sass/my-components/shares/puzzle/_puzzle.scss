@@ -26,6 +26,10 @@
     overflow-y: auto;
     display: none;
 
+    &.active {
+        display: block;
+    }
+
     @media screen and (max-width: 1199px) {
         min-height: 0;  
     }
@@ -41,6 +45,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: none;
+    &.active {
+        display: block;
+    }
 }
 
 .puzzle {
