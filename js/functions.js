@@ -660,145 +660,66 @@ function getRandomInt(min, max) {
  * собирает данные сессии
  */
 function getSessionData() {
-	
-	// Получение blackbox от iovation:
-	// console.log("getSessionData start blackbox_info");
-	// var blackbox_info = window.IGLOO.getBlackbox();
-	// console.log("getSessionData blackbox_info:");
-	// console.log(blackbox_info);
-	
-	var geocoder = new google.maps.Geocoder,
-		sessionData = {
-			user_country: '#404',
-			user_area: '#404',
-			user_city: '#404',
-			user_formatted_address: '#404',
-			user_geometry: '#404'
-		};
 
-	// закомментированно, ибо сожрало уйму денег
-	/*
-	geocoder.geocode({'location': geolocation}, function(results, status) {
-		if (status === 'OK') {
-			// console.log(results[0]);
-			var result = results[0].address_components;
-			var lenght = result.length;
-			
-			for (var i = 0; i < lenght; i++) {
-				// проверяем все типы данного элемента:
-				result[i].types.forEach(function(item, j, arr) {
-					if (item == 'country') userLocation.country = result[i].long_name;
-					if (item == 'administrative_area_level_1') userLocation.area = result[i].long_name;
-					if (item == 'locality') userLocation.city = result[i].long_name;
-				});
-			}
-			// console.log(userLocation);
+    // Получение blackbox от iovation:
+    // console.log("getSessionData start blackbox_info");
+    // var blackbox_info = window.IGLOO.getBlackbox();
+    // console.log("getSessionData blackbox_info:");
+    // console.log(blackbox_info);
 
-			// готовим к отправке:
-			sessionData = {
-				user_country: userLocation.country,
-				user_area: userLocation.area,
-				user_city: userLocation.city,
-				user_formatted_address: results[0].formatted_address,
-				user_geometry: results[0].geometry
-			};
-		} else {
-			// обработка ошибки
-			sessionData.geo_status = status;
-		}
-		
-		sessionData = getDeviceData(sessionData);
+    var sessionData = {
+		user_country: '#404',
+		user_area: '#404',
+		user_city: '#404',
+		user_formatted_address: '#404',
+		user_geometry: '#404'
+	};
 
-		// отпечаток системы Fingerprint (асинхронный режим!!!):
-		// var options = {excludeUserAgent: true};
-		var options = {};
-		new Fingerprint2(options).get(function(result, components){
-			sessionData.fingerprint = result;
-			var cpu = getDeviceInfo('CPU');	// получаем тип процессора с параллельными потоками
-			if (cpu !== '') {
-				components[components.length] = {key:'cpu', value:cpu};
-			}
-			var gpu = getDeviceInfo('GPU');	// получаем тип видеокарты
-			if (gpu !== '') {
-				components[components.length] = {key:'gpu', value:gpu};
-			}
+    sessionData = getDeviceData(sessionData);
 
-			var dataComponents = {
-				fingerprintComponents: components
-			}; 
+    // отпечаток системы Fingerprint (асинхронный режим!!!):
+    // var options = {excludeUserAgent: true};
+    var options = {};
+    new Fingerprint2(options).get(function(result, components){
+        sessionData.fingerprint = result;
+        var cpu = getDeviceInfo('CPU');	// получаем тип процессора с параллельными потоками
+        if (cpu !== '') {
+            components[components.length] = {key:'cpu', value:cpu};
+        }
+        var gpu = getDeviceInfo('GPU');	// получаем тип видеокарты
+        if (gpu !== '') {
+            components[components.length] = {key:'gpu', value:gpu};
+        }
 
-			var options = {excludeUserAgent: true};	// отключаем использование UserAgent в формировании
-			new Fingerprint2(options).get(function(result, components){
-				sessionData.fingerprintDevice = result;
+        var dataComponents = {
+            fingerprintComponents: components
+        };
 
-				// sessionData += '"fingerprintComponents":"' + components + '", ';
-				// console.log(result); //a hash, representing your device fingerprint
-				// console.log(components); // an array of FP components
-				// console.log(sessionData);
+        var options = {excludeUserAgent: true};	// отключаем использование UserAgent в формировании
+        new Fingerprint2(options).get(function(result, components){
+            sessionData.fingerprintDevice = result;
 
-				sessionData.end = 'ok';
-				// console.log(sessionData);
+            // sessionData += '"fingerprintComponents":"' + components + '", ';
+            // console.log(result); //a hash, representing your device fingerprint
+            // console.log(components); // an array of FP components
+            // console.log(sessionData);
 
-				// готовим данные для отправки:
-				var data = {
-					typeData: 'userInfo',
-					sessionData: JSON.stringify(sessionData),
-					dataComponents: dataComponents
-					// iovation: JSON.stringify(blackbox_info)
-				};
+            sessionData.end = 'ok';
+            // console.log(sessionData);
 
-				// отправить массив на сервер
-				//console.log("Передаем запрос ajax 'userInfo'");
-				sendAjax(data);
-			});
-		});
-	});*/
-	
-	sessionData = getDeviceData(sessionData);
+            // готовим данные для отправки:
+            var data = {
+                typeData: 'userInfo',
+                sessionData: JSON.stringify(sessionData),
+                dataComponents: dataComponents
+                // iovation: JSON.stringify(blackbox_info)
+            };
 
-	// отпечаток системы Fingerprint (асинхронный режим!!!):
-	// var options = {excludeUserAgent: true};
-	var options = {};
-	new Fingerprint2(options).get(function(result, components){
-		sessionData.fingerprint = result;
-		var cpu = getDeviceInfo('CPU');	// получаем тип процессора с параллельными потоками
-		if (cpu !== '') {
-			components[components.length] = {key:'cpu', value:cpu};
-		}
-		var gpu = getDeviceInfo('GPU');	// получаем тип видеокарты
-		if (gpu !== '') {
-			components[components.length] = {key:'gpu', value:gpu};
-		}
-
-		var dataComponents = {
-			fingerprintComponents: components
-		}; 
-
-		var options = {excludeUserAgent: true};	// отключаем использование UserAgent в формировании
-		new Fingerprint2(options).get(function(result, components){
-			sessionData.fingerprintDevice = result;
-
-			// sessionData += '"fingerprintComponents":"' + components + '", ';
-			// console.log(result); //a hash, representing your device fingerprint
-			// console.log(components); // an array of FP components
-			// console.log(sessionData);
-
-			sessionData.end = 'ok';
-			// console.log(sessionData);
-
-			// готовим данные для отправки:
-			var data = {
-				typeData: 'userInfo',
-				sessionData: JSON.stringify(sessionData),
-				dataComponents: dataComponents
-				// iovation: JSON.stringify(blackbox_info)
-			};
-
-			// отправить массив на сервер
-			//console.log("Передаем запрос ajax 'userInfo'");
-			sendAjax(data);
-		});
-	});
+            // отправить массив на сервер
+            //console.log("Передаем запрос ajax 'userInfo'");
+            sendAjax(data);
+        });
+    });
 }
 
 function getDeviceData(sessionData) {
@@ -898,6 +819,40 @@ function getDeviceData(sessionData) {
 	// console.log(screen);
 		
 	return sessionData;
+}
+
+function getUserLocation(callback) {
+	var geocoder = new google.maps.Geocoder;
+
+   	geocoder.geocode({'location': geolocation}, function(results, status) {
+        if (status === 'OK') {
+            // console.log(results[0]);
+            var result = results[0].address_components;
+            var lenght = result.length;
+
+            var $userCountry = $('#user-location-country');
+            var $userArea = $('#user-location-area');
+            var $userCity = $('#user-location-city');
+            var $userGeometry = $('#user-location-geometry');
+            var $userAddress = $('#user-location-formatted-address');
+
+            for (var i = 0; i < lenght; i++) {
+                // проверяем все типы данного элемента:
+                result[i].types.forEach(function(item, j, arr) {
+                    if (item == 'country') $userCountry.val(result[i].long_name);
+                    if (item == 'administrative_area_level_1') $userArea.val(result[i].long_name);
+                    if (item == 'locality') $userCity.val(result[i].long_name);
+                });
+            }
+
+            $userGeometry.val(results[0].formatted_address);
+            $userAddress.val(JSON.stringify(results[0].geometry));
+        }
+
+        if (typeof callback === 'function') {
+        	callback();
+		}
+    });
 }
 
 /*
@@ -4320,8 +4275,11 @@ function submitCredit(prefix) {
 		ga('send', 'event', 'Application', 'Click'); // аналитика Google
 		// eval("yaCounter" + YandexMetrikaId + ".reachGoal('clickApplication');");	// аналитика Yandex
 
-		window.document.forms['form_credit'].submit();
+		getUserLocation(function() {
+			window.document.forms['form_credit'].submit();
+		});
 	}
+
 	if (window.document.forms['js-form-3'] != null)
 		window.document.forms['js-form-3'].submit();
 
@@ -5492,7 +5450,7 @@ $(document).ready(function () {
 	if ($('.js-modal-show-60').length > 0) {
 		setTimeout(function () {
 			$('.js-modal-show-60').modal('show');
-        }, 5000);
+        }, 60000);
     }
 
 	// если есть секции с кнопками сохранения введенного телефона:
